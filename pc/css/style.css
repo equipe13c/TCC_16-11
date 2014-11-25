@@ -1234,11 +1234,11 @@ imgAutor{
 }
 #textocomentario{
     width: 600px;
-    height: 60px;
+    height: 40px;
     margin-top: 5px;
     margin-left: 10px;
-    resize: none;
     float:left;
+    
 }
 .coment{
     width: 700px;
