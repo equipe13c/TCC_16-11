@@ -141,9 +141,7 @@
                     </figure>
                     <div id="descricaoColunista"> 
                         <div id="infoAutor">
-                            <?php
-                            buscarDescricaoUsuario('29');
-                            ?>
+                            
                         </div>
                     </div>
                 </div>
