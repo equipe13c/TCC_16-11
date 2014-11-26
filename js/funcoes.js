@@ -145,11 +145,9 @@ function mostraOculta(opc, id, id2){
                 function ocultar(id,tipo){
                     document.getElementById(id).style.display = 'none';
                     document.getElementById("imgPrincipal").style.marginTop = "390px";
-                    $('.testes').each(
-         function(){
-            $(this).attr("checked", false);
-         }
-      );
+                    if(document.getElementById('checkboxNintendo').checked == true){
+                        document.getElementById('checkboxNintendo').checked = false;
+                    }
                     if(tipo=='nintendo'){
                         document.getElementById("imgPrincipal").style.backgroundColor = "#009FE3";
                         document.getElementById("tituloMateria").style.backgroundColor = "#009FE3";               

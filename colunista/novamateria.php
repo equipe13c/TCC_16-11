@@ -113,6 +113,11 @@
                               <label for="radioXbox">Xbox</label><br/><br/><br/>
                               <p> Xbox </p>
                             </li>
+                            <li class="inputRadio radioNostalgia">
+                              <input name="categoria[]"  value="0" type="radio" id="radioNostalgia" onclick="ocultar('categorias','nostalgia');">    
+                              <label for="radioNostalgia">Xbox</label><br/><br/><br/>
+                              <p>  </p>
+                            </li>
                             <li class="inputRadio radioMulti">
                               <input name="categoria[]"  value="0" type="radio" id="radioMulti" onclick="mostraOculta2('radioMulti','categorias','imgPrincipal');">    
                               <label for="radioMulti">Xbox</label><br/><br/><br/>
@@ -125,30 +130,30 @@
 
                                 <ul class="inputCheckboxs">
                                   <li class="inputCheckbox checkboxNintendo">
-                                    <input name="categoria[]" class="testes" value="2"  type="checkbox" id="checkboxNintendo">
+                                    <input name="categoria[]"  value="2"  type="checkbox" id="checkboxNintendo">
                                     <label for="checkboxNintendo">Nintendo</label><br/><br/><br/>
                                     <p> Nintendo </p>
                                   </li>
 
                                   <li class="inputCheckbox checkboxPc">
-                                    <input name="categoria[]" class="testes" value="4"  type="checkbox" id="checkboxPc">
+                                    <input name="categoria[]" value="4"  type="checkbox" id="checkboxPc">
                                     <label for="checkboxPc">PC</label><br/><br/><br/>
                                     <p> PC </p>
                                   </li>
 
                                   <li class="inputCheckbox checkboxPlaystation">
-                                    <input name="categoria[]" class="testes" value="1"  type="checkbox" id="checkboxPlaystation">
+                                    <input name="categoria[]" value="1"  type="checkbox" id="checkboxPlaystation">
                                     <label for="checkboxPlaystation">Playstation</label><br/><br/><br/>
                                     <p> Playstation </p>
                                   </li>
 
                                   <li class="inputCheckbox checkboxXbox">
-                                    <input name="categoria[]" class="testes" value="3"  type="checkbox" id="checkboxXbox">    
+                                    <input name="categoria[]" value="3"  type="checkbox" id="checkboxXbox">    
                                     <label for="checkboxXbox">Xbox</label><br/><br/><br/>
                                     <p> Xbox </p>
                                   </li>
                                 </ul>
-                                <input name="categoria[]" class="testes" style="display: none;" value="0"  type="checkbox" id="checkboxXbox" checked>
+                                <input name="categoria[]" style="display: none;" value="0"  type="checkbox" id="checkboxXbox" checked>
                             </div>
                             
                             
