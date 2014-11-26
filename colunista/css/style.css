@@ -906,6 +906,23 @@ table.bordasimples tr td {
     display: block;
     position: relative;
 }
+
+#imgFooter{
+    width: 100%;
+    height: 110px;
+    margin-top: 0;
+    margin-left: 0;
+    float: left; 
+}
+
+#imgFooter img{
+    height: 110px;
+    margin-top: 0;
+    margin-left: 30%;
+    margin-right: 30%;
+    float: left;
+}
+
 #footer{
     width: 100%;
     height: 270px;
@@ -917,16 +934,17 @@ table.bordasimples tr td {
     color: #005890;
     font-family: century gothic;
     font-size: 12pt; 
-}
-
-#footer h1{
+}#footer{
+    width: 100%;
+    height: 270px;
+    margin-top: 0;
+    margin-left: 0;
+    float: left; 
+    text-align: center;
     font-family: century gothic;
-    font-size: 12pt;
-    color: #fff;
-    margin-top: 0px;
-    margin-bottom: 10px;
-    background-color: #333;
-    line-height: 15pt;
+    font-size: 12pt; 
+    border-top: solid 10px #8e8e8e;
+    background-color: #777;
 }
 
 #footer a{
@@ -942,23 +960,99 @@ table.bordasimples tr td {
     text-decoration: underline;
 }
 
+#footerLeft{
+    width: 320px;
+    height: 245px;
+    margin-top: 12px;
+    margin-left: 5px;
+    margin-right: 55px;
+    float: left;    
+}
+
+#textoRodape{
+    width: 310px;
+    height: 116px;
+    margin-top: 0px;
+    margin-left: 5px;
+    float: left;    
+    background-color: #fff;
+    border: solid 5px #333;
+}
+
+#textoRodape p{
+    margin-top: 8px;
+    margin-left: 8px;
+    margin-right: 8px;
+    font-family: arial;
+    font-size: 10pt;
+    float: left;    
+}
+
+#logosRodape{
+    width: 310px;
+    height: 100px;
+    margin-top: 20px;
+    margin-left: 5px;
+    float: left;    
+}
+
+#logosRodape img{
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    float: left;    
+    background-color: #fff;
+    box-shadow: 1px 1px 10px 0 #000;    
+    border-radius: 6px;
+}
+
 #linksRodape{
     width: 560px;
-    height: 270px;
-    margin-top: 0px;
-    margin-left: 27%;
+    height: 245px;
+    margin-top: 12px;
+    margin-left: 0;
+    margin-right: 0;
+    float: left;
+}
+
+#tituloRodape{
+    width: 100%;
+    height: 30px;
+    margin-top: 0;
+    margin-bottom: 10px;  
+    float: left;
+    background-color: #333;
+}
+
+#tituloRodape img{
+    width: 20px;
+    height: 20px;     
+    margin-left: 5px;    
+    margin-right: 5px;
+    float: left;
+}
+
+#tituloRodape h4{
+    margin-top: 5px;
+    font-family: century gothic;
+    font-size: 11pt;
+    color: #fff;
+    line-height: 15pt;
+    text-align: left;
 }
 
 .linksRodape{
     width: 130px;
     height: 240px;
-    margin-top: 15px;
+    margin-top: 0;
     margin-left: 5px;
     float: left;
-    color: #fff;
+    color: #000;
     line-height: 17pt;    
-    border: solid 2px #333;
+    border: solid 2px #333;    
 }
+
 .designButton{
     width:200px;
     height:40px;
@@ -1819,6 +1913,14 @@ ul li p{
     color: #000;
     background-color: lightgrey;
 }
+#urlMateria{
+    width: 100%;
+    height: 40px;
+    float: left;
+    margin-left: 0;
+    margin-top: 0;      
+    margin-bottom: 10px;
+}
 
 #video1{
    width: 425px;
@@ -1877,6 +1979,20 @@ ul li p{
     font-size: 10pt;
     text-transform: uppercase;
     font-weight: bold;
+}
+.txtUrlMateria{
+    height:30px;
+    width:300px;
+    float: left;  
+    border: none;
+    color: #000;
+    text-align: center;
+    font-family: century gothic;
+    font-size: 10pt;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-left:310px;
+    margin-top:10px;
 }
 #urlVideo1{
 margin-left: 0px;

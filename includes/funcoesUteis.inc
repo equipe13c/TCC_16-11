@@ -788,7 +788,7 @@ function buscarImagemAutor($autor){
                     echo "<img src='../uploads/$urlImagem' alt='Imagem' id='imgAutor'>";
                     }
 }
-function buscarDescAutor($autor){
+function buscarDescricaoUsuario($autor){
                     $query = "SELECT * FROM USUARIO WHERE COD_USUARIO = $autor";
                     $result = mysql_query($query);                
                     $imagens = mysql_num_rows($result);
@@ -844,7 +844,30 @@ function listarComentarios($string){
                             echo '</div>';
                             }
 }
+function buscarUrlVideo($code,$url){
+                    $query = "SELECT URLVIDEO1,URLVIDEO2 FROM ARTIGO WHERE ID_ARTIGO = $code";
+                    $result = mysql_query($query);                
+                    $videos = mysql_num_rows($result);
+                    $videos2 = mysql_fetch_array($result);
 
+                    $urlVideo1 = $videos2['URLVIDEO1'];
+                    $urlVideo2 = $videos2['URLVIDEO2'];
+                    if($urlVideo1 === ''){
+                        echo '<script>document.getElementById("galeriaVideo").style.display = "none";</script>';
+                    }
+                    else{
+                    if($url == 'urlVideo1'){
+                    echo "<div id='video1'>";
+                    echo "<iframe width='370' id='iframeVideo1' height='245' src='$urlVideo1' frameborder='0' allowfullscreen></iframe>";
+                    echo "</div>";
+                    }                   
+                    if($url == 'urlVideo2'){
+                    echo "<div id='video2'>";
+                    echo "<iframe width='370' id='iframeVideo2' height='245' src='$urlVideo2' frameborder='0' allowfullscreen></iframe>";
+                    echo "</div>";
+                    }  
+                    }
+                    }
 
 
 

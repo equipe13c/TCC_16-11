@@ -14,12 +14,12 @@ $autor = $_SESSION['code'];
 $urlArtigo = $_POST['url_materia'];
 $descricaoArtigo = $_POST['descricao'];
 $dataLancamento = $_POST['data_lancamento'];
-$serieArtigo = $_POST['serie'];
 $conteudoArtigo = $_POST['conteudo'];
-$conteudoArtigo2 = $_POST['conteudo2'];
-$tituloConteudoArtigo = $_POST['titulo_conteudo'];
-
-
+$urlVideo = $_POST['urlVideo1'];
+$urlVideo = str_replace('watch?v=','embed/',$urlVideo);
+$urlVideo2 = $_POST['urlVideo2'];
+$urlVideo2 = str_replace('watch?v=','embed/',$urlVideo2);
+$subtitulo = $_POST['subtitulo'];
 // INICIO UPLOAD IMAGEM_CAPA
 $_UP['pasta'] = "../uploads/";
 $_UP['tamanho'] = 1024 * 1024 * 2; //2MB;
@@ -55,40 +55,7 @@ $salt = geraSaltAleatorio();
         $imgCapaname = $_FILES['imagemCapa']['name'];
     }
     if(move_uploaded_file($_FILES['imagemCapa']['tmp_name'], $_UP['pasta'] . $imgCapaname)){
-            // INICIO UPLOAD IMAGEM_MINIATURA
-            $_UP['pasta'] = "../uploads/";
-            $_UP['tamanho'] = 1024 * 1024 * 2; //2MB;
-            $_UP['extensao'] = array('jpg','png','gif');
-            $_UP['renomeia'] = true;
-
-            $_UP['erros'][0] = "Não Houve Erros";
-            $_UP['erros'][1] = "O Arquivo é Maior do que o límite do php";
-            $_UP['erros'][2] = "Tamanho da imagem ultrapassou o límite exigido";
-            $_UP['erros'][3] = "Upload feito parcialmente";
-            $_UP['erros'][4] = "Nao teve upload";
-            if($_FILES['imagemMiniatura']['error'] != 0){
-                die("Não foi Possível alterar a imagem Devido a: <br/>". $_UP['erros'][$_FILES['imagemMiniatura']['erros']]);
-                exit;
-            }
-            $img_nome = $_FILES['imagemMiniatura']['name'];
-            $img_separador = explode('.',$img_nome);
-            $extensao = strtolower(end($img_separador));
-            if(array($extensao, $_UP['extensao'])=== false){
-                echo "Por Favor Escolha apenas imagens JPG, PNG e GIF";
-            }
-
-            else if($_UP['tamanho'] < $_FILES['imagemMiniatura']['size']){
-                echo "Arquivo muito grande, Envie um arquivo1 de até 2MB";
-            }
-            else{
-                if($_UP['renomeia'] == true){
-            $salt = geraSaltAleatorio();
-                    $imagemMiniaturaname = $salt.'.jpg';
-                }
-                else{
-                    $imagemMiniaturaname = $_FILES['imagemMiniatura']['name'];
-                }
-                if(move_uploaded_file($_FILES['imagemMiniatura']['tmp_name'], $_UP['pasta'] . $imagemMiniaturaname)){
+            
                     // INICIO UPLOAD IMAGEM_PRINCIPAL
                         $_UP['pasta'] = "../uploads/";
                         $_UP['tamanho'] = 1024 * 1024 * 2; //2MB;
@@ -230,15 +197,15 @@ $salt = geraSaltAleatorio();
                                                                         for( $i=0; $i<sizeof( $categoria ); $i++ ){
                                                                            $categoriaArtigo = $categoria[$i];
                                                                            if($categoriaArtigo == "1"){
-                                                                               $sql = "INSERT INTO ARTIGO(TITULO_ARTIGO, CATEGORIA_ARTIGO,DATA_ARTIGO, HORA_ARTIGO, AUTOR_ARTIGO, URL_ARTIGO, DESCRICAO_ARTIGO, DATA_LANCAMENTO, SERIE_ARTIGO, CONTEUDO_ARTIGO, TITULO_CONTEUDO_ARTIGO,CONTEUDO_ARTIGO2)
-                                                                                VALUES('$tituloArtigo',1,'$data','$hora',$autor,'playstation/$urlArtigo.php','$descricaoArtigo','$dataLancamento', '$serieArtigo', '$conteudoArtigo', '$tituloConteudoArtigo', '$conteudoArtigo2')";
+                                                                               $sql = "INSERT INTO ARTIGO(TITULO_ARTIGO, CATEGORIA_ARTIGO,DATA_ARTIGO, HORA_ARTIGO, AUTOR_ARTIGO, URL_ARTIGO, DESCRICAO_ARTIGO, DATA_LANCAMENTO, CONTEUDO_ARTIGO, TITULO_CONTEUDO_ARTIGO, PLATAFORMA_ARTIGO, URLVIDEO1, URLVIDEO2)
+                                                                                VALUES('$tituloArtigo',1,'$data','$hora',$autor,'playstation/$urlArtigo.php','$descricaoArtigo','$dataLancamento', '$conteudoArtigo', '$subtitulo','$plataforma', '$urlVideo', '$urlVideo2')";
                                                                                if(mysql_query($sql)){
                                                                                    echo "Nova Matéria Inserida";
                                                                                    $busca = "SELECT * FROM ARTIGO WHERE TITULO_ARTIGO = '$tituloArtigo' AND URL_ARTIGO = 'playstation/$urlArtigo.php'"; 
                                                                                    $result = mysql_query($busca);
                                                                                    $resultBusca = mysql_fetch_array($result);
-                                                                                   $sql = "INSERT INTO IMAGENS_MATERIA(COD_MATERIA_IMAGEM, IMAGEM_CAPA, IMAGEM_PRINCIPAL, IMAGEM_GALERIA, IMAGEM_GALERIA2, IMAGEM_GALERIA3, IMAGEM_MINIATURA)
-                                                                                       VALUES(".$resultBusca['ID_ARTIGO'].", '$imgCapaname', '$imagemPrincipalname', '$imagemGalerianame', '$imagemGaleria2name', '$imagemGaleria3', '$imagemMiniaturaname')";
+                                                                                   $sql = "INSERT INTO IMAGENS_MATERIA(COD_MATERIA_IMAGEM, IMAGEM_CAPA, IMAGEM_PRINCIPAL, IMAGEM_GALERIA, IMAGEM_GALERIA2, IMAGEM_GALERIA3)
+                                                                                       VALUES(".$resultBusca['ID_ARTIGO'].", '$imgCapaname', '$imagemPrincipalname', '$imagemGalerianame', '$imagemGaleria2name', '$imagemGaleria3')";
                                                                                    if(mysql_query($sql)){
                                                                                         $codigo_materia = $resultBusca['ID_ARTIGO'];
                                                                                         $urlArtigoP = $resultBusca['URL_ARTIGO'];
@@ -466,15 +433,15 @@ $corpo = '<!DOCTYPE html>
                                                                                }
                                                                             }
                                                                            if($categoriaArtigo == "2"){
-                                                                               $sql = "INSERT INTO ARTIGO(TITULO_ARTIGO, CATEGORIA_ARTIGO,DATA_ARTIGO, HORA_ARTIGO, AUTOR_ARTIGO, URL_ARTIGO, DESCRICAO_ARTIGO, DATA_LANCAMENTO, SERIE_ARTIGO, CONTEUDO_ARTIGO, TITULO_CONTEUDO_ARTIGO,CONTEUDO_ARTIGO2)
-                                                                                VALUES('$tituloArtigo',2,'$data','$hora',$autor,'nintendo/$urlArtigo.php','$descricaoArtigo','$dataLancamento', '$serieArtigo', '$conteudoArtigo', '$tituloConteudoArtigo', '$conteudoArtigo2')";
+                                                                               $sql = "INSERT INTO ARTIGO(TITULO_ARTIGO, CATEGORIA_ARTIGO,DATA_ARTIGO, HORA_ARTIGO, AUTOR_ARTIGO, URL_ARTIGO, DESCRICAO_ARTIGO, DATA_LANCAMENTO, CONTEUDO_ARTIGO, TITULO_CONTEUDO_ARTIGO, PLATAFORMA_ARTIGO, URLVIDEO1, URLVIDEO2)
+                                                                                VALUES('$tituloArtigo',2,'$data','$hora',$autor,'nintendo/$urlArtigo.php','$descricaoArtigo','$dataLancamento', '$conteudoArtigo', '$subtitulo','$plataforma', '$urlVideo', '$urlVideo2')";
                                                                                if(mysql_query($sql)){
                                                                                    echo "Nova Matéria Inserida";
                                                                                    $busca = "SELECT * FROM ARTIGO WHERE TITULO_ARTIGO = '$tituloArtigo' AND URL_ARTIGO = 'nintendo/$urlArtigo.php'"; 
                                                                                    $result = mysql_query($busca);
                                                                                    $resultBusca = mysql_fetch_array($result);
-                                                                                   $sql = "INSERT INTO IMAGENS_MATERIA(COD_MATERIA_IMAGEM, IMAGEM_CAPA, IMAGEM_PRINCIPAL, IMAGEM_GALERIA, IMAGEM_GALERIA2, IMAGEM_GALERIA3, IMAGEM_MINIATURA)
-                                                                                       VALUES(".$resultBusca['ID_ARTIGO'].", '$imgCapaname', '$imagemPrincipalname', '$imagemGalerianame', '$imagemGaleria2name', '$imagemGaleria3', '$imagemMiniaturaname')";
+                                                                                   $sql = "INSERT INTO IMAGENS_MATERIA(COD_MATERIA_IMAGEM, IMAGEM_CAPA, IMAGEM_PRINCIPAL, IMAGEM_GALERIA, IMAGEM_GALERIA2, IMAGEM_GALERIA3)
+                                                                                       VALUES(".$resultBusca['ID_ARTIGO'].", '$imgCapaname', '$imagemPrincipalname', '$imagemGalerianame', '$imagemGaleria2name', '$imagemGaleria3')";
                                                                                    if(mysql_query($sql)){
                                                                                         $codigo_materia = $resultBusca['ID_ARTIGO'];
                                                                                         $urlArtigoP = $resultBusca['URL_ARTIGO'];
@@ -701,15 +668,15 @@ $corpo = '<!DOCTYPE html>
                                                                                }
                                                                             }
                                                                            if($categoriaArtigo == "3"){
-                                                                               $sql = "INSERT INTO ARTIGO(TITULO_ARTIGO, CATEGORIA_ARTIGO,DATA_ARTIGO, HORA_ARTIGO, AUTOR_ARTIGO, URL_ARTIGO, DESCRICAO_ARTIGO, DATA_LANCAMENTO, SERIE_ARTIGO, CONTEUDO_ARTIGO, TITULO_CONTEUDO_ARTIGO,CONTEUDO_ARTIGO2)
-                                                                                VALUES('$tituloArtigo',3, '$data','$hora',$autor,'xbox/$urlArtigo.php','$descricaoArtigo','$dataLancamento', '$serieArtigo', '$conteudoArtigo', '$tituloConteudoArtigo', '$conteudoArtigo2')";
+                                                                               $sql = "INSERT INTO ARTIGO(TITULO_ARTIGO, CATEGORIA_ARTIGO,DATA_ARTIGO, HORA_ARTIGO, AUTOR_ARTIGO, URL_ARTIGO, DESCRICAO_ARTIGO, DATA_LANCAMENTO, CONTEUDO_ARTIGO, TITULO_CONTEUDO_ARTIGO, PLATAFORMA_ARTIGO, URLVIDEO1, URLVIDEO2)
+                                                                                VALUES('$tituloArtigo',3, '$data','$hora',$autor,'xbox/$urlArtigo.php','$descricaoArtigo','$dataLancamento', '$conteudoArtigo', '$subtitulo','$plataforma', '$urlVideo', '$urlVideo2')";
                                                                                if(mysql_query($sql)){
                                                                                    echo "Nova Matéria Inserida";
                                                                                    $busca = "SELECT * FROM ARTIGO WHERE TITULO_ARTIGO = '$tituloArtigo' AND URL_ARTIGO = 'xbox/$urlArtigo.php'"; 
                                                                                    $result = mysql_query($busca);
                                                                                    $resultBusca = mysql_fetch_array($result);
-                                                                                   $sql = "INSERT INTO IMAGENS_MATERIA(COD_MATERIA_IMAGEM, IMAGEM_CAPA, IMAGEM_PRINCIPAL, IMAGEM_GALERIA, IMAGEM_GALERIA2, IMAGEM_GALERIA3, IMAGEM_MINIATURA)
-                                                                                       VALUES(".$resultBusca['ID_ARTIGO'].", '$imgCapaname', '$imagemPrincipalname', '$imagemGalerianame', '$imagemGaleria2name', '$imagemGaleria3', '$imagemMiniaturaname')";
+                                                                                   $sql = "INSERT INTO IMAGENS_MATERIA(COD_MATERIA_IMAGEM, IMAGEM_CAPA, IMAGEM_PRINCIPAL, IMAGEM_GALERIA, IMAGEM_GALERIA2, IMAGEM_GALERIA3)
+                                                                                       VALUES(".$resultBusca['ID_ARTIGO'].", '$imgCapaname', '$imagemPrincipalname', '$imagemGalerianame', '$imagemGaleria2name', '$imagemGaleria3')";
                                                                                    if(mysql_query($sql)){
                                                                                         $codigo_materia = $resultBusca['ID_ARTIGO'];
                                                                                         $urlArtigoP = $resultBusca['URL_ARTIGO'];
@@ -938,15 +905,15 @@ $corpo = '<!DOCTYPE html>
                                                                                }
                                                                             }
                                                                            if($categoriaArtigo == "4"){
-                                                                               $sql = "INSERT INTO ARTIGO(TITULO_ARTIGO, CATEGORIA_ARTIGO,DATA_ARTIGO, HORA_ARTIGO, AUTOR_ARTIGO, URL_ARTIGO, DESCRICAO_ARTIGO, DATA_LANCAMENTO, SERIE_ARTIGO, CONTEUDO_ARTIGO, TITULO_CONTEUDO_ARTIGO,CONTEUDO_ARTIGO2)
-                                                                                VALUES('$tituloArtigo',4,'$data','$hora',$autor,'pc/$urlArtigo.php','$descricaoArtigo','$dataLancamento', '$serieArtigo', '$conteudoArtigo', '$tituloConteudoArtigo', '$conteudoArtigo2')";
+                                                                               $sql = "INSERT INTO ARTIGO(TITULO_ARTIGO, CATEGORIA_ARTIGO,DATA_ARTIGO, HORA_ARTIGO, AUTOR_ARTIGO, URL_ARTIGO, DESCRICAO_ARTIGO, DATA_LANCAMENTO, CONTEUDO_ARTIGO, TITULO_CONTEUDO_ARTIGO, PLATAFORMA_ARTIGO, URLVIDEO1, URLVIDEO2)
+                                                                                VALUES('$tituloArtigo',4,'$data','$hora',$autor,'pc/$urlArtigo.php','$descricaoArtigo','$dataLancamento', '$conteudoArtigo', '$subtitulo','$plataforma', '$urlVideo', '$urlVideo2')";
                                                                                if(mysql_query($sql)){
                                                                                    echo "Nova Matéria Inserida";
                                                                                    $busca = "SELECT * FROM ARTIGO WHERE TITULO_ARTIGO = '$tituloArtigo' AND URL_ARTIGO = 'pc/$urlArtigo.php'"; 
                                                                                    $result = mysql_query($busca);
                                                                                    $resultBusca = mysql_fetch_array($result);
-                                                                                   $sql = "INSERT INTO IMAGENS_MATERIA(COD_MATERIA_IMAGEM, IMAGEM_CAPA, IMAGEM_PRINCIPAL, IMAGEM_GALERIA, IMAGEM_GALERIA2, IMAGEM_GALERIA3, IMAGEM_MINIATURA)
-                                                                                       VALUES(".$resultBusca['ID_ARTIGO'].", '$imgCapaname', '$imagemPrincipalname', '$imagemGalerianame', '$imagemGaleria2name', '$imagemGaleria3', '$imagemMiniaturaname')";
+                                                                                   $sql = "INSERT INTO IMAGENS_MATERIA(COD_MATERIA_IMAGEM, IMAGEM_CAPA, IMAGEM_PRINCIPAL, IMAGEM_GALERIA, IMAGEM_GALERIA2, IMAGEM_GALERIA3)
+                                                                                       VALUES(".$resultBusca['ID_ARTIGO'].", '$imgCapaname', '$imagemPrincipalname', '$imagemGalerianame', '$imagemGaleria2name', '$imagemGaleria3')";
                                                                                    if(mysql_query($sql)){
                                                                                         $codigo_materia = $resultBusca['ID_ARTIGO'];
                                                                                         $urlArtigoP = $resultBusca['URL_ARTIGO'];
@@ -1203,11 +1170,6 @@ $corpo = '<!DOCTYPE html>
                 else{
                 }
             }
-        //FIM UPLOAD IMAGEM_MINIATURA
-    }
-    else{
-    }
-}
 //FIM UPLOAD IMAGEM_CAPA
 
 

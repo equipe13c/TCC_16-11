@@ -177,6 +177,14 @@ body{
     float: left;
 }
 
+#busca{ 
+    width: 200px;
+    height: 30px;
+    margin-top: 20px;
+    margin-right: 5px;
+    float: right;
+}
+
 #busca #search input{  
     height: 30px;
     width: 60px;
@@ -1128,36 +1136,6 @@ table.bordasimples tr td {
     line-height: 15pt;
 }
 
-#footer a{
-    text-decoration: none;
-    color: #fff;
-    font-family: century gothic;
-    font-size: 10pt;
-    line-height: 10pt;    
-    font-style: italic;
-}
-
-#footer a:hover{
-    text-decoration: underline;
-}
-
-#linksRodape{
-    width: 560px;
-    height: 270px;
-    margin-top: 0px;
-    margin-left: 27%;
-}
-
-.linksRodape{
-    width: 130px;
-    height: 240px;
-    margin-top: 15px;
-    margin-left: 5px;
-    float: left;
-    color: #fff;
-    line-height: 17pt;    
-    border: solid 2px #333;
-}
 .designButton{
     width:200px;
     height:40px;

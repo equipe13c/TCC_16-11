@@ -11,22 +11,18 @@
         <script type="text/javascript" src="../js/restrito.js"></script>
         <title></title>
         <script type="text/javascript"> 
-            onload = function(){
+            onload = function(){     
                 var imgMiniLogo = document.getElementById("imgMiniLogo");
-                var imgLogo = document.getElementById("img-logo"); 
-                imgMiniLogo.innerHTML = "<img src='../imagens/logosReduzidos001.png' alt='' id='miniLogo'>";
-                imgLogo.innerHTML = "<img src='../imagens/logo001.png' alt='' id='logo'>";  
+                var imgLogo = document.getElementById("img-logo");                
+                imgMiniLogo.innerHTML = '<img src="../imagens/logosReduzidos001.png" alt="" id="miniLogo">';
+                imgLogo.innerHTML = '<img src="../imagens/logo001.png" alt="" id="logo">';   
                 document.getElementById("nav").style.backgroundColor = "#00989E";
-                document.getElementById("navReduzido").style.backgroundColor = "#00989E";
-                document.getElementById("logar").style.borderBottom = "solid 5px #00989E"; 
-                document.getElementById("botaoLogin").style.backgroundColor = "#00989E";                
-                document.getElementById("fundoDescricaoMateria").style.backgroundColor = "#26C8D1";
-            };            
-            function teste(form) {
-                document.getElementById("imagemCapa").src = form;
-            }
- 
-        </script>   
+                document.getElementById("navReduzido").style.backgroundColor = "#00989E";                 
+                document.getElementById("botaoLogin").style.backgroundColor = "#00989E";
+                document.getElementById("logar").style.borderBottom = "solid 5px #00989E";               
+                document.getElementById("tituloPagina").style.backgroundColor = "#00989E"; 
+            };
+        </script>  
     </head>
     <body >
         <section id="container" >
@@ -91,30 +87,30 @@
                             <h1> Selecione Uma Categoria Abaixo: </h1> <br/>
                             <ul class="inputRadios">
                             <li class="inputRadio radioNintendo">
-                              <input name="payment_methods" type="radio" id="radioNintendo" onclick="ocultar('categorias','nintendo');">
+                              <input name="categoria[]" value="2" type="radio" id="radioNintendo" onclick="ocultar('categorias','nintendo');">
                               <label for="radioNintendo">Nintendo</label><br/><br/><br/>
                               <p> Nintendo </p>
                             </li>
 
                             <li class="inputRadio radioPc">
-                              <input name="payment_methods" type="radio" id="radioPc" onclick="ocultar('categorias','pc');">
+                              <input name="categoria[]" value="4" type="radio" id="radioPc" onclick="ocultar('categorias','pc');">
                               <label for="radioPc">PC</label><br/><br/><br/>
                               <p> PC </p>
                             </li>
 
                             <li class="inputRadio radioPlaystation">
-                              <input name="payment_methods" type="radio" id="radioPlaystation" onclick="ocultar('categorias','ps');">
+                              <input name="categoria[]" value="1" type="radio" id="radioPlaystation" onclick="ocultar('categorias','ps');">
                               <label for="radioPlaystation">Playstation</label><br/><br/><br/>
                               <p> Playstation </p>
                             </li>
 
                             <li class="inputRadio radioXbox">
-                              <input name="payment_methods" type="radio" id="radioXbox" onclick="ocultar('categorias','xbox');">    
+                              <input name="categoria[]" value="3" type="radio" id="radioXbox" onclick="ocultar('categorias','xbox');">    
                               <label for="radioXbox">Xbox</label><br/><br/><br/>
                               <p> Xbox </p>
                             </li>
                             <li class="inputRadio radioMulti">
-                              <input name="payment_methods" type="radio" id="radioMulti" onclick="mostraOculta2('radioMulti','categorias','imgPrincipal');">    
+                              <input name="categoria[]" value="0" type="radio" id="radioMulti" onclick="mostraOculta2('radioMulti','categorias','imgPrincipal');">    
                               <label for="radioMulti">Xbox</label><br/><br/><br/>
                               <p> Multiplataforma </p>
                             </li>
@@ -125,30 +121,30 @@
 
                                 <ul class="inputCheckboxs">
                                   <li class="inputCheckbox checkboxNintendo">
-                                    <input name="payment_methods" type="checkbox" id="checkboxNintendo">
+                                    <input name="categoria[]" value="2"  type="checkbox" id="checkboxNintendo">
                                     <label for="checkboxNintendo">Nintendo</label><br/><br/><br/>
                                     <p> Nintendo </p>
                                   </li>
 
                                   <li class="inputCheckbox checkboxPc">
-                                    <input name="payment_methods" type="checkbox" id="checkboxPc">
+                                    <input name="categoria[]" value="4"  type="checkbox" id="checkboxPc">
                                     <label for="checkboxPc">PC</label><br/><br/><br/>
                                     <p> PC </p>
                                   </li>
 
                                   <li class="inputCheckbox checkboxPlaystation">
-                                    <input name="payment_methods" type="checkbox" id="checkboxPlaystation">
+                                    <input name="categoria[]" value="1"  type="checkbox" id="checkboxPlaystation">
                                     <label for="checkboxPlaystation">Playstation</label><br/><br/><br/>
                                     <p> Playstation </p>
                                   </li>
 
                                   <li class="inputCheckbox checkboxXbox">
-                                    <input name="payment_methods" type="checkbox" id="checkboxXbox">    
+                                    <input name="categoria[]" value="3"  type="checkbox" id="checkboxXbox">    
                                     <label for="checkboxXbox">Xbox</label><br/><br/><br/>
                                     <p> Xbox </p>
                                   </li>
                                 </ul>
-
+                                <input name="categoria[]" style="display: none;" value="0"  type="checkbox" id="checkboxXbox" checked>
                             </div>
                             
                             
@@ -165,7 +161,7 @@
                             <input type="file" name="imagemPrincipal" class="imgPrincipal" id="files" onchange="preview(this,'principal');" multiple>
                         </figure>
                         <div id="tituloMateria">
-                            <input type="text" name="titulo" class="textos_materia" id="titulo_materia" placeholder="Digite aqui o título da Matéria">
+                            <input type="text" name="titulo_conteudo" class="textos_materia" id="titulo_materia" placeholder="Digite aqui o título da Matéria">
                         </div>                       
                         <div id="fundoDescricaoMateria">
                             <div id="descricaoMateria">
@@ -222,26 +218,26 @@
                         </div>      
                         <div id="conteudoMateria">                            
                             <div id="subtituloMateria">
-                                <input type="text" class="subtituloMateria" placeholder="Subtítulo da Matéria">
+                                <input type="text" name="subtitulo" class="subtituloMateria" placeholder="Subtítulo da Matéria">
                             </div>
                             <p> Limite de Caracteres: 1500. </p>
-                            <textarea id="campoConteudo1" placeholder="Digite o texto da matéria aqui" maxlength="1500"></textarea>
+                            <textarea id="campoConteudo1" placeholder="Digite o texto da matéria aqui" name="conteudo" maxlength="1500"></textarea>
                         </div>
                         <div id="galeriaImagens">
                             <figure class="imagensGaleria" >
                                 <p> imagem 255x150</p>
                                 <img id="preview_imageGaleria1" alt="" src="">
-                                <input type="file" name="imagemCapa" class="imgGaleria1" onchange="preview(this,'galeria1');" multiple>
+                                <input type="file" name="imagemGaleria" class="imgGaleria1" onchange="preview(this,'galeria1');" multiple>
                             </figure>
                             <figure class="imagensGaleria">
                                 <p> imagem 255x150</p>
                                 <img id="preview_imageGaleria2" alt="" src="">
-                                <input type="file" name="imagemCapa" class="imgGaleria1" onchange="preview(this,'galeria2');" multiple>
+                                <input type="file" name="imagemGaleria2" class="imgGaleria1" onchange="preview(this,'galeria2');" multiple>
                             </figure>
                             <figure class="imagensGaleria" >
                                 <p> imagem 255x150</p>
                                 <img id="preview_imageGaleria3" alt="" src="">
-                                <input type="file" name="imagemCapa" class="imgGaleria1" onchange="preview(this,'galeria3');" multiple>
+                                <input type="file" name="imagemGaleria3" class="imgGaleria1" onchange="preview(this,'galeria3');" multiple>
                             </figure>                                
                         </div>
                         <div id="galeriaVideo">
@@ -262,15 +258,21 @@
                                 <iframe width="425" id="iframeVideo2" height="300" src="" frameborder="0" allowfullscreen></iframe>     
                             </div>
                         </div>
+                        <div id="urlMateria">
+                           <input type="text" name="url_materia" class='txtUrlMateria' id="urlMaterias" placeholder="DIGITE A URL DA MATÉRIA">
+                        </div>
                         <div id="postarMateria">
                             <input type="submit" value="Postar Matéria" name="postarMateria" class="inserirMateria">
                         </div>
                     </form> 
                 </article>                
             </article>
+            <div id="imgFooter" ondragstart="return false">
+                <img src="../imagens/imagemRodape.png">
+            </div>
             <footer id="footer">
                 <?php
-                    include_once '../includes/rodape.php';
+                    include_once '../includes/rodapeAdmin.php';
                 ?>
             </footer>            
         </section>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>                                                                                  
     <head> 
-        <title> TheSims4</title>
+        <title>GTA V</title>
         <meta charset="UTF-8">
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
         <link rel="stylesheet" type="text/css" href="css/style.css"/>
@@ -15,17 +15,17 @@
             onload = function(){
                 var imgMiniLogo = document.getElementById("imgMiniLogo");
                 var imgLogo = document.getElementById("img-logo"); 
-                imgMiniLogo.innerHTML = "<img src='../imagens/logosReduzidos006.png' alt='' id='miniLogo'>";
-                imgLogo.innerHTML = "<img src='../imagens/logo006.png' alt='' id='logo'>";  
-                document.getElementById("nav").style.backgroundColor = "#F39200";                
-                document.getElementById("imgPrincipal").style.backgroundColor = "#F39200"; 
-                document.getElementById("tituloMateria").style.backgroundColor = "#F39200";
-                document.getElementById("navReduzido").style.backgroundColor = "#F39200";
-                document.getElementById("fundoDescricaoMateria").style.backgroundColor = "#F7D47F";
-                document.getElementById("descricaoColunista").style.backgroundColor = "#F39200";  
-                document.getElementById("logar").style.borderBottom = "solid 5px #F39200"; 
-                document.getElementById("botaoLogin").style.backgroundColor = "#F39200";
-                document.getElementById("tituloPagina").style.backgroundColor = "#F39200";            
+                imgMiniLogo.innerHTML = "<img src='../imagens/logosReduzidos005.png' alt='' id='miniLogo'>";
+                imgLogo.innerHTML = "<img src='../imagens/logo005.png' alt='' id='logo'>";  
+                document.getElementById("nav").style.backgroundColor = "#009FE3";                
+                document.getElementById("imgPrincipal").style.backgroundColor = "#009FE3"; 
+                document.getElementById("tituloMateria").style.backgroundColor = "#009FE3";
+                document.getElementById("navReduzido").style.backgroundColor = "#009FE3";
+                document.getElementById("fundoDescricaoMateria").style.backgroundColor = "#CEECF5";
+                document.getElementById("descricaoColunista").style.backgroundColor = "#009FE3";  
+                document.getElementById("logar").style.borderBottom = "solid 5px #009FE3"; 
+                document.getElementById("botaoLogin").style.backgroundColor = "#009FE3";
+                document.getElementById("tituloPagina").style.backgroundColor = "#009FE3";            
                 var imgMiniLogo = document.getElementById("imgMiniLogo");
             };
         </script>       
@@ -44,7 +44,7 @@
                 ?>
             <figure id="imgCapa">
                 <?php
-                infosImagensMateria('capa','1');
+                infosImagensMateria('capa','2');
                 ?>
                 
             </figure>
@@ -61,13 +61,13 @@
             <article id="conteudo">
                 <figure id="imgPrincipal">
                     <?php
-                        infosImagensMateria('imgPrincipal','1');
+                        infosImagensMateria('imgPrincipal','2');
                     ?>
                 </figure>
                 <div id="tituloMateria">
                     <div id="caixaTitulo"><h1 class="editTitulo"> Zelda U
                     <?php
-                        infoArtigos('titulo','pc/thesims4.php');
+                        infoArtigos('titulo','nintendo/GTA.php');
                     ?>
                      </h1></div>
                 </div>
@@ -75,73 +75,78 @@
                     <div id="descricaoMateria">
                         <p class="editDescricao">
                         <?php
-                            infoArtigos('descricao','pc/thesims4.php');
+                            infoArtigos('descricao','nintendo/GTA.php');
                         ?>
                         </p>
                         <p class="editPlataforma">
                         <?php
                             echo "<b>Desenvolvedora:</b>    ";
-                            infoArtigos('plataforma','pc/thesims4.php');
+                            infoArtigos('plataforma','nintendo/GTA.php');
                         ?>
                         </p>
                         <p class="editDatalancamento">
                         <?php
                             echo "<b>Data de Lançamento:</b>    ";
-                            infoArtigos('dataLancamento','pc/thesims4.php');
+                            infoArtigos('dataLancamento','nintendo/GTA.php');
                         ?>
                         </p>
                     </div>
                 </div>    
                 <div id="conteudoMateria">
-                    <div class="ediConteudoMateria">
-                        <div class="editTituloconteudo">
-                            <p>
-                                <?php
-                                    infoArtigos('tituloConteudo','pc/thesims4.php');
-                                ?>
-                            </p>
-                        </div>                        
-                        <p>
-                            <?php
-                                infoArtigos('conteudoMateria','pc/thesims4.php');
-                            ?>
-                        </p>
-                        </div>
+                    <p class="editTituloconteudo">
+                    <?php
+                        infoArtigos('tituloConteudo','nintendo/GTA.php');
+                    ?>
+                    </p>
+                    <p class="ediConteudoMateria">
+                    <?php
+                        infoArtigos('conteudoMateria','nintendo/GTA.php');
+                    ?>
+                    </p>
                 </div>
                 <div id="galeriaImagens">
                     <figure class="imagensGaleria" >
                         <?php
-                            infosImagensMateria('imagemgaleria1','1');
+                            infosImagensMateria('imagemgaleria1','2');
                         ?>
                     </figure>
                     <figure class="imagensGaleria">
                         <?php
-                            infosImagensMateria('imagemgaleria2','1');
+                            infosImagensMateria('imagemgaleria2','2');
                         ?>
                     </figure>
                     <figure class="imagensGaleria" >
                         <?php
-                            infosImagensMateria('imagemgaleria3','1');
+                            infosImagensMateria('imagemgaleria3','2');
                         ?>
                     </figure>
                 </div>
-                <div id="galeriaVideo">
-                    <?php buscarUrlVideo('1','urlVideo1');
-                    buscarUrlVideo('1','urlVideo2');
+                <div id="conteudoMateria2">                    
+                    <p class="ediConteudoMateria">
+                    <?php
+                        infoArtigos('conteudoMateria2','nintendo/GTA.php');
                     ?>
+                    </p>
+                </div>
+                <div id="galeriaVideo">                    
+                    <p class="ediConteudoMateria">
+                    <?php
+                        infoArtigos('conteudoMateria','nintendo/GTA.php');
+                    ?>
+                    </p>
                 </div>
                 <div id="colunista">     
                     <figure id="autor_materia">
                     <?php
-                        buscarImagemAutor('29');
+                        buscarImagemAutor('2');
                     ?>
                     </figure>
                     <div id="descricaoColunista"> 
-                        <div id="infoAutor">
+                        <p>                     
                             <?php
-                            buscarDescricaoUsuario('29');
-                            ?>
-                        </div>
+                                    buscarDescAutor('2');
+                            ?> 
+                        </p>
                     </div>
                 </div>
                 <div id="comentario">
@@ -155,15 +160,15 @@
                                             
                     <div class="coment">
                         <form name='frmComentar' method='post' action='../comentar.php' id='enviar'>
-                        <input type="text" id='textocomentario' name='comentario'>                    
-                        <input type="hidden" name='codigoArtigo' value='1' > 
+                        <textarea id='textocomentario' name='comentario'> </textarea>                        
+                        <input type="hidden" name='codigoArtigo' value='2' > 
                         <input type="submit" name='btnComentar' value="Publicar" class="botaoEnviar" > 
                         </form>
                     </div>   
                     </div>
                     <div class='exibirComent'>
                         <?php
-                            listarComentarios('1');
+                            listarComentarios('2');
                         ?>
                     </div>
                 </div>

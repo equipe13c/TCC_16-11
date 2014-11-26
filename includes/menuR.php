@@ -1,24 +1,24 @@
 <nav id="navReduzido">
-    <a href="index.php"> 
+    <a href="../index.php"> 
         <div id="imgMiniLogo"></div>
     </a>
     <div id='menuReduzido'>
         <ul>
-            <li><a href='#'>Colunas</a>
+            <li><a href='#'><img src="../imagens/iconePlataforma001.png"></a>
                 <ul>
-                    <li><a href='series.php'>Séries</a></li>
-                    <li><a href='personagens.php'>Personagens</a></li>
-                    <li><a href='generos.php'>Gêneros</a></li>
-                    <li><a href='nostalgia.php'>Nostalgia</a></li>
+                    <li><a href='../series.php'>Séries</a></li>
+                    <li><a href='../personagens.php'>Personagens</a></li>
+                    <li><a href='../generos.php'>Gêneros</a></li>
+                    <li><a href='../nostalgia.php'>Nostalgia</a></li>
                 </ul>
             </li>
-            <li><a href='playstation.php'><img src="../imagens/iconePlataforma002.png"></a>                                
+            <li><a href='../playstation.php'><img src="../imagens/iconePlataforma002.png"></a>                                
             </li>
-            <li><a href='nintendo.php'><img src="../imagens/iconePlataforma003.png"></a>
+            <li><a href='../nintendo.php'><img src="../imagens/iconePlataforma003.png"></a>
             </li>
-            <li><a href='xbox.php'><img src="../imagens/iconePlataforma004.png"></a>
+            <li><a href='../xbox.php'><img src="../imagens/iconePlataforma004.png"></a>
             </li>
-            <li><a href='pc.php'><img src="../imagens/iconePlataforma005.png"></a></li>                               
+            <li><a href='../pc.php'><img src="../imagens/iconePlataforma005.png"></a></li>                               
         </ul> 
     </div>        
     <div id="iconesSociaisReduzido">
@@ -32,24 +32,24 @@
     </div>                    
 </nav>
 <nav id="nav">
-    <a href="index.php"> <div id="img-logo"></div></a>
+    <a href="../index.php"> <div id="img-logo"></div></a>
     <div id='menu'>
         <ul>
-            <li><a href='#'> Colunas</a>
+            <li><a href='#'> <img src="../imagens/iconePlataforma001.png"> Colunas</a>
                 <ul>
-                    <li class='sub'><a href='series.php'>Séries</a></li>
-                    <li class='sub'><a href='personagens.php'>Personagens</a></li>
-                    <li class='sub'><a href='generos.php'>Gêneros</a></li>
-                    <li class='sub'><a href='nostalgia.php'>Nostalgia</a></li>
+                    <li class='sub'><a href='../series.php'>Séries</a></li>
+                    <li class='sub'><a href='../personagens.php'>Personagens</a></li>
+                    <li class='sub'><a href='../generos.php'>Gêneros</a></li>
+                    <li class='sub'><a href='../nostalgia.php'>Nostalgia</a></li>
                 </ul>
             </li>
-            <li><a href='playstation.php'> <img src="../imagens/iconePlataforma002.png"> PlayStation</a>                                
+            <li><a href='../playstation.php'> <img src="../imagens/iconePlataforma002.png"> PlayStation</a>                                
             </li>
-            <li><a href='nintendo.php'> <img src="../imagens/iconePlataforma003.png"> Nintendo</a>
+            <li><a href='../nintendo.php'> <img src="../imagens/iconePlataforma003.png"> Nintendo</a>
             </li>
-            <li><a href='xbox.php'> <img src="../imagens/iconePlataforma004.png"> Xbox</a>
+            <li><a href='../xbox.php'> <img src="../imagens/iconePlataforma004.png"> Xbox</a>
             </li>
-            <li><a href='pc.php'> <img src="../imagens/iconePlataforma005.png"> PC</a></li>                               
+            <li><a href='../pc.php'> <img src="../imagens/iconePlataforma005.png"> PC</a></li>                               
         </ul> 
     </div>        
     <div id="iconesSociais">
