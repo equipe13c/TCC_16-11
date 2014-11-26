@@ -4,6 +4,7 @@ include 'conexao/conecta.inc';
 session_start();
 $codeUser = $_SESSION['code'];
 $comentario = $_POST['comentario'];
+date_default_timezone_set("Brazil/East");
 $codigoArtigo = $_POST['codigoArtigo'];
 $hora = date('H:i:s');
 $dia = date('Y-m-d');
