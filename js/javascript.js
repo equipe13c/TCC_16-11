@@ -182,59 +182,60 @@ function validaLogin(form){
 };
 
 //Validação de Cadastro
-function validaCadastro(form){    
-    if (form.nome.value==""){
+function validaCadastro(formCad){    
+    if (formCad.nome.value==""){
         alert("Preencha o nome corretamente.");
-        form.nome.focus();
+        formCad.nome.focus();
         return false;
     }   
-    if (form.apelido.value==""){
+    if (formCad.apelido.value==""){
         alert("Preencha o apelido corretamente.");
-        form.apelido.focus();
+        formCad.apelido.focus();
         return false;
     }          
     var filtro_mail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-    if (!filtro_mail.test(form.email.value) || form.email.value==""){
+    if (!filtro_mail.test(formCad.email.value) || formCad.email.value==""){
         alert("Preencha o E-mail corretamente.");
-        form.email.focus();
+        formCad.email.focus();
         return false;
     }
-    if (!filtro_mail.test(form.confirmaEmail.value) || form.confirmaEmail.value==""){
-        alert("Confirme seu E-mail corretamente.");
-        form.confirmaEmail.focus();
+    if (!filtro_mail.test(formCad.confirmemail.value) || formCad.confirmemail.value==""){
+        alert("Confirme seu E-mail.");
+        formCad.confirmemail.focus();
         return false;
     }
-    if (form.email.value!=form.confirmaEmail.value){
-        alert("O E-mail e a confirmação devem ser iguais");
-        form.confirmaEmail.focus();
+  
+    if (formCad.confirmemail.value!=formCad.email.value){
+        alert("O e-mail e a confirmação devem ser iguais");
+        formCad.confirmemail.focus();
         return false;
+        
     }
-    if (form.senha.value==""){
+    if (formCad.senha.value==""){
         alert("Preencha a senha corretamente.");
-        form.senha.focus();
+        formCad.senha.focus();
         return false;
     }
-    if (form.senha.value=="" || form.senha.value.length < 8){
+    if (formCad.senha.value=="" || formCad.senha.value.length < 8){
         alert("A senha deve conter pelo menos 8 dígitos.");
-        form.senha.focus();
+        formCad.senha.focus();
         return false;
-    }                
-    if (form.confirmaSenha.value=="" || form.confirmaSenha.value.length < 8){
-        alert("Preencha a confirmação de senha corretamente.");
-        form.confirmaSenha.focus();
+        
+    } 
+    
+    if (formCad.confirmsenha.value!=formCad.senha.value){
+        alert("O senha e a confirmação devem ser iguais");
+        formCad.confirmsenha.focus();
+        return false;
+        
+    }
+    
+    if (formCad.data.value==""){
+        alert("Preencha a data de nascimento corretamente");
+        formCad.data.focus();
         return false;
     }
-    if (form.senha.value!=form.confirmaSenha.value){
-        alert("A senha e a confirmação devem de ser iguais.");
-        form.confirmaSenha.focus();
-        return false;
-    }
-    if (form.dataNascimento.value==""){
-        alert("Preencha a data de nascimento da seguinte forma: dd/mm/aaa.");
-        form.dataNascimento.focus();
-        return false;
-    }
-     if (form.termos.checked == false ){
+     if (formCad.termos.checked == false ){
         alert("Você deve aceitar os Temos de Uso para se cadastrar.");
         return false;
     }

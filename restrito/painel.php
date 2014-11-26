@@ -10,7 +10,11 @@
         <script type="text/javascript" src="../js/menu2.js"></script>
         <script type="text/javascript" src="../js/restrito.js"></script>
         <script type="text/javascript"> 
-            onload = function(){                
+            onload = function(){     
+                var imgMiniLogo = document.getElementById("imgMiniLogo");
+                var imgLogo = document.getElementById("img-logo");                
+                imgMiniLogo.innerHTML = '<img src="../imagens/logosReduzidos001.png" alt="" id="miniLogo">';
+                imgLogo.innerHTML = '<img src="../imagens/logo001.png" alt="" id="logo">';
                 document.getElementById("navReduzido").style.backgroundColor = "#009FE3";  
                 document.getElementById("nav").style.backgroundColor = "#009FE3";              
                 document.getElementById("imgPrincipal").style.backgroundColor = "#009FE3"; 
@@ -18,10 +22,7 @@
                 document.getElementById("logar").style.borderBottom = "solid 5px #009FE3"; 
                 document.getElementById("botaoLogin").style.backgroundColor = "#009FE3";
                 document.getElementById("tituloPagina").style.backgroundColor = "#009FE3";            
-                var imgMiniLogo = document.getElementById("imgMiniLogo");
-                var imgLogo = document.getElementById("img-logo");                
-                imgMiniLogo.innerHTML = '<img src="../imagens/logosReduzidos001.png" alt="" id="miniLogo">';
-                imgLogo.innerHTML = '<img src="../../imagens/logo001.png" alt="" id="logo">';
+                
             };
         </script>
         <title> Multiplayer </title>
