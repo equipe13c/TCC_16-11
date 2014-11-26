@@ -86,35 +86,35 @@
                     ?>
                 </nav>
                 <article id="conteudo_infos">
-                    <form action="inserirMateriaNova.php" method="post" enctype="multipart/form-data" class="novaMateria">
+                    <form action="inserirMateriaNova.php" name="formInserirMat" method="post" enctype="multipart/form-data" class="novaMateria" onsubmit="return validaInserir(this);">
                         <div id="categoria">
                             <h1> Selecione Uma Categoria Abaixo: </h1> <br/>
                             <ul class="inputRadios">
                             <li class="inputRadio radioNintendo">
-                              <input name="categoria[]" value="2" type="radio" id="radioNintendo" onclick="ocultar('categorias','nintendo');">
+                              <input name="categoria[]"  value="2" type="radio" id="radioNintendo" onclick="ocultar('categorias','nintendo');">
                               <label for="radioNintendo">Nintendo</label><br/><br/><br/>
                               <p> Nintendo </p>
                             </li>
 
                             <li class="inputRadio radioPc">
-                              <input name="categoria[]" value="4" type="radio" id="radioPc" onclick="ocultar('categorias','pc');">
+                              <input name="categoria[]"  value="4" type="radio" id="radioPc" onclick="ocultar('categorias','pc');">
                               <label for="radioPc">PC</label><br/><br/><br/>
                               <p> PC </p>
                             </li>
 
                             <li class="inputRadio radioPlaystation">
-                              <input name="categoria[]" value="1" type="radio" id="radioPlaystation" onclick="ocultar('categorias','ps');">
+                              <input name="categoria[]"  value="1" type="radio" id="radioPlaystation" onclick="ocultar('categorias','ps');">
                               <label for="radioPlaystation">Playstation</label><br/><br/><br/>
                               <p> Playstation </p>
                             </li>
 
                             <li class="inputRadio radioXbox">
-                              <input name="categoria[]" value="3" type="radio" id="radioXbox" onclick="ocultar('categorias','xbox');">    
+                              <input name="categoria[]"  value="3" type="radio" id="radioXbox" onclick="ocultar('categorias','xbox');">    
                               <label for="radioXbox">Xbox</label><br/><br/><br/>
                               <p> Xbox </p>
                             </li>
                             <li class="inputRadio radioMulti">
-                              <input name="categoria[]" value="0" type="radio" id="radioMulti" onclick="mostraOculta2('radioMulti','categorias','imgPrincipal');">    
+                              <input name="categoria[]"  value="0" type="radio" id="radioMulti" onclick="mostraOculta2('radioMulti','categorias','imgPrincipal');">    
                               <label for="radioMulti">Xbox</label><br/><br/><br/>
                               <p> Multiplataforma </p>
                             </li>
@@ -125,30 +125,30 @@
 
                                 <ul class="inputCheckboxs">
                                   <li class="inputCheckbox checkboxNintendo">
-                                    <input name="categoria[]" value="2"  type="checkbox" id="checkboxNintendo">
+                                    <input name="categoria[]" class="testes" value="2"  type="checkbox" id="checkboxNintendo">
                                     <label for="checkboxNintendo">Nintendo</label><br/><br/><br/>
                                     <p> Nintendo </p>
                                   </li>
 
                                   <li class="inputCheckbox checkboxPc">
-                                    <input name="categoria[]" value="4"  type="checkbox" id="checkboxPc">
+                                    <input name="categoria[]" class="testes" value="4"  type="checkbox" id="checkboxPc">
                                     <label for="checkboxPc">PC</label><br/><br/><br/>
                                     <p> PC </p>
                                   </li>
 
                                   <li class="inputCheckbox checkboxPlaystation">
-                                    <input name="categoria[]" value="1"  type="checkbox" id="checkboxPlaystation">
+                                    <input name="categoria[]" class="testes" value="1"  type="checkbox" id="checkboxPlaystation">
                                     <label for="checkboxPlaystation">Playstation</label><br/><br/><br/>
                                     <p> Playstation </p>
                                   </li>
 
                                   <li class="inputCheckbox checkboxXbox">
-                                    <input name="categoria[]" value="3"  type="checkbox" id="checkboxXbox">    
+                                    <input name="categoria[]" class="testes" value="3"  type="checkbox" id="checkboxXbox">    
                                     <label for="checkboxXbox">Xbox</label><br/><br/><br/>
                                     <p> Xbox </p>
                                   </li>
                                 </ul>
-                                <input name="categoria[]" style="display: none;" value="0"  type="checkbox" id="checkboxXbox" checked>
+                                <input name="categoria[]" class="testes" style="display: none;" value="0"  type="checkbox" id="checkboxXbox" checked>
                             </div>
                             
                             
@@ -157,7 +157,7 @@
                         <figure id="imgCapaMateria">
                             <p> Selecione uma imagem de capa com dimensões 400x250 para esta área.</p>
                             <img id="preview_imageCapa" alt="" src="">
-                            <input type="file" name="imagemCapa" class="imgCapaMateria" onchange="preview(this,'capa');" multiple>
+                            <input type="file" name="imagemCapa" class="imgCapaMateria"  onchange="preview(this,'capa');" multiple>
                         </figure>
                         <figure id="imgPrincipal">                            
                             <p> Selecione uma imagem com dimensões 400x250 para esta área.</p>
@@ -170,7 +170,7 @@
                         <div id="fundoDescricaoMateria">
                             <div id="descricaoMateria">
                                 <p class="editDescricao">
-                                    <textarea name="descricao" class="descricao_materia" placeholder="Descrição do Jogo"></textarea>
+                                    <textarea name="descricao" class="descricao_materia" id="descricao_materia" placeholder="Descrição do Jogo"></textarea>
                                 </p>
                                 <p class="editPlataforma">
                                     Plataforma
@@ -216,13 +216,13 @@
                                 </div>                                                                
                                 <div class="editDatalancamento">
                                  <p id="textData"> Data de Lançamento </p>
-                                    <input type="date" name="data_lancamento" class="dataLancamento" >
+                                    <input type="date" name="data_lancamento" id="data_lancamento" class="dataLancamento" >
                                 </div>
                             </div>
                         </div>      
                         <div id="conteudoMateria">                            
                             <div id="subtituloMateria">
-                                <input type="text" name="subtitulo" class="subtituloMateria" placeholder="Subtítulo da Matéria">
+                                <input type="text" name="subtitulo" id="subtitulo_materia" class="subtituloMateria" placeholder="Subtítulo da Matéria">
                             </div>
                             <p> Limite de Caracteres: 1500. </p>
                             <textarea id="campoConteudo1" placeholder="Digite o texto da matéria aqui" name="conteudo" maxlength="1500"></textarea>

@@ -8,6 +8,7 @@ return substr(md5(mt_rand()), 0, $tamanho);
 echo "<meta charset=UTF-8>";
 $tituloArtigo = $_POST['titulo_conteudo'];
 $categoria = $_POST['categoria'];
+
 $data = date('Y-m-d');
 $hora = date('H:i:s');
 $autor = $_SESSION['code'];
@@ -196,6 +197,11 @@ $salt = geraSaltAleatorio();
                                                                         
                                                                         for( $i=0; $i<sizeof( $categoria ); $i++ ){
                                                                            $categoriaArtigo = $categoria[$i];
+                                                                           if($categoriaArtigo == ""){
+  
+                                                                            echo "<script> javascript:history.go(-1)</script>";
+
+                                                                           }
                                                                            if($categoriaArtigo == "1"){
                                                                                $sql = "INSERT INTO ARTIGO(TITULO_ARTIGO, CATEGORIA_ARTIGO,DATA_ARTIGO, HORA_ARTIGO, AUTOR_ARTIGO, URL_ARTIGO, DESCRICAO_ARTIGO, DATA_LANCAMENTO, CONTEUDO_ARTIGO, TITULO_CONTEUDO_ARTIGO, PLATAFORMA_ARTIGO, URLVIDEO1, URLVIDEO2)
                                                                                 VALUES('$tituloArtigo',1,'$data','$hora',$autor,'playstation/$urlArtigo.php','$descricaoArtigo','$dataLancamento', '$conteudoArtigo', '$subtitulo','$plataforma', '$urlVideo', '$urlVideo2')";
