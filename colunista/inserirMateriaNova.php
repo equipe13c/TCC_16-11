@@ -209,7 +209,7 @@ $salt = geraSaltAleatorio();
                                                                                    if(mysql_query($sql)){
                                                                                         $codigo_materia = $resultBusca['ID_ARTIGO'];
                                                                                         $urlArtigoP = $resultBusca['URL_ARTIGO'];
-                                                                                        
+                                                                                        $codAutor = $resultBusca['AUTOR_ARTIGO'];
                                                                                                 $backMenu1 = "#9C1006";
                                                                                                 $backMenu2 = "#9C1006";
                                                                                                 $backPrincipal = "#9C1006";
@@ -221,7 +221,7 @@ $salt = geraSaltAleatorio();
 $corpo = '<!DOCTYPE html>
 <html>                                                                                  
     <head> 
-        <title> '.$tituloArtigo.'</title>
+        <title>'.$tituloArtigo.'</title>
         <meta charset="UTF-8">
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
         <link rel="stylesheet" type="text/css" href="css/style.css"/>
@@ -231,6 +231,10 @@ $corpo = '<!DOCTYPE html>
         <script type="text/javascript" src="../js/javascript.js"></script>
         <script type="text/javascript" src="../js/menu2.js"></script>
         <script type="text/javascript" src="../js/restrito.js"></script>
+        <link rel="stylesheet" href="../popupgaleria/vlb_files1/vlightbox1.css" type="text/css" />
+	<link rel="stylesheet" href="../popupgaleria/vlb_files1/visuallightbox.css" type="text/css" media="screen" />
+        <script src="../popupgaleria/vlb_engine/jquery.min.js" type="text/javascript"></script>
+	<script src="../popupgaleria/vlb_engine/visuallightbox.js" type="text/javascript"></script>
         <script type="text/javascript"> 
             onload = function(){
                 var imgMiniLogo = document.getElementById("imgMiniLogo");
@@ -245,144 +249,139 @@ $corpo = '<!DOCTYPE html>
                 document.getElementById("descricaoColunista").style.backgroundColor = "'.$descricaoCol.'";  
                 document.getElementById("logar").style.borderBottom = "solid 5px '.$descricaoCol.'"; 
                 document.getElementById("botaoLogin").style.backgroundColor = "'.$fundoLogar.'";
-                document.getElementById("tituloPagina").style.backgroundColor = "'.$fundoLogar.'";            
+                document.getElementById("tituloPagina").style.backgroundColor = "'.$fundoLogar.'";           
                 var imgMiniLogo = document.getElementById("imgMiniLogo");
             };
         </script>       
         
     </head> 
 <body>
-        '.'<section id="container">
+        <section id="container">
             <?php
-                '."include_once '../conexao/conecta.inc';
+               '." include_once '../conexao/conecta.inc';
                 include_once '../includes/funcoesUteis.inc';
                 session_start();
+                acrescentarAcessos('1');
             ?>
             ".'<header id="cabecalho">
                 <?php
-                    '."include_once '../includes/menuMaterias.php';
+                   '." include_once '../includes/menuMaterias.php';
                 ?>
             ".'<figure id="imgCapa">
                 <?php
-                '."infosImagensMateria('capa','".$codigo_materia."');
-                ?>
-                
+               '." infosImagensMateria('capa','".$codigo_materia."');
+                ?>                
             </figure>
-                ".'<div id="logar">
+               ".' <div id="logar">
                     <?php
-                       '."VerificaSessao2('');
+                      '." VerificaSessao2('');".'
                     ?>                    
                 </div>
-
             </header>
-
-
-
-            ".'<article id="conteudo">
+            <article id="conteudo">
                 <figure id="imgPrincipal">
                     <?php
-                       '." infosImagensMateria('imgPrincipal','".$codigo_materia."');
+                      '."  infosImagensMateria('imgPrincipal','".$codigo_materia."');
                     ?>
                 </figure>
-                ".'<div id="tituloMateria">
+               ".' <div id="tituloMateria">
                     <div id="caixaTitulo"><h1 class="editTitulo"> Zelda U
                     <?php
-                       '." infoArtigos('titulo','".$urlArtigoP."');
+                     '."   infoArtigos('titulo','".$urlArtigoP."');
                     ?>
                      </h1></div>
                 </div>
-                ".'<div id="fundoDescricaoMateria">
+               ".' <div id="fundoDescricaoMateria">
                     <div id="descricaoMateria">
                         <p class="editDescricao">
                         <?php
-                           '." infoArtigos('descricao','".$urlArtigoP."');
+                          '."  infoArtigos('descricao','".$urlArtigoP."');
                         ?>
                         </p>
                        ".' <p class="editPlataforma">
                         <?php
                             echo "<b>Desenvolvedora:</b>    ";
-                           '." infoArtigos('plataforma','".$urlArtigoP."');
+                          '."  infoArtigos('plataforma','".$urlArtigoP."');
                         ?>
                         </p>
-                        ".'<p class="editDatalancamento">
+                      ".'  <p class="editDatalancamento">
                         <?php
                             echo "<b>Data de Lançamento:</b>    ";
-                            '."infoArtigos('dataLancamento','".$urlArtigoP."');
+                         '."   infoArtigos('dataLancamento','".$urlArtigoP."');
                         ?>
                         </p>
                     </div>
                 </div>    
                 ".'<div id="conteudoMateria">
-                    <p class="editTituloconteudo">
-                    <?php
-                       '." infoArtigos('tituloConteudo','".$urlArtigoP."');
-                    ?>
-                    </p>
-                    ".'<p class="ediConteudoMateria">
-                    <?php
-                       '." infoArtigos('conteudoMateria','".$urlArtigoP."');
-                    ?>
-                    </p>
+                    <div class="ediConteudoMateria">
+                        <div class="editTituloconteudo">
+                            <p>
+                                <?php
+                                 '."   infoArtigos('tituloConteudo','".$urlArtigoP."');
+                                ?>
+                            </p>
+                            ".'<div id="nome_autor">
+                                <b>POR</b>
+                                <?php
+                                  '." infoArtigos('nomeAutor','".$urlArtigoP."');  
+                                ?>
+                               <b>EM</b> 20/12/1900
+                            </div>
+                        </div>                        
+                        <p>
+                            <?php
+                                infoArtigos('conteudoMateria','".$urlArtigoP."');
+                            ?>
+                        </p>
+                        </div>
                 </div>
-               ".' <div id="galeriaImagens">
+                ".'<div id="galeriaImagens">
                     <figure class="imagensGaleria" >
                         <?php
-                           '." infosImagensMateria('imagemgaleria1','".$codigo_materia."');
+                         '."   infosImagensMateria('imagemgaleria1','".$codigo_materia."');
                         ?>
                     </figure>
-                    ".'<figure class="imagensGaleria">
+                   ".' <figure class="imagensGaleria">
                         <?php
-                            '."infosImagensMateria('imagemgaleria2','".$codigo_materia."');
+                         '."   infosImagensMateria('imagemgaleria2','".$codigo_materia."');
                         ?>
                     </figure>
-                    ".'<figure class="imagensGaleria" >
+                   ".' <figure class="imagensGaleria" >
                         <?php
-                           '." infosImagensMateria('imagemgaleria3','".$codigo_materia."');
+                          '."  infosImagensMateria('imagemgaleria3','".$codigo_materia."');
                         ?>
                     </figure>
+                    ".'	<script src="../popupgaleria/vlb_engine/vlbdata1.js" type="text/javascript"></script>
                 </div>
-                ".'<div id="conteudoMateria2">                    
-                    <p class="ediConteudoMateria">
-                    <?php
-                       '." infoArtigos('conteudoMateria2','".$urlArtigoP."');
+                <div id="galeriaVideo">
+                    '."<?php buscarUrlVideo('".$codigo_materia."','urlVideo1');
+                    buscarUrlVideo('".$codigo_materia."','urlVideo2');
                     ?>
-                    </p>
-                </div>
-                ".'<div id="galeriaVideo">                    
-                    <p class="ediConteudoMateria">
-                    <?php
-                       '." infoArtigos('conteudoMateria','".$urlArtigoP."');
-                    ?>
-                    </p>
                 </div>
                 ".'<div id="colunista">     
                     <figure id="autor_materia">
                     <?php
-                       '." buscarImagemAutor('".$codigo_materia."');
+                       '." buscarImagemAutor('".$codAutor."');".'
                     ?>
                     </figure>
-                    ".'<div id="descricaoColunista"> 
-                        <p>                     
-                            <?php
-                                '."    buscarDescAutor('".$codigo_materia."');
-                            ?> 
-                        </p>
+                    <div id="descricaoColunista"> 
+                        <div id="infoAutor">
+                            '." buscarDescAutor('".$codAutor."');".'
+                        </div>
                     </div>
                 </div>
-                ".'<div id="comentario">
-                    <div class="comentarios">
-                        
+                <div id="comentario">
+                    <div class="comentarios">                        
                     <figure class="imagem_user"> 
                         <?php
                             buscarFotoUser();
                         ?>
-                    </figure>
-                                            
+                    </figure>                                            
                     <div class="coment">
-                        '."<form name='frmComentar' method='post' action='../comentar.php' id='enviar'>
-                        <textarea id='textocomentario' name='comentario'> </textarea>                        
-                        ".'<input type="hidden" '."name='codigoArtigo' value='".$codigo_materia."' > 
-                        ".'<input type="submit" '."name='btnComentar' ".'value="Publicar" class="botaoEnviar" > 
+                       '." <form name='frmComentar' method='post' action='../comentar.php' id='enviar'>
+                        ".'<input type="text" id="textocomentario" name="comentario">                    
+                        <input type="hidden" name="codigoArtigo" value="'.$codigo_materia.'" > 
+                        <input type="submit" name="btnComentar" value="Publicar" class="botaoEnviar" > 
                         </form>
                     </div>   
                     </div>
@@ -393,7 +392,7 @@ $corpo = '<!DOCTYPE html>
                     </div>
                 </div>
             </article>
-            ".'<aside id="aside1">
+           ".' <aside id="aside1">
                     <?php
                        buscarMateriasAside();
                    ?>
@@ -405,17 +404,17 @@ $corpo = '<!DOCTYPE html>
                     <p> Voltar ao topo </p>
                 </a>                    
             </div>
-            <div id="imgFooter"'." ondragstart='return false'> 
-                ".'<img src="../imagens/ideiaRodape.png" alt=""> 
+            '."<div id='imgFooter' ondragstart='return false'> 
+                <img src='../imagens/ideiaRodape.png' alt=''> 
             </div>
-            <footer id="footer">
+            ".'<footer id="footer">
                 <?php
-                    '."include_once '../includes/rodapeMaterias.php';
+                   '." include_once '../includes/rodapeMaterias.php';
                 ?>
             </footer>            
         </section>
     </body>
-</html>'";
+</html>";
                    
                                                                                         $url_materia = "../" . $urlArtigoP;
                                                                                         $formatacao = $corpo;
@@ -467,6 +466,10 @@ $corpo = '<!DOCTYPE html>
         <script type="text/javascript" src="../js/javascript.js"></script>
         <script type="text/javascript" src="../js/menu2.js"></script>
         <script type="text/javascript" src="../js/restrito.js"></script>
+        <link rel="stylesheet" href="../popupgaleria/vlb_files1/vlightbox1.css" type="text/css" />
+	<link rel="stylesheet" href="../popupgaleria/vlb_files1/visuallightbox.css" type="text/css" media="screen" />
+        <script src="../popupgaleria/vlb_engine/jquery.min.js" type="text/javascript"></script>
+	<script src="../popupgaleria/vlb_engine/visuallightbox.js" type="text/javascript"></script>
         <script type="text/javascript"> 
             onload = function(){
                 var imgMiniLogo = document.getElementById("imgMiniLogo");
@@ -481,144 +484,139 @@ $corpo = '<!DOCTYPE html>
                 document.getElementById("descricaoColunista").style.backgroundColor = "'.$descricaoCol.'";  
                 document.getElementById("logar").style.borderBottom = "solid 5px '.$descricaoCol.'"; 
                 document.getElementById("botaoLogin").style.backgroundColor = "'.$fundoLogar.'";
-                document.getElementById("tituloPagina").style.backgroundColor = "'.$fundoLogar.'";            
+                document.getElementById("tituloPagina").style.backgroundColor = "'.$fundoLogar.'";           
                 var imgMiniLogo = document.getElementById("imgMiniLogo");
             };
         </script>       
         
     </head> 
 <body>
-        '.'<section id="container">
+        <section id="container">
             <?php
-                '."include_once '../conexao/conecta.inc';
+               '." include_once '../conexao/conecta.inc';
                 include_once '../includes/funcoesUteis.inc';
                 session_start();
+                acrescentarAcessos('1');
             ?>
             ".'<header id="cabecalho">
                 <?php
-                    '."include_once '../includes/menuMaterias.php';
+                   '." include_once '../includes/menuMaterias.php';
                 ?>
             ".'<figure id="imgCapa">
                 <?php
-                '."infosImagensMateria('capa','".$codigo_materia."');
-                ?>
-                
+               '." infosImagensMateria('capa','".$codigo_materia."');
+                ?>                
             </figure>
-                ".'<div id="logar">
+               ".' <div id="logar">
                     <?php
-                       '."VerificaSessao2('');
+                      '." VerificaSessao2('');".'
                     ?>                    
                 </div>
-
             </header>
-
-
-
-            ".'<article id="conteudo">
+            <article id="conteudo">
                 <figure id="imgPrincipal">
                     <?php
-                       '." infosImagensMateria('imgPrincipal','".$codigo_materia."');
+                      '."  infosImagensMateria('imgPrincipal','".$codigo_materia."');
                     ?>
                 </figure>
-                ".'<div id="tituloMateria">
+               ".' <div id="tituloMateria">
                     <div id="caixaTitulo"><h1 class="editTitulo"> Zelda U
                     <?php
-                       '." infoArtigos('titulo','".$urlArtigoP."');
+                     '."   infoArtigos('titulo','".$urlArtigoP."');
                     ?>
                      </h1></div>
                 </div>
-                ".'<div id="fundoDescricaoMateria">
+               ".' <div id="fundoDescricaoMateria">
                     <div id="descricaoMateria">
                         <p class="editDescricao">
                         <?php
-                           '." infoArtigos('descricao','".$urlArtigoP."');
+                          '."  infoArtigos('descricao','".$urlArtigoP."');
                         ?>
                         </p>
                        ".' <p class="editPlataforma">
                         <?php
                             echo "<b>Desenvolvedora:</b>    ";
-                           '." infoArtigos('plataforma','".$urlArtigoP."');
+                          '."  infoArtigos('plataforma','".$urlArtigoP."');
                         ?>
                         </p>
-                        ".'<p class="editDatalancamento">
+                      ".'  <p class="editDatalancamento">
                         <?php
                             echo "<b>Data de Lançamento:</b>    ";
-                            '."infoArtigos('dataLancamento','".$urlArtigoP."');
+                         '."   infoArtigos('dataLancamento','".$urlArtigoP."');
                         ?>
                         </p>
                     </div>
                 </div>    
                 ".'<div id="conteudoMateria">
-                    <p class="editTituloconteudo">
-                    <?php
-                       '." infoArtigos('tituloConteudo','".$urlArtigoP."');
-                    ?>
-                    </p>
-                    ".'<p class="ediConteudoMateria">
-                    <?php
-                       '." infoArtigos('conteudoMateria','".$urlArtigoP."');
-                    ?>
-                    </p>
+                    <div class="ediConteudoMateria">
+                        <div class="editTituloconteudo">
+                            <p>
+                                <?php
+                                 '."   infoArtigos('tituloConteudo','".$urlArtigoP."');
+                                ?>
+                            </p>
+                            ".'<div id="nome_autor">
+                                <b>POR</b>
+                                <?php
+                                  '." infoArtigos('nomeAutor','".$urlArtigoP."');  
+                                ?>
+                               <b>EM</b> 20/12/1900
+                            </div>
+                        </div>                        
+                        <p>
+                            <?php
+                                infoArtigos('conteudoMateria','".$urlArtigoP."');
+                            ?>
+                        </p>
+                        </div>
                 </div>
-               ".' <div id="galeriaImagens">
+                ".'<div id="galeriaImagens">
                     <figure class="imagensGaleria" >
                         <?php
-                           '." infosImagensMateria('imagemgaleria1','".$codigo_materia."');
+                         '."   infosImagensMateria('imagemgaleria1','".$codigo_materia."');
                         ?>
                     </figure>
-                    ".'<figure class="imagensGaleria">
+                   ".' <figure class="imagensGaleria">
                         <?php
-                            '."infosImagensMateria('imagemgaleria2','".$codigo_materia."');
+                         '."   infosImagensMateria('imagemgaleria2','".$codigo_materia."');
                         ?>
                     </figure>
-                    ".'<figure class="imagensGaleria" >
+                   ".' <figure class="imagensGaleria" >
                         <?php
-                           '." infosImagensMateria('imagemgaleria3','".$codigo_materia."');
+                          '."  infosImagensMateria('imagemgaleria3','".$codigo_materia."');
                         ?>
                     </figure>
+                    ".'	<script src="../popupgaleria/vlb_engine/vlbdata1.js" type="text/javascript"></script>
                 </div>
-                ".'<div id="conteudoMateria2">                    
-                    <p class="ediConteudoMateria">
-                    <?php
-                       '." infoArtigos('conteudoMateria2','".$urlArtigoP."');
+                <div id="galeriaVideo">
+                    '."<?php buscarUrlVideo('".$codigo_materia."','urlVideo1');
+                    buscarUrlVideo('".$codigo_materia."','urlVideo2');
                     ?>
-                    </p>
-                </div>
-                ".'<div id="galeriaVideo">                    
-                    <p class="ediConteudoMateria">
-                    <?php
-                       '." infoArtigos('conteudoMateria','".$urlArtigoP."');
-                    ?>
-                    </p>
                 </div>
                 ".'<div id="colunista">     
                     <figure id="autor_materia">
                     <?php
-                       '." buscarImagemAutor('".$codigo_materia."');
+                       '." buscarImagemAutor('".$codAutor."');".'
                     ?>
                     </figure>
-                    ".'<div id="descricaoColunista"> 
-                        <p>                     
-                            <?php
-                                '."    buscarDescAutor('".$codigo_materia."');
-                            ?> 
-                        </p>
+                    <div id="descricaoColunista"> 
+                        <div id="infoAutor">
+                            '." buscarDescAutor('".$codAutor."');".'
+                        </div>
                     </div>
                 </div>
-                ".'<div id="comentario">
-                    <div class="comentarios">
-                        
+                <div id="comentario">
+                    <div class="comentarios">                        
                     <figure class="imagem_user"> 
                         <?php
                             buscarFotoUser();
                         ?>
-                    </figure>
-                                            
+                    </figure>                                            
                     <div class="coment">
-                        '."<form name='frmComentar' method='post' action='../comentar.php' id='enviar'>
-                        <textarea id='textocomentario' name='comentario'> </textarea>                        
-                        ".'<input type="hidden" '."name='codigoArtigo' value='".$codigo_materia."' > 
-                        ".'<input type="submit" '."name='btnComentar' ".'value="Publicar" class="botaoEnviar" > 
+                       '." <form name='frmComentar' method='post' action='../comentar.php' id='enviar'>
+                        ".'<input type="text" id="textocomentario" name="comentario">                    
+                        <input type="hidden" name="codigoArtigo" value="'.$codigo_materia.'" > 
+                        <input type="submit" name="btnComentar" value="Publicar" class="botaoEnviar" > 
                         </form>
                     </div>   
                     </div>
@@ -629,7 +627,7 @@ $corpo = '<!DOCTYPE html>
                     </div>
                 </div>
             </article>
-            ".'<aside id="aside1">
+           ".' <aside id="aside1">
                     <?php
                        buscarMateriasAside();
                    ?>
@@ -641,17 +639,17 @@ $corpo = '<!DOCTYPE html>
                     <p> Voltar ao topo </p>
                 </a>                    
             </div>
-            <div id="imgFooter"'." ondragstart='return false'> 
-                ".'<img src="../imagens/ideiaRodape.png" alt=""> 
+            '."<div id='imgFooter' ondragstart='return false'> 
+                <img src='../imagens/ideiaRodape.png' alt=''> 
             </div>
-            <footer id="footer">
+            ".'<footer id="footer">
                 <?php
-                    '."include_once '../includes/rodapeMaterias.php';
+                   '." include_once '../includes/rodapeMaterias.php';
                 ?>
             </footer>            
         </section>
     </body>
-</html>'";
+</html>";
                                                                                         $url_materia =  "../" . $urlArtigoP;
                                                                                         $formatacao = $corpo;
                                                                                         $fp = fopen($url_materia , "w");
@@ -702,6 +700,10 @@ $corpo = '<!DOCTYPE html>
         <script type="text/javascript" src="../js/javascript.js"></script>
         <script type="text/javascript" src="../js/menu2.js"></script>
         <script type="text/javascript" src="../js/restrito.js"></script>
+        <link rel="stylesheet" href="../popupgaleria/vlb_files1/vlightbox1.css" type="text/css" />
+	<link rel="stylesheet" href="../popupgaleria/vlb_files1/visuallightbox.css" type="text/css" media="screen" />
+        <script src="../popupgaleria/vlb_engine/jquery.min.js" type="text/javascript"></script>
+	<script src="../popupgaleria/vlb_engine/visuallightbox.js" type="text/javascript"></script>
         <script type="text/javascript"> 
             onload = function(){
                 var imgMiniLogo = document.getElementById("imgMiniLogo");
@@ -716,144 +718,139 @@ $corpo = '<!DOCTYPE html>
                 document.getElementById("descricaoColunista").style.backgroundColor = "'.$descricaoCol.'";  
                 document.getElementById("logar").style.borderBottom = "solid 5px '.$descricaoCol.'"; 
                 document.getElementById("botaoLogin").style.backgroundColor = "'.$fundoLogar.'";
-                document.getElementById("tituloPagina").style.backgroundColor = "'.$fundoLogar.'";            
+                document.getElementById("tituloPagina").style.backgroundColor = "'.$fundoLogar.'";           
                 var imgMiniLogo = document.getElementById("imgMiniLogo");
             };
         </script>       
         
     </head> 
 <body>
-        '.'<section id="container">
+        <section id="container">
             <?php
-                '."include_once '../conexao/conecta.inc';
+               '." include_once '../conexao/conecta.inc';
                 include_once '../includes/funcoesUteis.inc';
                 session_start();
+                acrescentarAcessos('1');
             ?>
             ".'<header id="cabecalho">
                 <?php
-                    '."include_once '../includes/menuMaterias.php';
+                   '." include_once '../includes/menuMaterias.php';
                 ?>
             ".'<figure id="imgCapa">
                 <?php
-                '."infosImagensMateria('capa','".$codigo_materia."');
-                ?>
-                
+               '." infosImagensMateria('capa','".$codigo_materia."');
+                ?>                
             </figure>
-                ".'<div id="logar">
+               ".' <div id="logar">
                     <?php
-                       '."VerificaSessao2('');
+                      '." VerificaSessao2('');".'
                     ?>                    
                 </div>
-
             </header>
-
-
-
-            ".'<article id="conteudo">
+            <article id="conteudo">
                 <figure id="imgPrincipal">
                     <?php
-                       '." infosImagensMateria('imgPrincipal','".$codigo_materia."');
+                      '."  infosImagensMateria('imgPrincipal','".$codigo_materia."');
                     ?>
                 </figure>
-                ".'<div id="tituloMateria">
+               ".' <div id="tituloMateria">
                     <div id="caixaTitulo"><h1 class="editTitulo"> Zelda U
                     <?php
-                       '." infoArtigos('titulo','".$urlArtigoP."');
+                     '."   infoArtigos('titulo','".$urlArtigoP."');
                     ?>
                      </h1></div>
                 </div>
-                ".'<div id="fundoDescricaoMateria">
+               ".' <div id="fundoDescricaoMateria">
                     <div id="descricaoMateria">
                         <p class="editDescricao">
                         <?php
-                           '." infoArtigos('descricao','".$urlArtigoP."');
+                          '."  infoArtigos('descricao','".$urlArtigoP."');
                         ?>
                         </p>
                        ".' <p class="editPlataforma">
                         <?php
                             echo "<b>Desenvolvedora:</b>    ";
-                           '." infoArtigos('plataforma','".$urlArtigoP."');
+                          '."  infoArtigos('plataforma','".$urlArtigoP."');
                         ?>
                         </p>
-                        ".'<p class="editDatalancamento">
+                      ".'  <p class="editDatalancamento">
                         <?php
                             echo "<b>Data de Lançamento:</b>    ";
-                            '."infoArtigos('dataLancamento','".$urlArtigoP."');
+                         '."   infoArtigos('dataLancamento','".$urlArtigoP."');
                         ?>
                         </p>
                     </div>
                 </div>    
                 ".'<div id="conteudoMateria">
-                    <p class="editTituloconteudo">
-                    <?php
-                       '." infoArtigos('tituloConteudo','".$urlArtigoP."');
-                    ?>
-                    </p>
-                    ".'<p class="ediConteudoMateria">
-                    <?php
-                       '." infoArtigos('conteudoMateria','".$urlArtigoP."');
-                    ?>
-                    </p>
+                    <div class="ediConteudoMateria">
+                        <div class="editTituloconteudo">
+                            <p>
+                                <?php
+                                 '."   infoArtigos('tituloConteudo','".$urlArtigoP."');
+                                ?>
+                            </p>
+                            ".'<div id="nome_autor">
+                                <b>POR</b>
+                                <?php
+                                  '." infoArtigos('nomeAutor','".$urlArtigoP."');  
+                                ?>
+                               <b>EM</b> 20/12/1900
+                            </div>
+                        </div>                        
+                        <p>
+                            <?php
+                                infoArtigos('conteudoMateria','".$urlArtigoP."');
+                            ?>
+                        </p>
+                        </div>
                 </div>
-               ".' <div id="galeriaImagens">
+                ".'<div id="galeriaImagens">
                     <figure class="imagensGaleria" >
                         <?php
-                           '." infosImagensMateria('imagemgaleria1','".$codigo_materia."');
+                         '."   infosImagensMateria('imagemgaleria1','".$codigo_materia."');
                         ?>
                     </figure>
-                    ".'<figure class="imagensGaleria">
+                   ".' <figure class="imagensGaleria">
                         <?php
-                            '."infosImagensMateria('imagemgaleria2','".$codigo_materia."');
+                         '."   infosImagensMateria('imagemgaleria2','".$codigo_materia."');
                         ?>
                     </figure>
-                    ".'<figure class="imagensGaleria" >
+                   ".' <figure class="imagensGaleria" >
                         <?php
-                           '." infosImagensMateria('imagemgaleria3','".$codigo_materia."');
+                          '."  infosImagensMateria('imagemgaleria3','".$codigo_materia."');
                         ?>
                     </figure>
+                    ".'	<script src="../popupgaleria/vlb_engine/vlbdata1.js" type="text/javascript"></script>
                 </div>
-                ".'<div id="conteudoMateria2">                    
-                    <p class="ediConteudoMateria">
-                    <?php
-                       '." infoArtigos('conteudoMateria2','".$urlArtigoP."');
+                <div id="galeriaVideo">
+                    '."<?php buscarUrlVideo('".$codigo_materia."','urlVideo1');
+                    buscarUrlVideo('".$codigo_materia."','urlVideo2');
                     ?>
-                    </p>
-                </div>
-                ".'<div id="galeriaVideo">                    
-                    <p class="ediConteudoMateria">
-                    <?php
-                       '." infoArtigos('conteudoMateria','".$urlArtigoP."');
-                    ?>
-                    </p>
                 </div>
                 ".'<div id="colunista">     
                     <figure id="autor_materia">
                     <?php
-                       '." buscarImagemAutor('".$codigo_materia."');
+                       '." buscarImagemAutor('".$codAutor."');".'
                     ?>
                     </figure>
-                    ".'<div id="descricaoColunista"> 
-                        <p>                     
-                            <?php
-                                '."    buscarDescAutor('".$codigo_materia."');
-                            ?> 
-                        </p>
+                    <div id="descricaoColunista"> 
+                        <div id="infoAutor">
+                            '." buscarDescAutor('".$codAutor."');".'
+                        </div>
                     </div>
                 </div>
-                ".'<div id="comentario">
-                    <div class="comentarios">
-                        
+                <div id="comentario">
+                    <div class="comentarios">                        
                     <figure class="imagem_user"> 
                         <?php
                             buscarFotoUser();
                         ?>
-                    </figure>
-                                            
+                    </figure>                                            
                     <div class="coment">
-                        '."<form name='frmComentar' method='post' action='../comentar.php' id='enviar'>
-                        <textarea id='textocomentario' name='comentario'> </textarea>                        
-                        ".'<input type="hidden" '."name='codigoArtigo' value='".$codigo_materia."' > 
-                        ".'<input type="submit" '."name='btnComentar' ".'value="Publicar" class="botaoEnviar" > 
+                       '." <form name='frmComentar' method='post' action='../comentar.php' id='enviar'>
+                        ".'<input type="text" id="textocomentario" name="comentario">                    
+                        <input type="hidden" name="codigoArtigo" value="'.$codigo_materia.'" > 
+                        <input type="submit" name="btnComentar" value="Publicar" class="botaoEnviar" > 
                         </form>
                     </div>   
                     </div>
@@ -864,7 +861,7 @@ $corpo = '<!DOCTYPE html>
                     </div>
                 </div>
             </article>
-            ".'<aside id="aside1">
+           ".' <aside id="aside1">
                     <?php
                        buscarMateriasAside();
                    ?>
@@ -876,17 +873,17 @@ $corpo = '<!DOCTYPE html>
                     <p> Voltar ao topo </p>
                 </a>                    
             </div>
-            <div id="imgFooter"'." ondragstart='return false'> 
-                ".'<img src="../imagens/ideiaRodape.png" alt=""> 
+            '."<div id='imgFooter' ondragstart='return false'> 
+                <img src='../imagens/ideiaRodape.png' alt=''> 
             </div>
-            <footer id="footer">
+            ".'<footer id="footer">
                 <?php
-                    '."include_once '../includes/rodapeMaterias.php';
+                   '." include_once '../includes/rodapeMaterias.php';
                 ?>
             </footer>            
         </section>
     </body>
-</html>'";
+</html>";
                    
                    
                                                                                         $url_materia =  "../" . $urlArtigoP;
@@ -929,7 +926,7 @@ $corpo = '<!DOCTYPE html>
   $corpo = '<!DOCTYPE html>
 <html>                                                                                  
     <head> 
-        <title> '.$tituloArtigo.'</title>
+        <title>'.$tituloArtigo.'</title>
         <meta charset="UTF-8">
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
         <link rel="stylesheet" type="text/css" href="css/style.css"/>
@@ -939,6 +936,10 @@ $corpo = '<!DOCTYPE html>
         <script type="text/javascript" src="../js/javascript.js"></script>
         <script type="text/javascript" src="../js/menu2.js"></script>
         <script type="text/javascript" src="../js/restrito.js"></script>
+        <link rel="stylesheet" href="../popupgaleria/vlb_files1/vlightbox1.css" type="text/css" />
+	<link rel="stylesheet" href="../popupgaleria/vlb_files1/visuallightbox.css" type="text/css" media="screen" />
+        <script src="../popupgaleria/vlb_engine/jquery.min.js" type="text/javascript"></script>
+	<script src="../popupgaleria/vlb_engine/visuallightbox.js" type="text/javascript"></script>
         <script type="text/javascript"> 
             onload = function(){
                 var imgMiniLogo = document.getElementById("imgMiniLogo");
@@ -953,144 +954,139 @@ $corpo = '<!DOCTYPE html>
                 document.getElementById("descricaoColunista").style.backgroundColor = "'.$descricaoCol.'";  
                 document.getElementById("logar").style.borderBottom = "solid 5px '.$descricaoCol.'"; 
                 document.getElementById("botaoLogin").style.backgroundColor = "'.$fundoLogar.'";
-                document.getElementById("tituloPagina").style.backgroundColor = "'.$fundoLogar.'";            
+                document.getElementById("tituloPagina").style.backgroundColor = "'.$fundoLogar.'";           
                 var imgMiniLogo = document.getElementById("imgMiniLogo");
             };
         </script>       
         
     </head> 
 <body>
-        '.'<section id="container">
+        <section id="container">
             <?php
-                '."include_once '../conexao/conecta.inc';
+               '." include_once '../conexao/conecta.inc';
                 include_once '../includes/funcoesUteis.inc';
                 session_start();
+                acrescentarAcessos('1');
             ?>
             ".'<header id="cabecalho">
                 <?php
-                    '."include_once '../includes/menuMaterias.php';
+                   '." include_once '../includes/menuMaterias.php';
                 ?>
             ".'<figure id="imgCapa">
                 <?php
-                '."infosImagensMateria('capa','".$codigo_materia."');
-                ?>
-                
+               '." infosImagensMateria('capa','".$codigo_materia."');
+                ?>                
             </figure>
-                ".'<div id="logar">
+               ".' <div id="logar">
                     <?php
-                       '."VerificaSessao2('');
+                      '." VerificaSessao2('');".'
                     ?>                    
                 </div>
-
             </header>
-
-
-
-            ".'<article id="conteudo">
+            <article id="conteudo">
                 <figure id="imgPrincipal">
                     <?php
-                       '." infosImagensMateria('imgPrincipal','".$codigo_materia."');
+                      '."  infosImagensMateria('imgPrincipal','".$codigo_materia."');
                     ?>
                 </figure>
-                ".'<div id="tituloMateria">
+               ".' <div id="tituloMateria">
                     <div id="caixaTitulo"><h1 class="editTitulo"> Zelda U
                     <?php
-                       '." infoArtigos('titulo','".$urlArtigoP."');
+                     '."   infoArtigos('titulo','".$urlArtigoP."');
                     ?>
                      </h1></div>
                 </div>
-                ".'<div id="fundoDescricaoMateria">
+               ".' <div id="fundoDescricaoMateria">
                     <div id="descricaoMateria">
                         <p class="editDescricao">
                         <?php
-                           '." infoArtigos('descricao','".$urlArtigoP."');
+                          '."  infoArtigos('descricao','".$urlArtigoP."');
                         ?>
                         </p>
                        ".' <p class="editPlataforma">
                         <?php
                             echo "<b>Desenvolvedora:</b>    ";
-                           '." infoArtigos('plataforma','".$urlArtigoP."');
+                          '."  infoArtigos('plataforma','".$urlArtigoP."');
                         ?>
                         </p>
-                        ".'<p class="editDatalancamento">
+                      ".'  <p class="editDatalancamento">
                         <?php
                             echo "<b>Data de Lançamento:</b>    ";
-                            '."infoArtigos('dataLancamento','".$urlArtigoP."');
+                         '."   infoArtigos('dataLancamento','".$urlArtigoP."');
                         ?>
                         </p>
                     </div>
                 </div>    
                 ".'<div id="conteudoMateria">
-                    <p class="editTituloconteudo">
-                    <?php
-                       '." infoArtigos('tituloConteudo','".$urlArtigoP."');
-                    ?>
-                    </p>
-                    ".'<p class="ediConteudoMateria">
-                    <?php
-                       '." infoArtigos('conteudoMateria','".$urlArtigoP."');
-                    ?>
-                    </p>
+                    <div class="ediConteudoMateria">
+                        <div class="editTituloconteudo">
+                            <p>
+                                <?php
+                                 '."   infoArtigos('tituloConteudo','".$urlArtigoP."');
+                                ?>
+                            </p>
+                            ".'<div id="nome_autor">
+                                <b>POR</b>
+                                <?php
+                                  '." infoArtigos('nomeAutor','".$urlArtigoP."');  
+                                ?>
+                               <b>EM</b> 20/12/1900
+                            </div>
+                        </div>                        
+                        <p>
+                            <?php
+                                infoArtigos('conteudoMateria','".$urlArtigoP."');
+                            ?>
+                        </p>
+                        </div>
                 </div>
-               ".' <div id="galeriaImagens">
+                ".'<div id="galeriaImagens">
                     <figure class="imagensGaleria" >
                         <?php
-                           '." infosImagensMateria('imagemgaleria1','".$codigo_materia."');
+                         '."   infosImagensMateria('imagemgaleria1','".$codigo_materia."');
                         ?>
                     </figure>
-                    ".'<figure class="imagensGaleria">
+                   ".' <figure class="imagensGaleria">
                         <?php
-                            '."infosImagensMateria('imagemgaleria2','".$codigo_materia."');
+                         '."   infosImagensMateria('imagemgaleria2','".$codigo_materia."');
                         ?>
                     </figure>
-                    ".'<figure class="imagensGaleria" >
+                   ".' <figure class="imagensGaleria" >
                         <?php
-                           '." infosImagensMateria('imagemgaleria3','".$codigo_materia."');
+                          '."  infosImagensMateria('imagemgaleria3','".$codigo_materia."');
                         ?>
                     </figure>
+                    ".'	<script src="../popupgaleria/vlb_engine/vlbdata1.js" type="text/javascript"></script>
                 </div>
-                ".'<div id="conteudoMateria2">                    
-                    <p class="ediConteudoMateria">
-                    <?php
-                       '." infoArtigos('conteudoMateria2','".$urlArtigoP."');
+                <div id="galeriaVideo">
+                    '."<?php buscarUrlVideo('".$codigo_materia."','urlVideo1');
+                    buscarUrlVideo('".$codigo_materia."','urlVideo2');
                     ?>
-                    </p>
-                </div>
-                ".'<div id="galeriaVideo">                    
-                    <p class="ediConteudoMateria">
-                    <?php
-                       '." infoArtigos('conteudoMateria','".$urlArtigoP."');
-                    ?>
-                    </p>
                 </div>
                 ".'<div id="colunista">     
                     <figure id="autor_materia">
                     <?php
-                       '." buscarImagemAutor('".$codigo_materia."');
+                       '." buscarImagemAutor('".$codAutor."');".'
                     ?>
                     </figure>
-                    ".'<div id="descricaoColunista"> 
-                        <p>                     
-                            <?php
-                                '."    buscarDescAutor('".$codigo_materia."');
-                            ?> 
-                        </p>
+                    <div id="descricaoColunista"> 
+                        <div id="infoAutor">
+                            '." buscarDescAutor('".$codAutor."');".'
+                        </div>
                     </div>
                 </div>
-                ".'<div id="comentario">
-                    <div class="comentarios">
-                        
+                <div id="comentario">
+                    <div class="comentarios">                        
                     <figure class="imagem_user"> 
                         <?php
                             buscarFotoUser();
                         ?>
-                    </figure>
-                                            
+                    </figure>                                            
                     <div class="coment">
-                        '."<form name='frmComentar' method='post' action='../comentar.php' id='enviar'>
-                        <textarea id='textocomentario' name='comentario'> </textarea>                        
-                        ".'<input type="hidden" '."name='codigoArtigo' value='".$codigo_materia."' > 
-                        ".'<input type="submit" '."name='btnComentar' ".'value="Publicar" class="botaoEnviar" > 
+                       '." <form name='frmComentar' method='post' action='../comentar.php' id='enviar'>
+                        ".'<input type="text" id="textocomentario" name="comentario">                    
+                        <input type="hidden" name="codigoArtigo" value="'.$codigo_materia.'" > 
+                        <input type="submit" name="btnComentar" value="Publicar" class="botaoEnviar" > 
                         </form>
                     </div>   
                     </div>
@@ -1101,7 +1097,7 @@ $corpo = '<!DOCTYPE html>
                     </div>
                 </div>
             </article>
-            ".'<aside id="aside1">
+           ".' <aside id="aside1">
                     <?php
                        buscarMateriasAside();
                    ?>
@@ -1113,17 +1109,17 @@ $corpo = '<!DOCTYPE html>
                     <p> Voltar ao topo </p>
                 </a>                    
             </div>
-            <div id="imgFooter"'." ondragstart='return false'> 
-                ".'<img src="../imagens/ideiaRodape.png" alt=""> 
+            '."<div id='imgFooter' ondragstart='return false'> 
+                <img src='../imagens/ideiaRodape.png' alt=''> 
             </div>
-            <footer id="footer">
+            ".'<footer id="footer">
                 <?php
-                    '."include_once '../includes/rodapeMaterias.php';
+                   '." include_once '../includes/rodapeMaterias.php';
                 ?>
             </footer>            
         </section>
     </body>
-</html>'";
+</html>";
                                                                                         $url_materia = "../" . $urlArtigoP;
                                                                                         $formatacao = $corpo;
                                                                                         $fp = fopen($url_materia , "w");

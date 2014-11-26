@@ -341,7 +341,7 @@ function infosImagensMateria($string){
                     else{
                     $imagens2 = mysql_fetch_array($result); 
                     $urlImagem = $imagens2['IMAGEM_GALERIA'];
-                    echo "<img src='../uploads/$urlImagem' alt='Imagem' class='imgGaleria'>";
+                    echo '<a class="vlightbox1" href="../uploads/'.$urlImagem.'"><img src="../uploads/'.$urlImagem.'" alt="" /></a>';
                     }
                 }
                 if($string == "imagemgaleria2"){   
@@ -356,7 +356,7 @@ function infosImagensMateria($string){
                     else{
                     $imagens2 = mysql_fetch_array($result); 
                     $urlImagem = $imagens2['IMAGEM_GALERIA2'];
-                    echo "<img src='../uploads/$urlImagem' alt='Imagem' class='imgGaleria'>";
+                    echo '<a class="vlightbox1" href="../uploads/'.$urlImagem.'"><img src="../uploads/'.$urlImagem.'" alt="" /></a>';
                     }
                 }
                 if($string == "imagemgaleria3"){   
@@ -371,7 +371,7 @@ function infosImagensMateria($string){
                     else{
                     $imagens2 = mysql_fetch_array($result); 
                     $urlImagem = $imagens2['IMAGEM_GALERIA3'];
-                    echo "<img src='../uploads/$urlImagem' alt='Imagem' class='imgGaleria'>";
+                    echo '<a class="vlightbox1" href="../uploads/'.$urlImagem.'"><img src="../uploads/'.$urlImagem.'" alt="" /></a>';
                     }
                 }
                 if($string == "capa"){   
@@ -483,6 +483,21 @@ function  infoArtigos($string,$url){
         echo "$infoRecebida";
         }
     }
+    if($string == "nomeAutor"){
+        $sql = "SELECT * FROM ARTIGO WHERE URL_ARTIGO = '$url'";
+        $result = mysql_query($sql);                
+        $info = mysql_num_rows($result);
+        if($info === 0){
+        }
+        else{
+        $informacao = mysql_fetch_array($result); 
+        $infoRecebida = $informacao['AUTOR_ARTIGO'];
+        $sql = "SELECT * FROM USUARIO WHERE COD_USUARIO = '$infoRecebida'";
+        $result = mysql_query($sql);  
+        $nomeResult = mysql_fetch_array($result);
+        echo $nomeResult['NOME_USUARIO']; 
+        }
+    }
 }
 function buscarMateriasAside(){
                             $query = "SELECT * FROM ARTIGO ORDER BY DATA_ARTIGO DESC";
@@ -504,7 +519,7 @@ function buscarMateriasAside(){
                                     $sql = "SELECT * FROM IMAGENS_MATERIA WHERE COD_MATERIA_IMAGEM = $codigoImagem";
                                     $resultado = mysql_query($sql);
                                     $artigos2 = mysql_fetch_array($resultado);
-                                    $imagemMini = $artigos2['IMAGEM_MINIATURA'];
+                                    $imagemMini = $artigos2['IMAGEM_PRINCIPAL'];
                                     echo '<div class="materiaAside">';
                                     echo '<a href="../'.$urlArtigo.'"><div class="descricaoMateriaAside">';
                                     echo '<p>'.$tituloArtigo .'</p>';
@@ -818,12 +833,19 @@ else{
 }
 }
 function listarComentarios($string){
-                            $query = "SELECT * FROM COMENT WHERE CODIGO_MATERIA = $string ORDER BY HORA_COMENT DESC";
+                            $query = "SELECT * FROM COMENT WHERE CODIGO_MATERIA = $string  ORDER BY COD_COMENT DESC";
                             $result = mysql_query($query);                
                             $imagens = mysql_num_rows($result);
                             while($comentarios = mysql_fetch_array($result)){ 
                             $comentario = $comentarios['CONTEUDO_COMENT'];
                             $codComent = $comentarios['COD_COMENT'];
+                            $dataComent = $comentarios['DATA_COMENT'];
+                                    $ano = substr($dataComent, 0, 4);
+                                    $mes = substr($dataComent, 5, 2);
+                                    $dia = substr($dataComent, 8, 2);
+                            $horaComent = $comentarios['HORA_COMENT'];    
+                                    $hora = substr($horaComent, 0, 2);
+                                    $min = substr($horaComent, 3, 2);
                             $codigoUser = $comentarios['COD_USUARIO'];
                             $query2 = "SELECT * FROM USUARIO WHERE COD_USUARIO = $codigoUser";
                             $resultado1 = mysql_query($query2);
@@ -839,6 +861,7 @@ function listarComentarios($string){
                             echo '<div class="coment">';
                             echo '<form action="../removerComent.php" method="post">';
                             echo "<input type='text' class='nome_comentario' readonly='readonly' disabled='disabled' name='nomeUserComent' value='$nomeUser'>";
+                            echo "<input type='text'  id='data_comentario' readonly='readonly' disabled='disabled' name='dataComent' value='$hora:$min, $dia / $mes / $ano'>";
                             echo "<input type='text' class='texto_comentario' readonly='readonly' disabled='disabled' name='textComentario' value='$comentario'>";
                             echo "</form>";
                             echo '</div>';
@@ -868,8 +891,24 @@ function buscarUrlVideo($code,$url){
                     }  
                     }
                     }
-
-
+function acrescentarAcessos($id){
+                    $query = "SELECT * FROM ARTIGO WHERE ID_ARTIGO = $id";
+                    $result = mysql_query($query);                
+                    $acessos = mysql_num_rows($result);
+                    $acessos2 = mysql_fetch_array($result); 
+                    $totalAcessos = $acessos2['ACESSOS'];
+                    $totalAcessos = $totalAcessos + 1;
+                    $sql = "UPDATE ARTIGO SET ACESSOS = $totalAcessos WHERE ID_ARTIGO = $id";
+                    mysql_query($sql);
+}
+function buscarDescAutor($id){
+                    $query = "SELECT * FROM USUARIO WHERE COD_USUARIO = $id";
+                    $result = mysql_query($query);                
+                    $descricaoUser = mysql_num_rows($result);
+                    $descricaoUser2 = mysql_fetch_array($result); 
+                    $resultDescricao = $descricaoUser2['DESCRICAO_USUARIO'];
+                    echo $resultDescricao;
+}
 
 ?>
 

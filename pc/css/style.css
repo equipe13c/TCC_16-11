@@ -1216,13 +1216,13 @@ imgAutor{
     background-color: darkblue;
 }
 .comentarios{
-    width: 840px;
+    width: 795px;
     height: auto;
     float: left;
     background-color: Gainsboro;
 }
 #comentario{
-    width: 100%;
+    width: 795px;
     height: auto;
     float: left;
     margin-top: 30px;
@@ -1236,12 +1236,12 @@ imgAutor{
     width: 600px;
     height: 40px;
     margin-top: 5px;
-    margin-left: 10px;
+    margin-left: 0px;
     float:left;
     
 }
 .coment{
-    width: 700px;
+    width: 600px;
     height: 130px;
     float: left;
     margin-top: 2px;
@@ -1252,7 +1252,7 @@ imgAutor{
 .botaoEnviar{
     width: 100px;
     height: 30px;
-    margin-top: 80px;
+    margin-top: 51px;
     margin-left: -102px; 
     margin-bottom: 10px;
     font-family: century gothic;
@@ -1263,7 +1263,7 @@ imgAutor{
     cursor: pointer;
 }
 .exibirComent{
-    width: 840px;
+    width: 795px;
     height: auto;
     float: left;
     margin-top:20px;
@@ -1312,4 +1312,16 @@ imgAutor{
     font-size:14pt;
     font-family:century gothic;
     font-weight: bolder;
+}
+#data_comentario{
+    width:175px;
+    height:25px;
+    margin-top:10px;
+    float:right;
+    text-align: center;
+    background-color:transparent;
+    border:0px;
+    color:#333;
+    font-size:12pt;
+    font-family: century gothic;
 }
