@@ -685,8 +685,7 @@ $corpo = '<!DOCTYPE html>
                                                                                    if(mysql_query($sql)){
                                                                                         $codigo_materia = $resultBusca['ID_ARTIGO'];
                                                                                         $urlArtigoP = $resultBusca['URL_ARTIGO'];
-                                                                                        $codAutor = $resultBusca['AUTOR_ARTIGO'];
-                                                                                        
+                                                                                         $codAutor = $resultBusca['AUTOR_ARTIGO'];
         $backMenu1 = "#8EA50D";
         $backMenu2 = "#8EA50D";
         $backPrincipal = "#8EA50D";
@@ -922,8 +921,7 @@ $corpo = '<!DOCTYPE html>
                                                                                    if(mysql_query($sql)){
                                                                                         $codigo_materia = $resultBusca['ID_ARTIGO'];
                                                                                         $urlArtigoP = $resultBusca['URL_ARTIGO'];
-                                                                                        $codAutor = $resultBusca['AUTOR_ARTIGO'];
-                                                                                        
+                                                                                         $codAutor = $resultBusca['AUTOR_ARTIGO'];
         $backMenu1 = "#F39200";
         $backMenu2 = "#F39200";
         $backPrincipal = "#F39200";

@@ -792,9 +792,8 @@ color:#00989E;
     margin-top: 0px;
     z-index: -5;
     position: absolute;
-    
-
 }
+
 #imgFundo{
     width: 100%;
     height: 450px;
@@ -852,11 +851,6 @@ color:#00989E;
     text-align: center;
 }
 
-#fundoDescricaoMateria{
-    width: 100%;
-    height: auto;
-    float: left;
-}
 
 #descricaoMateria{
     width: 350px;
@@ -865,6 +859,21 @@ color:#00989E;
     margin-left: 10px;
     margin-bottom: 10px;    
     float: left; 
+}
+
+#fundoDescricaoMateria{
+    margin-top: 0px;
+    width: 100%;
+    height: auto;
+    float: left;
+    background-color: #26C8D1;
+}
+
+#fundoDescricaoMateria p{
+    font-family: century gothic;
+    font-size: 12pt;
+    border: none;
+    color: #fff;
 }
 .materiaAside{
     width: 285px;
@@ -944,6 +953,10 @@ color:#00989E;
 
 .editDescricao{
     margin-top: 10px;
+    word-wrap: break-word;
+    width:340px;
+    height:auto;
+    
 }
 
 .editPlataforma{
@@ -953,7 +966,7 @@ color:#00989E;
     margin-top: 10px;
     margin-bottom: 10px;
 }
-#conteudoMateria, #conteudoMateria2{
+#conteudoMateria{
     width: 100%;
     height: auto;
     margin-top: 0px;
@@ -963,27 +976,43 @@ color:#00989E;
 }
 
 .editTituloconteudo{
-    font-size: 14pt;
-    font-family: century gothic;
-    margin-left:50px;
-    margin-top:20px;
-    float:left;
-    width: 700px;
-    height:60px;
-    text-align: left;
+    width: 95%;
+    height: 60px;
+    float: left;
+    text-align: center;
+    margin-top: 0;
 }
-
+.editTituloconteudo p{
+    color: #000;
+    text-align: center;
+    font-family: century gothic;
+    font-size: 10pt;
+    text-transform: uppercase;
+    font-weight: bold;
+}
 .ediConteudoMateria{
-    font-size: 14pt;
-    font-family: century gothic;
-    margin-left:50px;
-    margin-top:100px;
-    width: 700px;
-    float:left;
-    height:100px;
-    text-align: left;
-}
+    width: 95%;
+    min-height: 250px;
+    height:auto;
+    float: left;
+    margin-left: 15px;
+    margin-top: 0;      
+    margin-bottom: 0px;
+    border: none;
+    font-family: arial;
+    font-size: 12pt;
+    color: #000;
+    line-height: 15pt;
+    padding: 5px;
 
+}
+.ediConteudoMateria p{
+    font-family: arial;
+    font-size: 12pt;
+    color: #000;
+    line-height: 15pt;
+    padding: 5px;
+}
 #galeriaImagens{
     width: 100%;
     height: auto;
@@ -1007,20 +1036,48 @@ color:#00989E;
     margin-left:0px;
     margin-top:0px;
 }
-
 #galeriaVideo{
     width: 100%;
-    height: 400px;
-    margin-top: 0;
-    margin-left: 0;
+    min-height: 130px;
     float: left;
+    margin-left: 0;
+    margin-top: 0;      
+    margin-bottom: 10px;
+    border: none;
+    font-family: arial;
+    font-size: 12pt;
+    color: #000;
+    background-color: black;
 }
 
-#galeriaVideo iframe{
-    margin-top: 0px;
-    margin-left: 0px;
-    float: left;
+#video1{
+   width: 370px;
+    height: 245px;
+    float: left;    
+    margin-top: 25px;  
+    margin-left: 20px;
+    margin-bottom: 20px;
+    border: none;
+    font-family: arial;
+    font-size: 12pt;
+    color: #000;
+    background-color: #fff;
 }
+#video2{
+    width: 370px;
+    height: 245px;
+    float: right;    
+    margin-top: 25px;  
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border: none;
+    font-family: arial;
+    font-size: 12pt;
+    color: #000;
+    background-color: #fff;
+}
+
+
 
 #colunista{
     width: 100%;
@@ -1049,16 +1106,16 @@ imgAutor{
     margin-top: 10px;
     margin-left: 10px;
     float: left;
-    background-color: red;
-}
 
-#descricaoColunista p{
-    font-family: arial;
-    font-size: 12pt;
-    color: #000;
+}
+#infoAutor{
+    width: 615px;
+    height: 110px;
     margin-top: 10px;
     margin-left: 10px;
-    margin-right: 10px;   
+    float: left;
+    background-color: white;
+
 }
 
 #aside1{
@@ -1159,13 +1216,13 @@ imgAutor{
     background-color: darkblue;
 }
 .comentarios{
-    width: 840px;
+    width: 795px;
     height: auto;
     float: left;
     background-color: Gainsboro;
 }
 #comentario{
-    width: 100%;
+    width: 795px;
     height: auto;
     float: left;
     margin-top: 30px;
@@ -1177,14 +1234,14 @@ imgAutor{
 }
 #textocomentario{
     width: 600px;
-    height: 60px;
+    height: 40px;
     margin-top: 5px;
-    margin-left: 10px;
-    resize: none;
+    margin-left: 0px;
     float:left;
+    
 }
 .coment{
-    width: 700px;
+    width: 600px;
     height: 130px;
     float: left;
     margin-top: 2px;
@@ -1195,7 +1252,7 @@ imgAutor{
 .botaoEnviar{
     width: 100px;
     height: 30px;
-    margin-top: 80px;
+    margin-top: 51px;
     margin-left: -102px; 
     margin-bottom: 10px;
     font-family: century gothic;
@@ -1206,7 +1263,7 @@ imgAutor{
     cursor: pointer;
 }
 .exibirComent{
-    width: 840px;
+    width: 795px;
     height: auto;
     float: left;
     margin-top:20px;
@@ -1255,4 +1312,16 @@ imgAutor{
     font-size:14pt;
     font-family:century gothic;
     font-weight: bolder;
+}
+#data_comentario{
+    width:175px;
+    height:25px;
+    margin-top:10px;
+    float:right;
+    text-align: center;
+    background-color:transparent;
+    border:0px;
+    color:#333;
+    font-size:12pt;
+    font-family: century gothic;
 }

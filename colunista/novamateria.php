@@ -82,7 +82,7 @@
                     ?>
                 </nav>
                 <article id="conteudo_infos">
-                    <form action="inserirMateriaNova.php" name="formInserirMat" method="post" enctype="multipart/form-data" class="novaMateria" onsubmit="return validaInserir(this);">
+                    <form action="inserirMateriaNova.php" method="post" enctype="multipart/form-data" class="novaMateria" onsubmit="return validaInserir(this);">
                         <div id="categoria">
                             <h1> Selecione Uma Categoria Abaixo: </h1> <br/>
                             <ul class="inputRadios">
