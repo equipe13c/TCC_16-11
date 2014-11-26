@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head> 
-        <title> Multiplayer </title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="shortcut icon" href="imagens/icone001.png" >
@@ -22,6 +21,7 @@
                 document.getElementById("tituloPagina").style.backgroundColor = "#00989E";
             };             
         </script>        
+        <title> Mapa do Site </title>
     </head> 
     <body> 
         <section id="container">
@@ -41,9 +41,9 @@
                 </div>
             </header>
             <article id="article"> 
-                <div id="area1">                    
-                    <div id="mapaSite"> 
-                        <h1> Mapa do Site </h1><br/>                        
+                <div id="area1">         
+                    <h1 id="tituloPagina"> Termos de Uso </h1><br/>
+                    <div id="mapaSite">                         
                         <h2> Está Perdido? </h2><br/>
                         <p> Multiplayer </p>
                         <a href="index.php"> Home </a>                        
@@ -66,7 +66,7 @@
                 </div>
             </article>
             <div id="imgFooter" ondragstart='return false'> 
-                <img src="imagens/ideiaRodape.png" alt=""> 
+                <img src="imagens/imagemRodape.png" alt=""> 
             </div>
             <footer id="footer" ondragstart='return false'>
                 <?php

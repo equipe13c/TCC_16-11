@@ -1,10 +1,10 @@
-<nav id="navReduzido">
+﻿<nav id="navReduzido">
     <a href="index.php"> 
         <div id="imgMiniLogo"></div>
     </a>
     <div id='menuReduzido'>
         <ul>
-            <li><a href='#'>Colunas</a>
+            <li><a href='#'><img src="imagens/iconePlataforma001.png"></a>
                 <ul>
                     <li class='subReduzido'><a href='series.php'>Séries</a></li>
                     <li class='subReduzido'><a href='personagens.php'>Personagens</a></li>
@@ -35,7 +35,7 @@
     <a href="index.php"> <div id="img-logo"></div></a>
     <div id='menu'>
         <ul>
-            <li><a href='#'> Colunas</a>
+            <li><a href='#'> <img src="imagens/iconePlataforma001.png"> Colunas </a>
                 <ul>
                     <li class='sub'><a href='series.php'>Séries</a></li>
                     <li class='sub'><a href='personagens.php'>Personagens</a></li>

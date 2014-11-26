@@ -544,6 +544,7 @@ color: white;
     margin-top:-100px;
     margin-left:0px;
 }
+
 #imgCapasource{
     width: 100%;
     height: 305px;
@@ -551,6 +552,7 @@ color: white;
     margin-top:0px;
     margin-left:0px;
 }
+
 #conteudo{
     width: 80%;
     height: 725px;
@@ -612,16 +614,37 @@ color: white;
 
 }
 #imgCam{
-    width:30px;
-    height:20px;
-    margin-left: 48px;
-    margin-top: 100px;
+    width:110px;
+    height:50px;
+    margin-left: 10px;
+    margin-top: 40px;
     z-index: 2;
     position:absolute;
-    opacity: 0.5;
 }
-.imgCamera:hover{
- 
+
+.mudarImg{
+    font-family: century gothic;
+    font-size: 9pt;
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.mudarImg:hover{
+    text-decoration: underline;
+}
+
+.inputMudarImg{
+    margin-top: -10px;
+    position: absolute;
+    z-index: 4;
+    float: left;
+}
+
+.inputMudarImg + .inputMudarImg{
+    margin-top: 10px;
 }
 
 .username{
@@ -905,7 +928,34 @@ table.bordasimples tr td {
     display: block;
     position: relative;
 }
+#imgFooter{
+    width: 100%;
+    height: 110px;
+    margin-top: 0;
+    margin-left: 0;
+    float: left; 
+}
+
+#imgFooter img{
+    height: 110px;
+    margin-top: 0;
+    margin-left: 30%;
+    margin-right: 30%;
+    float: left;
+}
+
 #footer{
+    width: 100%;
+    height: 270px;
+    margin-top: 0;
+    margin-left: 0;
+    float: left;
+    background-color: #8e8e8e; 
+    text-align: center;
+    color: #005890;
+    font-family: century gothic;
+    font-size: 12pt; 
+}#footer{
     width: 100%;
     height: 270px;
     margin-top: 0;
@@ -1023,6 +1073,7 @@ table.bordasimples tr td {
     line-height: 17pt;    
     border: solid 2px #333;    
 }
+
 .designButton{
     width:200px;
     height:40px;

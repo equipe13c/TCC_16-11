@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head> 
-        <title> Multiplayer </title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="shortcut icon" href="imagens/icone001.png" >
@@ -15,6 +14,7 @@
                 var imgLogo = document.getElementById("img-logo");                
                 imgMiniLogo.innerHTML = '<img src="imagens/logosReduzidos001.png" alt="" id="miniLogo">';
                 imgLogo.innerHTML = '<img src="imagens/logo001.png" alt="" id="logo">';
+                document.getElementById("tituloPagina").style.backgroundColor = "#00989E";
                 document.getElementById("nav").style.backgroundColor = "#00989E";
                 document.getElementById("navReduzido").style.backgroundColor = "#00989E";
                 document.getElementById("logar").style.borderBottom = "solid 5px #00989E"; 
@@ -22,6 +22,7 @@
                 document.getElementById("tituloPagina").style.backgroundColor = "#00989E";
             };             
         </script>        
+        <title> Termos de Uso </title>
     </head>
     <body> 
         <section id="container">
@@ -41,9 +42,9 @@
                 </div>
             </header>
             <article id="article">
-                <div id="area1">                    
-                    <div id="termosUso"> 
-                        <h1> Termos de Uso </h1><br/>
+                <div id="area1">              
+                    <h1 id="tituloPagina"> Termos de Uso </h1><br/>
+                    <div id="termosUso">                         
                         <p> O site MULTIPLAYER funciona como uma plataforma de conteúdo, onde os redatores, designers e outros operadores
                             inserem seus conteúdos sem pagamento de salário ou similar. Todo o conteúdo publicado por um membro pertence a ele,
                             pode ser retirado a qualquer momento pelo mesmo, e este disponibiliza seu conteúdo para o MULTIPLAYER que permite o
@@ -65,7 +66,7 @@
                 </div>
             </article>
             <div id="imgFooter" ondragstart='return false'> 
-                <img src="imagens/ideiaRodape.png" alt=""> 
+                <img src="imagens/imagemRodape.png" alt=""> 
             </div>
             <footer id="footer" ondragstart='return false'>
                 <?php

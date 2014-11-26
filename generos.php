@@ -10,15 +10,16 @@
         <script type="text/javascript" src="js/javascript.js"></script>
         <script type="text/javascript">             
             onload = function(){
-                document.getElementById("nav").style.backgroundColor = "#00989E";
-                document.getElementById("navReduzido").style.backgroundColor = "#00989E";
-                document.getElementById("logar").style.borderBottom = "solid 5px #00989E"; 
-                document.getElementById("botaoLogin").style.backgroundColor = "#00989E";
-                document.getElementById("tituloPagina").style.backgroundColor = "#00989E";
                 var imgMiniLogo = document.getElementById("imgMiniLogo");
                 var imgLogo = document.getElementById("img-logo");                
                 imgMiniLogo.innerHTML = '<img src="imagens/logosReduzidos001.png" alt="" id="miniLogo">';
-                imgLogo.innerHTML = '<img src="imagens/logo001.png" alt="" id="logo">';
+                imgLogo.innerHTML = '<img src="imagens/logo001.png" alt="" id="logo">';                              
+                document.getElementById("tituloPagina").style.backgroundColor = "#00989E";   
+                document.getElementById("tituloAside").style.backgroundColor = "#00989E";   
+                document.getElementById("logar").style.borderBottom = "solid 5px #00989E";
+                document.getElementById("nav").style.backgroundColor = "#00989E";
+                document.getElementById("navReduzido").style.backgroundColor = "#00989E";                
+                document.getElementById("botaoLogin").style.backgroundColor = "#00989E";
             };             
         </script>        
     </head> 
@@ -40,7 +41,8 @@
                 </div>   
             </header>
             <article id="article"> 
-                <div id="materias">                        
+                <div id="corpoConteudo">
+                    <div id="materias">                        
                     <h1 id="tituloPagina"> Gêneros </h1>
                         <div id="materiasPequenas">
                             <a href="#">
@@ -116,9 +118,13 @@
                                 </div>
                             </a>
                         </div> 
-                    </div>    
+                    </div>                 
+                        <div id="paginacaoMateria">
+
+                        </div>
+                    </div>                   
                     <aside id="aside1">
-                        <h1 id="tituloPagina"> Top Notícias </h1>
+                        <h1 id="tituloAside"> Top Notícias </h1>
                         <div id="materiasAside">
                             <?php
                                 buscarMateriasAside2();

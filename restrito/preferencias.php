@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">       
+        <link rel="shortcut icon" href="../imagens/icone001.png" >
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <script type="text/javascript" src="../js/funcoes.js"> </script>
         <script type="text/javascript" src="../js/jquery.js"></script>
@@ -9,7 +10,20 @@
         <script type="text/javascript" src="../js/javascript.js"></script>
         <script type="text/javascript" src="../js/menu2.js"></script>
         <script type="text/javascript" src="../js/restrito.js"></script>
-        <title></title>
+        <script type="text/javascript"> 
+            onload = function(){     
+                var imgMiniLogo = document.getElementById("imgMiniLogo");
+                var imgLogo = document.getElementById("img-logo");                
+                imgMiniLogo.innerHTML = '<img src="../imagens/logosReduzidos001.png" alt="" id="miniLogo">';
+                imgLogo.innerHTML = '<img src="../imagens/logo001.png" alt="" id="logo">';   
+                document.getElementById("nav").style.backgroundColor = "#00989E";
+                document.getElementById("navReduzido").style.backgroundColor = "#00989E";                 
+                document.getElementById("botaoLogin").style.backgroundColor = "#00989E";
+                document.getElementById("logar").style.borderBottom = "solid 5px #00989E";               
+                document.getElementById("tituloPagina").style.backgroundColor = "#00989E"; 
+            };
+        </script>
+        <title> Área Restrita </title>
     </head>
     <body>
         <section id="container">
@@ -104,11 +118,14 @@
                     </form>    
                 </article>                
             </article>
+            <div id="imgFooter" ondragstart="return false">
+                <img src="../imagens/imagemRodape.png">
+            </div>
             <footer id="footer">
                 <?php
-                    include_once '../includes/rodape.php';
+                    include_once '../includes/rodapeAdmin.php';
                 ?>
-            </footer>            
+            </footer>         
         </section>
     </body>
 </html>

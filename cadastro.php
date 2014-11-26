@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head> 
-        <title> Multiplayer </title>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="css/style.css"/>
         <link rel="shortcut icon" href="imagens/icone001.png" >
@@ -12,16 +11,27 @@
         <script type="text/javascript" src="js/funcoes.js"></script>
         <script type="text/javascript">             
             onload = function(){
-                var imgLogo = document.getElementById("img-logo");
                 var imgMiniLogo = document.getElementById("imgMiniLogo");
-                imgLogo.innerHTML = '<img src="imagens/logo001.png" alt="" id="logo">'; 
-                imgMiniLogo.innerHTML = '<img src=".imagens/logosReduzidos001.png" alt="" id="miniLogo">';
+                var imgLogo = document.getElementById("img-logo");                
+                imgMiniLogo.innerHTML = '<img src="imagens/logosReduzidos001.png" alt="" id="miniLogo">';
+                imgLogo.innerHTML = '<img src="imagens/logo001.png" alt="" id="logo">';   
                 document.getElementById("nav").style.backgroundColor = "#00989E";
                 document.getElementById("navReduzido").style.backgroundColor = "#00989E";
                 document.getElementById("logar").style.borderBottom = "solid 5px #00989E"; 
                 document.getElementById("botaoLogin").style.backgroundColor = "#00989E";
                 
-                //Aqui estou verificando se o campo data foi prrenchido  
+               
+
+// Verificar se o formato da data digitada está correto       
+var patternData = /^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/;  
+if(!patternData.test(dataentrada)){  
+    alert("Digite a data no formato Dia/Mês/Ano");  
+    form_registra_entrada.dataentrada.focus();  
+    return false;  
+}
+var patternValidaData = /^(((0[1-9]|[12][0-9]|3[01])([-.\/])(0[13578]|10|12)([-.\/])(\d{4}))|(([0][1-9]|[12][0-9]|30)([-.\/])(0[469]|11)([-.\/])(\d{4}))|((0[1-9]|1[0-9]|2[0-8])([-.\/])(02)([-.\/])(\d{4}))|((29)(\.|-|\/)(02)([-.\/])([02468][048]00))|((29)([-.\/])(02)([-.\/])([13579][26]00))|((29)([-.\/])(02)([-.\/])([0-9][0-9][0][48]))|((29)([-.\/])(02)([-.\/])([0-9][0-9][2468][048]))|((29)([-.\/])(02)([-.\/])([0-9][0-9][13579][26])))$/; 
+ //Aqui estou verificando se o campo data foi prrenchido  
+
 if (dataentrada == ""){  
     alert ('Preencha o campo com a data de entrada');      
     form_registra_entrada.dataentrada.focus();  
@@ -37,8 +47,10 @@ if(!patternData.test(dataentrada)){
 
 var patternValidaData = /^(((0[1-9]|[12][0-9]|3[01])([-.\/])(0[13578]|10|12)([-.\/])(\d{4}))|(([0][1-9]|[12][0-9]|30)([-.\/])(0[469]|11)([-.\/])(\d{4}))|((0[1-9]|1[0-9]|2[0-8])([-.\/])(02)([-.\/])(\d{4}))|((29)(\.|-|\/)(02)([-.\/])([02468][048]00))|((29)([-.\/])(02)([-.\/])([13579][26]00))|((29)([-.\/])(02)([-.\/])([0-9][0-9][0][48]))|((29)([-.\/])(02)([-.\/])([0-9][0-9][2468][048]))|((29)([-.\/])(02)([-.\/])([0-9][0-9][13579][26])))$/; 
                 
+>>>>>>> origin/master
             };  
-        </script>        
+        </script>                
+        <title> Cadastre-se </title>
     </head> 
     <body> 
         <section id="container">
@@ -50,12 +62,7 @@ var patternValidaData = /^(((0[1-9]|[12][0-9]|3[01])([-.\/])(0[13578]|10|12)([-.
             <header id="cabecalho">
                 <?php
                     include_once 'includes/menu.php';
-                ?>
-                <div id="logar">
-                    <?php
-                        VerificaSessao('');
-                    ?>                    
-                </div>
+                ?>                
             </header>
             <article id="article"> 
                 <div id="msgCadastro2">
@@ -124,7 +131,7 @@ var patternValidaData = /^(((0[1-9]|[12][0-9]|3[01])([-.\/])(0[13578]|10|12)([-.
                 </div>                 
             </article>
             <div id="imgFooter" ondragstart='return false'> 
-                <img src="imagens/ideiaRodape.png" alt=""> 
+                <img src="imagens/imagemRodape.png" alt=""> 
             </div>
             <footer id="footer" ondragstart='return false'>
                 <?php

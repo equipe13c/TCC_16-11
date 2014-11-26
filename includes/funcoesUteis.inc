@@ -90,7 +90,7 @@ function VerificaSessao(){
                         <label class="txtLogin"> Usuário: </label><input type="email" name="email"><br/><br/>
                         <label class="txtLogin"> Senha: </label><input type="password" name="senha"><br/><br/>
                         <div id="msglogin"></div>
-                        <input type="submit" name="submit" class="btnLogin" value="Entrar"/><br/><br/>
+                        <input type="submit" name="submit" class="btnLogin" value="Entrar" id="botaoLogin"/><br/><br/>
                         <a class="linksLogin" href="cadastro.php">Cadastre-se </a>
                         <a class="linksLogin" href="esqueceuSenha.php">Esqueceu sua senha? </a>
                         </form>';
