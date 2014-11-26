@@ -549,7 +549,7 @@ function buscarMateriasAside2(){
                                     $sql = "SELECT * FROM IMAGENS_MATERIA WHERE COD_MATERIA_IMAGEM = $codigoImagem";
                                     $resultado = mysql_query($sql);
                                     $artigos2 = mysql_fetch_array($resultado);
-                                    $imagemMini = $artigos2['IMAGEM_MINIATURA'];
+                                    $imagemMini = $artigos2['IMAGEM_PRINCIPAL'];
                                     echo '<div class="materiaAside" >';
                                     echo '<a href="'.$urlArtigo.'"><div class="descricaoMateriaAside">';
                                     echo '<p>'.$tituloArtigo .'</p>';
@@ -580,7 +580,7 @@ function buscarMateriasSlide(){
                                     $sql = "SELECT * FROM IMAGENS_MATERIA WHERE COD_MATERIA_IMAGEM = $codigoImagem";
                                     $resultado = mysql_query($sql);
                                     $artigos2 = mysql_fetch_array($resultado);
-                                    $imagemMini = $artigos2['IMAGEM_MINIATURA'];
+                                    $imagemMini = $artigos2['IMAGEM_PRINCIPAL'];
                                     $imagemCapa = $artigos2['IMAGEM_CAPA'];
                                     echo '<a href="'.$urlArtigo.'">';
                                     echo '<div id="descricaoSlide">';
@@ -612,7 +612,7 @@ function buscarMateriasSlideP(){
                                     $sql = "SELECT * FROM IMAGENS_MATERIA WHERE COD_MATERIA_IMAGEM = $codigoImagem";
                                     $resultado = mysql_query($sql);
                                     $artigos2 = mysql_fetch_array($resultado);
-                                    $imagemMini = $artigos2['IMAGEM_MINIATURA'];
+                                    $imagemMini = $artigos2['IMAGEM_PRINCIPAL'];
                                     $imagemCapa = $artigos2['IMAGEM_CAPA'];
                                     echo '<a href="'.$urlArtigo.'">';
                                     echo '<div id="descricaoSlide">';
@@ -644,7 +644,7 @@ function buscarMateriasSlideX(){
                                     $sql = "SELECT * FROM IMAGENS_MATERIA WHERE COD_MATERIA_IMAGEM = $codigoImagem";
                                     $resultado = mysql_query($sql);
                                     $artigos2 = mysql_fetch_array($resultado);
-                                    $imagemMini = $artigos2['IMAGEM_MINIATURA'];
+                                    $imagemMini = $artigos2['IMAGEM_PRINCIPAL'];
                                     $imagemCapa = $artigos2['IMAGEM_CAPA'];
                                     echo '<a href="'.$urlArtigo.'">';
                                     echo '<div id="descricaoSlide">';
@@ -676,7 +676,7 @@ function buscarMateriasSlidePC(){
                                     $sql = "SELECT * FROM IMAGENS_MATERIA WHERE COD_MATERIA_IMAGEM = $codigoImagem";
                                     $resultado = mysql_query($sql);
                                     $artigos2 = mysql_fetch_array($resultado);
-                                    $imagemMini = $artigos2['IMAGEM_MINIATURA'];
+                                    $imagemMini = $artigos2['IMAGEM_PRINCIPAL'];
                                     $imagemCapa = $artigos2['IMAGEM_CAPA'];
                                     echo '<a href="'.$urlArtigo.'">';
                                     echo '<div id="descricaoSlide">';
@@ -708,7 +708,7 @@ function buscarMateriasSlideN(){
                                     $sql = "SELECT * FROM IMAGENS_MATERIA WHERE COD_MATERIA_IMAGEM = $codigoImagem";
                                     $resultado = mysql_query($sql);
                                     $artigos2 = mysql_fetch_array($resultado);
-                                    $imagemMini = $artigos2['IMAGEM_MINIATURA'];
+                                    $imagemMini = $artigos2['IMAGEM_PRINCIPAL'];
                                     $imagemCapa = $artigos2['IMAGEM_CAPA'];
                                     echo '<a href="'.$urlArtigo.'">';
                                     echo '<div id="descricaoSlide">';
@@ -740,7 +740,7 @@ function buscarMateriasPrincipal(){
                                     $sql = "SELECT * FROM IMAGENS_MATERIA WHERE COD_MATERIA_IMAGEM = $codigoImagem";
                                     $resultado = mysql_query($sql);
                                     $artigos2 = mysql_fetch_array($resultado);
-                                    $imagemMini = $artigos2['IMAGEM_MINIATURA'];
+                                    $imagemMini = $artigos2['IMAGEM_PRINCIPAL'];
                                     $imagemCapa = $artigos2['IMAGEM_CAPA'];
                                     echo '<a href="'.$urlArtigo.'">';
                                     echo '<div class="materiaPrincipal">';
@@ -775,7 +775,7 @@ function buscarMateriasPequenas(){
                                     $sql = "SELECT * FROM IMAGENS_MATERIA WHERE COD_MATERIA_IMAGEM = $codigoImagem";
                                     $resultado = mysql_query($sql);
                                     $artigos2 = mysql_fetch_array($resultado);
-                                    $imagemMini = $artigos2['IMAGEM_MINIATURA'];
+                                    $imagemMini = $artigos2['IMAGEM_PRINCIPAL'];
                                     $imagemCapa = $artigos2['IMAGEM_CAPA'];
                                     echo '<a href="'.$urlArtigo.'">';
                                     echo '<div class="materias">';
