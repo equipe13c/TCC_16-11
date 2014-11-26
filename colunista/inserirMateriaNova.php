@@ -450,6 +450,7 @@ $corpo = '<!DOCTYPE html>
                                                                                    if(mysql_query($sql)){
                                                                                         $codigo_materia = $resultBusca['ID_ARTIGO'];
                                                                                         $urlArtigoP = $resultBusca['URL_ARTIGO'];
+                                                                                        $codAutor = $resultBusca['AUTOR_ARTIGO'];
                                                                                         
         $backMenu1 = "#009FE3";
         $backMenu2 = "#009FE3";
@@ -684,6 +685,7 @@ $corpo = '<!DOCTYPE html>
                                                                                    if(mysql_query($sql)){
                                                                                         $codigo_materia = $resultBusca['ID_ARTIGO'];
                                                                                         $urlArtigoP = $resultBusca['URL_ARTIGO'];
+                                                                                        $codAutor = $resultBusca['AUTOR_ARTIGO'];
                                                                                         
         $backMenu1 = "#8EA50D";
         $backMenu2 = "#8EA50D";
@@ -920,6 +922,7 @@ $corpo = '<!DOCTYPE html>
                                                                                    if(mysql_query($sql)){
                                                                                         $codigo_materia = $resultBusca['ID_ARTIGO'];
                                                                                         $urlArtigoP = $resultBusca['URL_ARTIGO'];
+                                                                                        $codAutor = $resultBusca['AUTOR_ARTIGO'];
                                                                                         
         $backMenu1 = "#F39200";
         $backMenu2 = "#F39200";
