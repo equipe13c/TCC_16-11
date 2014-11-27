@@ -60,14 +60,11 @@
                             $urlImagem = $imagens2['URL_IMAGEM'];
                             echo "<img src='../uploads/$urlImagem' id='imagemUser' alt='imagem'>";
                         ?>
-                        <div id="imgCam" >                       
-                            <p class="mudarImg" type="file"> 
-                                Alterar Imagem 
-                                
-                            <a href="#" class="mudarImg"> 
-                                Retirar Imagem                             
-                                <input type="file" class="inputMudarImg">
-                            </a>
+                        <div id="imgCam" >
+                            <div id="linksMudarImg">
+                                <a href="alterarImg.php" > Alterar Imagem </a>
+                                <a href="removerImg.php" > Remover Imagem </a> 
+                            </div>
                         </div>     
                     </figure>
                     <div id="nomeUser">

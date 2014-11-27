@@ -9,7 +9,20 @@
         <script type="text/javascript" src="../js/javascript.js"></script>
         <script type="text/javascript" src="../js/menu2.js"></script>
         <script type="text/javascript" src="../js/restrito.js"></script>
-        <title></title>
+        <script type="text/javascript"> 
+            onload = function(){     
+                var imgMiniLogo = document.getElementById("imgMiniLogo");
+                var imgLogo = document.getElementById("img-logo");                
+                imgMiniLogo.innerHTML = '<img src="../imagens/logosReduzidos001.png" alt="" id="miniLogo">';
+                imgLogo.innerHTML = '<img src="../imagens/logo001.png" alt="" id="logo">';   
+                document.getElementById("nav").style.backgroundColor = "#00989E";
+                document.getElementById("navReduzido").style.backgroundColor = "#00989E";                 
+                document.getElementById("botaoLogin").style.backgroundColor = "#00989E";
+                document.getElementById("logar").style.borderBottom = "solid 5px #00989E";               
+                document.getElementById("tituloPagina").style.backgroundColor = "#00989E"; 
+            };
+        </script>
+        <title>Área Administrativa</title>
     </head>
     <body>
         <section id="container">
@@ -45,9 +58,12 @@
                             $urlImagem = $imagens2['URL_IMAGEM'];
                             echo "<img src='../uploads/$urlImagem' id='imagemUser' alt='imagem'>";
                         ?>
-                        <figure id="imgCam" >                       
-                            <a onmousedown="mostrarLinks();"  id="camera"></a>
-                        </figure>
+                        <div id="imgCam" >
+                            <div id="linksMudarImg">
+                                <a href="alterarImg.php" > Alterar Imagem </a>
+                                <a href="removerImg.php" > Remover Imagem </a> 
+                            </div>
+                        </div>
                         <nav id="menuImagem" >
 
                         </nav>    

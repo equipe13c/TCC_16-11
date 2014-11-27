@@ -11,20 +11,18 @@
         <script type="text/javascript" src="../js/restrito.js"></script>
         <script type="text/javascript"> 
             onload = function(){     
-                document.getElementById("imgMiniLogo").innerHTML = '<img src="../imagens/logosReduzidos001.png" alt="" id="miniLogo">';
-                var imgLogo = document.getElementById("img-logo");
-                imgLogo.innerHTML = '<img src="../imagens/logo001.png" alt="" id="logo">';
-                document.getElementById("navReduzido").style.backgroundColor = "#00989E";  
-                document.getElementById("nav").style.backgroundColor = "#00989E";              
-                document.getElementById("imgPrincipal").style.backgroundColor = "#009FE3"; 
-                document.getElementById("tituloMateria").style.backgroundColor = "#009FE3";
-                document.getElementById("logar").style.borderBottom = "solid 5px #009FE3"; 
-                document.getElementById("botaoLogin").style.backgroundColor = "#009FE3";
-                document.getElementById("tituloPagina").style.backgroundColor = "#009FE3";            
-
+                var imgMiniLogo = document.getElementById("imgMiniLogo");
+                var imgLogo = document.getElementById("img-logo");                
+                imgMiniLogo.innerHTML = '<img src="../imagens/logosReduzidos001.png" alt="" id="miniLogo">';
+                imgLogo.innerHTML = '<img src="../imagens/logo001.png" alt="" id="logo">';   
+                document.getElementById("nav").style.backgroundColor = "#00989E";
+                document.getElementById("navReduzido").style.backgroundColor = "#00989E";                 
+                document.getElementById("botaoLogin").style.backgroundColor = "#00989E";
+                document.getElementById("logar").style.borderBottom = "solid 5px #00989E";               
+                document.getElementById("tituloPagina").style.backgroundColor = "#00989E"; 
             };
         </script>
-        <title></title>
+        <title>Área Administrativa</title>
     </head>
     <body >
         <section id="container" >
@@ -64,9 +62,12 @@
                             $urlImagem = $imagens2['URL_IMAGEM'];
                             echo "<img src='../uploads/$urlImagem' id='imagemUser' alt='imagem'>";
                         ?>
-                        <figure id="imgCam" >                       
-                            <a onmousedown="mostrarLinks();"  id="camera"></a>
-                        </figure>
+                        <div id="imgCam" >
+                            <div id="linksMudarImg">
+                                <a href="alterarImg.php" > Alterar Imagem </a>
+                                <a href="removerImg.php" > Remover Imagem </a> 
+                            </div>
+                        </div>
                         <nav id="menuImagem" >
 
                         </nav> 

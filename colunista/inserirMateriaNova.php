@@ -218,7 +218,7 @@ $salt = geraSaltAleatorio();
                                                                                                 $logo = "002.png";
                                                                                                 $ano = substr($data, 0, 4);
                                                                                                 $mes = substr($data, 5, 2);
-                                                                                                $dia = substr($data, 6, 2);
+                                                                                                $dia = substr($data, 8, 2);
                                                                                             $corpo = '<!DOCTYPE html>
                                                                                                 
 <html>                                                                                  
