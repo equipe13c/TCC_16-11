@@ -707,7 +707,7 @@ color: white;
     width: 990px;
     height: 300px;
     margin-top: 50px;
-    margin-left: 50px;
+    margin-left: 45px;
     background-color: #00989E;
     font-family: century gothic;
     color: #333
@@ -729,13 +729,7 @@ table.editEmailTable td.icone2{
     width:300px;
     text-align: center;
 }
-table.bordasimples td.info{
-    width:250px;
-    text-align: left;
-    font-family: century gothic;
-    font-size:14pt;
-    font-weight: bold;
-}
+
 
 table.editEmailTable td.info2{
     width:300px;
@@ -837,9 +831,14 @@ table.editEmailTable td.info2, td.campos2, td.icone2, td.salvarEdit{
     font-family: century gothic;
     margin-left:7px;
 }
-.edit a:hover{
-    
+
+.edit input{
+    width: 110px;
+    padding-right: 5px;
+    padding-left: 8px;
 }
+
+
 #menu2{
     width: 780px;
     height: 43px;
@@ -1115,6 +1114,19 @@ table.editEmailTable td.info2, td.campos2, td.icone2, td.salvarEdit{
     font-family: century gothic;
 }
 
+#tabelaPreferencias{
+    width:500px;
+    height:400px;
+    float: left;
+    margin-top: 50px;
+    margin-left: 280px;
+    background-color: ghostwhite;
+    border: solid 5px #00989E;
+    color:white;
+    font-size: 14pt;
+    font-family: century gothic;
+}
+
 .info{
     margin-top: 20px;
     margin-left: 150px;
@@ -1158,8 +1170,9 @@ table.tablealterarCapa td.info{
     text-align: center;
 }
 #imagemCapa{
-    width:200px;
-    height:80px;
+    margin-top: 5px;
+    width: 170px;
+    height: 50px;
 }
 table.tablealterarCapa2{
     margin-left:20px;

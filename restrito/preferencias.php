@@ -85,39 +85,66 @@
                 </nav>
                 <article id="conteudo_infos">
                     <form action="script2.php" method="post" enctype="multipart/form-data">
-                        <table id="tabelaPerfil" class="tablealterarCapa2">
-                            <tr>
-                                <th id="alterar" colspan="3">Alterar Foto de Capa</th>
+                        <table id="tabelaPerfil" class="bordasimples">
+                            <tr class="linhasInfo">
+                                <td class="info">Imagem de Capa</td>
+                                <td class="campos"><?php
+                                    $query = "SELECT * FROM IMAGEM_USUARIO WHERE COD_IMAGEM_USUARIO = ".$_SESSION['code'];
+                                    $result = mysql_query($query);                
+                                    $imagens = mysql_num_rows($result);
+                                    if($imagens === 0){
+                                    $nome = "defaultCapa.jpg";            
+                                    mysql_query("INSERT INTO IMAGEM_USUARIO(URL_IMAGEM_CAPA, COD_IMAGEM_USUARIO)
+                                    VALUES('$nome'".$_SESSION['code'].")");
+                                    }
+                                    else{
+                                    $imagens2 = mysql_fetch_array($result); 
+                                    $urlImagem = $imagens2['URL_IMAGEM_CAPA'];
+                                    echo "<img src='../uploads/$urlImagem' alt='Imagem' id='imagemCapa'>";
+                                    }
+                                ?></td>
+                                <td class="edit">
+                                    <input type="file" name="arquivo" value="Alterar Imagem" class="inputPreferencias"> <br/>
+                                    <input type="submit" name="alterarImg" class="inputPreferencias" value="Alterar Foto">    
+                                </td>                            
                             </tr>
-                            <tr>
-                                <td class="icone"><img src="../imagens/contacts.png" alt="imgNome" id=""> Imagem Capa</td>
-                                <td class="info">                     
-                            <?php
-                                $query = "SELECT * FROM IMAGEM_USUARIO WHERE COD_IMAGEM_USUARIO = ".$_SESSION['code'];
-                                $result = mysql_query($query);                
-                                $imagens = mysql_num_rows($result);
-                                if($imagens === 0){
-                                $nome = "defaultCapa.jpg";            
-                                mysql_query("INSERT INTO IMAGEM_USUARIO(URL_IMAGEM_CAPA, COD_IMAGEM_USUARIO)
-                                VALUES('$nome'".$_SESSION['code'].")");
-                                }
-                                else{
-                                $imagens2 = mysql_fetch_array($result); 
-                                $urlImagem = $imagens2['URL_IMAGEM_CAPA'];
-                                echo "<img src='../uploads/$urlImagem' alt='Imagem' id='imagemCapa'>";
-                                }
-                            ?>
-                                </td>
+                            <tr class="linhasInfo">
+                                <td class="info">Jogos Preferidos</td>
+                                <td class="campos"><input type="text" class="txtInfo" disabled="disabled"  id="nomeInfo" name="nomeUser"  value="<?php  buscarDados('nome'); ?>"></td>
+                                <td class="edit" id="salvarName"><img src="../imagens/edit.png" alt="editImage" class="editImage"><a onclick="edit('nome')" href="#">Editar</a></td>                                
                             </tr>
-                            <tr>
-                                <td class="icone"><img src="../imagens/picture.png" alt="imgNome" id=""></td>
-                                <td class="info"><input type="file" name="arquivo" value="Alterar Imagem"></td>
+                            <tr class="linhasInfo">
+                                <td class="info">Plataformas Preferidas</td>
+                                <td class="campos"><input type="text" class="txtInfo" disabled="disabled"  id="nomeInfo" name="nomeUser"  value="<?php  buscarDados('nome'); ?>"></td>
+                                <td class="edit" id="salvarName"><img src="../imagens/edit.png" alt="editImage" class="editImage"><a onclick="edit('nome')" href="#">Editar</a></td>                            
                             </tr>
-                            <tr>
-                                <td class="icone"><img src="../imagens/checkmark.png" alt="imgNome" id=""></td>
-                                <td class="info"><input type="submit" name="alterarImg" class="bsalvar" value="Alterar Foto"></td>
+                            <tr class="linhasInfo">
+                                <td class="info">Apelido</td>
+                                <td class="campos"><input type="text" class="txtInfo" disabled="disabled"  id="apelidoInfo" name="apelidoUser" value="<?php buscarDados('apelido'); ?>"></td>
+                                <td class="edit" id="salvarApel"><img src="../imagens/edit.png" alt="editImage" class="editImage"><a onclick="edit('apelido')" href="#">Editar</a></td>                            
+                            </tr>
+                            <tr class="linhasInfo">
+                                <td class="info">Data de nascimento</td>
+                                <td class="campos"><input type="text" class="txtInfo" disabled="disabled"  id="dataInfo"  value="<?php buscarDados('data'); ?>"></td>
+                                <td class="edit"></td>                            
+                            </tr>
+                            <tr class="linhasInfo">
+                                <td class="info">Estado</td>
+                                <td class="campos"><input type="text" class="txtInfo" disabled="disabled" id="cidadeInfo" name="estadoUser" value="<?php buscarDados('estado'); ?>"></td>
+                                <td class="edit" id="salvarCid"><img src="../imagens/edit.png" alt="editImage" class="editImage"><a onclick="edit('estado')" href="#">Editar</a></td>                            
                             </tr>
                         </table>
+                        <div id="">                                      
+                            <div class="alterar">                     
+                                
+                            </div>                                                         
+                            <div class="infoInputs">
+                                                     
+                            </div>                                
+                            <div class="infoInputs">
+                                                            
+                            </div>
+                        </div>
                     </form>    
                 </article>                
             </article>
