@@ -397,7 +397,7 @@ INSERT INTO `usuario` (`COD_USUARIO`,`NOME_USUARIO`,`APELIDO_USUARIO`,`EMAIL_USU
  (34,'josimar','josi','josimar3@gmail.com','$2a$08$MTQwMTA5NTY0ODU0NWE4NuTK2mkeghWnBsGMLIgmYR1gte/Zo18im',2,'0000-00-00',NULL,NULL,NULL),
  (35,'josimar','josi','josimar4@gmail.com','$2a$08$MTE1OTcwMTQ1NTQ1YTg3Zebe3XcThAuzVYrZxGomZAjsOU8MKAKMK',2,'0000-00-00',NULL,NULL,NULL),
  (36,'JONATHAN ALVES DE LIMA','Jow','jonathan.webitb2@hotmail.com','$2a$08$MTY3MDY4OTYyODU0NjkzOOi8vpFE944LbpG.bjJigPJdOYPLJV03m',3,'0000-00-00',NULL,NULL,NULL),
- (44,'Joao Gabriel','Joao Gay','joaozinho@gmail.com','123456789',1,'2014-11-27',NULL,'SP','I\'am Fucked');
+ (44,'Joao Gabriel','Joao Gay','joaozinho@gmail.com','$2a$08$MTcxOTAwNjA2NzU0NWE1O.LQBhx7eZb3nryfzfJaa50cyDklklb7.',1,'2014-11-27',NULL,'SP','I\'am Fucked');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 
 
