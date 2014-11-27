@@ -2088,14 +2088,17 @@ margin-left: 350px;
 }
 #mostrarMaterias{
     width:100%;
-    min-height: 100px;
-    height:auto;
+    height:800px;
     float:left;
 }
 #mostrar_materias{
     width:100%;
-    height:auto;
+    height:800px;
     float:left;
     border:0px;
-    min-height: 100px;
+}
+.tabelaMateria{
+    
+    
+    
 }
