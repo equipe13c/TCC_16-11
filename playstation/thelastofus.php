@@ -1,7 +1,8 @@
 <!DOCTYPE html>
+                                                                                                
 <html>                                                                                  
     <head> 
-        <title> TheSims4</title>
+        <title>the last of us - Remastered</title>
         <meta charset="UTF-8">
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
         <link rel="stylesheet" type="text/css" href="css/style.css"/>
@@ -19,17 +20,17 @@
             onload = function(){
                 var imgMiniLogo = document.getElementById("imgMiniLogo");
                 var imgLogo = document.getElementById("img-logo"); 
-                imgMiniLogo.innerHTML = "<img src='../imagens/logosReduzidos006.png' alt='' id='miniLogo'>";
-                imgLogo.innerHTML = "<img src='../imagens/logo006.png' alt='' id='logo'>";  
-                document.getElementById("nav").style.backgroundColor = "#F39200";                
-                document.getElementById("imgPrincipal").style.backgroundColor = "#F39200"; 
-                document.getElementById("tituloMateria").style.backgroundColor = "#F39200";
-                document.getElementById("navReduzido").style.backgroundColor = "#F39200";
-                document.getElementById("fundoDescricaoMateria").style.backgroundColor = "#F7D47F";
-                document.getElementById("descricaoColunista").style.backgroundColor = "#F39200";  
-                document.getElementById("logar").style.borderBottom = "solid 5px #F39200"; 
-                document.getElementById("botaoLogin").style.backgroundColor = "#F39200";
-                document.getElementById("tituloPagina").style.backgroundColor = "#F39200";            
+                imgMiniLogo.innerHTML = "<img src='../imagens/logosReduzidos002.png' alt='' id='miniLogo'>";
+                imgLogo.innerHTML = "<img src='../imagens/logo002.png' alt='' id='logo'>";  
+                document.getElementById("nav").style.backgroundColor = "#9C1006";                
+                document.getElementById("imgPrincipal").style.backgroundColor = "#9C1006"; 
+                document.getElementById("tituloMateria").style.backgroundColor = "#9C1006";
+                document.getElementById("navReduzido").style.backgroundColor = "#9C1006";
+                document.getElementById("fundoDescricaoMateria").style.backgroundColor = "#FCC6C0";
+                document.getElementById("descricaoColunista").style.backgroundColor = "#9C1006";  
+                document.getElementById("logar").style.borderBottom = "solid 5px #9C1006"; 
+                document.getElementById("botaoLogin").style.backgroundColor = "#9C1006";
+                document.getElementById("tituloPagina").style.backgroundColor = "#9C1006";           
                 var imgMiniLogo = document.getElementById("imgMiniLogo");
             };
         </script>       
@@ -41,7 +42,7 @@
                 include_once '../conexao/conecta.inc';
                 include_once '../includes/funcoesUteis.inc';
                 session_start();
-                acrescentarAcessos('1');
+                acrescentarAcessos('2');
             ?>
             <header id="cabecalho">
                 <?php
@@ -49,7 +50,7 @@
                 ?>
             <figure id="imgCapa">
                 <?php
-                infosImagensMateria('capa','1');
+                infosImagensMateria('capa','2');
                 ?>                
             </figure>
                 <div id="logar">
@@ -61,13 +62,13 @@
             <article id="conteudo">
                 <figure id="imgPrincipal">
                     <?php
-                        infosImagensMateria('imgPrincipal','1');
+                        infosImagensMateria('imgPrincipal','2');
                     ?>
                 </figure>
                 <div id="tituloMateria">
-                    <div id="caixaTitulo"><h1 class="editTitulo"> Zelda U
+                    <div id="caixaTitulo"><h1 class="editTitulo"> 
                     <?php
-                        infoArtigos('titulo','pc/thesims4.php');
+                        infoArtigos('titulo','playstation/thelastofus.php');
                     ?>
                      </h1></div>
                 </div>
@@ -75,19 +76,19 @@
                     <div id="descricaoMateria">
                         <p class="editDescricao">
                         <?php
-                            infoArtigos('descricao','pc/thesims4.php');
+                            infoArtigos('descricao','playstation/thelastofus.php');
                         ?>
                         </p>
                         <p class="editPlataforma">
                         <?php
                             echo "<b>Desenvolvedora:</b>    ";
-                            infoArtigos('plataforma','pc/thesims4.php');
+                            infoArtigos('plataforma','playstation/thelastofus.php');
                         ?>
                         </p>
                         <p class="editDatalancamento">
                         <?php
                             echo "<b>Data de Lançamento:</b>    ";
-                            infoArtigos('dataLancamento','pc/thesims4.php');
+                            infoArtigos('dataLancamento','playstation/thelastofus.php');
                         ?>
                         </p>
                     </div>
@@ -97,20 +98,20 @@
                         <div class="editTituloconteudo">
                             <p>
                                 <?php
-                                    infoArtigos('tituloConteudo','pc/thesims4.php');
+                                    infoArtigos('tituloConteudo','playstation/thelastofus.php');
                                 ?>
                             </p>
                             <div id="nome_autor">
                                 <b>POR</b>
                                 <?php
-                                   infoArtigos('nomeAutor','pc/thesims4.php');  
+                                   infoArtigos('nomeAutor','playstation/thelastofus.php');  
                                 ?>
-                               <b>EM</b> 20/12/1900
+                               <b>EM</b> 1-/11/2014 
                             </div>
                         </div>                        
                         <p>
                             <?php
-                                infoArtigos('conteudoMateria','pc/thesims4.php');
+                                infoArtigos('conteudoMateria','playstation/thelastofus.php');
                             ?>
                         </p>
                         </div>
@@ -118,24 +119,24 @@
                 <div id="galeriaImagens">
                     <figure class="imagensGaleria" >
                         <?php
-                            infosImagensMateria('imagemgaleria1','1');
+                            infosImagensMateria('imagemgaleria1','2');
                         ?>
                     </figure>
                     <figure class="imagensGaleria">
                         <?php
-                            infosImagensMateria('imagemgaleria2','1');
+                            infosImagensMateria('imagemgaleria2','2');
                         ?>
                     </figure>
                     <figure class="imagensGaleria" >
                         <?php
-                            infosImagensMateria('imagemgaleria3','1');
+                            infosImagensMateria('imagemgaleria3','2');
                         ?>
                     </figure>
                     	<script src="../popupgaleria/vlb_engine/vlbdata1.js" type="text/javascript"></script>
                 </div>
                 <div id="galeriaVideo">
-                    <?php buscarUrlVideo('1','urlVideo1');
-                    buscarUrlVideo('1','urlVideo2');
+                    <?php buscarUrlVideo('2','urlVideo1');
+                    buscarUrlVideo('2','urlVideo2');
                     ?>
                 </div>
                 <div id="colunista">     
@@ -146,7 +147,7 @@
                     </figure>
                     <div id="descricaoColunista"> 
                         <div id="infoAutor">
-                            
+                             <?phpbuscarDescAutor('29');?>
                         </div>
                     </div>
                 </div>
@@ -159,15 +160,15 @@
                     </figure>                                            
                     <div class="coment">
                         <form name='frmComentar' method='post' action='../comentar.php' id='enviar'>
-                        <input type="text" id='textocomentario' name='comentario'>                    
-                        <input type="hidden" name='codigoArtigo' value='1' > 
-                        <input type="submit" name='btnComentar' value="Publicar" class="botaoEnviar" > 
+                        <input type="text" id="textocomentario" name="comentario">                    
+                        <input type="hidden" name="codigoArtigo" value="2" > 
+                        <input type="submit" name="btnComentar" value="Publicar" class="botaoEnviar" > 
                         </form>
                     </div>   
                     </div>
                     <div class='exibirComent'>
                         <?php
-                            listarComentarios('1');
+                            listarComentarios('2');
                         ?>
                     </div>
                 </div>
@@ -184,8 +185,8 @@
                     <p> Voltar ao topo </p>
                 </a>                    
             </div>
-            <div id="imgFooter" ondragstart='return false'> 
-                <img src="../imagens/ideiaRodape.png" alt=""> 
+            <div id='imgFooter' ondragstart='return false'> 
+                <img src='../imagens/ideiaRodape.png' alt=''> 
             </div>
             <footer id="footer">
                 <?php

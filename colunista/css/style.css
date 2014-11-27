@@ -1499,7 +1499,7 @@ table.tableInserirMateria td.campos{
 .inputRadios {
   list-style: none;
   margin-top: 0px;
-  margin-left: 120px;
+  margin-left: 50px;
   padding: 0;
 }
 
@@ -1554,6 +1554,10 @@ table.tableInserirMateria td.campos{
     background-image: url(../../imagens/radioXbox.jpg);
     background-size: 120px 70px;
 }
+.radioNostalgia label {
+    background-image: url(../../imagens/radioNostalgia.jpg);
+    background-size: 120px 70px;
+}
 .radioMulti label {
     background-image: url(../../imagens/radioMulti.jpg);
     background-size: 120px 70px;
@@ -1603,6 +1607,13 @@ table.tableInserirMateria td.campos{
   outline: 4px solid #00989E;
   background-image: url(../../imagens/radioMultiover.jpg);
 }
+.radioNostalgia input:focus + label {
+  outline: 2px dotted #009FE3;
+}
+.radioNostalgia input:checked + label {
+  outline: 4px solid #009FE3;
+  background-image: url(../../imagens/radioNostalgia.jpg);
+}
 .inputRadios input:checked + label:after {  
   bottom: -10px;
   content: "";
@@ -1647,6 +1658,14 @@ table.tableInserirMateria td.campos{
     background-position: 1px 0px; 
   }
     .radioMulti input:checked + label:after {
+    bottom: 0;
+    right: 0;
+    background-color: #00989E;
+    background-image: url(../../imagens/ok.png);
+    background-size: 20px 20px;
+    background-position: 1px 0px; 
+  }
+    .radioNostalgia input:checked + label:after {
     bottom: 0;
     right: 0;
     background-color: #00989E;
