@@ -33,12 +33,12 @@ echo '<form action="inserirMateriaNova.php" method="post" enctype="multipart/for
                         <figure id="imgCapaMateria">
                             <p> Selecione uma imagem de capa com dimensões 400x250 para esta área.</p>
                             <img id="preview_imageCapa" alt="" src="../uploads/'.$totalResult2['IMAGEM_CAPA'].'">
-                            <input type="file" name="imagemCapa" class="imgCapaMateria" value="../uploads/'.$totalResult2['IMAGEM_CAPA'].'" onchange="preview(this,'."'capa'".');" multiple>
+                            <input type="file" name="imagemCapa" class="imgCapaMateria"  onchange="preview(this,'."'capa'".');" multiple>
                         </figure>
                         <figure id="imgPrincipal">                            
                             <p> Selecione uma imagem com dimensões 400x250 para esta área.</p>
                             <img id="preview_image" alt="" src="../uploads/'.$totalResult2['IMAGEM_PRINCIPAL'].'">
-                            <input type="file" name="imagemPrincipal" class="imgPrincipal" id="files" value="../uploads/'.$totalResult2['IMAGEM_PRINCIPAL'].'" onchange="preview(this,'."'principal'".');" multiple>
+                            <input type="file" name="imagemPrincipal" class="imgPrincipal" id="files"  onchange="preview(this,'."'principal'".');" multiple>
                         </figure>
                         <div id="tituloMateria">
                             <input type="text" name="titulo_conteudo" class="textos_materia" id="titulo_materia" value="'.$totalResult['TITULO_ARTIGO'].'">
@@ -112,7 +112,7 @@ echo '<form action="inserirMateriaNova.php" method="post" enctype="multipart/for
                             <figure class="imagensGaleria">
                                 <p> imagem 255x150</p>
                                 <img id="preview_imageGaleria2" alt="" src="../uploads/'.$totalResult2['IMAGEM_GALERIA2'].'">
-                                <input type="file" name="imagemGaleria2" value="../uploads/'.$totalResult2['IMAGEM_GALERIA'].'" class="imgGaleria1" onchange="preview(this,'."'galeria2'".');" multiple>
+                                <input type="file" name="imagemGaleria2"  class="imgGaleria1" onchange="preview(this,'."'galeria2'".');" multiple>
                             </figure>
                             <figure class="imagensGaleria" >
                                 <p> imagem 255x150</p>
