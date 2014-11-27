@@ -58,9 +58,10 @@ while($artigos = mysql_fetch_array($limite))
                 $mes = substr($artigos['DATA_ARTIGO'], 5, 2);
                 $dia = substr($artigos['DATA_ARTIGO'], 8, 2);                                                      
                 $urlArtigo = $artigos['URL_ARTIGO'];
-    echo "<form id='usuariosA' action='desativarUsuario.php' method='post'>";
+    echo "<form id='usuariosA' action='opcoes.php' method='post'>";
         echo "<tr class='linhasInfo'>";
         echo "<td class='linhasInfos'><img src='../uploads/$urlImagem' id='imagem_usuario_listagem' alt='imagem'></td>";
+        echo "<td><input type='hidden' readonly='readonly' class='txtInfo3' size='35'  id='usuarioTable' name='codigo' value='" . $artigos['ID_ARTIGO'] . "'></td>";
         echo "<td><input type='text' readonly='readonly' class='txtInfo3' size='25'  id='usuarioTable' name='titulo' value='" . $artigos['TITULO_ARTIGO'] . "'></td>";
         echo "<td><input type='text' readonly='readonly' class='txtInfo3' size='25'  id='usuarioTable' name='autor' value='" . $autorArtigo . "'></td>";
         echo "<td><input type='hidden' readonly='readonly' class='txtInfo3' size='35'  id='usuarioTable' name='data' value='" . $artigos['DATA_ARTIGO'] . "'></td>";
