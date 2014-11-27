@@ -15,6 +15,7 @@ $urlArtigo = $_POST['url_materia'];
 $descricaoArtigo = $_POST['descricao'];
 $dataLancamento = $_POST['data_lancamento'];
 $conteudoArtigo = $_POST['conteudo'];
+$plataforma = $_POST['plataforma'];
 $urlVideo = $_POST['urlVideo1'];
 $urlVideo = str_replace('watch?v=','embed/',$urlVideo);
 $urlVideo2 = $_POST['urlVideo2'];
@@ -25,13 +26,11 @@ $_UP['pasta'] = "../uploads/";
 $_UP['tamanho'] = 1024 * 1024 * 2; //2MB;
 $_UP['extensao'] = array('jpg','png','gif');
 $_UP['renomeia'] = true;
-
 $_UP['erros'][0] = "Não Houve Erros";
 $_UP['erros'][1] = "O Arquivo é Maior do que o límite do php";
 $_UP['erros'][2] = "Tamanho da imagem ultrapassou o límite exigido";
 $_UP['erros'][3] = "Upload feito parcialmente";
 $_UP['erros'][4] = "Nao teve upload";
-
 if($_FILES['imagemCapa']['error'] != 0){
     die("Não foi Possível alterar a imagem Devido a: <br/>". $_UP['erros'][$_FILES['imagemCapa']['erros']]);
     exit;
@@ -61,7 +60,6 @@ $salt = geraSaltAleatorio();
                         $_UP['tamanho'] = 1024 * 1024 * 2; //2MB;
                         $_UP['extensao'] = array('jpg','png','gif');
                         $_UP['renomeia'] = true;
-
                         $_UP['erros'][0] = "Não Houve Erros";
                         $_UP['erros'][1] = "O Arquivo é Maior do que o límite do php";
                         $_UP['erros'][2] = "Tamanho da imagem ultrapassou o límite exigido";
@@ -77,7 +75,6 @@ $salt = geraSaltAleatorio();
                         if(array($extensao, $_UP['extensao'])=== false){
                             echo "Por Favor Escolha apenas imagens JPG, PNG e GIF";
                         }
-
                         else if($_UP['tamanho'] < $_FILES['imagemPrincipal']['size']){
                             echo "Arquivo muito grande, Envie um arquivo1 de até 2MB";
                         }
@@ -95,7 +92,6 @@ $salt = geraSaltAleatorio();
                                     $_UP['tamanho'] = 1024 * 1024 * 2; //2MB;
                                     $_UP['extensao'] = array('jpg','png','gif');
                                     $_UP['renomeia'] = true;
-
                                     $_UP['erros'][0] = "Não Houve Erros";
                                     $_UP['erros'][1] = "O Arquivo é Maior do que o límite do php";
                                     $_UP['erros'][2] = "Tamanho da imagem ultrapassou o límite exigido";
@@ -111,7 +107,6 @@ $salt = geraSaltAleatorio();
                                     if(array($extensao, $_UP['extensao'])=== false){
                                         echo "Por Favor Escolha apenas imagens JPG, PNG e GIF";
                                     }
-
                                     else if($_UP['tamanho'] < $_FILES['imagemGaleria']['size']){
                                         echo "Arquivo muito grande, Envie um arquivo1 de até 2MB";
                                     }
@@ -129,7 +124,6 @@ $salt = geraSaltAleatorio();
                                                 $_UP['tamanho'] = 1024 * 1024 * 2; //2MB;
                                                 $_UP['extensao'] = array('jpg','png','gif');
                                                 $_UP['renomeia'] = true;
-
                                                 $_UP['erros'][0] = "Não Houve Erros";
                                                 $_UP['erros'][1] = "O Arquivo é Maior do que o límite do php";
                                                 $_UP['erros'][2] = "Tamanho da imagem ultrapassou o límite exigido";
@@ -145,7 +139,6 @@ $salt = geraSaltAleatorio();
                                                 if(array($extensao, $_UP['extensao'])=== false){
                                                     echo "Por Favor Escolha apenas imagens JPG, PNG e GIF";
                                                 }
-
                                                 else if($_UP['tamanho'] < $_FILES['imagemGaleria2']['size']){
                                                     echo "Arquivo muito grande, Envie um arquivo1 de até 2MB";
                                                 }
@@ -163,7 +156,6 @@ $salt = geraSaltAleatorio();
                                                             $_UP['tamanho'] = 1024 * 1024 * 2; //2MB;
                                                             $_UP['extensao'] = array('jpg','png','gif');
                                                             $_UP['renomeia'] = true;
-
                                                             $_UP['erros'][0] = "Não Houve Erros";
                                                             $_UP['erros'][1] = "O Arquivo é Maior do que o límite do php";
                                                             $_UP['erros'][2] = "Tamanho da imagem ultrapassou o límite exigido";
@@ -179,7 +171,6 @@ $salt = geraSaltAleatorio();
                                                             if(array($extensao, $_UP['extensao'])=== false){
                                                                 echo "Por Favor Escolha apenas imagens JPG, PNG e GIF";
                                                             }
-
                                                             else if($_UP['tamanho'] < $_FILES['imagemGaleria3']['size']){
                                                                 echo "Arquivo muito grande, Envie um arquivo1 de até 2MB";
                                                             }
@@ -196,6 +187,10 @@ $salt = geraSaltAleatorio();
                                                                         
                                                                         for( $i=0; $i<sizeof( $categoria ); $i++ ){
                                                                            $categoriaArtigo = $categoria[$i];
+                                                                           if($categoriaArtigo == ""){
+  
+                                                                            echo "<script> javascript:history.go(-1)</script>";
+                                                                           }
                                                                            if($categoriaArtigo == "1"){
                                                                                $sql = "INSERT INTO ARTIGO(TITULO_ARTIGO, CATEGORIA_ARTIGO,DATA_ARTIGO, HORA_ARTIGO, AUTOR_ARTIGO, URL_ARTIGO, DESCRICAO_ARTIGO, DATA_LANCAMENTO, CONTEUDO_ARTIGO, TITULO_CONTEUDO_ARTIGO, PLATAFORMA_ARTIGO, URLVIDEO1, URLVIDEO2)
                                                                                 VALUES('$tituloArtigo',1,'$data','$hora',$autor,'playstation/$urlArtigo.php','$descricaoArtigo','$dataLancamento', '$conteudoArtigo', '$subtitulo','$plataforma', '$urlVideo', '$urlVideo2')";
@@ -444,6 +439,7 @@ $corpo = '<!DOCTYPE html>
                                                                                    if(mysql_query($sql)){
                                                                                         $codigo_materia = $resultBusca['ID_ARTIGO'];
                                                                                         $urlArtigoP = $resultBusca['URL_ARTIGO'];
+                                                                                        $codAutor = $resultBusca['AUTOR_ARTIGO'];
                                                                                         
         $backMenu1 = "#009FE3";
         $backMenu2 = "#009FE3";
@@ -678,6 +674,7 @@ $corpo = '<!DOCTYPE html>
                                                                                    if(mysql_query($sql)){
                                                                                         $codigo_materia = $resultBusca['ID_ARTIGO'];
                                                                                         $urlArtigoP = $resultBusca['URL_ARTIGO'];
+                                                                                        $codAutor = $resultBusca['AUTOR_ARTIGO'];
                                                                                         
         $backMenu1 = "#8EA50D";
         $backMenu2 = "#8EA50D";
@@ -914,6 +911,7 @@ $corpo = '<!DOCTYPE html>
                                                                                    if(mysql_query($sql)){
                                                                                         $codigo_materia = $resultBusca['ID_ARTIGO'];
                                                                                         $urlArtigoP = $resultBusca['URL_ARTIGO'];
+                                                                                        $codAutor = $resultBusca['AUTOR_ARTIGO'];
                                                                                         
         $backMenu1 = "#F39200";
         $backMenu2 = "#F39200";
@@ -1140,7 +1138,6 @@ $corpo = '<!DOCTYPE html>
                                                                                 break;
                                                                             }
                                                                         }
-
                                                                     // FIM UPLOAD IMAGEM3_GALERIA
                                                                 }
                                                                 else{
@@ -1167,5 +1164,3 @@ $corpo = '<!DOCTYPE html>
                 }
             }
 //FIM UPLOAD IMAGEM_CAPA
-
-
