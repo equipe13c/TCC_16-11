@@ -80,46 +80,49 @@
                     ?>
                 </nav>
                 <article id="conteudo_infos">
-                    <form action="update.php" method="post">
-                        <table id="tabelaPerfil" class="bordasimples">
-                            <tr class="linhasInfo">
-                                <td class="icone"><img src="../imagens/mail.png" alt="imgMail" id="mailImg"></td>
-                                <td class="info">Endereço de e-mail</td>
-                                <td class="campos"><input type="text" class="txtInfo" disabled="disabled" id="emailInfo"   value="<?php echo $_SESSION['email']; ?>"></td>
-                                <td class="edit"><img src="../imagens/edit.png" alt="editImage" class="editImage"><a onclick="edit('email', '<?php echo $_SESSION['email']; ?>')" href="#">Editar</a></td>                            
-                            </tr>
-                            <tr class="linhasInfo">
-                                <td class="icone"><img src="../imagens/lock.png" alt="imgCidade" id="senhaImg"></td>
-                                <td class="info">Senha</td>
-                                <td class="campos"><input type="password" class="txtInfo" disabled="disabled" id="senhaInfo" name="senhaUser" value="default"></td>
-                                <td class="edit" id="salvarSenha"><img src="../imagens/edit.png" alt="editImage" class="editImage"><a href="alterarSenha.php">Editar</a></td>                            
-                            </tr>
-                            <tr class="linhasInfo">
-                                <td class="icone"><img src="../imagens/nome.png" alt="imgNome" id="nomeImg"></td>
-                                <td class="info">Nome completo</td>
-                                <td class="campos"><input type="text" class="txtInfo" disabled="disabled"  id="nomeInfo" name="nomeUser"  value="<?php  buscarDados('nome'); ?>"></td>
-                                <td class="edit" id="salvarName"><img src="../imagens/edit.png" alt="editImage" class="editImage"><a onclick="edit('nome')" href="#">Editar</a></td>                            
-                            </tr>
-                            <tr class="linhasInfo">
-                                <td class="icone"><img src="../imagens/nome.png" alt="imgNome" id="nomeImg"></td>
-                                <td class="info">Apelido</td>
-                                <td class="campos"><input type="text" class="txtInfo" disabled="disabled"  id="apelidoInfo" name="apelidoUser" value="<?php buscarDados('apelido'); ?>"></td>
-                                <td class="edit" id="salvarApel"><img src="../imagens/edit.png" alt="editImage" class="editImage"><a onclick="edit('apelido')" href="#">Editar</a></td>                            
-                            </tr>
-                            <tr class="linhasInfo">
-                                <td class="icone"><img src="../imagens/data.png" alt="imgData" id="dataImg"></td>
-                                <td class="info">Data de nascimento</td>
-                                <td class="campos"><input type="text" class="txtInfo" disabled="disabled"  id="dataInfo"  value="<?php buscarDados('data'); ?>"></td>
-                                <td class="edit"></td>                            
-                            </tr>
-                            <tr class="linhasInfo">
-                                <td class="icone"><img src="../imagens/cidade.png" alt="imgCidade" id="cidadeImg"></td>
-                                <td class="info">Estado</td>
-                                <td class="campos"><input type="text" class="txtInfo" disabled="disabled" id="cidadeInfo" name="estadoUser" value="<?php buscarDados('estado'); ?>"></td>
-                                <td class="edit" id="salvarCid"><img src="../imagens/edit.png" alt="editImage" class="editImage"><a onclick="edit('cidade')" href="#">Editar</a></td>                            
-                            </tr>
-                        </table>
-                    </form>    
+                             <form action="inserirMateriaNova.php" method="post" enctype="multipart/form-data" class="novaMateria" onsubmit="return validaInserir(this);">
+                        <div id="categoria">
+                            <h1> Selecione um tipo de Matéria: </h1> <br/>
+                            <ul class="inputRadios">
+                            <li class="inputRadio radioNintendo">
+                              <input name="categoria[]"  value="2" type="radio" id="radioNintendo" onclick="ocultar('categorias','nintendo');">
+                              <label for="radioNintendo">Nintendo</label><br/><br/><br/>
+                              <p> Nintendo </p>
+                            </li>
+
+                            <li class="inputRadio radioPc">
+                              <input name="categoria[]"  value="4" type="radio" id="radioPc" onclick="ocultar('categorias','pc');">
+                              <label for="radioPc">PC</label><br/><br/><br/>
+                              <p> PC </p>
+                            </li>
+
+                            <li class="inputRadio radioPlaystation">
+                              <input name="categoria[]"  value="1" type="radio" id="radioPlaystation" onclick="ocultar('categorias','ps');">
+                              <label for="radioPlaystation">Playstation</label><br/><br/><br/>
+                              <p> Playstation </p>
+                            </li>
+
+                            <li class="inputRadio radioXbox">
+                              <input name="categoria[]"  value="3" type="radio" id="radioXbox" onclick="ocultar('categorias','xbox');">    
+                              <label for="radioXbox">Xbox</label><br/><br/><br/>
+                              <p> Xbox </p>
+                            </li>
+                            <li class="inputRadio radioNostalgia">
+                              <input name="categoria[]"  value="0" type="radio" id="radioNostalgia" onclick="ocultar('categorias','nostalgia');">    
+                              <label for="radioNostalgia">Xbox</label><br/><br/><br/>
+                              <p>  </p>
+                            </li>
+                            <li class="inputRadio radioMulti">
+                              <input name="categoria[]"  value="0" type="radio" id="radioMulti" onclick="mostraOculta2('radioMulti','categorias','imgPrincipal');">    
+                              <label for="radioMulti">Xbox</label><br/><br/><br/>
+                              <p> Multiplataforma </p>
+                            </li>
+                          </ul> 
+                        </div>
+                        <div id="mostrarMaterias" style="display:none">
+                                <iframe width="425" id="iframeVideo2" height="300" src="" frameborder="0" allowfullscreen></iframe>     
+                        </div>
+                       </form>
                 </article>                
             </article>
             <div id="imgFooter" ondragstart="return false">

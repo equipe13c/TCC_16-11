@@ -24,7 +24,7 @@ $urlVideo2 = str_replace('watch?v=','embed/',$urlVideo2);
 $subtitulo = $_POST['subtitulo'];
 // INICIO UPLOAD IMAGEM_CAPA
 $_UP['pasta'] = "../uploads/";
-$_UP['tamanho'] = 1024 * 1024 * 2; //2MB;
+$_UP['tamanho'] = 1024 * 1024 * 4; //2MB;
 $_UP['extensao'] = array('jpg','png','gif');
 $_UP['renomeia'] = true;
 
@@ -60,7 +60,7 @@ $salt = geraSaltAleatorio();
             
                     // INICIO UPLOAD IMAGEM_PRINCIPAL
                         $_UP['pasta'] = "../uploads/";
-                        $_UP['tamanho'] = 1024 * 1024 * 2; //2MB;
+                        $_UP['tamanho'] = 1024 * 1024 * 4; //2MB;
                         $_UP['extensao'] = array('jpg','png','gif');
                         $_UP['renomeia'] = true;
 
@@ -94,7 +94,7 @@ $salt = geraSaltAleatorio();
                             if(move_uploaded_file($_FILES['imagemPrincipal']['tmp_name'], $_UP['pasta'] . $imagemPrincipalname)){
                                 // INICIO UPLOAD IMAGEM_GALERIA 
                                     $_UP['pasta'] = "../uploads/";
-                                    $_UP['tamanho'] = 1024 * 1024 * 2; //2MB;
+                                    $_UP['tamanho'] = 1024 * 1024 * 4; //2MB;
                                     $_UP['extensao'] = array('jpg','png','gif');
                                     $_UP['renomeia'] = true;
 
@@ -128,7 +128,7 @@ $salt = geraSaltAleatorio();
                                         if(move_uploaded_file($_FILES['imagemGaleria']['tmp_name'], $_UP['pasta'] . $imagemGalerianame)){
                                             // INICIO UPLOAD IMAGEM2_GALERIA
                                                 $_UP['pasta'] = "../uploads/";
-                                                $_UP['tamanho'] = 1024 * 1024 * 2; //2MB;
+                                                $_UP['tamanho'] = 1024 * 1024 * 4; //2MB;
                                                 $_UP['extensao'] = array('jpg','png','gif');
                                                 $_UP['renomeia'] = true;
 
@@ -162,7 +162,7 @@ $salt = geraSaltAleatorio();
                                                     if(move_uploaded_file($_FILES['imagemGaleria2']['tmp_name'], $_UP['pasta'] . $imagemGaleria2name)){
                                                         // INICIO UPLOAD IMAGEM3_GALERIA
                                                             $_UP['pasta'] = "../uploads/";
-                                                            $_UP['tamanho'] = 1024 * 1024 * 2; //2MB;
+                                                            $_UP['tamanho'] = 1024 * 1024 * 4; //2MB;
                                                             $_UP['extensao'] = array('jpg','png','gif');
                                                             $_UP['renomeia'] = true;
 
@@ -227,7 +227,7 @@ $salt = geraSaltAleatorio();
                                                                                                 $logo = "002.png";
                                                                                                 $ano = substr($data, 0, 4);
                                                                                                 $mes = substr($data, 5, 2);
-                                                                                                $dia = substr($data, 6, 2);
+                                                                                                $dia = substr($data, 8, 2);
                                                                                             $corpo = '<!DOCTYPE html>
                                                                                                 
 <html>                                                                                  
@@ -311,7 +311,7 @@ $salt = geraSaltAleatorio();
                         </p>
                        ".' <p class="editPlataforma">
                         <?php
-                            echo "<b>Desenvolvedora:</b>    ";
+                            echo "<b>Plataforma:</b>    ";
                           '."  infoArtigos('plataforma','".$urlArtigoP."');
                         ?>
                         </p>
@@ -469,7 +469,7 @@ $salt = geraSaltAleatorio();
         $logo = "005.png";
  $ano = substr($data, 0, 4);
                                                                                                 $mes = substr($data, 5, 2);
-                                                                                                $dia = substr($data, 6, 2);
+                                                                                                $dia = substr($data, 8, 2);
                                                                                             $corpo = '<!DOCTYPE html>
                                                                                                 
 <html>                                                                                  
@@ -553,7 +553,7 @@ $salt = geraSaltAleatorio();
                         </p>
                        ".' <p class="editPlataforma">
                         <?php
-                            echo "<b>Desenvolvedora:</b>    ";
+                            echo "<b>Plataforma:</b>    ";
                           '."  infoArtigos('plataforma','".$urlArtigoP."');
                         ?>
                         </p>
@@ -709,7 +709,7 @@ $salt = geraSaltAleatorio();
         $logo = "003.png";
  $ano = substr($data, 0, 4);
                                                                                                 $mes = substr($data, 5, 2);
-                                                                                                $dia = substr($data, 6, 2);
+                                                                                                $dia = substr($data, 8, 2);
                                                                                             $corpo = '<!DOCTYPE html>
                                                                                                 
 <html>                                                                                  
@@ -793,7 +793,7 @@ $salt = geraSaltAleatorio();
                         </p>
                        ".' <p class="editPlataforma">
                         <?php
-                            echo "<b>Desenvolvedora:</b>    ";
+                            echo "<b>Plataforma:</b>    ";
                           '."  infoArtigos('plataforma','".$urlArtigoP."');
                         ?>
                         </p>
@@ -950,7 +950,7 @@ $salt = geraSaltAleatorio();
         $logo = "006.png";
    $ano = substr($data, 0, 4);
                                                                                                 $mes = substr($data, 5, 2);
-                                                                                                $dia = substr($data, 6, 2);
+                                                                                                $dia = substr($data, 8, 2);
                                                                                             $corpo = '<!DOCTYPE html>
                                                                                                 
 <html>                                                                                  
@@ -1034,7 +1034,7 @@ $salt = geraSaltAleatorio();
                         </p>
                        ".' <p class="editPlataforma">
                         <?php
-                            echo "<b>Desenvolvedora:</b>    ";
+                            echo "<b>Plataforma:</b>    ";
                           '."  infoArtigos('plataforma','".$urlArtigoP."');
                         ?>
                         </p>
@@ -1190,7 +1190,7 @@ $salt = geraSaltAleatorio();
                                                                                                 $logo = "002.png";
                                                                                                 $ano = substr($data, 0, 4);
                                                                                                 $mes = substr($data, 5, 2);
-                                                                                                $dia = substr($data, 6, 2);
+                                                                                                $dia = substr($data, 8, 2);
                                                                                             $corpo = '<!DOCTYPE html>
                                                                                                 
 <html>                                                                                  
@@ -1274,7 +1274,7 @@ $salt = geraSaltAleatorio();
                         </p>
                        ".' <p class="editPlataforma">
                         <?php
-                            echo "<b>Desenvolvedora:</b>    ";
+                            echo "<b>Plataforma:</b>    ";
                           '."  infoArtigos('plataforma','".$urlArtigoP."');
                         ?>
                         </p>
