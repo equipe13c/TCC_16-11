@@ -3,6 +3,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="shortcut icon" href="../imagens/icone001.png" >
         <script type="text/javascript" src="../js/funcoes.js"> </script>
         <script type="text/javascript" src="../js/jquery.js"></script>
         <script type="text/javascript" src="../js/cycle.js"></script>
@@ -22,7 +23,7 @@
                 document.getElementById("tituloPagina").style.backgroundColor = "#00989E"; 
             };
         </script> 
-        <title></title>
+        <title> Área Administrativa </title>
     </head>
     <body>
         <section id="container">
@@ -59,12 +60,12 @@
                             $urlImagem = $imagens2['URL_IMAGEM'];
                             echo "<img src='../uploads/$urlImagem' id='imagemUser' alt='imagem'>";
                         ?>
-                        <figure id="imgCam" >                       
-                            <a onmousedown="mostrarLinks();"  id="camera"></a>
-                        </figure>
-                        <nav id="menuImagem" >
-
-                        </nav>    
+                        <div id="imgCam" >
+                            <div id="linksMudarImg">
+                                <a href="alterarImg.php" > Alterar Imagem </a>
+                                <a href="removerImg.php" > Remover Imagem </a> 
+                            </div>
+                        </div>    
                     </figure>
                     <div id="nomeUser">
                         <?php
@@ -104,8 +105,11 @@
                             </tr>';
                         while ($acoes = mysql_fetch_array($limite))
                         {
+                            $ano = substr($acoes['DATA_LOG'], 0, 4);
+                            $mes = substr($acoes['DATA_LOG'], 5, 2);
+                            $dia = substr($acoes['DATA_LOG'], 8, 2);
                             echo '<tr class="linhasInfo">';
-                            echo '<td class="valores">'.$acoes['DATA_LOG'].'</td>';
+                            echo '<td class="valores">'.$dia.'/'.$mes.'/'.$ano.'</td>';
                             echo '<td class="valores">'.$acoes['HORA_LOG'].'</td>';
                             $query2 = "SELECT NOME_ACAO FROM ACOES_LOG WHERE COD_ACOES_LOG =". $acoes['ACAO_LOG'];
                             $result1 = mysql_query($query2);

@@ -60,9 +60,12 @@
                             $urlImagem = $imagens2['URL_IMAGEM'];
                             echo "<img src='../uploads/$urlImagem' id='imagemUser' alt='imagem'>";
                         ?>
-                        <figure id="imgCam" >                       
-                            <a onmousedown="mostrarLinks();"  id="camera"></a>
-                        </figure>
+                        <div id="imgCam" >
+                            <div id="linksMudarImg">
+                                <a href="alterarImg.php" > Alterar Imagem </a>
+                                <a href="removerImg.php" > Remover Imagem </a> 
+                            </div>
+                        </div>
                         <nav id="menuImagem" >
 
                         </nav>    
@@ -85,37 +88,31 @@
                     <form action="update.php" method="post">
                         <table id="tabelaPerfil" class="bordasimples">
                             <tr class="linhasInfo">
-                                <td class="icone"><img src="../imagens/mail.png" alt="imgMail" id="mailImg"></td>
                                 <td class="info">Endereço de e-mail</td>
                                 <td class="campos"><input type="text" class="txtInfo" disabled="disabled" id="emailInfo"   value="<?php echo $_SESSION['email']; ?>"></td>
                                 <td class="edit"><img src="../imagens/edit.png" alt="editImage" class="editImage"><a onclick="edit('email', '<?php echo $_SESSION['email']; ?>')" href="#">Editar</a></td>                            
                             </tr>
                             <tr class="linhasInfo">
-                                <td class="icone"><img src="../imagens/lock.png" alt="imgCidade" id="senhaImg"></td>
                                 <td class="info">Senha</td>
                                 <td class="campos"><input type="password" class="txtInfo" disabled="disabled" id="senhaInfo" name="senhaUser" value="default"></td>
                                 <td class="edit" id="salvarSenha"><img src="../imagens/edit.png" alt="editImage" class="editImage"><a href="alterarSenha.php">Editar</a></td>                            
                             </tr>
                             <tr class="linhasInfo">
-                                <td class="icone"><img src="../imagens/nome.png" alt="imgNome" id="nomeImg"></td>
                                 <td class="info">Nome completo</td>
                                 <td class="campos"><input type="text" class="txtInfo" disabled="disabled"  id="nomeInfo" name="nomeUser"  value="<?php  buscarDados('nome'); ?>"></td>
                                 <td class="edit" id="salvarName"><img src="../imagens/edit.png" alt="editImage" class="editImage"><a onclick="edit('nome')" href="#">Editar</a></td>                            
                             </tr>
                             <tr class="linhasInfo">
-                                <td class="icone"><img src="../imagens/nome.png" alt="imgNome" id="nomeImg"></td>
                                 <td class="info">Apelido</td>
                                 <td class="campos"><input type="text" class="txtInfo" disabled="disabled"  id="apelidoInfo" name="apelidoUser" value="<?php buscarDados('apelido'); ?>"></td>
                                 <td class="edit" id="salvarApel"><img src="../imagens/edit.png" alt="editImage" class="editImage"><a onclick="edit('apelido')" href="#">Editar</a></td>                            
                             </tr>
                             <tr class="linhasInfo">
-                                <td class="icone"><img src="../imagens/data.png" alt="imgData" id="dataImg"></td>
                                 <td class="info">Data de nascimento</td>
                                 <td class="campos"><input type="text" class="txtInfo" disabled="disabled"  id="dataInfo"  value="<?php buscarDados('data'); ?>"></td>
                                 <td class="edit"></td>                            
                             </tr>
                             <tr class="linhasInfo">
-                                <td class="icone"><img src="../imagens/cidade.png" alt="imgCidade" id="cidadeImg"></td>
                                 <td class="info">Estado</td>
                                 <td class="campos"><input type="text" class="txtInfo" disabled="disabled" id="cidadeInfo" name="estadoUser" value="<?php buscarDados('estado'); ?>"></td>
                                 <td class="edit" id="salvarCid"><img src="../imagens/edit.png" alt="editImage" class="editImage"><a onclick="edit('estado')" href="#">Editar</a></td>                            

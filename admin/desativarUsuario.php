@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>TODO supply a title</title>
+    <head>        
          <link rel="stylesheet" type="text/css" href="css/style2.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
+        <title>Área Administrativa</title>
     </head>
     <body>
         <?php        

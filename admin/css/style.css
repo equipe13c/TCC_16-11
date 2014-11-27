@@ -698,22 +698,58 @@ color: white;
     z-index: 0;
 }
 
-.imgCamera{
-    width:30px;
-    height:20px;
-
-}
 #imgCam{
-    width:30px;
-    height:20px;
-    margin-left: 48px;
-    margin-top: 100px;
+    width:122px;
+    height:122px;
+    margin-left: 2.5px;
+    margin-top: 2.5px;
     z-index: 2;
     position:absolute;
-    opacity: 0.5;
+    opacity: 0;
+    background-color: #fff;
+    border-radius: 60px;
 }
-.imgCamera:hover{
- 
+
+#imgCam:hover{
+    opacity: 0.7;
+}
+
+#linksMudarImg{
+    width: 110px;
+    height: 50px;
+    float: left;
+    margin-top: 30px;
+    margin-left: 7px;
+    text-align: center;
+}
+
+#linksMudarImg a{
+    line-height: 25px;
+    font-family: century gothic;
+    font-size: 8.5pt;
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.mudarImg input{
+    height: 25px;
+    width: 110px;  
+}
+
+.inputMudarImg{
+    margin-top: -15px;
+    margin-left: -55px;
+    position: absolute;
+    z-index: 4;
+    float: left;
+    opacity: 0;
+}
+
+.inputMudarImg + .inputMudarImg{
+    margin-top: 10px;
 }
 
 .username{

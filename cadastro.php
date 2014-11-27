@@ -14,41 +14,15 @@
                 var imgMiniLogo = document.getElementById("imgMiniLogo");
                 var imgLogo = document.getElementById("img-logo");                
                 imgMiniLogo.innerHTML = '<img src="imagens/logosReduzidos001.png" alt="" id="miniLogo">';
-                imgLogo.innerHTML = '<img src="imagens/logo001.png" alt="" id="logo">';   
-                document.getElementById("nav").style.backgroundColor = "#00989E";
+                imgLogo.innerHTML = '<img src="imagens/logo001.png" alt="" id="logo">';                  
                 document.getElementById("navReduzido").style.backgroundColor = "#00989E";
-                document.getElementById("logar").style.borderBottom = "solid 5px #00989E"; 
-                document.getElementById("botaoLogin").style.backgroundColor = "#00989E";
+                document.getElementById("nav").style.backgroundColor = "#00989E";
+                };
+            cadastroRealizado = function(){                
+                document.getElementById("msgCad").style.display = "none";
+            };    
+            setTimeout(cadastroRalizado(), 3000);
                 
-               
-
-// Verificar se o formato da data digitada está correto       
-var patternData = /^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/;  
-if(!patternData.test(dataentrada)){  
-    alert("Digite a data no formato Dia/Mês/Ano");  
-    form_registra_entrada.dataentrada.focus();  
-    return false;  
-}
-var patternValidaData = /^(((0[1-9]|[12][0-9]|3[01])([-.\/])(0[13578]|10|12)([-.\/])(\d{4}))|(([0][1-9]|[12][0-9]|30)([-.\/])(0[469]|11)([-.\/])(\d{4}))|((0[1-9]|1[0-9]|2[0-8])([-.\/])(02)([-.\/])(\d{4}))|((29)(\.|-|\/)(02)([-.\/])([02468][048]00))|((29)([-.\/])(02)([-.\/])([13579][26]00))|((29)([-.\/])(02)([-.\/])([0-9][0-9][0][48]))|((29)([-.\/])(02)([-.\/])([0-9][0-9][2468][048]))|((29)([-.\/])(02)([-.\/])([0-9][0-9][13579][26])))$/; 
- //Aqui estou verificando se o campo data foi prrenchido  
-
-if (dataentrada == ""){  
-    alert ('Preencha o campo com a data de entrada');      
-    form_registra_entrada.dataentrada.focus();  
-    return false;  
-}  
-// Verificar se o formato da data digitada está correto       
-var patternData = /^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/;  
-if(!patternData.test(dataentrada)){  
-    alert("Digite a data no formato Dia/Mês/Ano");  
-    form_registra_entrada.dataentrada.focus();  
-    return false;  
-}
-
-var patternValidaData = /^(((0[1-9]|[12][0-9]|3[01])([-.\/])(0[13578]|10|12)([-.\/])(\d{4}))|(([0][1-9]|[12][0-9]|30)([-.\/])(0[469]|11)([-.\/])(\d{4}))|((0[1-9]|1[0-9]|2[0-8])([-.\/])(02)([-.\/])(\d{4}))|((29)(\.|-|\/)(02)([-.\/])([02468][048]00))|((29)([-.\/])(02)([-.\/])([13579][26]00))|((29)([-.\/])(02)([-.\/])([0-9][0-9][0][48]))|((29)([-.\/])(02)([-.\/])([0-9][0-9][2468][048]))|((29)([-.\/])(02)([-.\/])([0-9][0-9][13579][26])))$/; 
-                
->>>>>>> origin/master
-            };  
         </script>                
         <title> Cadastre-se </title>
     </head> 
@@ -121,7 +95,7 @@ var patternValidaData = /^(((0[1-9]|[12][0-9]|3[01])([-.\/])(0[13578]|10|12)([-.
                                 <a id="atualizarCaptcha" onclick="atualizarCaptcha();"> Mudar Captcha </a>                            
                             </div>        
                             <br/><br/>
-                            <input type="checkbox" name="termos" id="termos"> <a href="termos_uso.php"> Concordo Com os Termos de Uso </a>
+                            <input type="checkbox" name="termos" id="termos"> <a href="termos_uso.php" target="_blank"> Concordo Com os Termos de Uso </a>
                             <br/>
                             <input type="reset" value="Limpar" class="botaoForm"/>
                             <input type="submit" value="Cadastrar" class="botaoForm"/>

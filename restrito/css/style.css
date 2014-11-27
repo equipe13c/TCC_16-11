@@ -555,7 +555,8 @@ color: white;
 
 #conteudo{
     width: 80%;
-    height: 725px;
+    height: auto;
+    min-height: 500px;
     float:left;
     margin-top:0px;
     margin-left:160px;
@@ -591,9 +592,7 @@ color: white;
     position:absolute;
     z-index: 1;
 }
-#imagemUser:hover{
-    opacity:0.9;
-}
+
 #nomeUser{
     float:left;
     width:220px;
@@ -608,39 +607,54 @@ color: white;
     z-index: 0;
 }
 
-.imgCamera{
-    width:30px;
-    height:20px;
-
-}
 #imgCam{
-    width:110px;
-    height:50px;
-    margin-left: 10px;
-    margin-top: 40px;
+    width:122px;
+    height:122px;
+    margin-left: 2.5px;
+    margin-top: 2.5px;
     z-index: 2;
     position:absolute;
+    opacity: 0;
+    background-color: #fff;
+    border-radius: 60px;
 }
 
-.mudarImg{
+#imgCam:hover{
+    opacity: 0.7;
+}
+
+#linksMudarImg{
+    width: 110px;
+    height: 50px;
+    float: left;
+    margin-top: 30px;
+    margin-left: 7px;
+    text-align: center;
+}
+
+#linksMudarImg a{
+    line-height: 25px;
     font-family: century gothic;
-    font-size: 9pt;
-    color: #333;
+    font-size: 8.5pt;
+    color: #000;
     font-weight: bold;
     text-decoration: none;
     text-align: center;
     text-transform: uppercase;
 }
 
-.mudarImg:hover{
-    text-decoration: underline;
+.mudarImg input{
+    height: 25px;
+    width: 110px;  
 }
 
 .inputMudarImg{
-    margin-top: -10px;
+    margin-top: -15px;
+    margin-left: -55px;
     position: absolute;
     z-index: 4;
     float: left;
+    opacity: 0;
 }
 
 .inputMudarImg + .inputMudarImg{
@@ -689,28 +703,33 @@ color: white;
     margin-top:0px;
 }
 
-table.bordasimples {
-    border-collapse: collapse;
-    width:1000px; 
-    height:300px;
-    margin-left:50px;
-    margin-top:70px;
+.bordasimples{
+    width: 990px;
+    height: 300px;
+    margin-top: 50px;
+    margin-left: 45px;
+    background-color: #00989E;
+    font-family: century gothic;
+    color: #333
 }
-table.bordasimples td.icone{
-    width:100px;
+
+.bordasimples th{
+    background-color: #d0d0d0;
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+.bordasimples td{
+    background-color: #fff;
+    font-size: 12pt;
     text-align: center;
 }
+
 table.editEmailTable td.icone2{
     width:300px;
     text-align: center;
 }
-table.bordasimples td.info{
-    width:250px;
-    text-align: left;
-    font-family: century gothic;
-    font-size:14pt;
-    font-weight: bold;
-}
+
 
 table.editEmailTable td.info2{
     width:300px;
@@ -728,23 +747,20 @@ table.editEmailTable td.info2{
     font-weight: bold;
 }
 
-.bsalvar	{
-    border-color: #999 #000 #000 #999;
+.bsalvar{
     border: 1px solid;
     width: 100px;
-    background: #333; 
+    background: #00989E; 
     color: white;
     font-family: century gothic;
-    font-size: 11px;
+    font-size: 10pt;
     text-align: center;
     text-decoration: none;
     height:40px;
-    border-radius: 6px;
 }
 	 
-.bsalvar:hover	{
+.bsalvar:hover{
    position: relative;
-   background: #333;
    box-shadow: 2px 0px 5px #999;
 }
 
@@ -800,12 +816,7 @@ table.editEmailTable tr#bottomlinha, td.info2, td.campos2, td.icone2{
 table.editEmailTable td.info2, td.campos2, td.icone2, td.salvarEdit{
     border-top: 1px solid black;
 }
-table.bordasimples tr td {
-    height:30px;
-}
-.linhasInfo:hover{
-    background-color: #ccc;
-}
+
 .editImage{
     width:20px;
     height:20px;
@@ -820,9 +831,14 @@ table.bordasimples tr td {
     font-family: century gothic;
     margin-left:7px;
 }
-.edit a:hover{
-    
+
+.edit input{
+    width: 110px;
+    padding-right: 5px;
+    padding-left: 8px;
 }
+
+
 #menu2{
     width: 780px;
     height: 43px;
@@ -1084,19 +1100,104 @@ table.bordasimples tr td {
     border-radius: 3px;
     
 }
-table.tablealterarImg{
-    margin-left:210px;
-    margin-top:50px;
+
+#tablealterarImg{
+    width:500px;
+    height:400px;
+    float: left;
+    margin-top: 50px;
+    margin-left: 280px;
+    background-color: ghostwhite;
+    border: solid 5px #00989E;
+    color:white;
+    font-size: 14pt;
+    font-family: century gothic;
 }
-table.tablealterarImg td.icone{
-    width:300px;
-    text-align: center;
-    height:100px;
+
+#tabelaPreferencias{
+    width: 960px;
+    min-height: 400px;
+    height: auto;
+    float: left;
+    margin-top: 50px;
+    margin-left: 50px;
+    background-color: ghostwhite;
+    border: solid 5px #00989E;
+    color: white;
+    font-size: 14pt;
+    font-family: century gothic;
 }
-table.tablealterarImg td.info{
-    height:100px;
-    text-align: center;
+
+#alterarCapa{
+    width: 500px;
+    height: 240px;
+    float: left;
+    margin-top: 10px;
+    margin-left: 220px;
+    border: solid 1px #333;
+    color: #333;
+    font-size: 14pt;
+    font-family: century gothic;
 }
+
+#alterarCapa p{
+    margin-top: 10px;
+    margin-left: 130px;
+}
+
+.alterar{
+    margin-top: 10px;
+    margin-left: 160px;
+}
+
+.areasPreferencia p{
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 20px;
+    float: left;
+}
+
+.areasPreferencia{
+    width: 500px;
+    height: 300px;
+    float: left;
+    margin-top: 10px;
+    margin-left: 220px;
+    border: solid 1px #333;
+    color: #333;
+    font-size: 14pt;
+    font-family: century gothic;    
+}
+
+.areasPreferencia textarea{
+    min-height: 70px;
+    max-height: 70px;
+    height: 70px;
+    min-width: 200px;
+    max-width: 200px;
+    width: 200px;
+}
+
+.info{
+    margin-top: 20px;
+    margin-left: 150px;
+}
+
+.infoInputs{
+    width: 115px;
+    margin-top: 40px;
+    margin-left: 185px;
+}
+
+.infoInputs input{
+    width: 115px;    
+}
+
+.infoInputs + .infoInputs{    
+    margin-top: 20px;
+}
+
+
 #imagemInfo{
     width:200px;
     height:200px;
@@ -1105,6 +1206,7 @@ table.tablealterarImg td.info{
     width:30px;
     height:30px;
 }
+
 table.tablealterarCapa{
     margin-left:20px;
     margin-top:50px;
@@ -1119,8 +1221,9 @@ table.tablealterarCapa td.info{
     text-align: center;
 }
 #imagemCapa{
-    width:200px;
-    height:80px;
+    margin-top: 5px;
+    width: 170px;
+    height: 50px;
 }
 table.tablealterarCapa2{
     margin-left:20px;

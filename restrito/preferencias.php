@@ -59,9 +59,12 @@
                             $urlImagem = $imagens2['URL_IMAGEM'];
                             echo "<img src='../uploads/$urlImagem' id='imagemUser' alt='imagem'>";
                         ?>
-                        <figure id="imgCam" >                       
-                            <a onmousedown="mostrarLinks();"  id="camera"></a>
-                        </figure>
+                        <div id="imgCam" >
+                            <div id="linksMudarImg">
+                                <a href="alterarImg.php" > Alterar Imagem </a>
+                                <a href="removerImg.php" > Remover Imagem </a> 
+                            </div>
+                        </div>
                         <nav id="menuImagem" >
 
                         </nav>    
@@ -82,39 +85,42 @@
                 </nav>
                 <article id="conteudo_infos">
                     <form action="script2.php" method="post" enctype="multipart/form-data">
-                        <table id="tabelaPerfil" class="tablealterarCapa2">
-                            <tr>
-                                <th id="alterar" colspan="3">Alterar Foto de Capa</th>
-                            </tr>
-                            <tr>
-                                <td class="icone"><img src="../imagens/contacts.png" alt="imgNome" id=""> Imagem Capa</td>
-                                <td class="info">                     
-                            <?php
-                                $query = "SELECT * FROM IMAGEM_USUARIO WHERE COD_IMAGEM_USUARIO = ".$_SESSION['code'];
-                                $result = mysql_query($query);                
-                                $imagens = mysql_num_rows($result);
-                                if($imagens === 0){
-                                $nome = "defaultCapa.jpg";            
-                                mysql_query("INSERT INTO IMAGEM_USUARIO(URL_IMAGEM_CAPA, COD_IMAGEM_USUARIO)
-                                VALUES('$nome'".$_SESSION['code'].")");
-                                }
-                                else{
-                                $imagens2 = mysql_fetch_array($result); 
-                                $urlImagem = $imagens2['URL_IMAGEM_CAPA'];
-                                echo "<img src='../uploads/$urlImagem' alt='Imagem' id='imagemCapa'>";
-                                }
-                            ?>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="icone"><img src="../imagens/picture.png" alt="imgNome" id=""></td>
-                                <td class="info"><input type="file" name="arquivo" value="Alterar Imagem"></td>
-                            </tr>
-                            <tr>
-                                <td class="icone"><img src="../imagens/checkmark.png" alt="imgNome" id=""></td>
-                                <td class="info"><input type="submit" name="alterarImg" class="bsalvar" value="Alterar Foto"></td>
-                            </tr>
-                        </table>
+                        <div id="tabelaPreferencias">
+                            <div id="alterarCapa">
+                                <p> Alterar Imagem de Capa </p>
+                                <div class="alterar">                     
+                                    <?php
+                                        $query = "SELECT * FROM IMAGEM_USUARIO WHERE COD_IMAGEM_USUARIO = ".$_SESSION['code'];
+                                        $result = mysql_query($query);                
+                                        $imagens = mysql_num_rows($result);
+                                        if($imagens === 0){
+                                        $nome = "defaultCapa.jpg";            
+                                        mysql_query("INSERT INTO IMAGEM_USUARIO(URL_IMAGEM_CAPA, COD_IMAGEM_USUARIO)
+                                        VALUES('$nome'".$_SESSION['code'].")");
+                                        }
+                                        else{
+                                        $imagens2 = mysql_fetch_array($result); 
+                                        $urlImagem = $imagens2['URL_IMAGEM_CAPA'];
+                                        echo "<img src='../uploads/$urlImagem' alt='Imagem' id='imagemCapa'>";
+                                        }
+                                    ?>                                    
+                                </div>                                                         
+                                <div class="infoInputs">
+                                    <input type="file" name="arquivo" value="Alterar Imagem">                          
+                                </div>                                
+                                <div class="infoInputs">
+                                    <input type="submit" name="alterarImg" class="bsalvar" value="Alterar Foto">                                
+                                </div>
+                            </div>
+                            <div class="areasPreferencia">
+                                <p> Descrição </p> 
+                                <textarea id="areasPreferenciaInput"> </textarea> <br/>
+                                <p> Jogos Preferidos </p> 
+                                <textarea id="areasPreferenciaInput"> </textarea> <br/>
+                                <p> Plataformas Preferidos </p> 
+                                <textarea id="areasPreferenciaInput"> </textarea> <br/>
+                            </div>
+                        </div>
                     </form>    
                 </article>                
             </article>

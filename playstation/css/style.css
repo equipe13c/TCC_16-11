@@ -875,28 +875,59 @@ color:#00989E;
     border: none;
     color: #fff;
 }
-.materiaAside{
-    width: 285px;
-    height: 110px;
-    margin-top: 0px;
-    margin-left: 0px;
-    margin-bottom: 30px;
-    float: left;
-    box-shadow: 0 0 0 2px #333;
+.materia#aside1{
+    width:285px;
+    height: auto;
+    min-height: 865px;  
+    float:left;
+    margin-top:0px;
+    margin-left:50px;
+    box-shadow: 5px 5px 0px 0px #333;    
+    background-color: #fff;
 }
 
-.imagemMateriaAside{
-    width: 100%;
-    height: 100%;
-    margin-top: -125px;
-    margin-left: 0;
-    float: left;
-    z-index: 1;    
-    position: relative;
+#aside2{
+    width: 305px;
+    height: auto;
+    margin-top: 240px;
+    margin-right: 7%;
+    margin-bottom: 70px;
+    float: right;
+    background-color: #fff;    
+    box-shadow: 5px 5px 0px 0px #333;
+}
+
+.materiaAside{
+    width:270px;
+    height: 110px;
+    float:left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 8px;    
+}
+
+.materiaAside + .materiaAside{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.imagemMateriasAside{
+    width:270px;
+    height: 110px;
+    float:left;
+    margin-top:-112px;
+    margin-left:0px;
+}
+.textoAsideMateria{
+    width:270px;
+    height: 110px;
+    float:left;
+    margin-top:0px;
+    margin-left:0px;
 }
 
 .descricaoMateriaAside{
-    width: 285px;
+    width: 270px;
     height: 100%;
     margin-top: 0px;
     margin-left: 0px;
@@ -933,6 +964,15 @@ color:#00989E;
     line-height: 15pt;
     color: #fff;  
     text-align: center;
+}
+.imagemMateriaAside{
+    width: 100%;
+    height: 100%;
+    margin-top: -125px;
+    margin-left: 0;
+    float: left;
+    z-index: 1;    
+    position: relative;
 }
 
 

@@ -3,13 +3,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="shortcut icon" href="../imagens/icone001.png" >
         <script type="text/javascript" src="../js/funcoes.js"> </script>
         <script type="text/javascript" src="../js/jquery.js"></script>
         <script type="text/javascript" src="../js/cycle.js"></script>
         <script type="text/javascript" src="../js/javascript.js"></script>
         <script type="text/javascript" src="../js/menu2.js"></script>
         <script type="text/javascript" src="../js/restrito.js"></script>
-        <title></title>
         <script type="text/javascript"> 
             onload = function(){     
                 var imgMiniLogo = document.getElementById("imgMiniLogo");
@@ -23,6 +23,7 @@
                 document.getElementById("tituloPagina").style.backgroundColor = "#00989E"; 
             };
         </script>  
+        <title> Área Administrativa </title>
     </head>
     <body >
         <section id="container" >
@@ -60,9 +61,12 @@
                             $urlImagem = $imagens2['URL_IMAGEM'];
                             echo "<img src='../uploads/$urlImagem' id='imagemUser' alt='imagem'>";
                         ?>
-                        <figure id="imgCam" >                       
-                            <a onmousedown="mostrarLinks();"  id="camera"></a>
-                        </figure>
+                        <div id="imgCam" >
+                            <div id="linksMudarImg">
+                                <a href="alterarImg.php" > Alterar Imagem </a>
+                                <a href="removerImg.php" > Remover Imagem </a> 
+                            </div>
+                        </div>
                         <nav id="menuImagem" >
 
                         </nav>    

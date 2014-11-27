@@ -17,6 +17,7 @@ $descricaoArtigo = $_POST['descricao'];
 $dataLancamento = $_POST['data_lancamento'];
 $plataforma = $_POST['plataforma'];
 $conteudoArtigo = $_POST['conteudo'];
+$plataforma = $_POST['plataforma'];
 $urlVideo = $_POST['urlVideo1'];
 $urlVideo = str_replace('watch?v=','embed/',$urlVideo);
 $urlVideo2 = $_POST['urlVideo2'];
@@ -27,13 +28,11 @@ $_UP['pasta'] = "../uploads/";
 $_UP['tamanho'] = 1024 * 1024 * 4; //2MB;
 $_UP['extensao'] = array('jpg','png','gif');
 $_UP['renomeia'] = true;
-
 $_UP['erros'][0] = "Não Houve Erros";
 $_UP['erros'][1] = "O Arquivo é Maior do que o límite do php";
 $_UP['erros'][2] = "Tamanho da imagem ultrapassou o límite exigido";
 $_UP['erros'][3] = "Upload feito parcialmente";
 $_UP['erros'][4] = "Nao teve upload";
-
 if($_FILES['imagemCapa']['error'] != 0){
     die("Não foi Possível alterar a imagem Devido a: <br/>". $_UP['erros'][$_FILES['imagemCapa']['erros']]);
     exit;
@@ -63,7 +62,6 @@ $salt = geraSaltAleatorio();
                         $_UP['tamanho'] = 1024 * 1024 * 4; //2MB;
                         $_UP['extensao'] = array('jpg','png','gif');
                         $_UP['renomeia'] = true;
-
                         $_UP['erros'][0] = "Não Houve Erros";
                         $_UP['erros'][1] = "O Arquivo é Maior do que o límite do php";
                         $_UP['erros'][2] = "Tamanho da imagem ultrapassou o límite exigido";
@@ -79,7 +77,6 @@ $salt = geraSaltAleatorio();
                         if(array($extensao, $_UP['extensao'])=== false){
                             echo "Por Favor Escolha apenas imagens JPG, PNG e GIF";
                         }
-
                         else if($_UP['tamanho'] < $_FILES['imagemPrincipal']['size']){
                             echo "Arquivo muito grande, Envie um arquivo1 de até 2MB";
                         }
@@ -97,7 +94,6 @@ $salt = geraSaltAleatorio();
                                     $_UP['tamanho'] = 1024 * 1024 * 4; //2MB;
                                     $_UP['extensao'] = array('jpg','png','gif');
                                     $_UP['renomeia'] = true;
-
                                     $_UP['erros'][0] = "Não Houve Erros";
                                     $_UP['erros'][1] = "O Arquivo é Maior do que o límite do php";
                                     $_UP['erros'][2] = "Tamanho da imagem ultrapassou o límite exigido";
@@ -113,7 +109,6 @@ $salt = geraSaltAleatorio();
                                     if(array($extensao, $_UP['extensao'])=== false){
                                         echo "Por Favor Escolha apenas imagens JPG, PNG e GIF";
                                     }
-
                                     else if($_UP['tamanho'] < $_FILES['imagemGaleria']['size']){
                                         echo "Arquivo muito grande, Envie um arquivo1 de até 2MB";
                                     }
@@ -131,7 +126,6 @@ $salt = geraSaltAleatorio();
                                                 $_UP['tamanho'] = 1024 * 1024 * 4; //2MB;
                                                 $_UP['extensao'] = array('jpg','png','gif');
                                                 $_UP['renomeia'] = true;
-
                                                 $_UP['erros'][0] = "Não Houve Erros";
                                                 $_UP['erros'][1] = "O Arquivo é Maior do que o límite do php";
                                                 $_UP['erros'][2] = "Tamanho da imagem ultrapassou o límite exigido";
@@ -147,7 +141,6 @@ $salt = geraSaltAleatorio();
                                                 if(array($extensao, $_UP['extensao'])=== false){
                                                     echo "Por Favor Escolha apenas imagens JPG, PNG e GIF";
                                                 }
-
                                                 else if($_UP['tamanho'] < $_FILES['imagemGaleria2']['size']){
                                                     echo "Arquivo muito grande, Envie um arquivo1 de até 2MB";
                                                 }
@@ -165,7 +158,6 @@ $salt = geraSaltAleatorio();
                                                             $_UP['tamanho'] = 1024 * 1024 * 4; //2MB;
                                                             $_UP['extensao'] = array('jpg','png','gif');
                                                             $_UP['renomeia'] = true;
-
                                                             $_UP['erros'][0] = "Não Houve Erros";
                                                             $_UP['erros'][1] = "O Arquivo é Maior do que o límite do php";
                                                             $_UP['erros'][2] = "Tamanho da imagem ultrapassou o límite exigido";
@@ -181,7 +173,6 @@ $salt = geraSaltAleatorio();
                                                             if(array($extensao, $_UP['extensao'])=== false){
                                                                 echo "Por Favor Escolha apenas imagens JPG, PNG e GIF";
                                                             }
-
                                                             else if($_UP['tamanho'] < $_FILES['imagemGaleria3']['size']){
                                                                 echo "Arquivo muito grande, Envie um arquivo1 de até 2MB";
                                                             }
@@ -1411,7 +1402,6 @@ $salt = geraSaltAleatorio();
                                                                                 break;
                                                                             }
                                                                         }
-
                                                                     // FIM UPLOAD IMAGEM3_GALERIA
                                                                 }
                                                                 else{
@@ -1438,5 +1428,3 @@ $salt = geraSaltAleatorio();
                 }
             }
 //FIM UPLOAD IMAGEM_CAPA
-
-

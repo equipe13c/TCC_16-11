@@ -203,5 +203,9 @@ function mostraOculta(opc, id, id2){
                     document.getElementById("video2").style.display = 'none';
                     }
                 }
-
-                
+//Voltar ao topo
+            function toTop(){
+            $('html, body').animate({
+            scrollTop: 0
+            }, 0500, 'linear');
+            }

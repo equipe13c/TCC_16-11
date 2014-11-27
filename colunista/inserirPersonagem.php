@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head> 
-        <title> Multiplayer </title>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="../css/style.css"/>
-        <link rel="shortcut icon" href="imagens/icone001.png" >
+        <link rel="shortcut icon" href="../imagens/icone001.png" >
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/cycle.js"></script>
         <script type="text/javascript" src="js/javascript.js"></script>
@@ -20,7 +19,8 @@
                 imgMiniLogo.innerHTML = '<img src="imagens/logosReduzidos001.png" alt="" id="miniLogo">';
                 imgLogo.innerHTML = '<img src="imagens/logo001.png" alt="" id="logo">';
             };             
-        </script>        
+        </script>   
+        <title> Área Administrativa </title>
     </head> 
     <body> 
         <section id="container">

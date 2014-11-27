@@ -33,14 +33,14 @@ echo "<div id='busca'>"
         . "</form>"
         . "</div>";
 echo "<div class='tables'>";
-    echo "<table class='tabelas'   id='tabelaMateria' >";
+    echo "<table class='' id='tabelaMateria' >";
     echo "<tr>";
+    echo "<th style='display: none'>Código</th>";
     echo "<th>Imagem</th>";
     echo "<th>Titulo</th>";
     echo "<th>Autor</th>";
-    echo "<th>Data/Hora</th>";
+    echo "<th colspan='2'>Data/Hora</th>";
     echo "<th colspan='3'>Opções</th>";
-        echo "<th>Ação</th>";
     echo "</tr>";
 while($artigos = mysql_fetch_array($limite))
 {         
@@ -59,26 +59,27 @@ while($artigos = mysql_fetch_array($limite))
                 $dia = substr($artigos['DATA_ARTIGO'], 8, 2);                                                      
                 $urlArtigo = $artigos['URL_ARTIGO'];
     echo "<form id='usuariosA' action='opcoes.php' method='post'>";
-        echo "<tr class='linhasInfo'>";
-        echo "<td class='linhasInfos'><img src='../uploads/$urlImagem' id='imagem_usuario_listagem' alt='imagem'></td>";
-        echo "<td><input type='hidden' readonly='readonly' class='txtInfo3' size='35'  id='usuarioTable' name='codigo' value='" . $artigos['ID_ARTIGO'] . "'></td>";
-        echo "<td><input type='text' readonly='readonly' class='txtInfo3' size='25'  id='usuarioTable' name='titulo' value='" . $artigos['TITULO_ARTIGO'] . "'></td>";
-        echo "<td><input type='text' readonly='readonly' class='txtInfo3' size='25'  id='usuarioTable' name='autor' value='" . $autorArtigo . "'></td>";
-        echo "<td><input type='hidden' readonly='readonly' class='txtInfo3' size='35'  id='usuarioTable' name='data' value='" . $artigos['DATA_ARTIGO'] . "'></td>";
-        echo "<td><input type='hidden' readonly='readonly' class='txtInfo3' size='35'  id='usuarioTable' name='hora' value='" . $artigos['HORA_ARTIGO'] . "'></td>";
-        echo "<td><input type='text' readonly='readonly' class='txtInfo3' size='35'  id='usuarioTable' name='data_hora' value='".$artigos['HORA_ARTIGO'].'  ' . $dia.'/'.$mes.'/'.$ano. "'></td>";
+        echo "<tr>";
+        echo "<td style='display: none'><input type='hidden' readonly='readonly' class='txtInfo3' size='35'  id='usuarioTable' name='codigo' value='" . $artigos['ID_ARTIGO'] . "'></td>";
+        echo "<td><img src='../uploads/$urlImagem' id='imagem_materia_listagem' alt='imagem'></td>";        
+        echo "<td>" . $artigos['TITULO_ARTIGO'] . "</td>";
+        echo "<td>" . $autorArtigo . "</td>";
+        echo "<td>" . $dia.'/'.$mes.'/'.$ano. "</td>";
+        echo "<td>" . $artigos['HORA_ARTIGO'] . "</td>";
         echo "<td><input type='submit' class='botoes' name='editar' value='Editar Matéira'></td>";
         echo "<td><input type='submit' class='botoes' name='editar' value='Excluir Matéira'></td>";
-        echo "<td><a href='../$urlArtigo'><input type='button' class='botoes'></a></td>";
+        echo "<td><a href='../$urlArtigo' target='_blank'> Visualizar Matéria </a></td>";
         echo "</tr>"; 
         echo "</form>";
 }
 echo "</table><br/>";
 }
+
+ echo "<div id='paginacaoEditarMateria'>";
 $anterior = $pc -1; 
    $proximo = $pc +1; 
    if ($pc>1) 
-       { echo " <a href='?pagina=$anterior&tipoUser=$tipoMateria'><- Anterior</a> "; 
+       { echo " <a href='?pagina=$anterior&tipoMateria=$tipoMateria'>< Anterior</a> "; 
        
        } 
        if($pc ==1){/*CODIGO A APARECER PARA VOLTAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério
@@ -86,15 +87,15 @@ $anterior = $pc -1;
        // Inicio lógica rogerio
        for($i=1;$i<=$tp;$i++)
        {
-           echo "<a href=?pagina=$i&tipoUser=$tipoMateria>".$i . "</a>" . "    ";
+           echo "<a href=?pagina=$i&tipoMateria=$tipoMateria>".$i . "</a>" . "    ";
        }
        // Fim lógia rogério
        if ($pc<$tp) 
-           { echo " <a href='?pagina=$proximo&tipoUser=$tipoMateria'>Próxima -></a>"; 
+           { echo " <a href='?pagina=$proximo&tipoMateria=$tipoMateria'>Próxima ></a>"; 
            
            }
       if($pc == $tp){/*CODIGO A APARECER PARA PASSAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério
-
+echo "</div>";
 ?>
 
 
