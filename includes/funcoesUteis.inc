@@ -327,16 +327,16 @@ function buscarDados($string){
 function corpoMateria($corpo){
     $corpo = '';
 }
-function infosImagensMateria($string){
+function infosImagensMateria($string,$code){
 
                 if($string == "imagemgaleria1"){   
-                    $query = "SELECT * FROM IMAGENS_MATERIA WHERE COD_MATERIA_IMAGEM = 1";
+                    $query = "SELECT * FROM IMAGENS_MATERIA WHERE COD_MATERIA_IMAGEM = $code";
                     $result = mysql_query($query);                
                     $imagens = mysql_num_rows($result);
                     if($imagens === 0){
                     $nome = "defaultCapa.jpg";            
                     mysql_query("INSERT INTO IMAGENS_MATERIA(IMAGEM_CAPA, COD_MATERIA_IMAGEM)
-                    VALUES('$nome','1')");
+                    VALUES('$nome','$code')");
                     }
                     else{
                     $imagens2 = mysql_fetch_array($result); 
@@ -345,13 +345,13 @@ function infosImagensMateria($string){
                     }
                 }
                 if($string == "imagemgaleria2"){   
-                    $query = "SELECT * FROM IMAGENS_MATERIA WHERE COD_MATERIA_IMAGEM = 1";
+                    $query = "SELECT * FROM IMAGENS_MATERIA WHERE COD_MATERIA_IMAGEM = $code";
                     $result = mysql_query($query);                
                     $imagens = mysql_num_rows($result);
                     if($imagens === 0){
                     $nome = "defaultCapa.jpg";            
                     mysql_query("INSERT INTO IMAGENS_MATERIA(IMAGEM_CAPA, COD_MATERIA_IMAGEM)
-                    VALUES('$nome','1')");
+                    VALUES('$nome','$code')");
                     }
                     else{
                     $imagens2 = mysql_fetch_array($result); 
@@ -360,13 +360,13 @@ function infosImagensMateria($string){
                     }
                 }
                 if($string == "imagemgaleria3"){   
-                    $query = "SELECT * FROM IMAGENS_MATERIA WHERE COD_MATERIA_IMAGEM = 1";
+                    $query = "SELECT * FROM IMAGENS_MATERIA WHERE COD_MATERIA_IMAGEM = $code";
                     $result = mysql_query($query);                
                     $imagens = mysql_num_rows($result);
                     if($imagens === 0){
                     $nome = "defaultCapa.jpg";            
                     mysql_query("INSERT INTO IMAGENS_MATERIA(IMAGEM_CAPA, COD_MATERIA_IMAGEM)
-                    VALUES('$nome','1')");
+                    VALUES('$nome','$code')");
                     }
                     else{
                     $imagens2 = mysql_fetch_array($result); 
@@ -375,13 +375,13 @@ function infosImagensMateria($string){
                     }
                 }
                 if($string == "capa"){   
-                    $query = "SELECT * FROM IMAGENS_MATERIA WHERE COD_MATERIA_IMAGEM = 1";
+                    $query = "SELECT * FROM IMAGENS_MATERIA WHERE COD_MATERIA_IMAGEM = $code";
                     $result = mysql_query($query);                
                     $imagens = mysql_num_rows($result);
                     if($imagens === 0){
                     $nome = "defaultCapa.jpg";            
                     mysql_query("INSERT INTO IMAGENS_MATERIA(IMAGEM_CAPA, COD_MATERIA_IMAGEM)
-                    VALUES('$nome','1')");
+                    VALUES('$nome','$code')");
                     }
                     else{
                     $imagens2 = mysql_fetch_array($result); 
@@ -390,13 +390,13 @@ function infosImagensMateria($string){
                     }
                 }
                 if($string == "imgPrincipal"){   
-                    $query = "SELECT * FROM IMAGENS_MATERIA WHERE COD_MATERIA_IMAGEM = 1";
+                    $query = "SELECT * FROM IMAGENS_MATERIA WHERE COD_MATERIA_IMAGEM = $code";
                     $result = mysql_query($query);                
                     $imagens = mysql_num_rows($result);
                     if($imagens === 0){
                     $nome = "imgPrincipalDefault.jpg";            
                     mysql_query("INSERT INTO IMAGENS_MATERIA(IMAGEM_PRINCIPAL, COD_MATERIA_IMAGEM)
-                    VALUES('$nome','1')");
+                    VALUES('$nome','$code')");
                     }
                     else{
                     $imagens2 = mysql_fetch_array($result); 
@@ -530,7 +530,7 @@ function buscarMateriasAside(){
                             }
 }
 function buscarMateriasAside2(){
-                            $query = "SELECT * FROM ARTIGO ORDER BY DATA_ARTIGO DESC";
+                            $query = "SELECT * FROM ARTIGO ORDER BY ACESSOS DESC";
                             $total_reg = "7";
                             $inicio = 0;
                             $limite = mysql_query("$query LIMIT $inicio,$total_reg"); 
@@ -586,7 +586,7 @@ function buscarMateriasSlide(){
                                     echo '<div id="descricaoSlide">';
                                     echo $descricaoArtigo;
                                     echo '</div></a>';
-                                    echo '<img src="uploads/'.$imagemCapa.'" class="imgGaleria">';
+                                    echo '<img src="uploads/'.$imagemMini.'" class="imgGaleria">';
                                     echo '</a>';
                             }
                             }
@@ -618,7 +618,7 @@ function buscarMateriasSlideP(){
                                     echo '<div id="descricaoSlide">';
                                     echo $descricaoArtigo;
                                     echo '</div></a>';
- echo '<a href="'.$urlArtigo.'"><img src="uploads/'.$imagemCapa.'" class="imgGaleria"></a>';
+ echo '<a href="'.$urlArtigo.'"><img src="uploads/'.$imagemMini.'" class="imgGaleria"></a>';
                                     echo '</a>';
                             }
                             }
@@ -650,7 +650,7 @@ function buscarMateriasSlideX(){
                                     echo '<div id="descricaoSlide">';
                                     echo $descricaoArtigo;
                                     echo '</div></a>';
- echo '<a href="'.$urlArtigo.'"><img src="uploads/'.$imagemCapa.'" class="imgGaleria"></a>';
+ echo '<a href="'.$urlArtigo.'"><img src="uploads/'.$imagemMini.'" class="imgGaleria"></a>';
                                     echo '</a>';
                             }
                             }
@@ -682,7 +682,7 @@ function buscarMateriasSlidePC(){
                                     echo '<div id="descricaoSlide">';
                                     echo $descricaoArtigo;
                                     echo '</div></a>';
- echo '<a href="'.$urlArtigo.'"><img src="uploads/'.$imagemCapa.'" class="imgGaleria"></a>';
+ echo '<a href="'.$urlArtigo.'"><img src="uploads/'.$imagemMini.'" class="imgGaleria"></a>';
                                     echo '</a>';
                             }
                             }
@@ -714,7 +714,7 @@ function buscarMateriasSlideN(){
                                     echo '<div id="descricaoSlide">';
                                     echo $descricaoArtigo;
                                     echo '</div></a>';
- echo '<a href="'.$urlArtigo.'"><img src="uploads/'.$imagemCapa.'" class="imgGaleria"></a>';
+ echo '<a href="'.$urlArtigo.'"><img src="uploads/'.$imagemMini.'" class="imgGaleria"></a>';
                                     echo '</a>';
                             }
                             }
@@ -748,7 +748,7 @@ function buscarMateriasPrincipal(){
                                     echo '<div id="descricaoImagemPrincipal">';
                                     echo '<p>'.$descricaoArtigo.'</P>';
                                     echo '</div>';                                   
-                                    echo ' <img src="imagens/'.$imagemCapa.'" alt="" id="imagemMaterias">';
+                                    echo ' <img src="uploads/'.$imagemMini.'" alt="" id="imagemMaterias">';
                                     echo '</div>';
                                     echo '</a>';
                             }
@@ -782,7 +782,7 @@ function buscarMateriasPequenas(){
                                     echo '<div id="descricaoImagem">';
                                     echo '<p>'.$descricaoArtigo.'</P>';
                                     echo '</div>';                                   
-                                    echo ' <img src="imagens/'.$imagemCapa.'" alt="" id="imagemMaterias">';
+                                    echo ' <img src="uploads/'.$imagemMini.'" alt="" id="imagemMaterias">';
                                     echo '</div>';
                                     echo '</a>';
                             }
