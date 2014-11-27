@@ -20,6 +20,11 @@
                 document.getElementById("logar").style.borderBottom = "solid 5px #00989E";               
                 document.getElementById("tituloPagina").style.backgroundColor = "#00989E"; 
             };
+            
+                function mostrarMateria(info,id,value){
+                    document.getElementById(info).style.display = 'inline';
+                    document.getElementById(id).src = "listaMateria.php?&tipoMateria="+value;
+                }
         </script>
         <title> Multiplayer </title>
     </head>
@@ -85,42 +90,42 @@
                             <h1> Selecione um tipo de Matéria: </h1> <br/>
                             <ul class="inputRadios">
                             <li class="inputRadio radioNintendo">
-                              <input name="categoria[]"  value="2" type="radio" id="radioNintendo" onclick="ocultar('categorias','nintendo');">
+                              <input name="categoria[]"  value="2" type="radio" id="radioNintendo" onclick="mostrarMateria('mostrarMaterias','mostrar_materias','2');">
                               <label for="radioNintendo">Nintendo</label><br/><br/><br/>
                               <p> Nintendo </p>
                             </li>
 
                             <li class="inputRadio radioPc">
-                              <input name="categoria[]"  value="4" type="radio" id="radioPc" onclick="ocultar('categorias','pc');">
+                              <input name="categoria[]"  value="4" type="radio" id="radioPc" onclick="mostrarMateria('mostrarMaterias','mostrar_materias','4');">
                               <label for="radioPc">PC</label><br/><br/><br/>
                               <p> PC </p>
                             </li>
 
                             <li class="inputRadio radioPlaystation">
-                              <input name="categoria[]"  value="1" type="radio" id="radioPlaystation" onclick="ocultar('categorias','ps');">
+                              <input name="categoria[]"  value="1" type="radio" id="radioPlaystation" onclick="mostrarMateria('mostrarMaterias','mostrar_materias','1');">
                               <label for="radioPlaystation">Playstation</label><br/><br/><br/>
                               <p> Playstation </p>
                             </li>
 
                             <li class="inputRadio radioXbox">
-                              <input name="categoria[]"  value="3" type="radio" id="radioXbox" onclick="ocultar('categorias','xbox');">    
+                              <input name="categoria[]"  value="3" type="radio" id="radioXbox" onclick="mostrarMateria('mostrarMaterias','mostrar_materias','3');">    
                               <label for="radioXbox">Xbox</label><br/><br/><br/>
                               <p> Xbox </p>
                             </li>
                             <li class="inputRadio radioNostalgia">
-                              <input name="categoria[]"  value="0" type="radio" id="radioNostalgia" onclick="ocultar('categorias','nostalgia');">    
+                              <input name="categoria[]"  value="0" type="radio" id="radioNostalgia" onclick="mostrarMateria('mostrarMaterias','mostrar_materias','5');">    
                               <label for="radioNostalgia">Xbox</label><br/><br/><br/>
-                              <p>  </p>
+                              <p> Nostalgia </p>
                             </li>
                             <li class="inputRadio radioMulti">
-                              <input name="categoria[]"  value="0" type="radio" id="radioMulti" onclick="mostraOculta2('radioMulti','categorias','imgPrincipal');">    
+                              <input name="categoria[]"  value="0" type="radio" id="radioMulti" onclick="mostrarMateria('mostrarMaterias','mostrar_materias','0');">    
                               <label for="radioMulti">Xbox</label><br/><br/><br/>
                               <p> Multiplataforma </p>
                             </li>
                           </ul> 
                         </div>
-                        <div id="mostrarMaterias" style="display:none">
-                                <iframe width="425" id="iframeVideo2" height="300" src="" frameborder="0" allowfullscreen></iframe>     
+                        <div id="mostrarMaterias" style="display:none;">
+                             <iframe  id="mostrar_materias"  src="" frameborder="0" allowfullscreen></iframe>     
                         </div>
                        </form>
                 </article>                

@@ -2086,3 +2086,16 @@ margin-left: 350px;
     font-weight: bold;
     border:0px;
 }
+#mostrarMaterias{
+    width:100%;
+    min-height: 100px;
+    height:auto;
+    float:left;
+}
+#mostrar_materias{
+    width:100%;
+    height:auto;
+    float:left;
+    border:0px;
+    min-height: 100px;
+}
