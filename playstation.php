@@ -3,26 +3,26 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="shortcut icon" href="imagens/icone006.png" >
+        <link rel="shortcut icon" href="imagens/icone002.png" >
         <script type="text/javascript" src="js/funcoes.js"> </script>
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/cycle.js"></script>
         <script type="text/javascript" src="js/javascript.js"></script>
         <script type="text/javascript">
-            onload = function(){
+             onload = function(){
                 var imgMiniLogo = document.getElementById("imgMiniLogo");
                 var imgLogo = document.getElementById("img-logo");                
-                imgMiniLogo.innerHTML = '<img src="imagens/logosReduzidos006.png" alt="" id="miniLogo">';
-                imgLogo.innerHTML = '<img src="imagens/logo006.png" alt="" id="logo">';
-                document.getElementById("tituloPagina").style.backgroundColor = "#F39200";     
-                document.getElementById("tituloAside").style.backgroundColor = "#F39200"; 
-                document.getElementById("nav").style.backgroundColor = "#F39200";
-                document.getElementById("navReduzido").style.backgroundColor = "#F39200";                
-                document.getElementById("botaoLogin").style.backgroundColor = "#F39200";
-                document.getElementById("logar").style.borderBottom = "solid 5px #F39200";                
-            };
+                imgMiniLogo.innerHTML = '<img src="imagens/logosReduzidos002.png" alt="" id="miniLogo">';
+                imgLogo.innerHTML = '<img src="imagens/logo002.png" alt="" id="logo">';
+                document.getElementById("tituloPagina").style.backgroundColor = "#9C1006";     
+                document.getElementById("tituloAside").style.backgroundColor = "#9C1006"; 
+                document.getElementById("nav").style.backgroundColor = "#9C1006";
+                document.getElementById("navReduzido").style.backgroundColor = "#9C1006";                
+                document.getElementById("botaoLogin").style.backgroundColor = "#9C1006";
+                document.getElementById("logar").style.borderBottom = "solid 5px #9C1006; 
+            };  
         </script>       
-        <title> PC </title>
+        <title>Nintendo</title>
     </head>
     <body>
         <section id="container">
@@ -44,20 +44,20 @@
             <article id="conteudo">
                 <div id="galeria">  
                     <div id="botoesGaleria">
-                        <a href="#" id="prev"> <img src="imagens/previousPc.png" alt=""> </a>
-                        <a href="#" id="next"> <img src="imagens/nextPc.png" alt=""> </a>
+                        <a href="#" id="prev"> <img src="imagens/previousNintendo.png" alt=""> </a>
+                        <a href="#" id="next"> <img src="imagens/nextNintendo.png" alt=""> </a>
                     </div>
                     <div id="slide">
                         <?php
-                             buscarMateriasSlidePC();
+                             buscarMateriasSlideP();
                         ?>    
                     </div>                
                 </div>
                 <div id="corpoConteudo">
-                    <div id="materias">                         
+                    <div id="materias">  
                         <h1 id="tituloPagina"> Notícias </h1>
                          <?php
-                             buscarMateriasPrincipal();
+                                 buscarMateriasPrincipal();
                             ?>                            
                         <div id="materiasPequenas">
                             <?php
@@ -77,10 +77,9 @@
                             ?>
                         </div>    
                     </aside> 
-                
                 <div id="voltarTopo">
                     <a href="" class="subir">
-                        <img src="imagens/topoPc.png" alt="">
+                        <img src="imagens/topoNintendo.png" alt="">
                         <p> Voltar ao topo </p>
                     </a>                    
                 </div>

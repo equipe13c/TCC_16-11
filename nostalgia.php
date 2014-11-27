@@ -49,7 +49,7 @@
                     </div>
                     <div id="slide">
                         <?php
-                             buscarMateriasSlide();
+                             buscarMateriasSlideN();
                         ?>    
                     </div>                
                 </div>  
@@ -73,9 +73,6 @@
                         <h1 id="tituloAside"> Top Notícias </h1>
                         <div id="materiasAside">
                             <?php
-                                buscarMateriasAside2();
-                            ?>
-                             <?php
                                 buscarMateriasAside2();
                             ?>
                         </div>    
