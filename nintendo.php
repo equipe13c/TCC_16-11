@@ -75,9 +75,6 @@
                             <?php
                                 buscarMateriasAside2();
                             ?>
-                             <?php
-                                buscarMateriasAside2();
-                            ?>
                         </div>    
                     </aside> 
                 <div id="voltarTopo">

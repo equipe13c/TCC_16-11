@@ -221,7 +221,7 @@
                                 </div>                                                                
                                 <div class="editDatalancamento">
                                  <p id="textData"> Data de Lançamento </p>
-                                    <input type="date" name="data_lancamento" id="data_lancamento" class="dataLancamento" >
+                                    <input type="text" name="data_lancamento" id="data_lancamento" class="dataLancamento" >
                                 </div>
                             </div>
                         </div>      

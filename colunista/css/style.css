@@ -670,9 +670,10 @@ color: white;
     width: 950px;
     height: auto;
     float: left;
-    margin-left: 8.5%;
-    margin-top: 100px;
+    margin-left: 70px;
+    margin-top: 10px;
     background-color: #E0E0F8;;
+    margin-bottom: 25px;
 }
 #mailImg{
     width:35px;
@@ -705,9 +706,9 @@ color: white;
 
 table.bordasimples {
     border-collapse: collapse;
-    width:1000px; 
+    width:950px; 
     height:300px;
-    margin-left:50px;
+    margin-left:0px;
     margin-top:70px;
 }
 table.bordasimples td.icone{
@@ -2120,4 +2121,17 @@ margin-left: 350px;
     text-transform: uppercase;
     font-weight: bold;
     border:0px;
+}
+#mostrarMaterias{
+    width:100%;
+    min-height: 100px;
+    height:auto;
+    float:left;
+}
+#mostrar_materias{
+    width:100%;
+    height:auto;
+    float:left;
+    border:0px;
+    min-height: 100px;
 }
