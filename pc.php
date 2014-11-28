@@ -16,6 +16,7 @@
                 imgLogo.innerHTML = '<img src="imagens/logo006.png" alt="" id="logo">';
                 document.getElementById("tituloPagina").style.backgroundColor = "#F39200";     
                 document.getElementById("tituloAside").style.backgroundColor = "#F39200"; 
+                document.getElementById("tituloGaleria").style.backgroundColor = "#F39200";
                 document.getElementById("nav").style.backgroundColor = "#F39200";
                 document.getElementById("navReduzido").style.backgroundColor = "#F39200";                
                 document.getElementById("botaoLogin").style.backgroundColor = "#F39200";
@@ -42,16 +43,19 @@
                 </div>
             </header>
             <article id="conteudo">
-                <div id="galeria">  
-                    <div id="botoesGaleria">
-                        <a href="#" id="prev"> <img src="imagens/previousPc.png" alt=""> </a>
-                        <a href="#" id="next"> <img src="imagens/nextPc.png" alt=""> </a>
-                    </div>
-                    <div id="slide">
-                        <?php
-                             buscarMateriasSlidePC();
-                        ?>    
-                    </div>                
+<div id="corpoConteudoGaleria">
+                    <h1 id="tituloGaleria"> Novidades  </h1>
+                    <div id="galeria">  
+                        <div id="botoesGaleria">
+                            <a href="#" id="prev"> <img src="imagens/previous.png" alt=""> </a>
+                            <a href="#" id="next"> <img src="imagens/next.png" alt=""> </a>
+                        </div>
+                        <div id="slide">
+                            <?php
+                                 buscarMateriasSlidePC();
+                            ?>    
+                        </div>                
+                    </div>  
                 </div>
                 <div id="corpoConteudo">
                     <div id="materias">                         

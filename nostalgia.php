@@ -15,7 +15,8 @@
                 imgMiniLogo.innerHTML = '<img src="imagens/logosReduzidos004.png" alt="" id="miniLogo">';
                 imgLogo.innerHTML = '<img src="imagens/logo004.png" alt="" id="logo">';                              
                 document.getElementById("tituloPagina").style.backgroundColor = "#6D6A65";  
-                document.getElementById("tituloAside").style.backgroundColor = "#6D6A65";                 
+                document.getElementById("tituloAside").style.backgroundColor = "#6D6A65";   
+                document.getElementById("tituloGaleria").style.backgroundColor = "#6D6A65";
                 document.getElementById("logar").style.borderBottom = "solid 5px #6D6A65";
                 document.getElementById("nav").style.backgroundColor = "#6D6A65";
                 document.getElementById("navReduzido").style.backgroundColor = "#6D6A65";                
@@ -42,17 +43,20 @@
                 </div>
             </header>
             <article id="conteudo">
-                <div id="galeria">  
-                    <div id="botoesGaleria">
-                        <a href="#" id="prev"> <img src="imagens/previousOutros.png" alt=""> </a>
-                        <a href="#" id="next"> <img src="imagens/nextOutros.png" alt=""> </a>
-                    </div>
-                    <div id="slide">
-                        <?php
-                             buscarMateriasSlideN();
-                        ?>    
-                    </div>                
-                </div>  
+                <div id="corpoConteudoGaleria">
+                    <h1 id="tituloGaleria"> Novidades  </h1>
+                    <div id="galeria">  
+                        <div id="botoesGaleria">
+                            <a href="#" id="prev"> <img src="imagens/previous.png" alt=""> </a>
+                            <a href="#" id="next"> <img src="imagens/next.png" alt=""> </a>
+                        </div>
+                        <div id="slide">
+                            <?php
+                                 buscarMateriasSlideNS();
+                            ?>    
+                        </div>                
+                    </div>  
+                </div>
                     <div id="corpoConteudo">
                     <div id="materias">  
                         <h1 id="tituloPagina"> Nostalgia </h1>
