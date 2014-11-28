@@ -16,6 +16,7 @@
                 imgLogo.innerHTML = '<img src="imagens/logo003.png" alt="" id="logo">';
                 document.getElementById("tituloPagina").style.backgroundColor = "#8EA50D";     
                 document.getElementById("tituloAside").style.backgroundColor = "#8EA50D"; 
+                document.getElementById("tituloGaleria").style.backgroundColor = "#8EA50D";
                 document.getElementById("nav").style.backgroundColor = "#8EA50D";
                 document.getElementById("navReduzido").style.backgroundColor = "#8EA50D";                
                 document.getElementById("botaoLogin").style.backgroundColor = "#8EA50D";
@@ -42,16 +43,19 @@
                 </div>
             </header>
             <article id="conteudo">
-                <div id="galeria">  
-                    <div id="botoesGaleria">
-                        <a href="#" id="prev"> <img src="imagens/previousXbox.png" alt=""> </a>
-                        <a href="#" id="next"> <img src="imagens/nextXbox.png" alt=""> </a>
-                    </div>
-                    <div id="slide">
-                        <?php
-                             buscarMateriasSlideX();
-                        ?>    
-                    </div>                
+            <div id="corpoConteudoGaleria">
+                    <h1 id="tituloGaleria"> Novidades  </h1>
+                    <div id="galeria">  
+                        <div id="botoesGaleria">
+                            <a href="#" id="prev"> <img src="imagens/previous.png" alt=""> </a>
+                            <a href="#" id="next"> <img src="imagens/next.png" alt=""> </a>
+                        </div>
+                        <div id="slide">
+                            <?php
+                                 buscarMateriasSlideX();
+                            ?>    
+                        </div>                
+                    </div>  
                 </div>
                 <div id="corpoConteudo">
                     <div id="materias">                         

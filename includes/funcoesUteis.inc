@@ -500,7 +500,7 @@ function  infoArtigos($string,$url){
     }
 }
 function buscarMateriasAside(){
-                            $query = "SELECT * FROM ARTIGO ORDER BY DATA_ARTIGO DESC";
+                            $query = "SELECT * FROM ARTIGO ORDER BY ACESSOS DESC";
                             $total_reg = "10";
                             $inicio = 0;
                             $limite = mysql_query("$query LIMIT $inicio,$total_reg"); 
@@ -523,7 +523,7 @@ function buscarMateriasAside(){
                                     echo '<div class="materiaAside">';
                                     echo '<a href="../'.$urlArtigo.'"><div class="descricaoMateriaAside">';
                                     echo '<p>'.$tituloArtigo .'</p>';
-                                    echo '</div></a>';
+                                    echo '</div>';
                                     echo '<img src="../uploads/'.$imagemMini.'" class="imagemMateriaAside">';
                                     echo '</div>';
                             }
@@ -553,15 +553,16 @@ function buscarMateriasAside2(){
                                     echo '<div class="materiaAside" >';
                                     echo '<a href="'.$urlArtigo.'"><div class="descricaoMateriaAside">';
                                     echo '<p>'.$tituloArtigo .'</p>';
-                                    echo '</div></a>';
+                                    echo '</div>';
                                     echo '<img src="uploads/'.$imagemMini.'" class="imagemMateriaAside">';
                                     echo '</div>';
                             }
                             }
 }
 function buscarMateriasSlide(){
-                            $query = "SELECT * FROM ARTIGO ORDER BY DATA_ARTIGO DESC";
-                            $total_reg = "4";
+
+                            $query = "SELECT * FROM ARTIGO WHERE CATEGORIA_ARTIGO = 1 ORDER BY ID_ARTIGO DESC";
+                            $total_reg = "1";
                             $inicio = 0;
                             $limite = mysql_query("$query LIMIT $inicio,$total_reg"); 
                             $result = mysql_query($query);                
@@ -585,11 +586,141 @@ function buscarMateriasSlide(){
                                     echo '<a href="'.$urlArtigo.'">';
                                     echo '<div id="descricaoSlide">';
                                     echo $descricaoArtigo;
-                                    echo '</div></a>';
-                                    echo '<img src="uploads/'.$imagemMini.'" class="imgGaleria">';
+                                    echo '</div>';
+ echo '<img src="uploads/'.$imagemMini.'" class="imgGaleria">';
                                     echo '</a>';
                             }
+                 
+}
+//
+$query = "SELECT * FROM ARTIGO WHERE CATEGORIA_ARTIGO = 2 ORDER BY ID_ARTIGO DESC";
+                            $total_reg = "1";
+                            $inicio = 0;
+                            $limite = mysql_query("$query LIMIT $inicio,$total_reg"); 
+                            $result = mysql_query($query);                
+                            $tr = mysql_num_rows($result);
+                            $tp = $tr / $total_reg;
+                            if($tr === 0){
+                                echo "Nenhum Artigo encontrado";
                             }
+                            else{
+                                while($artigos = mysql_fetch_array($limite))
+                                {      
+                                    $codigoImagem = $artigos['ID_ARTIGO'];
+                                    $urlArtigo = $artigos['URL_ARTIGO'];
+                                    $tituloArtigo = $artigos['TITULO_ARTIGO'];
+                                    $descricaoArtigo = $artigos['DESCRICAO_ARTIGO'];
+                                    $sql = "SELECT * FROM IMAGENS_MATERIA WHERE COD_MATERIA_IMAGEM = $codigoImagem";
+                                    $resultado = mysql_query($sql);
+                                    $artigos2 = mysql_fetch_array($resultado);
+                                    $imagemMini = $artigos2['IMAGEM_PRINCIPAL'];
+                                    $imagemCapa = $artigos2['IMAGEM_CAPA'];
+                                    echo '<a href="'.$urlArtigo.'">';
+                                    echo '<div id="descricaoSlide">';
+                                    echo $descricaoArtigo;
+                                    echo '</div>';
+ echo '<img src="uploads/'.$imagemMini.'" class="imgGaleria">';
+                                    echo '</a>';
+                            }
+                 
+}
+//
+$query = "SELECT * FROM ARTIGO WHERE CATEGORIA_ARTIGO = 3 ORDER BY ID_ARTIGO DESC";
+                            $total_reg = "1";
+                            $inicio = 0;
+                            $limite = mysql_query("$query LIMIT $inicio,$total_reg"); 
+                            $result = mysql_query($query);                
+                            $tr = mysql_num_rows($result);
+                            $tp = $tr / $total_reg;
+                            if($tr === 0){
+                                echo "Nenhum Artigo encontrado";
+                            }
+                            else{
+                                while($artigos = mysql_fetch_array($limite))
+                                {      
+                                    $codigoImagem = $artigos['ID_ARTIGO'];
+                                    $urlArtigo = $artigos['URL_ARTIGO'];
+                                    $tituloArtigo = $artigos['TITULO_ARTIGO'];
+                                    $descricaoArtigo = $artigos['DESCRICAO_ARTIGO'];
+                                    $sql = "SELECT * FROM IMAGENS_MATERIA WHERE COD_MATERIA_IMAGEM = $codigoImagem";
+                                    $resultado = mysql_query($sql);
+                                    $artigos2 = mysql_fetch_array($resultado);
+                                    $imagemMini = $artigos2['IMAGEM_PRINCIPAL'];
+                                    $imagemCapa = $artigos2['IMAGEM_CAPA'];
+                                    echo '<a href="'.$urlArtigo.'">';
+                                    echo '<div id="descricaoSlide">';
+                                    echo $descricaoArtigo;
+                                    echo '</div>';
+ echo '<img src="uploads/'.$imagemMini.'" class="imgGaleria">';
+                                    echo '</a>';
+                            }
+                 
+}
+//
+$query = "SELECT * FROM ARTIGO WHERE CATEGORIA_ARTIGO = 4 ORDER BY ID_ARTIGO DESC";
+                            $total_reg = "1";
+                            $inicio = 0;
+                            $limite = mysql_query("$query LIMIT $inicio,$total_reg"); 
+                            $result = mysql_query($query);                
+                            $tr = mysql_num_rows($result);
+                            $tp = $tr / $total_reg;
+                            if($tr === 0){
+                                echo "Nenhum Artigo encontrado";
+                            }
+                            else{
+                                while($artigos = mysql_fetch_array($limite))
+                                {      
+                                    $codigoImagem = $artigos['ID_ARTIGO'];
+                                    $urlArtigo = $artigos['URL_ARTIGO'];
+                                    $tituloArtigo = $artigos['TITULO_ARTIGO'];
+                                    $descricaoArtigo = $artigos['DESCRICAO_ARTIGO'];
+                                    $sql = "SELECT * FROM IMAGENS_MATERIA WHERE COD_MATERIA_IMAGEM = $codigoImagem";
+                                    $resultado = mysql_query($sql);
+                                    $artigos2 = mysql_fetch_array($resultado);
+                                    $imagemMini = $artigos2['IMAGEM_PRINCIPAL'];
+                                    $imagemCapa = $artigos2['IMAGEM_CAPA'];
+                                    echo '<a href="'.$urlArtigo.'">';
+                                    echo '<div id="descricaoSlide">';
+                                    echo $descricaoArtigo;
+                                    echo '</div>';
+ echo '<img src="uploads/'.$imagemMini.'" class="imgGaleria">';
+                                    echo '</a>';
+                            }
+                 
+}
+
+//
+$query = "SELECT * FROM ARTIGO WHERE CATEGORIA_ARTIGO = 5 ORDER BY ID_ARTIGO DESC";
+                            $total_reg = "1";
+                            $inicio = 0;
+                            $limite = mysql_query("$query LIMIT $inicio,$total_reg"); 
+                            $result = mysql_query($query);                
+                            $tr = mysql_num_rows($result);
+                            $tp = $tr / $total_reg;
+                            if($tr === 0){
+                                echo "Nenhum Artigo encontrado";
+                            }
+                            else{
+                                while($artigos = mysql_fetch_array($limite))
+                                {      
+                                    $codigoImagem = $artigos['ID_ARTIGO'];
+                                    $urlArtigo = $artigos['URL_ARTIGO'];
+                                    $tituloArtigo = $artigos['TITULO_ARTIGO'];
+                                    $descricaoArtigo = $artigos['DESCRICAO_ARTIGO'];
+                                    $sql = "SELECT * FROM IMAGENS_MATERIA WHERE COD_MATERIA_IMAGEM = $codigoImagem";
+                                    $resultado = mysql_query($sql);
+                                    $artigos2 = mysql_fetch_array($resultado);
+                                    $imagemMini = $artigos2['IMAGEM_PRINCIPAL'];
+                                    $imagemCapa = $artigos2['IMAGEM_CAPA'];
+                                    echo '<a href="'.$urlArtigo.'">';
+                                    echo '<div id="descricaoSlide">';
+                                    echo $descricaoArtigo;
+                                    echo '</div>';
+ echo '<img src="uploads/'.$imagemMini.'" class="imgGaleria">';
+                                    echo '</a>';
+                            }
+                 
+}
 }
 function buscarMateriasSlideP(){
                             $query = "SELECT * FROM ARTIGO  WHERE CATEGORIA_ARTIGO = 1 ORDER BY DATA_ARTIGO DESC";
@@ -617,8 +748,8 @@ function buscarMateriasSlideP(){
                                     echo '<a href="'.$urlArtigo.'">';
                                     echo '<div id="descricaoSlide">';
                                     echo $descricaoArtigo;
-                                    echo '</div></a>';
- echo '<a href="'.$urlArtigo.'"><img src="uploads/'.$imagemMini.'" class="imgGaleria"></a>';
+                                    echo '</div>';
+ echo '<img src="uploads/'.$imagemMini.'" class="imgGaleria">';
                                     echo '</a>';
                             }
                             }
@@ -649,8 +780,8 @@ function buscarMateriasSlideX(){
                                     echo '<a href="'.$urlArtigo.'">';
                                     echo '<div id="descricaoSlide">';
                                     echo $descricaoArtigo;
-                                    echo '</div></a>';
- echo '<a href="'.$urlArtigo.'"><img src="uploads/'.$imagemMini.'" class="imgGaleria"></a>';
+                                    echo '</div>';
+ echo '<img src="uploads/'.$imagemMini.'" class="imgGaleria">';
                                     echo '</a>';
                             }
                             }
@@ -681,8 +812,8 @@ function buscarMateriasSlidePC(){
                                     echo '<a href="'.$urlArtigo.'">';
                                     echo '<div id="descricaoSlide">';
                                     echo $descricaoArtigo;
-                                    echo '</div></a>';
- echo '<a href="'.$urlArtigo.'"><img src="uploads/'.$imagemMini.'" class="imgGaleria"></a>';
+                                    echo '</div>';
+ echo '<img src="uploads/'.$imagemMini.'" class="imgGaleria">';
                                     echo '</a>';
                             }
                             }
@@ -713,8 +844,8 @@ function buscarMateriasSlideN(){
                                     echo '<a href="'.$urlArtigo.'">';
                                     echo '<div id="descricaoSlide">';
                                     echo $descricaoArtigo;
-                                    echo '</div></a>';
- echo '<a href="'.$urlArtigo.'"><img src="uploads/'.$imagemMini.'" class="imgGaleria"></a>';
+                                    echo '</div>';
+ echo '<img src="uploads/'.$imagemMini.'" class="imgGaleria">';
                                     echo '</a>';
                             }
                             }

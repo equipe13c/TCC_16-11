@@ -16,6 +16,7 @@
                 imgLogo.innerHTML = '<img src="imagens/logo001.png" alt="" id="logo">'; 
                 document.getElementById("tituloPagina").style.backgroundColor = "#00989E";      
                 document.getElementById("tituloAside").style.backgroundColor = "#00989E"; 
+                document.getElementById("tituloGaleria").style.backgroundColor = "#00989E";
                 document.getElementById("nav").style.backgroundColor = "#00989E";
                 document.getElementById("navReduzido").style.backgroundColor = "#00989E";                
                 document.getElementById("botaoLogin").style.backgroundColor = "#00989E";
@@ -42,17 +43,20 @@
                 </div>
             </header>
             <article id="conteudo">
-                <div id="galeria">  
-                    <div id="botoesGaleria">
-                        <a href="#" id="prev"> <img src="imagens/previous.png" alt=""> </a>
-                        <a href="#" id="next"> <img src="imagens/next.png" alt=""> </a>
-                    </div>
-                    <div id="slide">
-                        <?php
-                             buscarMateriasSlide();
-                        ?>    
-                    </div>                
-                </div>  
+                <div id="corpoConteudoGaleria">
+                    <h1 id="tituloGaleria"> Novidades  </h1>
+                    <div id="galeria">  
+                        <div id="botoesGaleria">
+                            <a href="#" id="prev"> <img src="imagens/previous.png" alt=""> </a>
+                            <a href="#" id="next"> <img src="imagens/next.png" alt=""> </a>
+                        </div>
+                        <div id="slide">
+                            <?php
+                                 buscarMateriasSlide();
+                            ?>    
+                        </div>                
+                    </div>  
+                </div>
                     <div id="corpoConteudo">
                     <div id="materias">                         
                         <h1 id="tituloPagina"> Notícias </h1>

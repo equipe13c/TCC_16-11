@@ -478,15 +478,34 @@ body{
     float: left;
     background-color: #fff;
 }
-
+#corpoConteudoGaleria{
+    width: 1150px;
+    height: 640px;
+    margin-top: 40px;
+    margin-left: 7%;
+    margin-bottom: 50px;
+    float: left;
+    background-color: #fff;
+    box-shadow: 7px 7px 0px 0px #333;
+}
+#tituloGaleria{
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 0px;
+    font-family: century gothic;
+    font-size: 16pt;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 5px;
+}
 #galeria{
     width: 1000px;
     height: 500px;
-    margin-top: 40px;
-    margin-left: 12.5%;
-    margin-bottom: 50px;
+    margin-top: 50px;
+    margin-left: 75px;
+    margin-bottom: 0px;
     float: left;
-    box-shadow: 0 0 0 10px #333;
     background-color: #333;
 }
 
@@ -747,6 +766,7 @@ body{
     margin-left:50px;
     box-shadow: 5px 5px 0px 0px #333;    
     background-color: #fff;
+    
 }
 
 #aside2{
