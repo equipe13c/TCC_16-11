@@ -500,7 +500,7 @@ function  infoArtigos($string,$url){
     }
 }
 function buscarMateriasAside(){
-                            $query = "SELECT * FROM ARTIGO ORDER BY DATA_ARTIGO DESC";
+                            $query = "SELECT * FROM ARTIGO ORDER BY ACESSOS DESC";
                             $total_reg = "10";
                             $inicio = 0;
                             $limite = mysql_query("$query LIMIT $inicio,$total_reg"); 
@@ -561,7 +561,7 @@ function buscarMateriasAside2(){
 }
 function buscarMateriasSlide(){
                             $query = "SELECT * FROM ARTIGO ORDER BY DATA_ARTIGO DESC";
-                            $total_reg = "4";
+                            $total_reg = "5";
                             $inicio = 0;
                             $limite = mysql_query("$query LIMIT $inicio,$total_reg"); 
                             $result = mysql_query($query);                
@@ -585,7 +585,7 @@ function buscarMateriasSlide(){
                                     echo '<a href="'.$urlArtigo.'">';
                                     echo '<div id="descricaoSlide">';
                                     echo $descricaoArtigo;
-                                    echo '</div></a>';
+                                    echo '</div>';
                                     echo '<img src="uploads/'.$imagemMini.'" class="imgGaleria">';
                                     echo '</a>';
                             }

@@ -5,7 +5,7 @@
         <title>Zelda U</title>
         <meta charset="UTF-8">
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/styleMaterias.css"/>
         <script type="text/javascript" src="../js/funcoes.js"> </script>
         <script type="text/javascript" src="../js/jquery.js"></script>
         <script type="text/javascript" src="../js/cycle.js"></script>
@@ -30,7 +30,8 @@
                 document.getElementById("descricaoColunista").style.backgroundColor = "#009FE3";  
                 document.getElementById("logar").style.borderBottom = "solid 5px #009FE3"; 
                 document.getElementById("botaoLogin").style.backgroundColor = "#009FE3";
-                document.getElementById("tituloPagina").style.backgroundColor = "#009FE3";           
+                document.getElementById("tituloPagina").style.backgroundColor = "#009FE3";
+                document.getElementById("tituloAside").style.backgroundColor = "#009FE3";
                 var imgMiniLogo = document.getElementById("imgMiniLogo");
             };
         </script>       
@@ -147,7 +148,7 @@
                     </figure>
                     <div id="descricaoColunista"> 
                         <div id="infoAutor">
-                             <?phpbuscarDescAutor('29');?>
+                             <?php buscarDescAutor('29');?>
                         </div>
                     </div>
                 </div>
@@ -174,6 +175,7 @@
                 </div>
             </article>
             <aside id="aside1">
+                <h1 id="tituloAside"> Top Notícias </h1>
                     <?php
                        buscarMateriasAside();
                    ?>

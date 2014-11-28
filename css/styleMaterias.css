@@ -1121,11 +1121,25 @@ imgAutor{
 #aside1{
     width:285px;
     height: auto;
+    min-height: 865px;  
     float:left;
-    margin-top:15px;
-    margin-left:20px;
-    border:1px solid black;
+    margin-top:0px;
+    margin-left:50px;
+    box-shadow: 5px 5px 0px 0px #333;    
+    background-color: #fff;
     
+}
+
+#tituloAside{
+    margin-top: 5px;
+    margin-left: 0;
+    margin-bottom: 10px;
+    font-family: century gothic;
+    font-size: 16pt;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 5px;
 }
 .materiaAside2{
     width:270px;
@@ -1150,7 +1164,7 @@ imgAutor{
     margin-left:0px;
 }
 #aside2{
-    width: 305px;
+    width: 285px;
     height: auto;
     margin-top: 15px;
     margin-left: 20px;
