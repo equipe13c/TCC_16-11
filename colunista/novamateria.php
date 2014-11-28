@@ -115,8 +115,8 @@
                             </li>
                             <li class="inputRadio radioNostalgia">
                               <input name="categoria[]"  value="0" type="radio" id="radioNostalgia" onclick="ocultar('categorias','nostalgia');">    
-                              <label for="radioNostalgia">Xbox</label><br/><br/><br/>
-                              <p>  </p>
+                              <label for="radioNostalgia">Nostalgia</label><br/><br/><br/>
+                              <p> Nostalgia </p>
                             </li>
                             <li class="inputRadio radioMulti">
                               <input name="categoria[]"  value="0" type="radio" id="radioMulti" onclick="mostraOculta2('radioMulti','categorias','imgPrincipal');">    

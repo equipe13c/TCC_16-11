@@ -85,32 +85,32 @@
                 </nav>
                 <article id="conteudo_infos">
                     <form action="script.php" method="post" enctype="multipart/form-data">
-                        <div id="tablealterarImg">    
-                            <div class="info">   
-                            <?php
-                            $query = "SELECT * FROM IMAGEM_USUARIO WHERE COD_IMAGEM_USUARIO = ".$_SESSION['code'];
-                            $result = mysql_query($query);                
-                            $imagens = mysql_num_rows($result);
-                            if($imagens === 0){
-                            $nome = "default.jpg";            
-                            mysql_query("INSERT INTO IMAGEM_USUARIO(URL_IMAGEM, COD_IMAGEM_USUARIO)
-                            VALUES('$nome'".$_SESSION['code'].")");
-                            }
-                            else{
-                            $imagens2 = mysql_fetch_array($result); 
-                            $urlImagem = $imagens2['URL_IMAGEM'];
-                            echo "<img src='../uploads/$urlImagem' id='imagemInfo' alt='imagem'>";
-                            }
-                            ?>
+                        <div id="tablealterarImg">                                      
+                            <div class="info">                     
+                                <?php
+                                $query = "SELECT * FROM IMAGEM_USUARIO WHERE COD_IMAGEM_USUARIO = ".$_SESSION['code'];
+                                $result = mysql_query($query);                
+                                $imagens = mysql_num_rows($result);
+                                if($imagens === 0){
+                                $nome = "default.jpg";            
+                                mysql_query("INSERT INTO IMAGEM_USUARIO(URL_IMAGEM, COD_IMAGEM_USUARIO)
+                                VALUES('$nome'".$_SESSION['code'].")");
+                                }
+                                else{
+                                $imagens2 = mysql_fetch_array($result); 
+                                $urlImagem = $imagens2['URL_IMAGEM'];
+                                echo "<img src='../uploads/$urlImagem' id='imagemInfo' alt='imagem'>";
+                                }
+                                ?>
                             </div>                                                         
                             <div class="infoInputs">
-                                <input type="file" name="arquivo" value="Alterar Imagem">
-                            </div>                               
+                                <input type="file" name="arquivo" value="Alterar Imagem">                            
+                            </div>                                
                             <div class="infoInputs">
-                                <input type="submit" name="alterarImg" class="bsalvar" value="Alterar Foto">
+                                <input type="submit" name="arquivo" class="bsalvar" value="Alterar Foto">                                
                             </div>
-                        </div> 
-                    </form>    
+                        </div>
+                    </form> 
                 </article>                
             </article>
             <footer id="footer">
