@@ -1130,7 +1130,7 @@ table.editEmailTable td.info2, td.campos2, td.icone2, td.salvarEdit{
 
 #alterarCapa{
     width: 500px;
-    height: 240px;
+    height: 200px;
     float: left;
     margin-top: 10px;
     margin-left: 220px;
@@ -1150,32 +1150,47 @@ table.editEmailTable td.info2, td.campos2, td.icone2, td.salvarEdit{
     margin-left: 160px;
 }
 
-.areasPreferencia p{
-    margin-top: 20px;
-    margin-left: 40px;
-    margin-right: 20px;
-    float: left;
+.preferencias p{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: center;
 }
 
 .areasPreferencia{
     width: 500px;
-    height: 300px;
+    height: 350px;
     float: left;
     margin-top: 10px;
     margin-left: 220px;
+    margin-bottom: 10px;
     border: solid 1px #333;
     color: #333;
     font-size: 14pt;
     font-family: century gothic;    
 }
 
+.preferencias{
+    width: 500px;
+    height: 90px;
+    float: left;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-bottom: 10px;
+    border: none;   
+}
+
 .areasPreferencia textarea{
-    min-height: 70px;
-    max-height: 70px;
-    height: 70px;
-    min-width: 200px;
-    max-width: 200px;
-    width: 200px;
+    min-height: 50px;
+    max-height: 50px;
+    height: 50px;
+    min-width: 400px;
+    max-width: 400px;
+    width: 400px;
+    margin-left: 51px;
+    font-family: century gothic;
+    font-size: 10pt;
+    color: #333;
+    text-transform: uppercase;
 }
 
 .info{
@@ -1185,7 +1200,7 @@ table.editEmailTable td.info2, td.campos2, td.icone2, td.salvarEdit{
 
 .infoInputs{
     width: 115px;
-    margin-top: 40px;
+    margin-top: 15px;
     margin-left: 185px;
 }
 
@@ -1194,7 +1209,7 @@ table.editEmailTable td.info2, td.campos2, td.icone2, td.salvarEdit{
 }
 
 .infoInputs + .infoInputs{    
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 
@@ -1238,5 +1253,48 @@ table.tablealterarCapa2 td.icone{
 table.tablealterarCapa2 td.info{
     width:200px;
     height:100px;
+    text-align: center;
+}
+
+#paginacaoLogAtividades{
+    height: 50px;
+    margin-top: 20px;
+    margin-left: 500px;
+    float: left;
+}
+
+#paginacaoLogAtividades a{ 
+    font-family: century gothic;
+    font-size: 12pt;
+    color: #333;
+    text-decoration: none;
+    padding-left: 2px;
+}
+
+#paginacaoLogAtividades a:hover{  
+    color: #333;
+    text-decoration: underline;
+}
+
+#tabelaLogAtividades{
+    width: 1000px;
+    margin-top: 30px;
+    margin-left: 45px;
+    float: left;
+    background-color: #00989E;
+    font-family: century gothic;
+    font-size: 12pt;
+    color: #333;
+}
+
+#tabelaLogAtividades th{
+    background-color: #E0E0E0;      
+    height: 60px;
+}
+
+#tabelaLogAtividades td{
+    width: 100px;
+    height: 50px;    
+    background-color: #fff;
     text-align: center;
 }

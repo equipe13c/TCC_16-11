@@ -1,7 +1,7 @@
 -- MySQL Administrator dump 1.4
 --
 -- ------------------------------------------------------
--- Server version	5.5.39
+-- Server version	5.6.16
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -38,7 +38,7 @@ CREATE TABLE `acoes_log` (
 
 /*!40000 ALTER TABLE `acoes_log` DISABLE KEYS */;
 INSERT INTO `acoes_log` (`COD_ACOES_LOG`,`NOME_ACAO`) VALUES 
- (1,'efetuou Login'),
+ (1,'Efetuou Login'),
  (2,'Alterou Foto'),
  (3,'Desativado'),
  (4,'Deletado'),
@@ -47,8 +47,8 @@ INSERT INTO `acoes_log` (`COD_ACOES_LOG`,`NOME_ACAO`) VALUES
  (7,'Alterou Email'),
  (8,'Alterou Nome de Perfil'),
  (9,'Comentou'),
- (10,'Cadastro No Site'),
- (11,'efetuou Logout');
+ (10,'Cadastrou no Site'),
+ (11,'Efetuou Logout');
 /*!40000 ALTER TABLE `acoes_log` ENABLE KEYS */;
 
 
@@ -91,8 +91,8 @@ INSERT INTO `artigo` (`ID_ARTIGO`,`TITULO_ARTIGO`,`CATEGORIA_ARTIGO`,`DATA_ARTIG
  (2,'the last of us - Remastered',1,'2014-11-27','01:50:23',29,'playstation/thelastofus.php','O game que ganhou vários prêmios do ano está de volta em uma nova versão muito mais refinada.','2014-07-30','The last­ of Us criado pela grande empresa Naughty Dog,é um jogo,onde se trata de um surto de Cordyceps(fungo responsável pela aniquilação da grande maioria da população),onde Joel um sobrevivente do Cordyceps, por isso podemos perceber durante o jogo que o protagonista é um pouco quanto reservado e fechado.Ele recebe uma missão de resgatar uma garota de quatorze anos do posto de quarentena,chamada Ellie,que nunca saiu mundo afora e podemos perceber isso no começo do jogo quando Ellie fica totalmente impressionada ou ver predios carros e animais.Os verdadeiros motivos por trás dessa missão não foram revelados,fazendo com que eles se tornem alvos procurados pelos militares.Ao longo da história Ellie e Joel começam a se aproximar mais,virando grandes amigos e uma dupla e tanto.','PlayStation 4','https://www.youtube.com/embed/kE7li_u1nmg','https://www.youtube.com/embed/FIFzImtPBvc','O que você irá fazer para sobreviver ?',1),
  (4,'gta v',1,'2014-11-27','15:34:13',29,'playstation/gtav.php','O grande sucesso da saga Grand Theft Auto(GTA),está de volta em uma versão mais refinada.','Novembro de 2014','Grand Theft Auto 5(GTA 5) foi mais um dos grandes sucessos anunciados na E3 2014,o game original(criado para xbox 360 e ps3) bateu todos os recorde da história dos games com mais de 33 milhões de unidades.\r\nCom os pedidos e rumores de uma versão para o pc e para os novos consoles(ps4 e xboxOne),os pedidos foram realizados.Esta nova versão irá incluir os mesmos conteúdos da versão anterior porém com gráficos melhorados,aumento do campo de visão e tráfego melhorados.\r\nO grande avanço é que agora podemos transferir personagens e progressos do GTA Online entre as plataformas.Exemplo um personagem salvo no Xbox360 pode ser transferido para o ps4,pc ou até mesmo xboxOne.\r\n','Multiplataforma','http://www.youtube.com/embed/VjZ5tgjPVfU','http://www.youtube.com/embed/BV85rkGqz2o','Los Santos como você nunca viu.',3),
  (5,'gta v',3,'2014-11-27','15:34:13',29,'xbox/gtav.php','O grande sucesso da saga Grand Theft Auto(GTA),está de volta em uma versão mais refinada.','Novembro de 2014','Grand Theft Auto 5(GTA 5) foi mais um dos grandes sucessos anunciados na E3 2014,o game original(criado para xbox 360 e ps3) bateu todos os recorde da história dos games com mais de 33 milhões de unidades.\r\nCom os pedidos e rumores de uma versão para o pc e para os novos consoles(ps4 e xboxOne),os pedidos foram realizados.Esta nova versão irá incluir os mesmos conteúdos da versão anterior porém com gráficos melhorados,aumento do campo de visão e tráfego melhorados.\r\nO grande avanço é que agora podemos transferir personagens e progressos do GTA Online entre as plataformas.Exemplo um personagem salvo no Xbox360 pode ser transferido para o ps4,pc ou até mesmo xboxOne.\r\n','Multiplataforma','http://www.youtube.com/embed/VjZ5tgjPVfU','http://www.youtube.com/embed/BV85rkGqz2o','Los Santos como você nunca viu.',2),
- (9,'Zelda U',2,'2014-11-27','16:02:29',29,'nintendo/zeldau.php','O mais novo game da saga The Legend of Zelda está chegando,sendo um dos grandes destaque da nintendo na E3 de 2014.','Final de 2015','Zelda U nome provissório,o mais novo game da saga The Legend of Zelda explorará um mundo de dimensões totalmente diferente dos anteriores.\r\nAinda não sabemos muito sobre esta nova hístoria,tendo boatos de que o game se passa entre o Wind Waker e o Skyward Sword,por causa de sua roupa e até mesmo pelo cenário,sendo uma floresta vasta e aberta.\r\n','Nintendo Wii U','http://www.youtube.com/embed/XZmxvig1dXE','http://www.youtube.com/embed/mM9MGY2OL8o','Qual será a nova trama para o grande heroí Li',2),
- (10,'sunset overdrive',3,'2014-11-27','16:23:08',29,'xbox/sunsetoverdrive.php','Uns dos melhores games da Xbox na E3 2014.','Final de 2015','Sunset Overdrive é um jogo,que se passa em um futuro distante de \"mundo-aberto\".\r\nOnde uma catastrofe deixou a cidade invadida por mutantes,quando mais morrer e se transformar mais você melhora seu nível.Seu objetivo destruir os monstros,com um arsenal incrível,contendo armas poderosas e talentos para atravessar a cidade com rapidez e agilidade.\r\nVocê pode modificar completamente a sua personagem e jogar com os seus amigos,sendo um dos grandes destaque do game. Com os gráficos cartunescos e visual infantil,não se deixe enganar,esse game não tem nada a ver com os jogos infantis!\r\n','Xbox One','http://www.youtube.com/embed/s_LmilGAhaM','http://www.youtube.com/embed/Zt4bfcbKtu4','Como sobreviver em um mundo sem regras e com ',2);
+ (9,'Zelda U',2,'2014-11-27','16:02:29',29,'nintendo/zeldau.php','O mais novo game da saga The Legend of Zelda está chegando,sendo um dos grandes destaque da nintendo na E3 de 2014.','Final de 2015','Zelda U nome provissório,o mais novo game da saga The Legend of Zelda explorará um mundo de dimensões totalmente diferente dos anteriores.\r\nAinda não sabemos muito sobre esta nova hístoria,tendo boatos de que o game se passa entre o Wind Waker e o Skyward Sword,por causa de sua roupa e até mesmo pelo cenário,sendo uma floresta vasta e aberta.\r\n','Nintendo Wii U','http://www.youtube.com/embed/XZmxvig1dXE','http://www.youtube.com/embed/mM9MGY2OL8o','Qual será a nova trama para o grande heroí Li',11),
+ (10,'sunset overdrive',3,'2014-11-27','16:23:08',29,'xbox/sunsetoverdrive.php','Uns dos melhores games da Xbox na E3 2014.','Final de 2015','Sunset Overdrive é um jogo,que se passa em um futuro distante de \"mundo-aberto\".\r\nOnde uma catastrofe deixou a cidade invadida por mutantes,quando mais morrer e se transformar mais você melhora seu nível.Seu objetivo destruir os monstros,com um arsenal incrível,contendo armas poderosas e talentos para atravessar a cidade com rapidez e agilidade.\r\nVocê pode modificar completamente a sua personagem e jogar com os seus amigos,sendo um dos grandes destaque do game. Com os gráficos cartunescos e visual infantil,não se deixe enganar,esse game não tem nada a ver com os jogos infantis!\r\n','Xbox One','http://www.youtube.com/embed/s_LmilGAhaM','http://www.youtube.com/embed/Zt4bfcbKtu4','Como sobreviver em um mundo sem regras e com ',3);
 /*!40000 ALTER TABLE `artigo` ENABLE KEYS */;
 
 
@@ -162,7 +162,7 @@ CREATE TABLE `coment` (
   KEY `CODIGO_MATERIA_idx` (`CODIGO_MATERIA`),
   CONSTRAINT `CODIGO_MATERIA` FOREIGN KEY (`CODIGO_MATERIA`) REFERENCES `artigo` (`ID_ARTIGO`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `COMENT_USUARIOS` FOREIGN KEY (`COD_USUARIO`) REFERENCES `usuario` (`COD_USUARIO`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `coment`
@@ -200,6 +200,33 @@ CREATE TABLE `desativados` (
 
 
 --
+-- Definition of table `imagem_materia_personagem`
+--
+
+DROP TABLE IF EXISTS `imagem_materia_personagem`;
+CREATE TABLE `imagem_materia_personagem` (
+  `COD_IMAGEM_PERSONAGEM` int(11) NOT NULL AUTO_INCREMENT,
+  `COD_PERSONAGEM_IMAGEM` int(11) NOT NULL,
+  `IMAGEM_CAPA` varchar(20) NOT NULL,
+  `IMAGEM_PRINCIPAL` varchar(20) NOT NULL,
+  `IMAGEM_GALERIA` varchar(20) NOT NULL,
+  `IMAGEM_GALERIA2` varchar(20) NOT NULL,
+  `IMAGEM_GALERIA3` varchar(20) NOT NULL,
+  `IMAGEM_MINIATURA_HOVER` varchar(20) NOT NULL,
+  `IMAGEM_MINIATURA_ALT` varchar(20) NOT NULL,
+  PRIMARY KEY (`COD_IMAGEM_PERSONAGEM`,`COD_PERSONAGEM_IMAGEM`),
+  CONSTRAINT `IMAGEM_PERSONAGEM` FOREIGN KEY (`COD_IMAGEM_PERSONAGEM`) REFERENCES `personagem` (`COD_PERSONAGEM`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `imagem_materia_personagem`
+--
+
+/*!40000 ALTER TABLE `imagem_materia_personagem` DISABLE KEYS */;
+/*!40000 ALTER TABLE `imagem_materia_personagem` ENABLE KEYS */;
+
+
+--
 -- Definition of table `imagem_usuario`
 --
 
@@ -212,7 +239,7 @@ CREATE TABLE `imagem_usuario` (
   PRIMARY KEY (`COD_IMAGEM`),
   KEY `COD_IMAGEM_USUARIO_idx` (`COD_IMAGEM_USUARIO`),
   CONSTRAINT `COD_IMAGEM_USUARIOS` FOREIGN KEY (`COD_IMAGEM_USUARIO`) REFERENCES `usuario` (`COD_USUARIO`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `imagem_usuario`
@@ -226,7 +253,8 @@ INSERT INTO `imagem_usuario` (`COD_IMAGEM`,`URL_IMAGEM`,`URL_IMAGEM_CAPA`,`COD_I
  (11,'default.jpg','defaultCapa.jpg',33),
  (12,'default.jpg','defaultCapa.jpg',34),
  (13,'default.jpg','defaultCapa.jpg',35),
- (14,'default.jpg','defaultCapa.jpg',36);
+ (14,'default.jpg','defaultCapa.jpg',36),
+ (15,'deffd2.jpg','defaultCapa.jpg',44);
 /*!40000 ALTER TABLE `imagem_usuario` ENABLE KEYS */;
 
 
@@ -305,7 +333,7 @@ CREATE TABLE `log` (
   KEY `COD_ACAO_idx` (`ACAO_LOG`),
   CONSTRAINT `COD_ACAO` FOREIGN KEY (`ACAO_LOG`) REFERENCES `acoes_log` (`COD_ACOES_LOG`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `COD_AUTOR_LOG` FOREIGN KEY (`COD_AUTOR_LOG`) REFERENCES `usuario` (`COD_USUARIO`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `log`
@@ -330,8 +358,52 @@ INSERT INTO `log` (`COD_LOG`,`IP_LOG`,`DATA_LOG`,`HORA_LOG`,`MENSAGEM_LOG`,`ACAO
  (23,'::1','2014-11-20','23:15:49','Jow efetuou Login',1,'jonathan.webitb@hotmail.com',29),
  (24,'::1','2014-11-27','00:51:12','Jow efetuou Login',1,'jonathan.webitb@hotmail.com',29),
  (25,'::1','2014-11-27','16:55:00','Jow efetuou Login',1,'jonathan.webitb@hotmail.com',29),
- (26,'::1','2014-11-27','16:55:52','Jow efetuou Login',1,'jonathan.webitb@hotmail.com',29);
+ (26,'::1','2014-11-27','16:55:52','Jow efetuou Login',1,'jonathan.webitb@hotmail.com',29),
+ (27,'::1','2014-11-27','21:14:55','Joao Gabriel Efeutou Logout',11,'joaozinho@gmail.com',44),
+ (28,'::1','2014-11-27','21:15:02','Jow efetuou Login',1,'jonathan.webitb@hotmail.com',29),
+ (29,'::1','2014-11-28','16:33:37','Jonathan Efeutou Logout',11,'jonathan.webitb@hotmail.com',29),
+ (30,'::1','2014-11-28','16:34:54','ADM: Joao Gay efetuou Login',1,'joaozinho@gmail.com',44),
+ (34,'::1','2014-11-28','16:40:17','Joaozinho  Alterou E-mail',7,'joaozinho@gmail.com',44),
+ (35,'::1','2014-11-28','16:40:51','ADM: Joaozinho  efetuou Login',1,'joaozinho@hotmail.com',44),
+ (36,'::1','2014-11-28','17:30:44','Joao Gabriel Efeutou Logout',11,'joaozinho@hotmail.com',44),
+ (37,'::1','2014-11-28','17:36:29','ADM: Joaozinho  efetuou Login',1,'joaozinho@hotmail.com',44),
+ (38,'::1','2014-11-28','18:09:04','Joao Gabriel Efeutou Logout',11,'joaozinho@hotmail.com',44),
+ (39,'::1','2014-11-28','18:09:13','Jow efetuou Login',1,'jonathan.webitb@hotmail.com',29),
+ (40,'::1','2014-11-28','18:15:14','Jonathan Efeutou Logout',11,'jonathan.webitb@hotmail.com',29),
+ (41,'::1','2014-11-28','18:15:21','ADM: Joaozinho  efetuou Login',1,'joaozinho@hotmail.com',44),
+ (42,'::1','2014-11-28','18:27:17','ADM: Joaozinho  efetuou Login',1,'joaozinho@hotmail.com',44),
+ (43,'::1','2014-11-28','18:29:29','Joao Gabriel Efeutou Logout',11,'joaozinho@hotmail.com',44),
+ (44,'::1','2014-11-28','18:29:58','Jow efetuou Login',1,'jonathan.webitb@hotmail.com',29),
+ (45,'::1','2014-11-28','18:42:50','Joaozinho  Alterou Foto',2,'joaozinho@hotmail.com',44),
+ (46,'::1','2014-11-28','18:43:37','Joaozinho  Alterou Foto',2,'joaozinho@hotmail.com',44),
+ (47,'::1','2014-11-28','18:44:29','Joaozinho  Alterou Foto',2,'joaozinho@hotmail.com',44),
+ (48,'::1','2014-11-28','19:21:58','Joaozinho  Alterou Foto',2,'joaozinho@hotmail.com',44),
+ (49,'::1','2014-11-28','19:22:50','Joaozinho  Alterou Foto',2,'joaozinho@hotmail.com',44);
 /*!40000 ALTER TABLE `log` ENABLE KEYS */;
+
+
+--
+-- Definition of table `personagem`
+--
+
+DROP TABLE IF EXISTS `personagem`;
+CREATE TABLE `personagem` (
+  `COD_PERSONAGEM` int(11) NOT NULL AUTO_INCREMENT,
+  `NOME_PERSONAGEM` varchar(45) NOT NULL,
+  `SERIE_PERSONAGEM` varchar(45) NOT NULL,
+  `DATA_PERSONAGEM` date NOT NULL,
+  `CONTEUDO_PERSONAGEM` text NOT NULL,
+  `TITULO_PERSONAGEM` varchar(45) NOT NULL,
+  `SUBTITULO_PERSONAGEM` varchar(45) NOT NULL,
+  PRIMARY KEY (`COD_PERSONAGEM`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `personagem`
+--
+
+/*!40000 ALTER TABLE `personagem` DISABLE KEYS */;
+/*!40000 ALTER TABLE `personagem` ENABLE KEYS */;
 
 
 --
@@ -397,7 +469,7 @@ INSERT INTO `usuario` (`COD_USUARIO`,`NOME_USUARIO`,`APELIDO_USUARIO`,`EMAIL_USU
  (34,'josimar','josi','josimar3@gmail.com','$2a$08$MTQwMTA5NTY0ODU0NWE4NuTK2mkeghWnBsGMLIgmYR1gte/Zo18im',2,'0000-00-00',NULL,NULL,NULL),
  (35,'josimar','josi','josimar4@gmail.com','$2a$08$MTE1OTcwMTQ1NTQ1YTg3Zebe3XcThAuzVYrZxGomZAjsOU8MKAKMK',2,'0000-00-00',NULL,NULL,NULL),
  (36,'JONATHAN ALVES DE LIMA','Jow','jonathan.webitb2@hotmail.com','$2a$08$MTY3MDY4OTYyODU0NjkzOOi8vpFE944LbpG.bjJigPJdOYPLJV03m',3,'0000-00-00',NULL,NULL,NULL),
- (44,'Joao Gabriel','Joao Gay','joaozinho@gmail.com','$2a$08$MTcxOTAwNjA2NzU0NWE1O.LQBhx7eZb3nryfzfJaa50cyDklklb7.',1,'2014-11-27',NULL,'SP','I\'am Fucked');
+ (44,'Joao Gabriel','Joaozinho ','joaozinho@hotmail.com','$2a$08$MTcxOTAwNjA2NzU0NWE1O.LQBhx7eZb3nryfzfJaa50cyDklklb7.',1,'2014-11-27',NULL,'SP','I\'am Fucked');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 
 

@@ -3,13 +3,27 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="shortcut icon" href="../imagens/icone001.png" >
         <script type="text/javascript" src="../js/funcoes.js"> </script>
         <script type="text/javascript" src="../js/jquery.js"></script>
         <script type="text/javascript" src="../js/cycle.js"></script>
         <script type="text/javascript" src="../js/javascript.js"></script>
         <script type="text/javascript" src="../js/menu2.js"></script>
         <script type="text/javascript" src="../js/restrito.js"></script>
-        <title></title>
+        <script type="text/javascript"> 
+            onload = function(){     
+                var imgMiniLogo = document.getElementById("imgMiniLogo");
+                var imgLogo = document.getElementById("img-logo");                
+                imgMiniLogo.innerHTML = '<img src="../imagens/logosReduzidos001.png" alt="" id="miniLogo">';
+                imgLogo.innerHTML = '<img src="../imagens/logo001.png" alt="" id="logo">';   
+                document.getElementById("nav").style.backgroundColor = "#00989E";
+                document.getElementById("navReduzido").style.backgroundColor = "#00989E";                 
+                document.getElementById("botaoLogin").style.backgroundColor = "#00989E";
+                document.getElementById("logar").style.borderBottom = "solid 5px #00989E";               
+                document.getElementById("tituloPagina").style.backgroundColor = "#00989E"; 
+            };
+        </script>
+        <title> Área Administrativa </title>
     </head>
     <body>
         <section id="container">
@@ -71,10 +85,8 @@
                 </nav>
                 <article id="conteudo_infos">
                     <form action="script.php" method="post" enctype="multipart/form-data">
-                        <table id="tabelaPerfil" class="tablealterarImg">
-                            <tr>
-                                <td class="icone"><img src="../imagens/contacts.png" alt="imgNome" id=""></td>
-                                <td class="info">                     
+                        <div id="tablealterarImg">    
+                            <div class="info">   
                             <?php
                             $query = "SELECT * FROM IMAGEM_USUARIO WHERE COD_IMAGEM_USUARIO = ".$_SESSION['code'];
                             $result = mysql_query($query);                
@@ -90,23 +102,20 @@
                             echo "<img src='../uploads/$urlImagem' id='imagemInfo' alt='imagem'>";
                             }
                             ?>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="icone"><img src="../imagens/picture.png" alt="imgNome" id=""></td>
-                                <td class="info"><input type="file" name="arquivo" value="Alterar Imagem"></td>
-                            </tr>
-                            <tr>
-                                <td class="icone"><img src="../imagens/checkmark.png" alt="imgNome" id=""></td>
-                                <td class="info"><input type="submit" name="alterarImg" class="bsalvar" value="Alterar Foto"></td>
-                            </tr>
-                        </table>
+                            </div>                                                         
+                            <div class="infoInputs">
+                                <input type="file" name="arquivo" value="Alterar Imagem">
+                            </div>                               
+                            <div class="infoInputs">
+                                <input type="submit" name="alterarImg" class="bsalvar" value="Alterar Foto">
+                            </div>
+                        </div> 
                     </form>    
                 </article>                
             </article>
             <footer id="footer">
                 <?php
-                    include_once '../includes/rodape.php';
+                    include_once '../includes/rodapeAdmin.php';
                 ?>
             </footer>            
         </section>

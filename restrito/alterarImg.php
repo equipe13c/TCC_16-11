@@ -107,7 +107,7 @@
                                 <input type="file" name="arquivo" value="Alterar Imagem">                            
                             </div>                                
                             <div class="infoInputs">
-                                <input type="submit" name="alterarImg" class="bsalvar" value="Alterar Foto">                                
+                                <input type="submit" name="arquivo" class="bsalvar" value="Alterar Foto">                                
                             </div>
                         </div>
                     </form>    

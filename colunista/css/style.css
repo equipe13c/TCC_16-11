@@ -669,14 +669,13 @@ color: white;
 }
 
 #conteudo_infos{
-    width: 970px;
-    height: auto;
-    float: left;
-    margin-left: 60px;
-    margin-top: 10px;
-    background-color: #E0E0F8;;
-    margin-bottom: 25px;
+    width: 100%;
+    height: 680px;
+    float:left;
+    margin-top:-17px;
+    margin-left:0px;
 }
+
 #mailImg{
     width:35px;
     height:20px;
@@ -706,27 +705,26 @@ color: white;
     margin-top:0px;
 }
 
-table.bordasimples {
-    border-collapse: collapse;
-    width:950px; 
-    height:300px;
-    margin-left:0px;
-    margin-top:70px;
-}
-table.bordasimples td.icone{
-    width:100px;
-    text-align: center;
-}
-table.editEmailTable td.icone2{
-    width:300px;
-    text-align: center;
-}
-table.bordasimples td.info{
-    width:250px;
-    text-align: left;
+.bordasimples{
+    width: 990px;
+    height: 300px;
+    margin-top: 50px;
+    margin-left: 45px;
+    background-color: #00989E;
     font-family: century gothic;
-    font-size:14pt;
+    color: #333
+}
+
+.bordasimples th{
+    background-color: #d0d0d0;
+    font-size: 12pt;
     font-weight: bold;
+}
+
+.bordasimples td{
+    background-color: #fff;
+    font-size: 12pt;
+    text-align: center;
 }
 
 table.editEmailTable td.info2{
@@ -745,23 +743,20 @@ table.editEmailTable td.info2{
     font-weight: bold;
 }
 
-.bsalvar	{
-    border-color: #999 #000 #000 #999;
+.bsalvar{
     border: 1px solid;
     width: 100px;
-    background: #333; 
+    background: #00989E; 
     color: white;
     font-family: century gothic;
-    font-size: 11px;
+    font-size: 10pt;
     text-align: center;
     text-decoration: none;
     height:40px;
-    border-radius: 6px;
 }
 	 
-.bsalvar:hover	{
+.bsalvar:hover{
    position: relative;
-   background: #333;
    box-shadow: 2px 0px 5px #999;
 }
 
@@ -1102,6 +1097,20 @@ table.bordasimples tr td {
     border-radius: 3px;
     
 }
+
+#tablealterarImg{
+    width:500px;
+    height:400px;
+    float: left;
+    margin-top: 50px;
+    margin-left: 280px;
+    background-color: ghostwhite;
+    border: solid 5px #00989E;
+    color:white;
+    font-size: 14pt;
+    font-family: century gothic;
+}
+
 table.tablealterarImg{
     margin-left:210px;
     margin-top:50px;
@@ -1115,6 +1124,26 @@ table.tablealterarImg td.info{
     height:100px;
     text-align: center;
 }
+
+.info{
+    margin-top: 20px;
+    margin-left: 150px;
+}
+
+.infoInputs{
+    width: 115px;
+    margin-top: 15px;
+    margin-left: 185px;
+}
+
+.infoInputs input{
+    width: 115px;    
+}
+
+.infoInputs + .infoInputs{    
+    margin-top: 10px;
+}
+
 #imagemInfo{
     width:200px;
     height:200px;
