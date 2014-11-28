@@ -100,7 +100,7 @@
                         echo "Nenhuma Ação Encontrada";
                     }
                     else{
-                        echo '<table id="tabelaPerfil" class="bordasimples">
+                        echo '<table id="tabelaLogAtividades" class="">
                             <tr class="linhasInfo">
                             <th> Data </th>
                             <th> Hora</th>
@@ -121,10 +121,11 @@
                             echo '</tr>';
                         }
                         echo '</table>';
+                     echo "<div id='paginacaoLogAtividades'>";
                     $anterior = $pc -1; 
                     $proximo = $pc +1; 
                     if ($pc>1) 
-                    { echo " <a href='?pagina=$anterior'><- Anterior</a> "; 
+                    { echo " <a href='?pagina=$anterior'>< Anterior</a> "; 
 
                     } 
                     if($pc ==1){/*CODIGO A APARECER PARA VOLTAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério
@@ -136,12 +137,13 @@
                     }
                     // Fim lógia rogério
                     if ($pc<$tp) 
-                        { echo " <a href='?pagina=$proximo'>Próxima -></a>"; 
+                        { echo " <a href='?pagina=$proximo'>Próxima ></a>"; 
 
                         }
                    if($pc == $tp){/*CODIGO A APARECER PARA PASSAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério
 
                     }
+                echo "</div>";
                 ?>
                 </article>                
             </article>

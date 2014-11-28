@@ -19,7 +19,7 @@
                 document.getElementById("nav").style.backgroundColor = "#9C1006";
                 document.getElementById("navReduzido").style.backgroundColor = "#9C1006";                
                 document.getElementById("botaoLogin").style.backgroundColor = "#9C1006";
-                document.getElementById("logar").style.borderBottom = "solid 5px #9C1006; 
+                document.getElementById("logar").style.borderBottom = "solid 5px #9C1006"; 
             };  
         </script>       
         <title>Nintendo</title>
@@ -44,8 +44,8 @@
             <article id="conteudo">
                 <div id="galeria">  
                     <div id="botoesGaleria">
-                        <a href="#" id="prev"> <img src="imagens/previousNintendo.png" alt=""> </a>
-                        <a href="#" id="next"> <img src="imagens/nextNintendo.png" alt=""> </a>
+                        <a href="#" id="prev"> <img src="imagens/previousPs.png" alt=""> </a>
+                        <a href="#" id="next"> <img src="imagens/nextPs.png" alt=""> </a>
                     </div>
                     <div id="slide">
                         <?php
@@ -79,7 +79,7 @@
                     </aside> 
                 <div id="voltarTopo">
                     <a href="" class="subir">
-                        <img src="imagens/topoNintendo.png" alt="">
+                        <img src="imagens/topoPs.png" alt="">
                         <p> Voltar ao topo </p>
                     </a>                    
                 </div>

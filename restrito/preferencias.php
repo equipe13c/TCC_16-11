@@ -112,13 +112,22 @@
                                     <input type="submit" name="alterarImg" class="bsalvar" value="Alterar Foto">                                
                                 </div>
                             </div>
-                            <div class="areasPreferencia">
-                                <p> Descrição </p> 
-                                <textarea id="areasPreferenciaInput"> </textarea> <br/>
-                                <p> Jogos Preferidos </p> 
-                                <textarea id="areasPreferenciaInput"> </textarea> <br/>
-                                <p> Plataformas Preferidos </p> 
-                                <textarea id="areasPreferenciaInput"> </textarea> <br/>
+                            <div class="areasPreferencia">                                
+                                <div class="preferencias">  
+                                    <p> Descrição: </p> 
+                                    <textarea id="areasPreferenciaInput"> </textarea> <br/>
+                                </div>
+                                <div class="preferencias">  
+                                    <p> Jogos Preferidos: </p> 
+                                    <textarea id="areasPreferenciaInput"> </textarea> <br/>
+                                </div>
+                                <div class="preferencias">  
+                                    <p> Plataformas Preferidas: </p> 
+                                    <textarea id="areasPreferenciaInput"> </textarea> <br/>
+                                </div>
+                                <div class="infoInputs">
+                                    <input type="submit" name="salvarPreferencias" class="bsalvar" value="Salvar">                                
+                                </div>
                             </div>
                         </div>
                     </form>    
