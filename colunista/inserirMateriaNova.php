@@ -17,7 +17,6 @@ $descricaoArtigo = $_POST['descricao'];
 $dataLancamento = $_POST['data_lancamento'];
 $plataforma = $_POST['plataforma'];
 $conteudoArtigo = $_POST['conteudo'];
-$plataforma = $_POST['plataforma'];
 $urlVideo = $_POST['urlVideo1'];
 $urlVideo = str_replace('watch?v=','embed/',$urlVideo);
 $urlVideo2 = $_POST['urlVideo2'];
@@ -246,7 +245,7 @@ $salt = geraSaltAleatorio();
                 document.getElementById("nav").style.backgroundColor = "'.$backMenu1.'";                
                 document.getElementById("imgPrincipal").style.backgroundColor = "'.$backPrincipal.'"; 
                 document.getElementById("tituloMateria").style.backgroundColor = "'.$backPrincipal.'";
-                document.getElementById("tituloMateria").style.backgroundColor = "'.$fundoTitulo.'";
+                document.getElementById("tituloAside").style.backgroundColor = "'.$backPrincipal.'";
                 document.getElementById("navReduzido").style.backgroundColor = "'.$backMenu2.'";
                 document.getElementById("fundoDescricaoMateria").style.backgroundColor = "'.$fundoDesc.'";
                 document.getElementById("descricaoColunista").style.backgroundColor = "'.$descricaoCol.'";  
@@ -391,6 +390,7 @@ $salt = geraSaltAleatorio();
                     </div>   
                     </div>
                     '."<div class='exibirComent'>
+                        <h1 id='tituloComentario'>Comentários</h1>
                         <?php
                             listarComentarios('".$codigo_materia."');
                         ?>
@@ -470,7 +470,7 @@ $salt = geraSaltAleatorio();
         <title>'.$tituloArtigo.'</title>
         <meta charset="UTF-8">
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/styleMaterias.css"/>
         <script type="text/javascript" src="../js/funcoes.js"> </script>
         <script type="text/javascript" src="../js/jquery.js"></script>
         <script type="text/javascript" src="../js/cycle.js"></script>
@@ -489,7 +489,8 @@ $salt = geraSaltAleatorio();
                 imgLogo.innerHTML = "'."<img src='../imagens/logo".$logo."' alt='' id='logo'>".'";  
                 document.getElementById("nav").style.backgroundColor = "'.$backMenu1.'";                
                 document.getElementById("imgPrincipal").style.backgroundColor = "'.$backPrincipal.'"; 
-                document.getElementById("tituloMateria").style.backgroundColor = "'.$fundoTitulo.'";
+                document.getElementById("tituloMateria").style.backgroundColor = "'.$backPrincipal.'";
+                document.getElementById("tituloAside").style.backgroundColor = "'.$backPrincipal.'";
                 document.getElementById("navReduzido").style.backgroundColor = "'.$backMenu2.'";
                 document.getElementById("fundoDescricaoMateria").style.backgroundColor = "'.$fundoDesc.'";
                 document.getElementById("descricaoColunista").style.backgroundColor = "'.$descricaoCol.'";  
@@ -613,7 +614,7 @@ $salt = geraSaltAleatorio();
                     <div id="descricaoColunista"> 
                         <div id="infoAutor">
                             '." <?php"
-        . "buscarDescAutor('".$codAutor."');"
+        . " buscarDescAutor('".$codAutor."');"
         . "?>".'
                         </div>
                     </div>
@@ -634,6 +635,7 @@ $salt = geraSaltAleatorio();
                     </div>   
                     </div>
                     '."<div class='exibirComent'>
+                        <h1 id='tituloComentario'>Comentários</h1>
                         <?php
                             listarComentarios('".$codigo_materia."');
                         ?>
@@ -641,6 +643,7 @@ $salt = geraSaltAleatorio();
                 </div>
             </article>
            ".' <aside id="aside1">
+               <h1 id="tituloAside"> Top Notícias </h1>
                     <?php
                        buscarMateriasAside();
                    ?>
@@ -710,7 +713,7 @@ $salt = geraSaltAleatorio();
         <title>'.$tituloArtigo.'</title>
         <meta charset="UTF-8">
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/styleMaterias.css"/>
         <script type="text/javascript" src="../js/funcoes.js"> </script>
         <script type="text/javascript" src="../js/jquery.js"></script>
         <script type="text/javascript" src="../js/cycle.js"></script>
@@ -729,7 +732,8 @@ $salt = geraSaltAleatorio();
                 imgLogo.innerHTML = "'."<img src='../imagens/logo".$logo."' alt='' id='logo'>".'";  
                 document.getElementById("nav").style.backgroundColor = "'.$backMenu1.'";                
                 document.getElementById("imgPrincipal").style.backgroundColor = "'.$backPrincipal.'"; 
-                document.getElementById("tituloMateria").style.backgroundColor = "'.$fundoTitulo.'";
+                document.getElementById("tituloMateria").style.backgroundColor = "'.$backPrincipal.'";
+                document.getElementById("tituloAside").style.backgroundColor = "'.$backPrincipal.'";
                 document.getElementById("navReduzido").style.backgroundColor = "'.$backMenu2.'";
                 document.getElementById("fundoDescricaoMateria").style.backgroundColor = "'.$fundoDesc.'";
                 document.getElementById("descricaoColunista").style.backgroundColor = "'.$descricaoCol.'";  
@@ -853,7 +857,7 @@ $salt = geraSaltAleatorio();
                     <div id="descricaoColunista"> 
                         <div id="infoAutor">
                             '." <?php"
-        . "buscarDescAutor('".$codAutor."');"
+        . " buscarDescAutor('".$codAutor."');"
         . "?>".'
                         </div>
                     </div>
@@ -874,6 +878,7 @@ $salt = geraSaltAleatorio();
                     </div>   
                     </div>
                     '."<div class='exibirComent'>
+                        <h1 id='tituloComentario'>Comentários</h1>
                         <?php
                             listarComentarios('".$codigo_materia."');
                         ?>
@@ -881,6 +886,7 @@ $salt = geraSaltAleatorio();
                 </div>
             </article>
            ".' <aside id="aside1">
+               <h1 id="tituloAside"> Top Notícias </h1>
                     <?php
                        buscarMateriasAside();
                    ?>
@@ -951,7 +957,7 @@ $salt = geraSaltAleatorio();
         <title>'.$tituloArtigo.'</title>
         <meta charset="UTF-8">
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/styleMaterias.css"/>
         <script type="text/javascript" src="../js/funcoes.js"> </script>
         <script type="text/javascript" src="../js/jquery.js"></script>
         <script type="text/javascript" src="../js/cycle.js"></script>
@@ -970,7 +976,8 @@ $salt = geraSaltAleatorio();
                 imgLogo.innerHTML = "'."<img src='../imagens/logo".$logo."' alt='' id='logo'>".'";  
                 document.getElementById("nav").style.backgroundColor = "'.$backMenu1.'";                
                 document.getElementById("imgPrincipal").style.backgroundColor = "'.$backPrincipal.'"; 
-                document.getElementById("tituloMateria").style.backgroundColor = "'.$fundoTitulo.'";
+                document.getElementById("tituloMateria").style.backgroundColor = "'.$backPrincipal.'";
+                document.getElementById("tituloAside").style.backgroundColor = "'.$backPrincipal.'";
                 document.getElementById("navReduzido").style.backgroundColor = "'.$backMenu2.'";
                 document.getElementById("fundoDescricaoMateria").style.backgroundColor = "'.$fundoDesc.'";
                 document.getElementById("descricaoColunista").style.backgroundColor = "'.$descricaoCol.'";  
@@ -1094,7 +1101,7 @@ $salt = geraSaltAleatorio();
                     <div id="descricaoColunista"> 
                         <div id="infoAutor">
                             '." <?php"
-        . "buscarDescAutor('".$codAutor."');"
+        . " buscarDescAutor('".$codAutor."');"
         . "?>".'
                         </div>
                     </div>
@@ -1115,6 +1122,7 @@ $salt = geraSaltAleatorio();
                     </div>   
                     </div>
                     '."<div class='exibirComent'>
+                        <h1 id='tituloComentario'>Comentários</h1>
                         <?php
                             listarComentarios('".$codigo_materia."');
                         ?>
@@ -1122,6 +1130,7 @@ $salt = geraSaltAleatorio();
                 </div>
             </article>
            ".' <aside id="aside1">
+               <h1 id="tituloAside"> Top Notícias </h1>
                     <?php
                        buscarMateriasAside();
                    ?>
@@ -1191,7 +1200,7 @@ $salt = geraSaltAleatorio();
         <title>'.$tituloArtigo.'</title>
         <meta charset="UTF-8">
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/styleMaterias.css"/>
         <script type="text/javascript" src="../js/funcoes.js"> </script>
         <script type="text/javascript" src="../js/jquery.js"></script>
         <script type="text/javascript" src="../js/cycle.js"></script>
@@ -1210,7 +1219,8 @@ $salt = geraSaltAleatorio();
                 imgLogo.innerHTML = "'."<img src='../imagens/logo".$logo."' alt='' id='logo'>".'";  
                 document.getElementById("nav").style.backgroundColor = "'.$backMenu1.'";                
                 document.getElementById("imgPrincipal").style.backgroundColor = "'.$backPrincipal.'"; 
-                document.getElementById("tituloMateria").style.backgroundColor = "'.$fundoTitulo.'";
+                document.getElementById("tituloMateria").style.backgroundColor = "'.$backPrincipal.'";
+                document.getElementById("tituloAside").style.backgroundColor = "'.$backPrincipal.'";
                 document.getElementById("navReduzido").style.backgroundColor = "'.$backMenu2.'";
                 document.getElementById("fundoDescricaoMateria").style.backgroundColor = "'.$fundoDesc.'";
                 document.getElementById("descricaoColunista").style.backgroundColor = "'.$descricaoCol.'";  
@@ -1334,7 +1344,7 @@ $salt = geraSaltAleatorio();
                     <div id="descricaoColunista"> 
                         <div id="infoAutor">
                             '." <?php"
-        . "buscarDescAutor('".$codAutor."');"
+        . " buscarDescAutor('".$codAutor."');"
         . "?>".'
                         </div>
                     </div>
@@ -1355,6 +1365,7 @@ $salt = geraSaltAleatorio();
                     </div>   
                     </div>
                     '."<div class='exibirComent'>
+                         <h1 id='tituloComentario'>Comentários</h1>
                         <?php
                             listarComentarios('".$codigo_materia."');
                         ?>
@@ -1362,6 +1373,7 @@ $salt = geraSaltAleatorio();
                 </div>
             </article>
            ".' <aside id="aside1">
+               <h1 id="tituloAside"> Top Notícias </h1>
                     <?php
                        buscarMateriasAside();
                    ?>
@@ -1384,7 +1396,6 @@ $salt = geraSaltAleatorio();
         </section>
     </body>
 </html>";
-                   
                                                                                         $url_materia = "../" . $urlArtigoP;
                                                                                         $formatacao = $corpo;
                                                                                         $fp = fopen($url_materia , "w");

@@ -964,12 +964,13 @@ else{
 }
 }
 function listarComentarios($string){
-                            $query = "SELECT * FROM COMENT WHERE CODIGO_MATERIA = $string  ORDER BY COD_COMENT DESC";
+                           $query = "SELECT * FROM COMENT WHERE CODIGO_MATERIA = $string  ORDER BY COD_COMENT DESC";
                             $result = mysql_query($query);                
                             $imagens = mysql_num_rows($result);
                             while($comentarios = mysql_fetch_array($result)){ 
                             $comentario = $comentarios['CONTEUDO_COMENT'];
                             $codComent = $comentarios['COD_COMENT'];
+                            $as= 'às';
                             $dataComent = $comentarios['DATA_COMENT'];
                                     $ano = substr($dataComent, 0, 4);
                                     $mes = substr($dataComent, 5, 2);
@@ -986,14 +987,16 @@ function listarComentarios($string){
                             $resultado = mysql_query($sql);                
                             $imagens2 = mysql_fetch_array($resultado); 
                             $urlImagem = $imagens2['URL_IMAGEM'];
+                            echo '<br/>';
                             echo '<figure class="imagem_user">'; 
                             echo "<img src='../uploads/$urlImagem' class='imagemUsuario' alt='imagem'>";
                             echo '</figure>';
                             echo '<div class="coment">';
                             echo '<form action="../removerComent.php" method="post">';
+                            echo '<hr width="620"/>';
                             echo "<input type='text' class='nome_comentario' readonly='readonly' disabled='disabled' name='nomeUserComent' value='$nomeUser'>";
-                            echo "<input type='text'  id='data_comentario' readonly='readonly' disabled='disabled' name='dataComent' value='$hora:$min, $dia / $mes / $ano'>";
-                            echo "<input type='text' class='texto_comentario' readonly='readonly' disabled='disabled' name='textComentario' value='$comentario'>";
+                            echo "<input type='text'  id='data_comentario' readonly='readonly' disabled='disabled' name='dataComent' value= '$as $hora:$min, $dia/$mes/$ano'>";
+                            echo "<textarea class='texto_comentario' readonly='readonly' disabled='disabled' name='textComentario'>$comentario</textarea>";
                             echo "</form>";
                             echo '</div>';
                             }

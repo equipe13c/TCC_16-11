@@ -28,12 +28,12 @@ case 'editar';
         $result2 = mysql_query($sql2);
         $totalResult2 = mysql_fetch_array($result2);
                 
-echo '<form action="inserirMateriaNova.php" method="post" enctype="multipart/form-data" class="novaMateria" onsubmit="return validaInserir(this);">
-                       
+echo '<form action="atualizarMateria.php" method="post" enctype="multipart/form-data" class="novaMateria" onsubmit="return validaInserir(this);">
+                       <input type="hidden" name="codigo" value="'.$codMateria.'">
                         <figure id="imgCapaMateria">
                             <p> Selecione uma imagem de capa com dimensões 400x250 para esta área.</p>
                             <img id="preview_imageCapa" alt="" src="../uploads/'.$totalResult2['IMAGEM_CAPA'].'">
-                            <input type="file" name="imagemCapa" class="imgCapaMateria"  onchange="preview(this,'."'capa'".');" multiple>
+                            <input type="file" name="imagemCapa" value="" class="imgCapaMateria"  onchange="preview(this,'."'capa'".');" multiple>
                         </figure>
                         <figure id="imgPrincipal">                            
                             <p> Selecione uma imagem com dimensões 400x250 para esta área.</p>
@@ -139,8 +139,8 @@ echo '<form action="inserirMateriaNova.php" method="post" enctype="multipart/for
                             </div>
                         </div>
                         <div id="postarMateria">
-                            <input type="submit" value="Postar Matéria" name="postarMateria" class="inserirMateria">
-                            <input type="button" value="Voltar Matéria" name="voltarM" onclick="voltar();" class="inserirMateria">
+                            <input type="submit" value="Atualizar Matéria" name="postarMateria" id="btnAtualizarMateria" class="AtualizarMateria">
+                            <input type="button" value="Voltar" name="voltarM" onclick="javascript:history.go(-1);" class="AtualizarMateria">
                         </div>
                     </form>';
         //Fim
