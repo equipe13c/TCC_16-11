@@ -291,3 +291,9 @@ if (form.senhaAtual.value==""){
         return false;
     }
 };
+
+function toTop(){
+$('html, body').animate({
+scrollTop: 0
+}, 0400, 'linear');
+}

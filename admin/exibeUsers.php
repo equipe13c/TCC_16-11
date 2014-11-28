@@ -2,7 +2,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css"> 
+        <link rel="shortcut icon" href="../imagens/icone001.png" >
         <script type="text/javascript" src="../js/funcoes.js"> </script>
         <script type="text/javascript" src="../js/jquery.js"></script>
         <script type="text/javascript" src="../js/cycle.js"></script>
@@ -116,23 +117,42 @@ if($tr == 0){
     echo "Nenhum Usuário Encontrado" . "<br/><br/>";
 }
 else{
+    
 echo "<div id='busca'>"
 ."<form action='buscarUsuario.php' method='post'>"
 . "<label id='name_busca'> Busca de Usuário</label>"
         . "<input type='text' onKeyPress='return letras();' name='nome_user' id='buscarUsuario'>"
         . "</form>"
         . "</div>";
+
 echo "<div class='tables'>";
-    echo "<table class='tabelas'   id='tabelausuario' >";
-    echo "<tr>";
+    echo "<table class='tabelaUsuarios'>";
+    echo "<tr>"; 
+        echo "<th colspan='7'> Filtrar </th>";    
+    echo "</tr>"; 
+    echo "<tr>";       
+    echo "<td><a href='#'> Nome </a> </td>";    
+    echo "<td><a href='#'> Data de Nascimento </a></td>";
+    echo "<td><a href='#'> Administradores </a></td>";
+    echo "<td><a href='#'> Colunistas </a></td>";
+    echo "<td><a href='#'> Restritos </a></td>";
+    echo "<td><a href='#'> Ativados </a></td>";
+    echo "<td><a href='#'> Desativados </a></td>";
+    echo "</tr>";
+    echo "</table>";
+echo "</div>";    
+echo "<div class='tables'>";
+    echo "<table class='tabelaUsuarios'>";
+    echo "<tr>";    
+    echo "<th style='display: none'>Código</th>";
+    echo "<th style='display: none'>Senha</th>";
     echo "<th>Imagem</th>";
     echo "<th>Nome</th>";
     echo "<th>Apelido</th>";
     echo "<th>E-mail</th>";
     echo "<th>Tipo</th>";
-    echo "<th>Código</th>";
-    echo "<th>Data Nasc.</th>";
-        echo "<th>Ação</th>";
+    echo "<th>Data de Nascimento</th>";
+    echo "<th>Ação</th>";
     echo "</tr>";
 while($usuarios = mysql_fetch_array($limite))
 {         
@@ -147,15 +167,15 @@ while($usuarios = mysql_fetch_array($limite))
                 
     echo "<form id='usuariosA' action='desativarUsuario.php' method='post'>";
         echo "<tr class='linhasInfo'>";
+        echo "<td class='info' style='display: none'> <input type='text' readonly='readonly' class='txtInfo3' size='5'  id='usuarioTable' name='cod_user' value='" . $usuarios['COD_USUARIO'] . "'></td>";
+        echo "<td style='display: none' type='hidden' readonly='readonly' class='txtInfo3' size='3' id='usuarioTable' name='senha' value='" . $usuarios['SENHA_USUARIO'] . "' > </td>";
         echo "<td class='linhasInfos'><a href=../uploads/$urlImagem><img src='../uploads/$urlImagem' id='imagem_usuario_listagem' alt='imagem'></a></td>";
         echo "<td><input type='text' readonly='readonly' class='txtInfo3' size='25'  id='usuarioTable' name='name' value='" . $usuarios['NOME_USUARIO'] . "'></td>";
         echo "<td><input type='text' readonly='readonly' class='txtInfo3' size='25'  id='usuarioTable' name='apelido' value='" . $usuarios['APELIDO_USUARIO'] . "'></td>";
         echo "<td><input type='text' readonly='readonly' class='txtInfo3' size='35'  id='usuarioTable' name='email' value='" . utf8_encode($usuarios['EMAIL_USUARIO']) . "'></td>";
         echo "<td><input type='text' readonly='readonly' class='txtInfo3' size='3'  id='usuarioTable' name='tipo' value='" . $usuarios['TIPO_USUARIO'] . "'></td>";
-        echo "<td><input type='hidden' readonly='readonly' class='txtInfo3' size='3'  id='usuarioTable' name='senha' value='" . $usuarios['SENHA_USUARIO'] . "'></td>";
-        echo "<td class='info'> <input type='text' readonly='readonly' class='txtInfo3' size='5'  id='usuarioTable' name='cod_user' value='" . $usuarios['COD_USUARIO'] . "'></td>";
-        echo "<td><input type='text' readonly='readonly' class='txtInfo3' size='7'  id='usuarioTable' name='dataNasc' value='" . $usuarios['DATA_NASCIMENTO'] . "'></td>";
-        echo "<td><input type='submit' class='botoes' name='desativar' value='Desativar'></td>";
+        echo "<td><input type='text' readonly='readonly' class='txtInfo3' size='10'  id='usuarioTable' name='dataNasc' value='" . $usuarios['DATA_NASCIMENTO'] . "'></td>";
+        echo "<td></td>";
         echo "</tr>"; 
         echo "</form>";
 }
@@ -187,11 +207,14 @@ $anterior = $pc -1;
                     <br/><br/>
                 </article>                
             </article>
+            <div id="imgFooter" ondragstart="return false">
+                <img src="../imagens/imagemRodape.png">
+            </div>
             <footer id="footer">
                 <?php
-                    include_once '../includes/rodape.php';
+                    include_once '../includes/rodapeAdmin.php';
                 ?>
-            </footer>            
+            </footer> 
         </section>
     </body>
 </html>

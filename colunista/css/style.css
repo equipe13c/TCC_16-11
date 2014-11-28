@@ -768,10 +768,7 @@ table.editEmailTable td.valid{
     text-align: center;
     width:80px;
 }
-table.bordasimples td.campos{
-    width:350px;
-    text-align: center;
-}
+
 .txtInfo2{
     width:350px;
     height:60px;
@@ -815,9 +812,7 @@ table.editEmailTable td.info2, td.campos2, td.icone2, td.salvarEdit{
 table.bordasimples tr td {
     height:30px;
 }
-.linhasInfo:hover{
-    background-color: #ccc;
-}
+
 .editImage{
     width:20px;
     height:20px;
