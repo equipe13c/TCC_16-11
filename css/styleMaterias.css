@@ -1260,7 +1260,7 @@ imgAutor{
     float: left;
     margin-top: 2px;
     margin-left: 5px;
-    background-color: Gainsboro;
+    background-color: transparent;
 }
 
 .botaoEnviar{
@@ -1281,13 +1281,13 @@ imgAutor{
     height: auto;
     float: left;
     margin-top:20px;
-    background-color: Gainsboro;
+    background-color: white;
 }
 .nome_comentario{
     width:auto;
     height:25px;
     margin-top:10px;
-    margin-left:20px;
+    margin-left:-65px;
     text-align: center;
     background-color:transparent;
     border:0px;
@@ -1295,18 +1295,27 @@ imgAutor{
     font-size:14pt;
     font-family: century gothic;
     font-weight: bold;
+    position: absolute;
+    
 }
 .texto_comentario{
+        min-width:600px ;
+    max-width:600px;
     width:600px;
     height:50px;
+    min-height:50px;
+    max-height:50px;
     margin-top:10px;
-
     margin-left:20px;
     text-align: left;
     border:0px;
     color:black;
     font-size:8pt;
+   background-color: transparent;
     font-family: century gothic;
+    word-break: break-all;
+    overflow: hidden;
+    
 }
 .editImageComent{
     width:20px;
@@ -1330,12 +1339,21 @@ imgAutor{
 #data_comentario{
     width:175px;
     height:25px;
-    margin-top:10px;
+    margin-top:12px;
+    margin-right: 353px;
     float:right;
     text-align: center;
     background-color:transparent;
     border:0px;
     color:#333;
+    font-size:9pt;
+    font-family: century gothic;
+         
+}
+#tituloComentario{
+    text-align: center;
+    margin-top:20px;
+    color:#00989E;
     font-size:12pt;
     font-family: century gothic;
 }

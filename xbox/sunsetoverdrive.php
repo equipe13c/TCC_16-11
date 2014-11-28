@@ -167,7 +167,9 @@
                         </form>
                     </div>   
                     </div>
+                    
                     <div class='exibirComent'>
+                        <h1 id="tituloComentario">Comentários</h1>
                         <?php
                             listarComentarios('10');
                         ?>

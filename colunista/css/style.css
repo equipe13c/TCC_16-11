@@ -2200,7 +2200,27 @@ margin-left: 220px;
 .retirarVideos + .retirarVideos{
 margin-left: 350px; 
 }
-
+#btnAtualizarMateria{
+    margin-left:310px;
+}
+.AtualizarMateria
+{
+    height:30px;
+    width:150px;
+    border-radius:0;
+    margin-left:20px;
+    margin-top:20px;
+    margin-bottom: 20px;
+    background-color:#00989E;
+    float:left;
+    color: #fff;
+    text-align: center;
+    font-family: century gothic;
+    font-size: 10pt;
+    text-transform: uppercase;
+    font-weight: bold;
+    border:0px;
+}
 .inserirMateria{
     height:30px;
     width:150px;
