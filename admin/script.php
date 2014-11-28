@@ -56,7 +56,7 @@ $salt = geraSaltAleatorio();
         $sql = "UPDATE IMAGEM_USUARIO SET URL_IMAGEM = '$nome' WHERE COD_IMAGEM_USUARIO = $code";
 
         if(mysql_query($sql)){
-             echo "<script> location.href='painel.php' </script>";
+             echo "<script> location.href='index.php' </script>";
             $mensagem = "$apelido Alterou Foto";
             salvaLog($mensagem);
         }

@@ -26,15 +26,16 @@
         <title> Área Administrativa </title>
     </head>
     <body >
-        <section id="container" >
-            <?php
-                include_once '../conexao/conecta.inc';
-                include_once '../includes/funcoesUteis.inc';
-            ?>
+        <section>
+        <?php             
+             include '../includes/funcoesUteis.inc';
+             include '../conexao/conecta.inc';
+             validaAutenticacao('index.php','1');
+             ?>
             <header id="cabecalho">
                 <?php
+                include_once '../includes/menuR.php';
                 validaAutenticacao('../index.php','1');
-                include_once '../includes/menuR.php';                
                 ?>
             </header>
             <figure id="imgCapa">
@@ -44,8 +45,11 @@
                 
             </figure>
             <article id="conteudo">
-                <div id="info_user">    
-                    <figure id="imgUser" onmouseover="mostrarCam();" onmouseout="retirarCam();" >
+                <div id="info_user">  
+                    <div id="linksAtualizarImg"> 
+                        <a href="alterarImg.php"> Alterar</a><br/>
+                        <a href="removerImg.php"> Remover</a>
+                    </div>                     
                         <?php
                             $query = "SELECT * FROM IMAGEM_USUARIO WHERE COD_IMAGEM_USUARIO = ".$_SESSION['code'];
                             $result = mysql_query($query);                
@@ -69,7 +73,6 @@
                         <nav id="menuImagem" >
 
                         </nav>    
-                    </figure>
                     <div id="nomeUser">
                         <?php
                         $sql = mysql_query("SELECT NOME_USUARIO, APELIDO_USUARIO FROM USUARIO WHERE COD_USUARIO =". $_SESSION['code']); 
@@ -79,46 +82,40 @@
                         ?>
                     </div>
                 </div>
-                <nav id="menu2">
+                                                <nav id="menu2">
                     <?php 
                         include '../includes/menuA.php';
                     ?>
                 </nav>
-                <article id="conteudo_infos">
-                    <form action="update.php" method="post">
-                        <table id="tabelaPerfil" class="bordasimples">
-                            <tr class="linhasInfo">
-                                <td class="info">Endereço de e-mail</td>
-                                <td class="campos"><input type="text" class="txtInfo" disabled="disabled" id="emailInfo"   value="<?php echo $_SESSION['email']; ?>"></td>
-                                <td class="edit"><img src="../imagens/edit.png" alt="editImage" class="editImage"><a onclick="edit('email', '<?php echo $_SESSION['email']; ?>')" href="#">Editar</a></td>                            
-                            </tr>
-                            <tr class="linhasInfo">
-                                <td class="info">Senha</td>
-                                <td class="campos"><input type="password" class="txtInfo" disabled="disabled" id="senhaInfo" name="senhaUser" value="default"></td>
-                                <td class="edit" id="salvarSenha"><img src="../imagens/edit.png" alt="editImage" class="editImage"><a href="alterarSenha.php">Editar</a></td>                            
-                            </tr>
-                            <tr class="linhasInfo">
-                                <td class="info">Nome completo</td>
-                                <td class="campos"><input type="text" class="txtInfo" disabled="disabled"  id="nomeInfo" name="nomeUser"  value="<?php  buscarDados('nome'); ?>"></td>
-                                <td class="edit" id="salvarName"><img src="../imagens/edit.png" alt="editImage" class="editImage"><a onclick="edit('nome')" href="#">Editar</a></td>                            
-                            </tr>
-                            <tr class="linhasInfo">
-                                <td class="info">Apelido</td>
-                                <td class="campos"><input type="text" class="txtInfo" disabled="disabled"  id="apelidoInfo" name="apelidoUser" value="<?php buscarDados('apelido'); ?>"></td>
-                                <td class="edit" id="salvarApel"><img src="../imagens/edit.png" alt="editImage" class="editImage"><a onclick="edit('apelido')" href="#">Editar</a></td>                            
-                            </tr>
-                            <tr class="linhasInfo">
-                                <td class="info">Data de nascimento</td>
-                                <td class="campos"><input type="text" class="txtInfo" disabled="disabled"  id="dataInfo"  value="<?php buscarDados('data'); ?>"></td>
-                                <td class="edit"></td>                            
-                            </tr>
-                            <tr class="linhasInfo">
-                                <td class="info">Estado</td>
-                                <td class="campos"><input type="text" class="txtInfo" disabled="disabled" id="cidadeInfo" name="estadoUser" value="<?php buscarDados('estado'); ?>"></td>
-                                <td class="edit" id="salvarCid"><img src="../imagens/edit.png" alt="editImage" class="editImage"><a onclick="edit('cidade')" href="#">Editar</a></td>                            
-                            </tr>
-                        </table>
-                    </form>    
+                <nav id="menuOpcoes">
+            <ul class="home">
+                <li id="buscaLog">
+                    <form action='logUsuario.php' method='get'>
+                    <label id='name_busca'>Busca de Usuário:</label>
+                    <input type='text' onKeyPress='return letras();' name='nome_user_log' id="buscarLog">
+                    </form>
+                    <br/><br/><br/><br/><br/><br/>
+                </li>
+                <li><a target='tela' href='listarLog.php?tipoLog=1'> Efetuaram Login </a></li>
+                 <li><a target='tela' href='listarLog.php?tipoLog=2'> Alteraram Foto </a></li>
+                 <li><a target='tela' href='listarLog.php?tipoLog=3'> Desativados </a></li>
+                 <li><a target='tela' href='listarLog.php?tipoLog=4'> Deletados </a></li>
+                 <li><a target='tela' href='listarLog.php?tipoLog=5'> Reativados </a></li>
+                 <li><a target='tela' href='listarLog.php?tipoLog=6'> Alteraram Senha </a></li>
+                 <li><a target='tela' href='listarLog.php?tipoLog=7'> Alteraram E-mail </a></li>
+                 <li><a target='tela' href='listarLog.php?tipoLog=8'> Alteraram Nome </a></li>
+                 <li><a target='tela' href='listarLog.php?tipoLog=9'> Comentaram Artigo </a></li>
+                 <li><a target='tela' href='listarLog.php?tipoLog=10'> Fez Cadastro </a></li>
+                 <li><a target='tela' href='listarLog.php?tipoLog=11'> efetuou Logout </a></li>
+            </ul>
+        </nav>
+
+                <article id="conteudo_infos"> <br/>
+                    
+                   
+                    
+                    <a href="javascript:history.go(-1);" id="linkVoltarUsuarios"> Voltar </a>
+                    <br/><br/>
                 </article>                
             </article>
             <div id="imgFooter" ondragstart="return false">

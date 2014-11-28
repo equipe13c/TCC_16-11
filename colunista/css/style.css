@@ -1117,7 +1117,7 @@ table.bordasimples tr td {
     height: auto;
     float: left;
     margin-top: 50px;
-    margin-left: 50px;
+    margin-left: -10px;
     background-color: ghostwhite;
     border: solid 5px #00989E;
     color: white;
@@ -1127,7 +1127,7 @@ table.bordasimples tr td {
 
 #alterarCapa{
     width: 500px;
-    height: 200px;
+    height: 230px;
     float: left;
     margin-top: 10px;
     margin-left: 220px;
@@ -1144,7 +1144,7 @@ table.bordasimples tr td {
 
 .alterar{
     margin-top: 10px;
-    margin-left: 160px;
+    margin-left: 145px;
 }
 
 .preferencias p{
@@ -2281,4 +2281,47 @@ margin-left: 350px;
 #paginacaoEditarMateria a:hover{  
     color: #333;
     text-decoration: underline;
+}
+
+#paginacaoLogAtividades{
+    height: 50px;
+    margin-top: 20px;
+    margin-left: 430px;
+    float: left;
+}
+
+#paginacaoLogAtividades a{ 
+    font-family: century gothic;
+    font-size: 12pt;
+    color: #333;
+    text-decoration: none;
+    padding-left: 2px;
+}
+
+#paginacaoLogAtividades a:hover{  
+    color: #333;
+    text-decoration: underline;
+}
+
+#tabelaLogAtividades{
+    width: 1000px;
+    margin-top: 30px;
+    margin-left: -15px;
+    float: left;
+    background-color: #00989E;
+    font-family: century gothic;
+    font-size: 12pt;
+    color: #333;
+}
+
+#tabelaLogAtividades th{
+    background-color: #E0E0E0;      
+    height: 60px;
+}
+
+#tabelaLogAtividades td{
+    width: 100px;
+    height: 50px;    
+    background-color: #fff;
+    text-align: center;
 }

@@ -85,13 +85,10 @@
                 </nav>
                 <article id="conteudo_infos">
                     <form action="script2.php" method="post" enctype="multipart/form-data">
-                        <table id="tabelaPerfil" class="tablealterarCapa2">
-                            <tr>
-                                <th id="alterar" colspan="3">Alterar Foto de Capa</th>
-                            </tr>
-                            <tr>
-                                <td class="icone"><img src="../imagens/contacts.png" alt="imgNome" id=""> Imagem Capa</td>
-                                <td class="info">                     
+                        <div id="tabelaPreferencias">
+                            <div id="alterarCapa">
+                                <p> Alterar Imagem de Capa </p>
+                                <div class="alterar">  
                             <?php
                                 $query = "SELECT * FROM IMAGEM_USUARIO WHERE COD_IMAGEM_USUARIO = ".$_SESSION['code'];
                                 $result = mysql_query($query);                
@@ -107,17 +104,32 @@
                                 echo "<img src='../uploads/$urlImagem' alt='Imagem' id='imagemCapa'>";
                                 }
                             ?>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="icone"><img src="../imagens/picture.png" alt="imgNome" id=""></td>
-                                <td class="info"><input type="file" name="arquivo" value="Alterar Imagem"></td>
-                            </tr>
-                            <tr>
-                                <td class="icone"><img src="../imagens/checkmark.png" alt="imgNome" id=""></td>
-                                <td class="info"><input type="submit" name="alterarImg" class="bsalvar" value="Alterar Foto"></td>
-                            </tr>
-                        </table>
+                               </div>                                                         
+                                <div class="infoInputs">
+                                    <input type="file" name="arquivo" value="Alterar Imagem">                          
+                                </div>                                
+                                <div class="infoInputs">
+                                    <input type="submit" name="alterarImg" class="bsalvar" value="Alterar Foto">                                
+                                </div>
+                            </div>
+                            <div class="areasPreferencia">                                
+                                <div class="preferencias">  
+                                    <p> Descrição: </p> 
+                                    <textarea id="areasPreferenciaInput"> </textarea> <br/>
+                                </div>
+                                <div class="preferencias">  
+                                    <p> Jogos Preferidos: </p> 
+                                    <textarea id="areasPreferenciaInput"> </textarea> <br/>
+                                </div>
+                                <div class="preferencias">  
+                                    <p> Plataformas Preferidas: </p> 
+                                    <textarea id="areasPreferenciaInput"> </textarea> <br/>
+                                </div>
+                                <div class="infoInputs">
+                                    <input type="submit" name="salvarPreferencias" class="bsalvar" value="Salvar">                                
+                                </div>
+                            </div>
+                        </div>
                     </form>    
                 </article>                
             </article>

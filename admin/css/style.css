@@ -760,7 +760,7 @@ color: white;
 }
 #conteudo_infos{
     width: 100%;
-    height: auto;
+    height: 680px;
     float:left;
     margin-top:-17px;
     margin-left:0px;
@@ -794,29 +794,33 @@ color: white;
     margin-top:0px;
 }
 
-table.bordasimples {
-    border-collapse: collapse;
-    width:1000px; 
-    height:300px;
-    margin-left:50px;
-    margin-top:70px;
+.bordasimples{
+    width: 990px;
+    height: 300px;
+    margin-top: 50px;
+    margin-left: 45px;
+    background-color: #00989E;
+    font-family: century gothic;
+    color: #333
 }
-table.bordasimple {
-    border-collapse: collapse;
-    width:1000px; 
-    height:70px;
-    margin-left: 40px;
-    margin-top: 20px;
+
+.bordasimples th{
+    background-color: #d0d0d0;
+    font-size: 12pt;
+    font-weight: bold;
 }
-table.bordasimples td.icone{
-    width:100px;
+
+.bordasimples td{
+    background-color: #fff;
+    font-size: 12pt;
     text-align: center;
 }
+
 table.editEmailTable td.icone2{
     width:300px;
     text-align: center;
 }
-table.bordasimples td.info{
+table.bordasimples td{
     width:250px;
     text-align: left;
     font-family: century gothic;
@@ -841,23 +845,20 @@ table.editEmailTable td.info2{
     font-weight: bold;
 }
 
-.bsalvar	{
-    border-color: #999 #000 #000 #999;
+.bsalvar{
     border: 1px solid;
     width: 100px;
-    background: #333; 
+    background: #00989E; 
     color: white;
     font-family: century gothic;
-    font-size: 11px;
+    font-size: 10pt;
     text-align: center;
     text-decoration: none;
     height:40px;
-    border-radius: 6px;
 }
 	 
-.bsalvar:hover	{
+.bsalvar:hover{
    position: relative;
-   background: #333;
    box-shadow: 2px 0px 5px #999;
 }
 
@@ -1182,23 +1183,123 @@ table.bordasimples tr td {
     border-radius: 3px;
     
 }
-table.tablealterarImg{
-    margin-left:210px;
-    margin-top:50px;
+
+#tablealterarImg{
+    width:500px;
+    height:400px;
+    float: left;
+    margin-top: 50px;
+    margin-left: 280px;
+    background-color: ghostwhite;
+    border: solid 5px #00989E;
+    color:white;
+    font-size: 14pt;
+    font-family: century gothic;
 }
-table.tablealterarImg td.icone{
-    width:300px;
+
+#tabelaPreferencias{
+    width: 960px;
+    min-height: 400px;
+    height: auto;
+    float: left;
+    margin-top: 50px;
+    margin-left: 55px;
+    background-color: ghostwhite;
+    border: solid 5px #00989E;
+    color: white;
+    font-size: 14pt;
+    font-family: century gothic;
+}
+
+#alterarCapa{
+    width: 500px;
+    height: 230px;
+    float: left;
+    margin-top: 10px;
+    margin-left: 220px;
+    border: solid 1px #333;
+    color: #333;
+    font-size: 14pt;
+    font-family: century gothic;
+}
+
+#alterarCapa p{
+    margin-top: 10px;
+    margin-left: 130px;
+}
+
+.alterar{
+    margin-top: 10px;
+    margin-left: 145px;
+}
+
+.preferencias p{
+    margin-top: 10px;
+    margin-bottom: 5px;
     text-align: center;
-    height:100px;
 }
-table.tablealterarImg td.info{
-    height:100px;
-    text-align: center;
+
+.areasPreferencia{
+    width: 500px;
+    height: 350px;
+    float: left;
+    margin-top: 10px;
+    margin-left: 220px;
+    margin-bottom: 10px;
+    border: solid 1px #333;
+    color: #333;
+    font-size: 14pt;
+    font-family: century gothic;    
 }
+
+.preferencias{
+    width: 500px;
+    height: 90px;
+    float: left;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-bottom: 10px;
+    border: none;   
+}
+
+.areasPreferencia textarea{
+    min-height: 50px;
+    max-height: 50px;
+    height: 50px;
+    min-width: 400px;
+    max-width: 400px;
+    width: 400px;
+    margin-left: 51px;
+    font-family: century gothic;
+    font-size: 10pt;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.info{
+    margin-top: 20px;
+    margin-left: 150px;
+}
+
+.infoInputs{
+    width: 115px;
+    margin-top: 15px;
+    margin-left: 185px;
+}
+
+.infoInputs input{
+    width: 115px;    
+}
+
+.infoInputs + .infoInputs{    
+    margin-top: 10px;
+}
+
 #imagemInfo{
     width:200px;
     height:200px;
 }
+
 .senhaImg{
     width:30px;
     height:30px;
@@ -1493,4 +1594,47 @@ table.tableInserirMateria td.campos{
     float: left;
     color: #000;
     line-height: 17pt;   
+}
+
+#paginacaoLogAtividades{
+    height: 50px;
+    margin-top: 20px;
+    margin-left: 430px;
+    float: left;
+}
+
+#paginacaoLogAtividades a{ 
+    font-family: century gothic;
+    font-size: 12pt;
+    color: #333;
+    text-decoration: none;
+    padding-left: 2px;
+}
+
+#paginacaoLogAtividades a:hover{  
+    color: #333;
+    text-decoration: underline;
+}
+
+#tabelaLogAtividades{
+    width: 1000px;
+    margin-top: 30px;
+    margin-left: -15px;
+    float: left;
+    background-color: #00989E;
+    font-family: century gothic;
+    font-size: 12pt;
+    color: #333;
+}
+
+#tabelaLogAtividades th{
+    background-color: #E0E0E0;      
+    height: 60px;
+}
+
+#tabelaLogAtividades td{
+    width: 100px;
+    height: 50px;    
+    background-color: #fff;
+    text-align: center;
 }
