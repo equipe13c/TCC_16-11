@@ -20,7 +20,7 @@ switch (get_post_action('editar')) {
 case 'editar';
         //Inicio
         validaAutenticacao('../index.php', '3');
-        $codMateria = $_GET['codigo'];
+        $codMateria = $_POST['codigo'];
         $sql = "SELECT * FROM ARTIGO WHERE ID_ARTIGO = $codMateria";
         $result = mysql_query($sql);
         $totalResult = mysql_fetch_array($result);
