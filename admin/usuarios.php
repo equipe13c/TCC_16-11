@@ -107,9 +107,6 @@
                                 <td class="icone"><img src="../imagens/data.png" alt="imgMail" id="mailImg"></td>
                                 <td class="info" id="tipoUser">  Selecione o Tipo de Usuário: </td>
                                 <td class="info" id="tipoUser">    
-                                    
-                
-                
                 <select name="tipoUser">
                     <option value="4">Desativados</option>
                 </select><br/>

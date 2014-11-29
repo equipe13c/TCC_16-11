@@ -8,85 +8,15 @@
         <script type="text/javascript" src="../js/cycle.js"></script>
         <script type="text/javascript" src="../js/javascript.js"></script>
         <script type="text/javascript" src="../js/menu2.js"></script>
-        <script type="text/javascript" src="../js/restrito.js"></script>
-        <script type="text/javascript"> 
-            onload = function(){     
-                document.getElementById("imgMiniLogo").innerHTML = '<img src="../imagens/logosReduzidos001.png" alt="" id="miniLogo">';
-                var imgLogo = document.getElementById("img-logo");
-                imgLogo.innerHTML = '<img src="../imagens/logo001.png" alt="" id="logo">';
-                document.getElementById("navReduzido").style.backgroundColor = "#00989E";  
-                document.getElementById("nav").style.backgroundColor = "#00989E";              
-                document.getElementById("imgPrincipal").style.backgroundColor = "#009FE3"; 
-                document.getElementById("tituloMateria").style.backgroundColor = "#009FE3";
-                document.getElementById("logar").style.borderBottom = "solid 5px #009FE3"; 
-                document.getElementById("botaoLogin").style.backgroundColor = "#009FE3";
-                document.getElementById("tituloPagina").style.backgroundColor = "#009FE3";            
-
-            };
-        </script>
+        <script type="text/javascript" src="../js/restrito.js"></script>        
         <title>Área Administrativa</title>
     </head>
-    <body >
         <section id="container" >
             <?php
                 include_once '../conexao/conecta.inc';
                 include_once '../includes/funcoesUteis.inc';
             ?>
-            <header id="cabecalho">
-                <?php
-                include_once '../includes/menuR.php';
-                validaAutenticacao('../index.php','1');
-                ?>
-            </header>
-            <figure id="imgCapa">
-                <?php
-                buscarDados('imgcapa');
-                ?>
-                
-            </figure>
-            <article id="conteudo">
-                <div id="info_user">    
-                    <div id="linksAtualizarImg">
-                        <a href="alterarImg.php"> Alterar </a>
-                        <a href="removerImg.php"> Remover </a>
-                    </div>
-                        <?php
-                            $query = "SELECT * FROM IMAGEM_USUARIO WHERE COD_IMAGEM_USUARIO = ".$_SESSION['code'];
-                            $result = mysql_query($query);                
-                            $imagens = mysql_num_rows($result);
-                            if($imagens === 0){
-                            $nome = "default.jpg";            
-                            mysql_query("INSERT INTO IMAGEM_USUARIO(URL_IMAGEM, COD_IMAGEM_USUARIO)
-                            VALUES('$nome'".$_SESSION['code'].")");
-                            }
-                            else{
-                            $imagens2 = mysql_fetch_array($result); 
-                            $urlImagem = $imagens2['URL_IMAGEM'];
-                            echo "<img src='../uploads/$urlImagem' id='imagemUser' alt='imagem'>";
-                        ?>
-                        <div id="imgCam" >
-                            <div id="linksMudarImg">
-                                <a href="alterarImg.php" > Alterar Imagem </a>
-                                <a href="removerImg.php" > Remover Imagem </a> 
-                            </div>
-                        </div>
-                        <nav id="menuImagem" >
-
-                        </nav> 
-                    <div id="nomeUser">
-                        <?php
-                        $sql = mysql_query("SELECT NOME_USUARIO, APELIDO_USUARIO FROM USUARIO WHERE COD_USUARIO =". $_SESSION['code']); 
-                        $result = mysql_fetch_array($sql); 
-                        echo '<h1 class="username">'.$result['NOME_USUARIO'].'<br/>( '.$result['APELIDO_USUARIO'].' )</h1>';
-                        }
-                        ?>
-                    </div>
-                </div>
-                <nav id="menu2">
-                    <?php 
-                        include '../includes/menuA.php';
-                    ?>
-                </nav>
+            
                 <article id="conteudo_infos">
 <?php
 $tipoLog = $_GET['tipoLog'];
@@ -105,23 +35,15 @@ if($tr == 0){
     echo "Nenhum Usuário Encontrado";
 }
 else{
-echo "<div id='busca'>"
-."<form action='buscarLogusuario.php' method='get'>"
-. "<label id='name_busca_log'>Busca de Usuário</label>"
-        . "<input type='hidden' value='$tipoLog' name='tipo_log'>"
-        . "<input type='text' onKeyPress='return letras();' name='nome_user_log'>"
-        . "</form>"
-        . "</div>";
-echo "<div class='tables'>";
-    echo "<table class='tabelas' id='tabelausuario'>";
-    echo "<tr>";
-    echo "<th>Código</th>";
-    echo "<th>IP</th>";
-    echo "<th>Data</th>";
-    echo "<th>Hora</th>";
-    echo "<th>Ação</th>";
-    echo "<th>Autor</th>";
-    echo "</tr>";
+echo '<table id="tabelaLogAtividades" class="">
+        <tr class="linhasInfo">
+        <th> Código </th>
+        <th> IP </th>
+        <th> Data </th>
+        <th> Hora </th>        
+        <th> Ação </th>        
+        <th> Usuário </th>
+        </tr>';    
 while($usuarios = mysql_fetch_array($limite))
 {                       
     echo "<form id='usuariosA' action='form.php' method='post'>";
@@ -158,16 +80,6 @@ $anterior = $pc -1;
       if($pc == $tp){/*CODIGO A APARECER PARA PASSAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério
 
 ?>
-            </article>                
-            </article>
-            <div id="imgFooter" ondragstart='return false'> 
-                <img src="../imagens/ideiaRodape.png" alt=""> 
-            </div>
-            <footer id="footer">
-                <?php
-                    include_once '../includes/rodapeAdmin.php';
-                ?>
-            </footer>            
+            </article>           
         </section>
-    </body>
 </html>

@@ -10,23 +10,6 @@
         <script type="text/javascript" src="../js/javascript.js"></script>
         <script type="text/javascript" src="../js/menu2.js"></script>
         <script type="text/javascript" src="../js/restrito.js"></script>
-        <script type="text/javascript">
-            function previewImgUser(input, tipo) {
-                    if(tipo == 'imgUser'){
-                if (input.files && input.files[0]) {
-                    var reader = new FileReader();
- 
-                    reader.onload = function (e) {
-                            $('#imagemInfo')
-                .attr('src', e.target.result)
-                                    .width(200)
-                    };
-                    reader.readAsDataURL(input.files[0]);
-                }
-            }
-}
-
-            </script>
         <script type="text/javascript"> 
             onload = function(){     
                 var imgMiniLogo = document.getElementById("imgMiniLogo");
@@ -39,7 +22,7 @@
                 document.getElementById("logar").style.borderBottom = "solid 5px #00989E";               
                 document.getElementById("tituloPagina").style.backgroundColor = "#00989E"; 
             };
-        </script>
+        </script> 
         <title> Área Administrativa </title>
     </head>
     <body>
@@ -47,6 +30,7 @@
             <?php
                 include_once '../conexao/conecta.inc';
                 include_once '../includes/funcoesUteis.inc';
+                include_once '../classes/Bcrypt.class.php';
             ?>
             <header id="cabecalho">
                 <?php
@@ -81,10 +65,7 @@
                                 <a href="alterarImg.php" > Alterar Imagem </a>
                                 <a href="removerImg.php" > Remover Imagem </a> 
                             </div>
-                        </div>
-                        <nav id="menuImagem" >
-
-                        </nav>    
+                        </div>    
                     </figure>
                     <div id="nomeUser">
                         <?php
@@ -97,38 +78,70 @@
                 </div>
                 <nav id="menu2">
                     <?php 
-                        include '../includes/menuC.php';
+                        include '../includes/menuA.php';
                     ?>
                 </nav>
                 <article id="conteudo_infos">
-                    <form action="script.php" method="post" enctype="multipart/form-data">
-                        <div id="tablealterarImg">                                      
-                            <div class="info">                     
-                                <?php
-                                $query = "SELECT * FROM IMAGEM_USUARIO WHERE COD_IMAGEM_USUARIO = ".$_SESSION['code'];
-                                $result = mysql_query($query);                
-                                $imagens = mysql_num_rows($result);
-                                if($imagens === 0){
-                                $nome = "default.jpg";            
-                                mysql_query("INSERT INTO IMAGEM_USUARIO(URL_IMAGEM, COD_IMAGEM_USUARIO)
-                                VALUES('$nome'".$_SESSION['code'].")");
-                                }
-                                else{
-                                $imagens2 = mysql_fetch_array($result); 
-                                $urlImagem = $imagens2['URL_IMAGEM'];
-                                echo "<img src='../uploads/$urlImagem' id='imagemInfo' alt='imagem'>";
-                                }
-                                ?>
-                            </div>                                                         
-                            <div class="infoInputs">
-                                
-                                <input type="file" name="arquivo" value="Alterar Imagem" id="btnAlterarImg" onchange="previewImgUser(this,'imgUser');" multiple>                            
-                            </div>                                
-                            <div class="infoInputs">
-                                <input type="submit" name="arquivo" class="bsalvar" value="Alterar Foto">                                
-                            </div>
-                        </div>
-                    </form> 
+                <?php
+                    $sql = "SELECT * FROM LOG WHERE COD_AUTOR_LOG =".$_SESSION['code'];
+                    $total_reg = "5";
+                    $pc= isset($_GET['pagina'])? $_GET['pagina'] : "1";
+                    $inicio = $pc - 1; 
+                    $inicio = $inicio * $total_reg;
+                    $limite = mysql_query("$sql LIMIT $inicio,$total_reg");
+                    $resultado = mysql_query($sql);
+                    $tr = mysql_num_rows($resultado);
+                    $tp = $tr / $total_reg;
+                    
+                    if($tr === 0){
+                        echo "Nenhuma Ação Encontrada";
+                    }
+                    else{
+                        echo '<table id="tabelaLogAtividades" class="">
+                            <tr class="linhasInfo">
+                            <th> Data </th>
+                            <th> Hora</th>
+                            <th> Ação</th>
+                            </tr>';
+                        while ($acoes = mysql_fetch_array($limite))
+                        {
+                            $ano = substr($acoes['DATA_LOG'], 0, 4);
+                            $mes = substr($acoes['DATA_LOG'], 5, 2);
+                            $dia = substr($acoes['DATA_LOG'], 8, 2);
+                            echo '<tr class="linhasInfo">';
+                            echo '<td class="valores">'.$dia.'/'.$mes.'/'.$ano.'</td>';
+                            echo '<td class="valores">'.$acoes['HORA_LOG'].'</td>';
+                            $query2 = "SELECT NOME_ACAO FROM ACOES_LOG WHERE COD_ACOES_LOG =". $acoes['ACAO_LOG'];
+                            $result1 = mysql_query($query2);
+                            $acao = mysql_fetch_array($result1);
+                            echo '<td class="valores">'.$acao['NOME_ACAO'].'</td>';
+                            echo '</tr>';
+                        }
+                        echo '</table>';
+                        echo "<div id='paginacaoLogAtividades'>";
+                    $anterior = $pc -1; 
+                    $proximo = $pc +1; 
+                    if ($pc>1) 
+                    { echo " <a href='?pagina=$anterior'>< Anterior</a> "; 
+
+                    } 
+                    if($pc ==1){/*CODIGO A APARECER PARA VOLTAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério
+                    //echo "|"; 
+                    // Inicio lógica rogerio
+                    for($i=1;$i<=$tp;$i++)
+                    {
+                        echo "<a href=?pagina=$i>".$i . "</a>" . "    ";
+                    }
+                    // Fim lógia rogério
+                    if ($pc<$tp) 
+                        { echo " <a href='?pagina=$proximo'>Próxima ></a>"; 
+
+                        }
+                   if($pc == $tp){/*CODIGO A APARECER PARA PASSAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério
+
+                    }
+                echo "</div>";
+                ?>
                 </article>                
             </article>
             <div id="imgFooter" ondragstart="return false">
@@ -138,7 +151,7 @@
                 <?php
                     include_once '../includes/rodapeAdmin.php';
                 ?>
-            </footer>          
+            </footer>              
         </section>
     </body>
 </html>

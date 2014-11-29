@@ -22,6 +22,9 @@
                 document.getElementById("logar").style.borderBottom = "solid 5px #00989E";               
                 document.getElementById("tituloPagina").style.backgroundColor = "#00989E"; 
             };
+    function mostrarLogs(){
+                    document.getElementById('mostrarLogs').style.display = 'inline';
+                }
         </script>
         <title> Área Administrativa </title>
     </head>
@@ -82,40 +85,44 @@
                         ?>
                     </div>
                 </div>
-                                                <nav id="menu2">
+                <nav id="menu2">
                     <?php 
                         include '../includes/menuA.php';
                     ?>
-                </nav>
-                <nav id="menuOpcoes">
-            <ul class="home">
-                <li id="buscaLog">
-                    <form action='logUsuario.php' method='get'>
-                    <label id='name_busca'>Busca de Usuário:</label>
-                    <input type='text' onKeyPress='return letras();' name='nome_user_log' id="buscarLog">
-                    </form>
-                    <br/><br/><br/><br/><br/><br/>
-                </li>
-                <li><a target='tela' href='listarLog.php?tipoLog=1'> Efetuaram Login </a></li>
-                 <li><a target='tela' href='listarLog.php?tipoLog=2'> Alteraram Foto </a></li>
-                 <li><a target='tela' href='listarLog.php?tipoLog=3'> Desativados </a></li>
-                 <li><a target='tela' href='listarLog.php?tipoLog=4'> Deletados </a></li>
-                 <li><a target='tela' href='listarLog.php?tipoLog=5'> Reativados </a></li>
-                 <li><a target='tela' href='listarLog.php?tipoLog=6'> Alteraram Senha </a></li>
-                 <li><a target='tela' href='listarLog.php?tipoLog=7'> Alteraram E-mail </a></li>
-                 <li><a target='tela' href='listarLog.php?tipoLog=8'> Alteraram Nome </a></li>
-                 <li><a target='tela' href='listarLog.php?tipoLog=9'> Comentaram Artigo </a></li>
-                 <li><a target='tela' href='listarLog.php?tipoLog=10'> Fez Cadastro </a></li>
-                 <li><a target='tela' href='listarLog.php?tipoLog=11'> efetuou Logout </a></li>
-            </ul>
-        </nav>
-
+                </nav>            
                 <article id="conteudo_infos"> <br/>
-                    
-                   
-                    
-                    <a href="javascript:history.go(-1);" id="linkVoltarUsuarios"> Voltar </a>
-                    <br/><br/>
+                         <?php 
+                        echo "<div id='buscaUsuarios'>"
+                        ."<form action='buscarUsuario.php' method='post'>"
+                        . "<label> Busca de Usuário</label>"
+                        . "<input type='text' onKeyPress='return letras();' name='nome_user' id='caixaUser'>"
+                        . "<input type='submit' name='botaoBuscaUser' id='botaoBuscaUser' value='Buscar'>"    
+                        . "</form>"
+                        . "</div>";
+                        
+                            echo "<div class='tables'>";
+                            echo "<table class='tabelaUsuarios'>";
+                            echo "<tr>";    
+                            echo "<th colspan='10'>Filtrar Atividades de Usuários</th>";                            
+                            echo "</tr>";    
+                            echo "<tr>";    
+                            echo "<td><a href='listarLog.php?&tipoLog=1'  target='logsUser' onclick='mostrarLogs();'> Efetuaram Login </a></td>";
+                            echo "<td><a href='listarLog.php?&tipoLog=2'  target='logsUser' onclick='mostrarLogs();'> Alteraram Foto </a></td>";
+                            echo "<td><a href='listarLog.php?&tipoLog=3'  target='logsUser' onclick='mostrarLogs();'> Desativados </a></td>";
+                            echo "<td><a href='listarLog.php?&tipoLog=5'  target='logsUser' onclick='mostrarLogs();'> Reativados </a></td>";
+                            echo "<td><a href='listarLog.php?&tipoLog=6'  target='logsUser' onclick='mostrarLogs();'> Alteraram Senha </a></td>";
+                            echo "<td><a href='listarLog.php?&tipoLog=7'  target='logsUser' onclick='mostrarLogs();'> Alteraram E-mail </a></td>";
+                            echo "<td><a href='listarLog.php?&tipoLog=8'  target='logsUser' onclick='mostrarLogs();'> Alteraram Nome </a></td>";
+                            echo "<td><a href='listarLog.php?&tipoLog=9'  target='logsUser' onclick='mostrarLogs();'> Comentaram Artigo </a></td>";
+                            echo "<td><a href='listarLog.php?&tipoLog=10'  target='logsUser' onclick='mostrarLogs();'> Fizeram Cadastro </a></td>";
+                            echo "<td><a href='listarLog.php?&tipoLog=11'  target='logsUser' onclick='mostrarLogs();'> Efetuaram Logout </a></td>";
+                            echo "</tr>";                            
+                            echo "</div>";                                                     
+                            echo "</table>";
+                            echo "<div id= style='display:none;'>"   
+                            ."<iframe  id='mostrar_logs'  src='' frameborder='0' allowfullscreen name='logsUser'></iframe> "    
+                            ."</div>";
+                        ?>
                 </article>                
             </article>
             <div id="imgFooter" ondragstart="return false">
