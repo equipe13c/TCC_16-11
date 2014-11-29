@@ -819,9 +819,9 @@ color: white;
 }
 
 .tabelaUsuarios{
-    width: 1000px;
+    width: 1050px;
     margin-top: 20px;
-    margin-left: 40px;
+    margin-left: 15px;
     margin-bottom: 20px;
     float: left;
     background-color: #00989E;
@@ -835,6 +835,7 @@ color: white;
     font-size: 12pt;
     font-weight: bold;
     height: 50px;
+    padding: 5px;
 }
 
 .tabelaUsuarios td{
@@ -1001,9 +1002,9 @@ table.bordasimples td.campos{
 }
 
 .botoes{
-    width: 57px;
+    width: 70px;
     height: 25px;
-    margin-left: 3px;
+    margin-left: 7px;
     margin-top: 4px;    
     margin-bottom: 5px;
     float: left;    
@@ -1016,7 +1017,7 @@ table.bordasimples td.campos{
 
 .botoes + .botoes{
     margin-top: 4px;
-    margin-left:  3px;
+    margin-left:  7px;
 }
 
 .tabelas #imagem_usuario_listagem{
