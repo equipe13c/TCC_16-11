@@ -81,7 +81,7 @@ while($artigos = mysql_fetch_array($limite))
         echo "<td>" . $dia.'/'.$mes.'/'.$ano. "</td>";
         echo "<td>" . $artigos['HORA_ARTIGO'] . "</td>";
         echo "<td><input type='submit' class='botoes' name='editar' value='Editar Matéira'></td>";
-        echo "<td><input type='submit' class='botoes' name='editar' value='Excluir Matéira'></td>";
+        echo "<td><input type='submit' class='botoes' name='excluir' value='Excluir Matéira'></td>";
         echo "<td><a href='../$urlArtigo' target='_blank'> Visualizar Matéria </a></td>";
         echo "</tr>"; 
         echo "</form>";

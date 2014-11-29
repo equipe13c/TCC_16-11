@@ -16,7 +16,7 @@
 <?php
 include '../includes/funcoesUteis.inc';
 
-switch (get_post_action('editar')) {
+switch (get_post_action('editar','excluir')) {
 case 'editar';
         //Inicio
         validaAutenticacao('../index.php', '3');
@@ -146,6 +146,24 @@ echo '<form action="atualizarMateria.php" method="post" enctype="multipart/form-
         //Fim
             //Fim
             break;
+case 'excluir';
+    //Inicio
+        validaAutenticacao('../index.php', '3');
+        $codMateria = $_POST['codigo'];
+        $sql = "DELETE FROM COMENT WHERE CODIGO_MATERIA = $codMateria";
+        mysql_query($sql);
+        $sql2 = "DELETE FROM IMAGENS_MATERIA WHERE COD_MATERIA_IMAGEM = $codMateria";
+        mysql_query($sql2);
+        $sql3 = "DELETE FROM ARTIGO WHERE ID_ARTIGO = $codMateria";
+        $result = mysql_query($sql3);
+        if($result){
+            echo "Matéria Deletada";
+        }
+        else{
+            echo "erro ao deletar Matéria";
+        }
+    //Fim   
+        break;
     default:
        echo "Nenhuma Função Definida";
 }

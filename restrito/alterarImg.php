@@ -23,6 +23,22 @@
                 document.getElementById("tituloPagina").style.backgroundColor = "#00989E"; 
             };
         </script>
+            <script type="text/javascript">
+            function previewImgUser(input, tipo) {
+                    if(tipo == 'imgUser'){
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+ 
+                    reader.onload = function (e) {
+                            $('#imagemInfo')
+                .attr('src', e.target.result)
+                                    .width(200)
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+            }
+            </script>
         <title></title>
     </head>
     <body>
@@ -103,8 +119,8 @@
                                 }
                                 ?>
                             </div>                                                         
-                            <div class="infoInputs">
-                                <input type="file" name="arquivo" value="Alterar Imagem">                            
+                            <div class="infoInputs">                         
+                                <input type="file" name="arquivo" value="Alterar Imagem" class="btnAlterarImg" onchange="previewImgUser(this,'imgUser');" multiple>                       
                             </div>                                
                             <div class="infoInputs">
                                 <input type="submit" name="arquivo" class="bsalvar" value="Alterar Foto">                                
