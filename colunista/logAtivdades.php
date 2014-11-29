@@ -117,7 +117,7 @@
                             echo '<td class="valores">'.$acao['NOME_ACAO'].'</td>';
                             echo '</tr>';
                         }
-                        echo '</table>';
+                        echo '</table>';                                                  
                         echo "<div id='paginacaoLogAtividades'>";
                     $anterior = $pc -1; 
                     $proximo = $pc +1; 

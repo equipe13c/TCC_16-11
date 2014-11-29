@@ -80,7 +80,7 @@
                 </div>
                 <nav id="menu2">
                     <?php 
-                        include '../includes/menuC.php';
+                        include '../includes/menuA.php';
                     ?>
                 </nav>
                 <article id="conteudo_infos" >
@@ -276,11 +276,14 @@
                     ?>
                 </article>                
             </article>
+            <div id="imgFooter" ondragstart="return false">
+                <img src="../imagens/imagemRodape.png">
+            </div>
             <footer id="footer">
                 <?php
-                    include_once '../includes/rodape.php';
+                    include_once '../includes/rodapeAdmin.php';
                 ?>
-            </footer>            
+            </footer>           
         </section>
     </body>
 </html>

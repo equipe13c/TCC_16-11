@@ -91,19 +91,8 @@
                     <?php
 
 
-    $tipoUser = $_GET['tipoUser'];
-if($tipoUser == "1"){
-$query = "SELECT * FROM USUARIO WHERE TIPO_USUARIO = '$tipoUser' ORDER BY COD_USUARIO ASC";
-}
-else if($tipoUser == "2"){
-$query = "SELECT * FROM USUARIO WHERE TIPO_USUARIO = '$tipoUser' ORDER BY COD_USUARIO ASC";    
-}
-else if($tipoUser == "3"){
-$query = "SELECT * FROM USUARIO WHERE TIPO_USUARIO = '$tipoUser' ORDER BY COD_USUARIO ASC"; 
-}
-else if($tipoUser == "deletados"){
-$query = "";  
-}
+
+$query = "SELECT * FROM USUARIO ORDER BY COD_USUARIO ASC";
 $total_reg = "5";
 $pc= isset($_GET['pagina'])? $_GET['pagina'] : "1";
 $inicio = $pc - 1; 
@@ -118,19 +107,21 @@ if($tr == 0){
 }
 else{
     
-echo "<div id='busca'>"
-."<form action='buscarUsuario.php' method='post'>"
-. "<label id='name_busca'> Busca de Usuário</label>"
-        . "<input type='text' onKeyPress='return letras();' name='nome_user' id='buscarUsuario'>"
-        . "</form>"
-        . "</div>";
+echo "<div id='buscaUsuarios'>"
+    ."<form action='buscarUsuario.php' method='post'>"
+    . "<label> Busca de Usuário</label>"
+    . "<input type='text' onKeyPress='return letras();' name='nome_user' id='caixaUser'>"
+    . "<input type='submit' name='botaoBuscaUser' id='botaoBuscaUser' value='Buscar'>"    
+    . "</form>"
+    . "</div>";
 
 echo "<div class='tables'>";
     echo "<table class='tabelaUsuarios'>";
     echo "<tr>"; 
-        echo "<th colspan='7'> Filtrar </th>";    
+        echo "<th colspan='8'> Filtrar </th>";    
     echo "</tr>"; 
     echo "<tr>";       
+    echo "<td><a href='#'> Todos </a> </td>"; 
     echo "<td><a href='#'> Nome </a> </td>";    
     echo "<td><a href='#'> Data de Nascimento </a></td>";
     echo "<td><a href='#'> Administradores </a></td>";
@@ -162,7 +153,11 @@ while($usuarios = mysql_fetch_array($limite))
                 $imagens = mysql_fetch_array($result2); 
                 $urlImagem = $imagens['URL_IMAGEM'];
                 
-                
+                  $sql5 = "SELECT * FROM TIPO WHERE COD_TIPO = ".$usuarios['TIPO_USUARIO'];
+                $result5 = mysql_query($sql5);   
+                $tipos = mysql_fetch_array($result5); 
+                $tipoUsuario = $tipos['TIPO_USUARIO'];
+             
                
                 
     echo "<form id='usuariosA' action='desativarUsuario.php' method='post'>";
@@ -173,18 +168,20 @@ while($usuarios = mysql_fetch_array($limite))
         echo "<td><input type='text' readonly='readonly' class='txtInfo3' size='25'  id='usuarioTable' name='name' value='" . $usuarios['NOME_USUARIO'] . "'></td>";
         echo "<td><input type='text' readonly='readonly' class='txtInfo3' size='25'  id='usuarioTable' name='apelido' value='" . $usuarios['APELIDO_USUARIO'] . "'></td>";
         echo "<td><input type='text' readonly='readonly' class='txtInfo3' size='35'  id='usuarioTable' name='email' value='" . utf8_encode($usuarios['EMAIL_USUARIO']) . "'></td>";
-        echo "<td><input type='text' readonly='readonly' class='txtInfo3' size='3'  id='usuarioTable' name='tipo' value='" . $usuarios['TIPO_USUARIO'] . "'></td>";
+        echo "<td><input type='text' readonly='readonly' class='txtInfo3' size='13'  id='usuarioTable' name='tipo' value='" . $tipoUsuario . "'></td>";
         echo "<td><input type='text' readonly='readonly' class='txtInfo3' size='10'  id='usuarioTable' name='dataNasc' value='" . $usuarios['DATA_NASCIMENTO'] . "'></td>";
-        echo "<td></td>";
+        echo "<td><input type='submit' class='botoes' name='ativar' value='Ativar'> <input type='submit' class='botoes' name='desativar' value='Desativar'> <input type='submit' class='botoes' name='elevar' value='Elevar'> <input type='submit' class='botoes' name='rebaixar' value='Rebaixar'> </td>";
         echo "</tr>"; 
         echo "</form>";
 }
 echo "</table><br/>";
+echo "</div>";   
 }
+ echo "<div id='paginacaoVisualizarUser'>";
 $anterior = $pc -1; 
    $proximo = $pc +1; 
    if ($pc>1) 
-       { echo " <a href='?pagina=$anterior&tipoUser=$tipoUser'><- Anterior</a> "; 
+       { echo " <a href=?pagina=$anterior>< Anterior</a> "; 
        
        } 
        if($pc ==1){/*CODIGO A APARECER PARA VOLTAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério
@@ -192,19 +189,16 @@ $anterior = $pc -1;
        // Inicio lógica rogerio
        for($i=1;$i<=$tp;$i++)
        {
-           echo "<a href=?pagina=$i&tipoUser=$tipoUser>".$i . "</a>" . "    ";
+           echo "<a href=?pagina=$i>".$i . "</a>" . "    ";
        }
        // Fim lógia rogério
        if ($pc<$tp) 
-           { echo " <a href='?pagina=$proximo&tipoUser=$tipoUser'>Próxima -></a>"; 
+           { echo " <a href=?pagina=$proximo>Próxima ></a>"; 
            
            }
       if($pc == $tp){/*CODIGO A APARECER PARA PASSAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério
-
-?>
-                    
-                    <a href="javascript:history.go(-1);" id="linkVoltarUsuarios"> Voltar </a>
-                    <br/><br/>
+echo "</div>";
+?>                   
                 </article>                
             </article>
             <div id="imgFooter" ondragstart="return false">

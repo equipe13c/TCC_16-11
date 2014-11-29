@@ -26,67 +26,12 @@
         </script>
         <title>Área Administrativa</title>
     </head>
-    <body >
         <section id="container" >
             <?php
                 include_once '../conexao/conecta.inc';
                 include_once '../includes/funcoesUteis.inc';
             ?>
-            <header id="cabecalho">
-                <?php
-                include_once '../includes/menuR.php';
-                validaAutenticacao('../index.php','1');
-                ?>
-            </header>
-            <figure id="imgCapa">
-                <?php
-                buscarDados('imgcapa');
-                ?>
-                
-            </figure>
-            <article id="conteudo">
-                <div id="info_user">    
-                    <div id="linksAtualizarImg">
-                        <a href="alterarImg.php"> Alterar </a>
-                        <a href="removerImg.php"> Remover </a>
-                    </div>
-                        <?php
-                            $query = "SELECT * FROM IMAGEM_USUARIO WHERE COD_IMAGEM_USUARIO = ".$_SESSION['code'];
-                            $result = mysql_query($query);                
-                            $imagens = mysql_num_rows($result);
-                            if($imagens === 0){
-                            $nome = "default.jpg";            
-                            mysql_query("INSERT INTO IMAGEM_USUARIO(URL_IMAGEM, COD_IMAGEM_USUARIO)
-                            VALUES('$nome'".$_SESSION['code'].")");
-                            }
-                            else{
-                            $imagens2 = mysql_fetch_array($result); 
-                            $urlImagem = $imagens2['URL_IMAGEM'];
-                            echo "<img src='../uploads/$urlImagem' id='imagemUser' alt='imagem'>";
-                        ?>
-                        <div id="imgCam" >
-                            <div id="linksMudarImg">
-                                <a href="alterarImg.php" > Alterar Imagem </a>
-                                <a href="removerImg.php" > Remover Imagem </a> 
-                            </div>
-                        </div>
-                        <nav id="menuImagem" >
-
-                        </nav> 
-                    <div id="nomeUser">
-                        <?php
-                        $sql = mysql_query("SELECT NOME_USUARIO, APELIDO_USUARIO FROM USUARIO WHERE COD_USUARIO =". $_SESSION['code']); 
-                        $result = mysql_fetch_array($sql); 
-                        echo '<h1 class="username">'.$result['NOME_USUARIO'].'<br/>( '.$result['APELIDO_USUARIO'].' )</h1>';
-                        }
-                        ?>
-                    </div>
-                </div>
-                <nav id="menu2">
-                    <?php 
-                        include '../includes/menuA.php';
-                    ?>
-                </nav>
+            
                 <article id="conteudo_infos">
 <?php
 $tipoLog = $_GET['tipoLog'];
@@ -158,16 +103,6 @@ $anterior = $pc -1;
       if($pc == $tp){/*CODIGO A APARECER PARA PASSAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério
 
 ?>
-            </article>                
-            </article>
-            <div id="imgFooter" ondragstart='return false'> 
-                <img src="../imagens/ideiaRodape.png" alt=""> 
-            </div>
-            <footer id="footer">
-                <?php
-                    include_once '../includes/rodapeAdmin.php';
-                ?>
-            </footer>            
+            </article>           
         </section>
-    </body>
 </html>

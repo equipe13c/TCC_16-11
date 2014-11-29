@@ -2,8 +2,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="shortcut icon" href="../imagens/icone001.png" >
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="shortcut icon" href="../imagens/icone001.png" >
         <script type="text/javascript" src="../js/funcoes.js"> </script>
         <script type="text/javascript" src="../js/jquery.js"></script>
         <script type="text/javascript" src="../js/cycle.js"></script>
@@ -22,33 +22,30 @@
                 document.getElementById("logar").style.borderBottom = "solid 5px #00989E";               
                 document.getElementById("tituloPagina").style.backgroundColor = "#00989E"; 
             };
-        </script>
+        </script> 
         <title> Área Administrativa </title>
     </head>
-    <body >
-        <section id="container" >
+    <body>
+        <section id="container">
             <?php
                 include_once '../conexao/conecta.inc';
                 include_once '../includes/funcoesUteis.inc';
+                include_once '../classes/Bcrypt.class.php';
             ?>
             <header id="cabecalho">
                 <?php
                 include_once '../includes/menuR.php';
-                validaAutenticacao('../index.php','1');
+                validaAutenticacao('../index.php','3');
                 ?>
             </header>
             <figure id="imgCapa">
                 <?php
                 buscarDados('imgcapa');
                 ?>
-                
             </figure>
             <article id="conteudo">
                 <div id="info_user">    
-                    <div id="linksAtualizarImg"> 
-                        <a href="alterarImg.php"> Alterar</a><br/>
-                        <a href="removerImg.php"> Remover</a>
-                    </div>
+                    <figure id="imgUser" onmouseover="mostrarCam();" onmouseout="retirarCam();" >
                         <?php
                             $query = "SELECT * FROM IMAGEM_USUARIO WHERE COD_IMAGEM_USUARIO = ".$_SESSION['code'];
                             $result = mysql_query($query);                
@@ -68,10 +65,8 @@
                                 <a href="alterarImg.php" > Alterar Imagem </a>
                                 <a href="removerImg.php" > Remover Imagem </a> 
                             </div>
-                        </div>
-                        <nav id="menuImagem" >
-
-                        </nav>    
+                        </div>    
+                    </figure>
                     <div id="nomeUser">
                         <?php
                         $sql = mysql_query("SELECT NOME_USUARIO, APELIDO_USUARIO FROM USUARIO WHERE COD_USUARIO =". $_SESSION['code']); 
@@ -86,48 +81,77 @@
                         include '../includes/menuA.php';
                     ?>
                 </nav>
-                <article id="conteudo_infos"> <br/>
-                    <form action="exibeUsers.php" method="get">
-                    <table id="tabelaPerfil" class="bordasimple">
-                            <tr class="linhasInfos">
-                                <td class="icone"><img src="../imagens/data.png" alt="imgMail" id="mailImg"></td>
-                                <td class="info" id="tipoUser">  Selecione o Tipo de Usuário: </td>
-                                <td class="info" id="tipoUser"> 
-                                <select name="tipoUser">
-                                    <option selected value="1">ADM</option>
-                                    <option value="2">RES</option>
-                                    <option value="3">COL</option>
-                                </select><br/>
-                                <td class="editList"> <input id="buttonUsers" type="submit" value="Listar">  </td>   
-                            </tr> </table>                  
-                   </form>
-                   <form action="listarDesativados.php" method="get">
-                    <table id="tabelaPerfil" class="bordasimple" style="margin-bottom: 20px;">
-                            <tr class="linhasInfos">
-                                <td class="icone"><img src="../imagens/data.png" alt="imgMail" id="mailImg"></td>
-                                <td class="info" id="tipoUser">  Selecione o Tipo de Usuário: </td>
-                                <td class="info" id="tipoUser">    
-                <select name="tipoUser">
-                    <option value="4">Desativados</option>
-                </select><br/>
-                   <td class="editList"> <input id="buttonUsers" type="submit" value="Listar">  </td>
-                
-                                                 
+                <article id="conteudo_infos">
+                <?php
+                    $sql = "SELECT * FROM LOG WHERE COD_AUTOR_LOG =".$_SESSION['code'];
+                    $total_reg = "5";
+                    $pc= isset($_GET['pagina'])? $_GET['pagina'] : "1";
+                    $inicio = $pc - 1; 
+                    $inicio = $inicio * $total_reg;
+                    $limite = mysql_query("$sql LIMIT $inicio,$total_reg");
+                    $resultado = mysql_query($sql);
+                    $tr = mysql_num_rows($resultado);
+                    $tp = $tr / $total_reg;
+                    
+                    if($tr === 0){
+                        echo "Nenhuma Ação Encontrada";
+                    }
+                    else{
+                        echo '<table id="tabelaLogAtividades" class="">
+                            <tr class="linhasInfo">
+                            <th> Data </th>
+                            <th> Hora</th>
+                            <th> Ação</th>
+                            </tr>';
+                        while ($acoes = mysql_fetch_array($limite))
+                        {
+                            $ano = substr($acoes['DATA_LOG'], 0, 4);
+                            $mes = substr($acoes['DATA_LOG'], 5, 2);
+                            $dia = substr($acoes['DATA_LOG'], 8, 2);
+                            echo '<tr class="linhasInfo">';
+                            echo '<td class="valores">'.$dia.'/'.$mes.'/'.$ano.'</td>';
+                            echo '<td class="valores">'.$acoes['HORA_LOG'].'</td>';
+                            $query2 = "SELECT NOME_ACAO FROM ACOES_LOG WHERE COD_ACOES_LOG =". $acoes['ACAO_LOG'];
+                            $result1 = mysql_query($query2);
+                            $acao = mysql_fetch_array($result1);
+                            echo '<td class="valores">'.$acao['NOME_ACAO'].'</td>';
+                            echo '</tr>';
+                        }
+                        echo '</table>';
+                        echo "<div id='paginacaoLogAtividades'>";
+                    $anterior = $pc -1; 
+                    $proximo = $pc +1; 
+                    if ($pc>1) 
+                    { echo " <a href='?pagina=$anterior'>< Anterior</a> "; 
 
-                            </tr> </table>
-                  
-                   </form>
+                    } 
+                    if($pc ==1){/*CODIGO A APARECER PARA VOLTAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério
+                    //echo "|"; 
+                    // Inicio lógica rogerio
+                    for($i=1;$i<=$tp;$i++)
+                    {
+                        echo "<a href=?pagina=$i>".$i . "</a>" . "    ";
+                    }
+                    // Fim lógia rogério
+                    if ($pc<$tp) 
+                        { echo " <a href='?pagina=$proximo'>Próxima ></a>"; 
 
+                        }
+                   if($pc == $tp){/*CODIGO A APARECER PARA PASSAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério
+
+                    }
+                echo "</div>";
+                ?>
                 </article>                
             </article>
             <div id="imgFooter" ondragstart="return false">
                 <img src="../imagens/imagemRodape.png">
-            </div>  
+            </div>
             <footer id="footer">
                 <?php
                     include_once '../includes/rodapeAdmin.php';
                 ?>
-            </footer>            
+            </footer>              
         </section>
     </body>
 </html>
