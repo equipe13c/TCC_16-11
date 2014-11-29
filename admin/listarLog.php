@@ -8,22 +8,7 @@
         <script type="text/javascript" src="../js/cycle.js"></script>
         <script type="text/javascript" src="../js/javascript.js"></script>
         <script type="text/javascript" src="../js/menu2.js"></script>
-        <script type="text/javascript" src="../js/restrito.js"></script>
-        <script type="text/javascript"> 
-            onload = function(){     
-                document.getElementById("imgMiniLogo").innerHTML = '<img src="../imagens/logosReduzidos001.png" alt="" id="miniLogo">';
-                var imgLogo = document.getElementById("img-logo");
-                imgLogo.innerHTML = '<img src="../imagens/logo001.png" alt="" id="logo">';
-                document.getElementById("navReduzido").style.backgroundColor = "#00989E";  
-                document.getElementById("nav").style.backgroundColor = "#00989E";              
-                document.getElementById("imgPrincipal").style.backgroundColor = "#009FE3"; 
-                document.getElementById("tituloMateria").style.backgroundColor = "#009FE3";
-                document.getElementById("logar").style.borderBottom = "solid 5px #009FE3"; 
-                document.getElementById("botaoLogin").style.backgroundColor = "#009FE3";
-                document.getElementById("tituloPagina").style.backgroundColor = "#009FE3";            
-
-            };
-        </script>
+        <script type="text/javascript" src="../js/restrito.js"></script>        
         <title>Área Administrativa</title>
     </head>
         <section id="container" >
@@ -50,23 +35,15 @@ if($tr == 0){
     echo "Nenhum Usuário Encontrado";
 }
 else{
-echo "<div id='busca'>"
-."<form action='buscarLogusuario.php' method='get'>"
-. "<label id='name_busca_log'>Busca de Usuário</label>"
-        . "<input type='hidden' value='$tipoLog' name='tipo_log'>"
-        . "<input type='text' onKeyPress='return letras();' name='nome_user_log'>"
-        . "</form>"
-        . "</div>";
-echo "<div class='tables'>";
-    echo "<table class='tabelas' id='tabelausuario'>";
-    echo "<tr>";
-    echo "<th>Código</th>";
-    echo "<th>IP</th>";
-    echo "<th>Data</th>";
-    echo "<th>Hora</th>";
-    echo "<th>Ação</th>";
-    echo "<th>Autor</th>";
-    echo "</tr>";
+echo '<table id="tabelaLogAtividades" class="">
+        <tr class="linhasInfo">
+        <th> Código </th>
+        <th> IP </th>
+        <th> Data </th>
+        <th> Hora </th>        
+        <th> Ação </th>        
+        <th> Usuário </th>
+        </tr>';    
 while($usuarios = mysql_fetch_array($limite))
 {                       
     echo "<form id='usuariosA' action='form.php' method='post'>";
