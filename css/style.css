@@ -500,6 +500,7 @@ body{
     background-color: #fff;
     box-shadow: 7px 7px 0px 0px #333;
 }
+
 #tituloGaleria{
     margin-top: 0;
     margin-left: 0;
@@ -726,6 +727,7 @@ body{
     float: left;
     z-index: 2;
     border: solid 5px #333;
+    
 }
 
 .materias img{
@@ -1523,12 +1525,11 @@ body{
 }
 
 .figura_materia{
-    width: 30%;
+    width: 180px;
     height: 140px;
     float:left;
     margin-top:10px;
     margin-left:10px;
-    border:1px solid black;
 }
 .imagem_miniatura_materia{
     width: 100%;
@@ -1537,15 +1538,82 @@ body{
     margin-top:0px;
     margin-left:0px;
 }
+.texto_titulo_materia{
+    width: 535px;
+    height: 30px;
+    float:left;
+    text-align: center;
+    margin-top:20px;
+    margin-left:10px;
+    font-size:14pt;
+    font-family: century gothic;
+    text-transform: uppercase;
+    text-decoration: none;
+font-weight: bolder;
+letter-spacing: 2px;
+color:#00989E;
+border-bottom: 1px solid #ccc;
+}
 .texto_materia{
-    width: 65%;
-    height: 140px;
+    width: 535px;
+    height: 80px;
     float:left;
     margin-top:10px;
     margin-left:10px;
-    border:1px solid black;
+    font-size:12pt;
+    font-family: century gothic;
+    text-transform: uppercase;
+    text-decoration: none;
+    color:#333;
+    text-align: justify;
 }
-
+.verMais{
+    width: 90px;
+    height: 22px;
+    float:right;
+    margin-top:-6px;
+    margin-right:4px;
+    border:1px solid #ccc;
+    border-radius: 5px;
+    background-color:#00989E;
+    text-align:center;
+        line-height: 21px;
+}
+.verMais a {
+    font-size:10pt;
+    font-family: century gothic;
+    text-decoration: none;
+    color:#ffffff;
+    text-align: justify;
+}
+.verMais a:hover {
+    opacity:0.6;
+}
+.dataArtigos{
+    width: 120px;
+    height: 15px;
+    float:left;
+    margin-left:5px;
+    margin-top:-5px;
+    font-size:10pt;
+    font-family: century gothic;
+    text-decoration: none;
+    color: black;
+    text-align: justify;
+    border-right: 1px solid #00989E;
+}
+.autorArtigo{
+    width: auto;
+    height: 15px;
+    float:left;
+    margin-left:5px;
+    margin-top:-5px;
+    font-size:10pt;
+    font-family: century gothic;
+    text-decoration: none;
+    color: black;
+    text-align: justify;
+}
 #name_materia{
     float:left;
     margin-top:70px;   
@@ -1989,6 +2057,43 @@ color:#00989E;
 }
 
 #paginacaoMaterias a:hover{  
+    color: #333;
+    text-decoration: underline;
+}
+#corpoConteudoGaleria2{
+    width: 900px;
+    height: auto;
+    margin-top: 0px;
+    margin-left: 7%;
+    min-height: 250px;
+    float: left;
+    background-color: #fff;
+    box-shadow: 7px 7px 0px 0px #333;
+}
+.materiasBusca{
+    width: 750px;
+    height: 160px;
+    float:left;
+    margin-top: 20px;
+    margin-left: 65px;
+    border:8px solid #00989E;
+}
+#paginacaoBuscar{
+    width: 100px;
+    height: 41px;
+    float:left;
+    margin-left:450px;
+    line-height: 40px;
+}
+#paginacaoBuscar a{ 
+    font-family: century gothic;
+    font-size: 12pt;
+    color: #333;
+    text-decoration: none;
+    padding-left: 2px;
+}
+
+#paginacaoBuscar a:hover{  
     color: #333;
     text-decoration: underline;
 }
