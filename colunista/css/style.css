@@ -1665,30 +1665,36 @@ table.tableInserirMateria td.campos{
 
 .radioNintendo label {
     background-image: url(../../imagens/radioNintendo.jpg);
-    background-size: 120px 70px;
+    background-size: 120px 70px;    
+    outline: 4px solid #E0E0E0;
 }
 
 .radioPc label {    
     background-image: url(../../imagens/radioPc.jpg);
-    background-size: 120px 70px;
+    background-size: 120px 70px;  
+    outline: 4px solid #E0E0E0;
 }
 
 .radioPlaystation label {
     background-image: url(../../imagens/radioPs.jpg);
-    background-size: 120px 70px;
+    background-size: 120px 70px;  
+    outline: 4px solid #E0E0E0;
 }
 
 .radioXbox label {
     background-image: url(../../imagens/radioXbox.jpg);
-    background-size: 120px 70px;
+    background-size: 120px 70px;  
+    outline: 4px solid #E0E0E0;
 }
 .radioNostalgia label {
     background-image: url(../../imagens/radioNostalgia.jpg);
-    background-size: 120px 70px;
+    background-size: 120px 70px;  
+    outline: 4px solid #E0E0E0;
 }
 .radioMulti label {
     background-image: url(../../imagens/radioMulti.jpg);
-    background-size: 120px 70px;
+    background-size: 120px 70px;  
+    outline: 4px solid #E0E0E0;
 }
 
 .radioNintendo input:focus + label {
@@ -1735,12 +1741,13 @@ table.tableInserirMateria td.campos{
   outline: 4px solid #00989E;
   background-image: url(../../imagens/radioMultiover.jpg);
 }
+
 .radioNostalgia input:focus + label {
-  outline: 2px dotted #009FE3;
+  outline: 2px dotted #6D6A65;
 }
 .radioNostalgia input:checked + label {
-  outline: 4px solid #009FE3;
-  background-image: url(../../imagens/radioNostalgia.jpg);
+  outline: 4px solid #6D6A65;
+  background-image: url(../../imagens/radioNostalgiaover.jpg);
 }
 .inputRadios input:checked + label:after {  
   bottom: -10px;
@@ -1796,7 +1803,7 @@ table.tableInserirMateria td.campos{
     .radioNostalgia input:checked + label:after {
     bottom: 0;
     right: 0;
-    background-color: #00989E;
+    background-color: #6D6A65;
     background-image: url(../../imagens/ok.png);
     background-size: 20px 20px;
     background-position: 1px 0px; 
@@ -1831,7 +1838,7 @@ ul li p{
 }
 #textData{    
     margin-top: 12px;
-    margin-left: 10px;
+    margin-left: 0px;
     float: left;
     font-family: century gothic;
     text-transform: uppercase;
@@ -1881,23 +1888,47 @@ ul li p{
   margin-left: 25px;
 }
 
-.checkboxNintendo label {
+.checkboxNintendo label{
     background-image: url(../../imagens/radioNintendo.jpg);
+    background-size: 120px 70px;  
+    outline: 4px solid #E0E0E0;    
+}
+
+.checkboxNintendo input:checked + label{
+    background-image: url(../../imagens/checkboxNintendoOver.jpg);
     background-size: 120px 70px;
 }
 
 .checkboxPc label {    
     background-image: url(../../imagens/radioPc.jpg);
+    background-size: 120px 70px;  
+    outline: 4px solid #E0E0E0;
+}
+
+.checkboxPc input:checked + label{
+    background-image: url(../../imagens/checkboxPcOver.jpg);
     background-size: 120px 70px;
 }
 
 .checkboxPlaystation label {
     background-image: url(../../imagens/radioPs.jpg);
+    background-size: 120px 70px;  
+    outline: 4px solid #E0E0E0;
+}
+
+.checkboxPlaystation input:checked + label{
+    background-image: url(../../imagens/checkboxPsOver.jpg);
     background-size: 120px 70px;
 }
 
 .checkboxXbox label {
     background-image: url(../../imagens/radioXbox.jpg);
+    background-size: 120px 70px;  
+    outline: 4px solid #E0E0E0;
+}
+
+.checkboxXbox input:checked + label{
+    background-image: url(../../imagens/checkboxXboxOver.jpg);
     background-size: 120px 70px;
 }
 
@@ -1917,17 +1948,6 @@ ul li p{
   position: absolute;
   right: -10px;
   width: 20px;
-}
-
-@-moz-document url-prefix() {
-  .inputCheckbox input:checked + label:after {
-    bottom: 0;
-    right: 0;
-    background-color: #00989E;
-    background-image: url(../../imagens/ok.png);
-    background-size: 20px 20px;
-    background-position: 1px 0px; 
-  }
 }
 
 ul li p{

@@ -51,7 +51,7 @@ function VerificaSessao(){
                 }
                 echo '</div><br/><br/>';
                 echo '<div class="links_usuario">';
-                  echo "<a href='restrito/painel.php'>Perfil </a><br/>";
+                  echo "<a href='restrito/index.php'>Perfil </a><br/>";
                   echo "<a href='restrito/sair.php'>Logout </a><br/>";
                 echo '</div>';
                 }
@@ -75,7 +75,7 @@ function VerificaSessao(){
                 }
                 echo '</div><br/><br/>';
                 echo '<div class="links_usuario">';
-                    echo "<a href='colunista/painel.php'>Perfil </a><br/>";
+                    echo "<a href='colunista/index.php'>Perfil </a><br/>";
                     echo "<a href='colunista/index.php'>Nova Matéria </a><br/>";
                     echo "<a href='colunista/inserirPersonagem.php'>Novo Personagem </a><br/>";
                     echo "<a href='colunista/sair.php'>Logout </a><br/>";
@@ -148,7 +148,7 @@ function VerificaSessao2(){
                 }
                 echo '</div><br/><br/>';
                 echo '<div class="links_usuario">';
-                  echo "<a href='../restrito/painel.php'>Perfil </a><br/>";
+                  echo "<a href='../restrito/index.php'>Perfil </a><br/>";
                   echo "<a href='../restrito/sair.php'>Logout </a><br/>";
                 echo '</div>';
                 }
@@ -172,7 +172,7 @@ function VerificaSessao2(){
                 }
                 echo '</div><br/><br/>';
                 echo '<div class="links_usuario">';
-                    echo "<a href='../colunista/painel.php'>Perfil </a><br/>";
+                    echo "<a href='../colunista/index.php'>Perfil </a><br/>";
                     echo "<a href='../colunista/index.php'>Nova Matéria </a><br/>";
                     echo "<a href='../colunista/sair.php'>Logout </a><br/>";
                 echo '</div>';

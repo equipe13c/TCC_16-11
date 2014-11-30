@@ -1743,16 +1743,73 @@ table.tableInserirMateria td.campos{
     margin-top: 2px;
 }
 
-#mostrarLlogs{
+#mostrarLogs{
     width: 1030px;
     height: 600px;
     float: left;
     margin-left: 25px;
     margin-bottom: 20px;
-    background-color: #00989E;
+    background-color: #fff;
 }
 
 #mostrar_logs{
     width: 1030px;
     height: 600px;
+    float: left;
+    margin-left: 25px;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+#tabelaAtividadesLog{
+    width: 1000px;
+    margin-top: 30px;
+    margin-left: 15px;
+    float: left;
+    background-color: #00989E;
+    font-family: century gothic;
+    font-size: 12pt;
+    color: #333;
+}
+
+#tabelaAtividadesLog th{
+    background-color: #E0E0E0;      
+    height: 60px;
+}
+
+#tabelaAtividadesLog td{
+    width: 100px;
+    height: 50px;    
+    background-color: #fff;
+    text-align: center;
+}
+
+#paginacaoAtividadesLog{
+    height: 50px;
+    margin-top: 20px;
+    margin-left: 420px;
+    float: left;
+}
+
+#paginacaoAtividadesLog a{ 
+    font-family: century gothic;
+    font-size: 12pt;
+    color: #333;
+    text-decoration: none;
+    padding-left: 2px;
+}
+
+#paginacaoAtividadesLog a:hover{  
+    color: #333;
+    text-decoration: underline;
+}
+
+.semUsuario{    
+    font-family: century gothic;
+    font-size: 14pt;
+    color: #333;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 25%;
+    font-weight: bold;
 }
