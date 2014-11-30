@@ -92,7 +92,7 @@
 
 
 
-$query = "SELECT * FROM USUARIO ORDER BY COD_USUARIO ASC";
+$query = "SELECT * FROM USUARIO WHERE TIPO_USUARIO = 1 OR TIPO_USUARIO = 2 OR TIPO_USUARIO = 3";
 $total_reg = "5";
 $pc= isset($_GET['pagina'])? $_GET['pagina'] : "1";
 $inicio = $pc - 1; 
@@ -121,7 +121,7 @@ echo "<div class='tables'>";
         echo "<th colspan='8'> Filtrar </th>";    
     echo "</tr>"; 
     echo "<tr>";       
-    echo "<td><a href=exibeUsers.php?> Todos </a> </td>"; 
+        echo "<td><a href=exibeUsers.php?> Todos </a> </td>"; 
     echo "<td><a href='listarUsuario.php'> Nome </a> </td>";    
     echo "<td><a href='listarUsuario2.php'> Data de Nascimento </a></td>";
     echo "<td><a href='listarUsuario3.php'> Administradores </a></td>";
@@ -158,7 +158,7 @@ while($usuarios = mysql_fetch_array($limite))
                 $tipos = mysql_fetch_array($result5); 
                 $tipoUsuario = $tipos['TIPO_USUARIO'];
              
-               $ano = substr($usuarios['DATA_NASCIMENTO'], 0, 4);
+                       $ano = substr($usuarios['DATA_NASCIMENTO'], 0, 4);
                $mes = substr($usuarios['DATA_NASCIMENTO'], 5, 2);
                $dia = substr($usuarios['DATA_NASCIMENTO'], 8, 2);
                 

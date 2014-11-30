@@ -72,9 +72,10 @@
                     </figure>
                     <div id="nomeUser">
                         <?php
+                        
                         $sql = mysql_query("SELECT NOME_USUARIO, APELIDO_USUARIO FROM USUARIO WHERE COD_USUARIO =". $_SESSION['code']); 
                         $result = mysql_fetch_array($sql); 
-                        echo '<h1 class="username">'.$result['NOME_USUARIO'].'<br/>( '.$result['APELIDO_USUARIO'].' )</h1>';
+                        echo '<a href="index.php" class="linkName"><h1 class="username">'.$result['NOME_USUARIO'].'<br/>( '.$result['APELIDO_USUARIO'].' )</h1></a>';
                         }
                         ?>
                     </div>

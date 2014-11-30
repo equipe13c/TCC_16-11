@@ -92,7 +92,7 @@
 
 
 
-$query = "SELECT * FROM USUARIO ORDER BY COD_USUARIO ASC";
+$query = "SELECT * FROM USUARIO ORDER BY DATA_NASCIMENTO ASC";
 $total_reg = "5";
 $pc= isset($_GET['pagina'])? $_GET['pagina'] : "1";
 $inicio = $pc - 1; 
@@ -157,8 +157,7 @@ while($usuarios = mysql_fetch_array($limite))
                 $result5 = mysql_query($sql5);   
                 $tipos = mysql_fetch_array($result5); 
                 $tipoUsuario = $tipos['TIPO_USUARIO'];
-             
-               $ano = substr($usuarios['DATA_NASCIMENTO'], 0, 4);
+                      $ano = substr($usuarios['DATA_NASCIMENTO'], 0, 4);
                $mes = substr($usuarios['DATA_NASCIMENTO'], 5, 2);
                $dia = substr($usuarios['DATA_NASCIMENTO'], 8, 2);
                 
