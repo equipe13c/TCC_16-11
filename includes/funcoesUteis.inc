@@ -932,14 +932,16 @@ function buscarMateriasPequenas(){
                                     $artigos2 = mysql_fetch_array($resultado);
                                     $imagemMini = $artigos2['IMAGEM_PRINCIPAL'];
                                     $imagemCapa = $artigos2['IMAGEM_CAPA'];
+                                    echo '<div class="materiasReduzidas">';
+                                    echo '<div class="materias">';                                    
                                     echo '<a href="'.$urlArtigo.'">';
-                                    echo '<div class="materias">';
+                                    echo '<img src="uploads/'.$imagemMini.'" alt="" id="imagemMaterias">';
+                                    echo '</div>';                      
                                     echo '<div id="descricaoImagem">';
-                                    echo '<p>'.$descricaoArtigo.'</P>';
-                                    echo '</div>';                                   
-                                    echo ' <img src="uploads/'.$imagemMini.'" alt="" id="imagemMaterias">';
-                                    echo '</div>';
+                                    echo '<p>'.$descricaoArtigo.'</p>';                                    
                                     echo '</a>';
+                                    echo '</div>';                                    
+                                    echo '</div>';
                             }                            
                     }
                     echo "<div id='paginacao'>";
