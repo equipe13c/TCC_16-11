@@ -41,7 +41,7 @@ include_once 'classes/Bcrypt.class.php';
         
 $email = $_POST['email']; 
 
-$query = "SELECT EMAIL_USUARIO FROM usuario WHERE EMAIL_USUARIO = '$email'";
+$query = "SELECT EMAIL_USUARIO FROM USUARIO WHERE EMAIL_USUARIO = '$email'";
 $result = mysql_query($query);
 
 $totalUsuario = mysql_num_rows($result);
@@ -51,40 +51,29 @@ if($totalUsuario === 0){
       echo '<a href="frmcadastro.php">Cadastre-se</a><br/>';
 }
 else{
-$COD = $_GET['id'];
-$query = "SELECT * FROM USUARIO WHERE COD_USUARIO = '$COD'";
+
+$query = "SELECT * FROM USUARIO WHERE EMAIL_USUARIO = '$email'";
 $result = mysql_query($query);
 $usuarios = mysql_fetch_array($result);
-$senha = $usuarios['SENHA_USUARIO'];
+$code = $usuarios['COD_USUARIO'];
 $nome = $usuarios['NOME_USUARIO'];
-$email = $usuarios['EMAIL_USUARIO'];
-function geraSaltAleatorio($tamanho = 6) {
-return substr(md5(mt_rand()), 0, $tamanho); 
-}
-$salt = geraSaltAleatorio();
-$novasenha = Bcrypt::hash($salt);
-
-$emaildestinatario = $email;
 $assunto = "Recuperação de Senha ";
-$envio = "UPDATE USUARIO SET EMAIL_USUARIO = '$email', SENHA_USUARIO = '$novasenha'  WHERE EMAIL_USUARIO = '$email'";
-if(mysql_query($envio)){
-    echo "<p class='senha_rec'>Senha Recuperada para o e-mail : $email</p><br/>";
+    echo "<p class='senha_rec'>Um link de Confirmação de Senha foi Enviado para<br/> "
+    . "$email</p><br/>";
    
 $emaildestinatario = $email;
 $assunto = "Recuperação de Senha ";
 $mensagemHTML = 'Olá'. $nome . '<br/>'
-        . 'Sua Senha de Recuperação é : '. $salt;
-$headers = 'From: Equipe 9Bits Multiplayer' . "\r\n" .
-    'Reply-To: Equipe 9Bits Multiplayer' . "\r\n" .
-    'X-Mailer: PHP/' . phpversion();
+        . 'Link de Confirmação de senha  : <a href=www.multiplayer.url.ph/trocarSenha.php?id='. $code;
+$headers = "MIME-Version: 1.1\r\n";
+$headers .= "Content-type: text/plain; charset=iso-8859-1\r\n";
+$headers .= "From: eu@seudominio.com\r\n"; // remetente
+$headers .= "Return-Path: eu@seudominio.com\r\n"; // return-path
 $envio = mail($emaildestinatario, $assunto, $mensagemHTML, $headers); 
 if($envio){
 echo "E-mail Enviado,<br/> Verifique Sua Caixa de Mensagens<br/> Caso o E-mail não tenha sido enviado <a href=reenviarSenha.php>clique aqui</a>";
 }
-    
-    }else{
-    echo 'Erro ao recuperar senha';
-}}
+    }
 ?>
             </article>
             <footer id="rodape">
