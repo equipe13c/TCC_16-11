@@ -4,9 +4,7 @@
                         <ul>
                             <li><a href='#'>Colunas</a>
                                 <ul>
-                                    <li class='sub'><a href='#'>Séries</a></li>
                                     <li class='sub'><a href='#'>Personagens</a></li>
-                                    <li class='sub'><a href='#'>Gêneros</a></li>
                                     <li class='sub'><a href='#'>Nostalgia</a></li>
                                 </ul>
                             </li>

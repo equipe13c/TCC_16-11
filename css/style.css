@@ -290,7 +290,6 @@ body{
     -ms-transition: color .2s ease;
     -o-transition: color .2s ease;
     transition: color .2s ease;
-    padding-bottom: 2px;
 }
 
 #menuReduzido ul li a:hover{
@@ -1512,11 +1511,15 @@ body{
     width: 130px;
     height: 240px;
     margin-top: 0;
-    margin-left: 5px;
+    margin-left: 70px;
     float: left;
     color: #000;
     line-height: 17pt;    
     border: solid 2px #333;    
+}
+
+.linksRodape + .linksRodape{    
+    margin-left: 10px;
 }
 
 .figura_materia{
@@ -1952,16 +1955,6 @@ color:#00989E;
     text-align: left;
 }
 
-.linksRodape{
-    width: 130px;
-    height: 240px;
-    margin-top: 0;
-    margin-left: 5px;
-    float: left;
-    color: #000;
-    line-height: 17pt;    
-    border: solid 2px #333;    
-}
 #msgCad{
     width:400px;
     height:60px;
@@ -1983,7 +1976,7 @@ color:#00989E;
 #paginacaoMaterias{
     height: 50px;
     margin-top: 20px;
-    margin-left: 420px;
+    margin-left: 320px;
     float: left;
 }
 
@@ -1998,4 +1991,14 @@ color:#00989E;
 #paginacaoMaterias a:hover{  
     color: #333;
     text-decoration: underline;
+}
+
+.semUsuario{    
+    font-family: century gothic;
+    font-size: 14pt;
+    color: #333;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 25%;
+    font-weight: bold;
 }

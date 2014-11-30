@@ -118,10 +118,7 @@
                                 </div>
                             </a>
                         </div> 
-                    </div>                 
-                        <div id="paginacaoMateria">
-
-                        </div>
+                    </div>    
                     </div>                   
                     <aside id="aside1">
                         <h1 id="tituloAside"> Top Notícias </h1>
@@ -135,7 +132,7 @@
                         </div>    
                     </aside> 
                 <div id="voltarTopo">
-                    <a href="" class="subir">
+                    <a href="javascript:toTop();" class="subir">
                         <img src="imagens/topo.png" alt="">
                         <p> Voltar ao topo </p>
                     </a>                    

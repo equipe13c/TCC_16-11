@@ -793,11 +793,15 @@ color:#00989E;
     width: 130px;
     height: 240px;
     margin-top: 0;
-    margin-left: 5px;
+    margin-left: 70px;
     float: left;
     color: #000;
     line-height: 17pt;    
     border: solid 2px #333;    
+}
+
+.linksRodape + .linksRodape{    
+    margin-left: 10px;
 }
 
 #imgCapa{
@@ -1331,7 +1335,7 @@ color:#00989E;
     font-family: century gothic;
     font-size: 14pt;
     color: #fff;
-    background-color: #00989E;
+    background-color: #777;
     border: 0;
     cursor: pointer;
 }
@@ -1346,7 +1350,7 @@ color:#00989E;
     width:auto;
     height:25px;
     margin-top:10px;
-    margin-left:-65px;
+    margin-left:-40px;
     text-align: center;
     background-color:transparent;
     border:0px;
@@ -1399,7 +1403,7 @@ color:#00989E;
     width:175px;
     height:25px;
     margin-top:12px;
-    margin-right: 353px;
+    margin-right: 310px;
     float:right;
     text-align: center;
     background-color:transparent;

@@ -888,7 +888,9 @@ function buscarMateriasPrincipal(){
 }
 function buscarMateriasPequenas(){
     $query = "SELECT * FROM ARTIGO ORDER BY ID_ARTIGO DESC";
-                            $total_reg = "6";
+                            $pc= isset($_GET['pagina'])? $_GET['pagina'] : "1";
+                            $inicio = $pc - 1; 
+                            $total_reg = "2";
                             $inicio = 0;
                             $limite = mysql_query("$query LIMIT $inicio,$total_reg"); 
                             $result = mysql_query($query);                
@@ -918,7 +920,29 @@ function buscarMateriasPequenas(){
                                     echo '</div>';
                                     echo '</a>';
                             }
-                            }
+                            echo "<div id='paginacaoMaterias'>";
+                    $anterior = $pc -1; 
+                    $proximo = $pc +1; 
+                    if ($pc>1) 
+                    { echo " <a href='?pagina=$anterior'>< Anterior</a> "; 
+
+                    } 
+                    if($pc ==1){/*CODIGO A APARECER PARA VOLTAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério
+                    //echo "|"; 
+                    // Inicio lógica rogerio
+                    for($i=1;$i<=$tp;$i++)
+                    {
+                        echo "<a href=?pagina=$i>".$i . "</a>" . "    ";
+                    }
+                    // Fim lógia rogério
+                    if ($pc<$tp) 
+                        { echo " <a href='?pagina=$proximo'>Próxima ></a>"; 
+
+                        }
+                   if($pc == $tp){/*CODIGO A APARECER PARA PASSAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério
+
+                    }
+                echo "</div>";
 }
 function buscarImagemAutor($autor){
                     $query = "SELECT * FROM IMAGEM_USUARIO WHERE COD_IMAGEM_USUARIO = $autor";
@@ -1046,6 +1070,5 @@ function buscarDescAutor($id){
                     echo $resultDescricao;
                     echo "<p/>";
 }
-
 ?>
 

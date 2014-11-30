@@ -1614,11 +1614,15 @@ table.tableInserirMateria td.campos{
     width: 130px;
     height: 240px;
     margin-top: 0;
-    margin-left: 5px;
+    margin-left: 70px;
     float: left;
     color: #000;
     line-height: 17pt;    
     border: solid 2px #333;    
+}
+
+.linksRodape + .linksRodape{    
+    margin-left: 10px;
 }
 
 #menuOpcoes{    

@@ -47,31 +47,28 @@
                     <h1 id="tituloGaleria"> Novidades  </h1>
                     <div id="galeria">  
                         <div id="botoesGaleria">
-                            <a href="#" id="prev"> <img src="imagens/previous.png" alt=""> </a>
-                            <a href="#" id="next"> <img src="imagens/next.png" alt=""> </a>
+                            <a href="#" id="prev"> <img src="imagens/previousOutros.png" alt=""> </a>
+                            <a href="#" id="next"> <img src="imagens/nextOutros.png" alt=""> </a>
                         </div>
                         <div id="slide">
                             <?php
-                                 buscarMateriasSlideNS();
+                                 buscarMateriasSlideP();
                             ?>    
                         </div>                
                     </div>  
                 </div>
-                    <div id="corpoConteudo">
+                <div id="corpoConteudo">
                     <div id="materias">  
-                        <h1 id="tituloPagina"> Nostalgia </h1>
+                        <h1 id="tituloPagina"> Notícias </h1>
                          <?php
-                             buscarMateriasPrincipal();
+                                 buscarMateriasPrincipal();
                             ?>                            
                         <div id="materiasPequenas">
                             <?php
                              buscarMateriasPequenas();
                             ?>                             
                         </div> 
-                    </div>                
-                        <div id="paginacaoMateria">
-
-                        </div>
+                    </div>     
                     </div>
                     <aside id="aside1">
                         <h1 id="tituloAside"> Top Notícias </h1>
@@ -81,9 +78,8 @@
                             ?>
                         </div>    
                     </aside> 
-                
                 <div id="voltarTopo">
-                    <a href="" class="subir">
+                    <a href="javascript:toTop();" class="subir">
                         <img src="imagens/topoOutros.png" alt="">
                         <p> Voltar ao topo </p>
                     </a>                    

@@ -83,7 +83,7 @@
                     </aside> 
                 
                 <div id="voltarTopo">
-                    <a href="" class="subir">
+                    <a href="javascript:toTop();" class="subir">
                         <img src="imagens/topoXbox.png" alt="">
                         <p> Voltar ao topo </p>
                     </a>                    

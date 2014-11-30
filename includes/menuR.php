@@ -6,9 +6,7 @@
         <ul>
             <li><a href='#'><img src="../imagens/iconePlataforma001.png"></a>
                 <ul>
-                    <li><a href='../series.php'>Séries</a></li>
                     <li><a href='../personagens.php'>Personagens</a></li>
-                    <li><a href='../generos.php'>Gêneros</a></li>
                     <li><a href='../nostalgia.php'>Nostalgia</a></li>
                 </ul>
             </li>
@@ -37,9 +35,7 @@
         <ul>
             <li><a href='#'> <img src="../imagens/iconePlataforma001.png"> Colunas</a>
                 <ul>
-                    <li class='sub'><a href='../series.php'>Séries</a></li>
                     <li class='sub'><a href='../personagens.php'>Personagens</a></li>
-                    <li class='sub'><a href='../generos.php'>Gêneros</a></li>
                     <li class='sub'><a href='../nostalgia.php'>Nostalgia</a></li>
                 </ul>
             </li>

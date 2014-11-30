@@ -8,16 +8,6 @@
         <script type="text/javascript" src="js/cycle.js"></script>
         <script type="text/javascript" src="js/javascript.js"></script>
         <script type="text/javascript"> 
-            $(document).ready(function(){
-               $('#slide').before('<img id="controleGaleria">').cycle({
-                   fx: 'scrollHorz',
-                   pause: true,
-                   timeout: 6000,
-                   next: '#next',
-                   prev: '#prev'
-               }); 
-            });           
-            
             onload = function(){
                 document.getElementById("nav").style.backgroundColor = "#00989E";
                 document.getElementById("search").style.backgroundColor = "#00989E";
