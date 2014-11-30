@@ -800,10 +800,10 @@ color: white;
     height: 300px;
     margin-top: 50px;
     margin-left: 45px;
+    margin-bottom: 30px;
     background-color: #00989E;
     font-family: century gothic;
-    color: #333;
-    margin-bottom: 30px;
+    color: #333
 }
 
 .bordasimples th{
@@ -819,10 +819,10 @@ color: white;
 }
 
 .tabelaUsuarios{
-    width: 1000px;
-    margin-top: 0px;
-    margin-left: 0px;
-    margin-bottom: 0px;
+    width: 1050px;
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-bottom: 20px;
     float: left;
     background-color: #00989E;
     font-family: century gothic;
@@ -835,6 +835,7 @@ color: white;
     font-size: 12pt;
     font-weight: bold;
     height: 50px;
+    padding: 5px;
 }
 
 .tabelaUsuarios td{
@@ -947,6 +948,7 @@ table.bordasimples td.campos{
     border:0px;
     background-color: white;
 }
+
 .txtInfo{
     width:350px;
     height:60px;
@@ -994,22 +996,24 @@ table.bordasimples td.campos{
 .txtInfo3{
     height: 20px;
     text-align: center;
-    color: #999;
+    color: #5E5E5E;
     font-family: century gothic;
     font-size: 10pt;
     border: 0px;
 }
 
 .botoes{
-    width: 60px;
-    height: 30px;
-    margin-left: 20%;
-    margin-top: 5px;    
+    width: 70px;
+    height: 25px;
+    margin-left: 7px;
+    margin-top: 4px;    
     margin-bottom: 5px;
     float: left;    
     border: 0;
     color: #fff;
     background-color: #00989E;
+    font-family: century gothic;
+    font-size: 9pt;
 }
 
 .botoes2{
@@ -1027,7 +1031,8 @@ table.bordasimples td.campos{
 }
 
 .botoes + .botoes{
-    margin-top: 5px;
+    margin-top: 4px;
+    margin-left:  7px;
 }
 
 .tabelas #imagem_usuario_listagem{
@@ -1056,17 +1061,7 @@ table.editEmailTable tr#bottomlinha, td.info2, td.campos2, td.icone2{
 table.editEmailTable td.info2, td.campos2, td.icone2, td.salvarEdit{
     border-top: 1px solid black;
 }
-table.bordasimples tr td {
-    height:30px;
-}
-.linhasInfo:hover{
-    background-color: #ccc;
-    
-}
-.linhasInfos{
-    background-color: #ccc;
-    height: 70px;
-}
+
 .editImage{
     width:20px;
     height:20px;
@@ -1270,11 +1265,6 @@ table.bordasimples tr td {
     font-size: 14pt;
     font-family: century gothic;
 }
-.editPreferencias{
-    float: right;
-    margin-top: -30px;
-    margin-right: 10px;
-}
 
 #tabelaPreferencias{
     width: 960px;
@@ -1282,7 +1272,8 @@ table.bordasimples tr td {
     height: auto;
     float: left;
     margin-top: 50px;
-    margin-left: 55px;
+    margin-left: 55px;    
+    margin-bottom: 30px;
     background-color: ghostwhite;
     border: solid 5px #00989E;
     color: white;
@@ -1728,6 +1719,7 @@ table.tableInserirMateria td.campos{
     height: 50px;    
     float: right;
     margin-right: 10px;
+    margin-top: 20px;
 }
 
 #buscaUsuarios label{ 
@@ -2197,9 +2189,7 @@ table.tableInserirMateria td.campos{
 
 .campos{
     width: 230px;
-    height: 30px;
-    margin-right: 10px;
-    float: right;     
+    height: 30px;    
     font-family: century gothic;
     font-size: 14pt;
     color: #333;

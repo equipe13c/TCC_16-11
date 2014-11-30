@@ -61,17 +61,13 @@
             </figure>
             <article id="conteudo">
                 <div id="info_user">    
-                    <div id="linksAtualizarImg"> 
-                        <a href="alterarImg.php"> Alterar</a><br/>
-                        <a href="removerImg.php"> Remover</a>
-                    </div>
                     <figure id="imgUser" onmouseover="mostrarCam();" onmouseout="retirarCam();" >
                         <?php
                             $query = "SELECT * FROM IMAGEM_USUARIO WHERE COD_IMAGEM_USUARIO = ".$_SESSION['code'];
                             $result = mysql_query($query);                
                             $imagens = mysql_num_rows($result);
                             if($imagens === 0){
-                            $nome = "defaultCapa.jpg";            
+                            $nome = "default.jpg";            
                             mysql_query("INSERT INTO IMAGEM_USUARIO(URL_IMAGEM, COD_IMAGEM_USUARIO)
                             VALUES('$nome'".$_SESSION['code'].")");
                             }
