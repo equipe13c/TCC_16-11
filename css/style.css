@@ -507,6 +507,7 @@ body{
     margin-bottom: 0px;
     float: left;
     background-color: #333;
+    border: 5px solid #333;
 }
 
 #slide{
@@ -1966,3 +1967,22 @@ color:#00989E;
     background-color: #fff;
 }
 
+#paginacaoMaterias{
+    height: 50px;
+    margin-top: 20px;
+    margin-left: 420px;
+    float: left;
+}
+
+#paginacaoMaterias a{ 
+    font-family: century gothic;
+    font-size: 12pt;
+    color: #333;
+    text-decoration: none;
+    padding-left: 2px;
+}
+
+#paginacaoMaterias a:hover{  
+    color: #333;
+    text-decoration: underline;
+}
