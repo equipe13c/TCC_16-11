@@ -31,13 +31,9 @@
             ?>
             <header id="cabecalho"  ondragstart="return false">
                 <?php
-                include_once '../includes/menu.php';
+                validaAutenticacao('../index.php','3');
+                include_once '../includes/menuR.php';
                 ?>
-                <div id="logar">
-                    <?php
-                        VerificaSessao('');
-                    ?>                    
-                </div>
             </header>
             <article id="article"> 
                 <div id="materias">

@@ -22,7 +22,7 @@ $tr = mysql_num_rows($result);
 
 $tp = $tr / $total_reg;
 if($tr == 0){
-    echo "Nenhum Usuário Encontrado";
+    echo "<p class='semUsuario'> Nenhum Usuário Encontrado </p>";
 }
 else{
 echo "<div id='busca'>"

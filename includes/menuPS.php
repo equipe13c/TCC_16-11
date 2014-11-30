@@ -20,9 +20,10 @@
                         </ul> 
                     </div>                    
                     <div id="busca">
-                        <a href="#"><img src="../imagens/lupa.jpg" alt="" id="imagemBusca"></a>
-                        <form method="post" action="buscarArtigo.php" id="search">  
-                            <input name="buscar" name='nome_artigo' type="text" size="40" placeholder="  Buscar" />
-                        </form>                                                
+                        <form method="get" action="/search" id="search"> 
+                            <input type="submit" name="buscarMaterias" value="buscar" id="inputBusca"/>
+                            <img src="../imagens/lupa.jpg" alt="" id="imagemBusca"> 
+                            <input name="nome_artigo" type="text" size="40" placeholder="  Buscar" id="caixaBusca"/>
+                        </form>                                             
                     </div>                    
                 </nav>

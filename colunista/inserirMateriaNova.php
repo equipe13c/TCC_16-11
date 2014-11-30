@@ -375,6 +375,7 @@ $salt = geraSaltAleatorio();
                     </div>
                 </div>
                 <div id="comentario">
+                <h1 id="tituloComentario">Comentários</h1>
                     <div class="comentarios">                        
                     <figure class="imagem_user"> 
                         <?php
@@ -390,7 +391,6 @@ $salt = geraSaltAleatorio();
                     </div>   
                     </div>
                     '."<div class='exibirComent'>
-                        <h1 id='tituloComentario'>Comentários</h1>
                         <?php
                             listarComentarios('".$codigo_materia."');
                         ?>
@@ -405,8 +405,8 @@ $salt = geraSaltAleatorio();
                 <br/>
             </aside>
             <div id="voltarTopo">
-                <a href="" class="subir">
-                    <img src="imagens/topo.png" alt="">
+                <a href="javascript:toTop();" class="subir">
+                    <img src="../imagens/topoPs.png" alt="">
                     <p> Voltar ao topo </p>
                 </a>                    
             </div>
@@ -620,6 +620,7 @@ $salt = geraSaltAleatorio();
                     </div>
                 </div>
                 <div id="comentario">
+                <h1 id="tituloComentario">Comentários</h1>
                     <div class="comentarios">                        
                     <figure class="imagem_user"> 
                         <?php
@@ -635,7 +636,6 @@ $salt = geraSaltAleatorio();
                     </div>   
                     </div>
                     '."<div class='exibirComent'>
-                        <h1 id='tituloComentario'>Comentários</h1>
                         <?php
                             listarComentarios('".$codigo_materia."');
                         ?>
@@ -650,8 +650,8 @@ $salt = geraSaltAleatorio();
                 <br/>
             </aside>
             <div id="voltarTopo">
-                <a href="" class="subir">
-                    <img src="imagens/topo.png" alt="">
+                <a href="javascript:toTop();" class="subir">
+                    <img src="../imagens/topoNintendo.png" alt="">
                     <p> Voltar ao topo </p>
                 </a>                    
             </div>
@@ -863,6 +863,7 @@ $salt = geraSaltAleatorio();
                     </div>
                 </div>
                 <div id="comentario">
+                <h1 id="tituloComentario">Comentários</h1>
                     <div class="comentarios">                        
                     <figure class="imagem_user"> 
                         <?php
@@ -878,7 +879,6 @@ $salt = geraSaltAleatorio();
                     </div>   
                     </div>
                     '."<div class='exibirComent'>
-                        <h1 id='tituloComentario'>Comentários</h1>
                         <?php
                             listarComentarios('".$codigo_materia."');
                         ?>
@@ -893,8 +893,8 @@ $salt = geraSaltAleatorio();
                 <br/>
             </aside>
             <div id="voltarTopo">
-                <a href="" class="subir">
-                    <img src="imagens/topo.png" alt="">
+                <a href="javascript:toTop();" class="subir">
+                    <img src="../imagens/topoXbox.png" alt="">
                     <p> Voltar ao topo </p>
                 </a>                    
             </div>
@@ -1107,6 +1107,7 @@ $salt = geraSaltAleatorio();
                     </div>
                 </div>
                 <div id="comentario">
+                <h1 id="tituloComentario">Comentários</h1>
                     <div class="comentarios">                        
                     <figure class="imagem_user"> 
                         <?php
@@ -1122,7 +1123,6 @@ $salt = geraSaltAleatorio();
                     </div>   
                     </div>
                     '."<div class='exibirComent'>
-                        <h1 id='tituloComentario'>Comentários</h1>
                         <?php
                             listarComentarios('".$codigo_materia."');
                         ?>
@@ -1137,8 +1137,8 @@ $salt = geraSaltAleatorio();
                 <br/>
             </aside>
             <div id="voltarTopo">
-                <a href="" class="subir">
-                    <img src="imagens/topo.png" alt="">
+                <a href="javascript:toTop();" class="subir">
+                    <img src="../imagens/topoPc.png" alt="">
                     <p> Voltar ao topo </p>
                 </a>                    
             </div>
@@ -1350,6 +1350,7 @@ $salt = geraSaltAleatorio();
                     </div>
                 </div>
                 <div id="comentario">
+                <h1 id="tituloComentario">Comentários</h1>
                     <div class="comentarios">                        
                     <figure class="imagem_user"> 
                         <?php
@@ -1364,8 +1365,7 @@ $salt = geraSaltAleatorio();
                         </form>
                     </div>   
                     </div>
-                    '."<div class='exibirComent'>
-                         <h1 id='tituloComentario'>Comentários</h1>
+                    '."<div class='exibirComent'>                         
                         <?php
                             listarComentarios('".$codigo_materia."');
                         ?>
@@ -1380,8 +1380,8 @@ $salt = geraSaltAleatorio();
                 <br/>
             </aside>
             <div id="voltarTopo">
-                <a href="" class="subir">
-                    <img src="imagens/topo.png" alt="">
+                <a href="javascript:toTop();" class="subir">
+                    <img src="../imagens/topoOutros.png" alt="">
                     <p> Voltar ao topo </p>
                 </a>                    
             </div>
