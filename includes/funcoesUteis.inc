@@ -51,7 +51,7 @@ function VerificaSessao(){
                 }
                 echo '</div><br/><br/>';
                 echo '<div class="links_usuario">';
-                  echo "<a href='restrito/painel.php'>Perfil </a><br/>";
+                  echo "<a href='restrito/index.php'>Perfil </a><br/>";
                   echo "<a href='restrito/sair.php'>Logout </a><br/>";
                 echo '</div>';
                 }
@@ -75,8 +75,8 @@ function VerificaSessao(){
                 }
                 echo '</div><br/><br/>';
                 echo '<div class="links_usuario">';
-                    echo "<a href='colunista/painel.php'>Perfil </a><br/>";
-                    echo "<a href='colunista/index.php'>Nova Matéria </a><br/>";
+                    echo "<a href='colunista/index.php'>Perfil </a><br/>";
+                    echo "<a href='colunista/novaMateria.php'>Nova Matéria </a><br/>";
                     echo "<a href='colunista/inserirPersonagem.php'>Novo Personagem </a><br/>";
                     echo "<a href='colunista/sair.php'>Logout </a><br/>";
                 echo '</div>';
@@ -169,7 +169,7 @@ function VerificaSessao2(){
                 }
                 echo '</div><br/><br/>';
                 echo '<div class="links_usuario">';
-                  echo "<a href='../restrito/painel.php'>Perfil </a><br/>";
+                  echo "<a href='../restrito/index.php'>Perfil </a><br/>";
                   echo "<a href='../restrito/sair.php'>Logout </a><br/>";
                 echo '</div>';
                 }
@@ -193,8 +193,9 @@ function VerificaSessao2(){
                 }
                 echo '</div><br/><br/>';
                 echo '<div class="links_usuario">';
-                    echo "<a href='../colunista/painel.php'>Perfil </a><br/>";
-                    echo "<a href='../colunista/index.php'>Nova Matéria </a><br/>";
+                    echo "<a href='../colunista/index.php'>Perfil </a><br/>";
+                    echo "<a href='../colunista/novamateria.php'>Nova Matéria </a><br/>";                    
+                    echo "<a href='../colunista/inserirPersonagem.php'>Novo Personagem </a><br/>";
                     echo "<a href='../colunista/sair.php'>Logout </a><br/>";
                 echo '</div>';
                 }
@@ -908,8 +909,10 @@ function buscarMateriasPrincipal(){
 }
 function buscarMateriasPequenas(){
     $query = "SELECT * FROM ARTIGO ORDER BY ID_ARTIGO DESC";
-                            $total_reg = "6";
-                            $inicio = 0;
+                            $pc= isset($_GET['pagina'])? $_GET['pagina'] : "1";
+                            $inicio = $pc - 1; 
+                            $total_reg = "3";
+                            $inicio = $inicio * $total_reg;
                             $limite = mysql_query("$query LIMIT $inicio,$total_reg"); 
                             $result = mysql_query($query);                
                             $tr = mysql_num_rows($result);
@@ -937,8 +940,31 @@ function buscarMateriasPequenas(){
                                     echo ' <img src="uploads/'.$imagemMini.'" alt="" id="imagemMaterias">';
                                     echo '</div>';
                                     echo '</a>';
+                            }                            
+                    }
+                    echo "<div id='paginacao'>";
+                    echo "<div id='paginacaoMaterias'>";
+                    $anterior = $pc -1; 
+                    $proximo = $pc +1; 
+                    if ($pc>1) 
+                        { echo " <a href=?pagina=$anterior>< Anterior</a> "; 
+
+                        } 
+                        if($pc ==1){/*CODIGO A APARECER PARA VOLTAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério
+                        //echo "|"; 
+                        // Inicio lógica rogerio
+                        for($i=1;$i<=$tp;$i++)
+                        {
+                            echo "<a href=?pagina=$i>".$i . "</a>" . "    ";
+                        }
+                        // Fim lógia rogério
+                        if ($pc<$tp) 
+                            { echo " <a href=?pagina=$proximo>Próxima ></a>"; 
+
                             }
-                            }
+                       if($pc == $tp){/*CODIGO A APARECER PARA PASSAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério
+                     echo "</div>";
+                     echo "</div>";
 }
 function buscarImagemAutor($autor){
                     $query = "SELECT * FROM IMAGEM_USUARIO WHERE COD_IMAGEM_USUARIO = $autor";
@@ -1057,12 +1083,14 @@ function acrescentarAcessos($id){
                     mysql_query($sql);
 }
 function buscarDescAutor($id){
+                    echo "<p class='informacaoAutor'>"; 
                     $query = "SELECT * FROM USUARIO WHERE COD_USUARIO = $id";
                     $result = mysql_query($query);                
                     $descricaoUser = mysql_num_rows($result);
                     $descricaoUser2 = mysql_fetch_array($result); 
                     $resultDescricao = $descricaoUser2['DESCRICAO_USUARIO'];
                     echo $resultDescricao;
+                    echo "<p/>";
 }
 function mostrarBotao($tipoUsuario){
     if($tipoUsuario==1){

@@ -37,15 +37,17 @@ $tr = mysql_num_rows($result);
 
 $tp = $tr / $total_reg;
 if($tr == 0){
-    echo "Nenhum Artigo Encontrado" . "<br/><br/>";
+    echo "<p class='semUsuario'> Nenhum Registro Encontrado </p>";
 }
 else{
-echo "<div id='busca'>"
-."<form action='buscarUsuario.php' method='post'>"
-. "<label id='name_busca'> Busca de Usuário</label>"
-        . "<input type='text' onKeyPress='return letras();' name='nome_user' id='buscarUsuario'>"
-        . "</form>"
-        . "</div>";
+    
+echo "<div id='buscaMaterias'>"
+    ."<form action='buscarUsuario.php' method='post'>"
+    . "<label> Busca de Usuário</label>"
+    . "<input type='text' onKeyPress='return letras();' name='nome_user' id='caixaMateria'>"
+    . "<input type='submit' name='botaoBuscaMateria' id='botaoBuscaMateria' value='Buscar'>"    
+    . "</form>"
+    . "</div>";
 echo "<div class='tables'>";
     echo "<table class='' id='tabelaMateria' >";
     echo "<tr>";

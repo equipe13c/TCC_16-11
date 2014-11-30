@@ -35,28 +35,15 @@
 </div>
 <div class="linksRodape">
     <div id="tituloRodape">                            
-        <h4> <img src="../imagens/iconeRodape.png" alt=""> Séries </h4>
+        <h4> <img src="../imagens/iconeRodape.png" alt=""> Personagens </h4>
     </div> 
-    <a href="../serie_mario.php"> Mario </a> <br/>
-    <a href="../serie_batman.php"> Batman </a> <br/>
-    <a href="../serie_mortal_kombat.php"> Mortal Kombat </a> <br/>
-    <a href="../serie_god_of_war.php"> God of War </a> <br/>
-    <a href="../serie_bioshock.php"> Bioshock </a> <br/>
-    <a href="../serie_the_sims.php"> The Sims </a> <br/>
-    <a href="../serie_legend_of_zelda.php"> Legend of Zelda </a> <br/>
-    <a href="../serie_pokemon.php"> Pokémon </a> <br/>
-</div>
-<div class="linksRodape">
-    <div id="tituloRodape">                            
-        <h4> <img src="../imagens/iconeRodape.png" alt=""> Gêneros </h4>
-    </div>                         
-    <a href="../genero1.php"> Ação </a> <br/>
-    <a href="../genero2.php"> FPS </a> <br/>
-    <a href="../genero3.php"> Corrida </a> <br/>
-    <a href="../genero4.php"> Terror </a> <br/>
-    <a href="../genero4.php"> Plataforma </a> <br/>
-    <a href="../genero4.php"> RPG </a> <br/>
-    <a href="../genero4.php"> Aventura </a> <br/>
-    <a href="../genero4.php"> Casual </a> <br/>
+    <a href="serie_mario.php"> Mario </a> <br/>
+    <a href="serie_batman.php"> Batman </a> <br/>
+    <a href="serie_mortal_kombat.php"> Kratos </a> <br/>
+    <a href="serie_god_of_war.php"> Link </a> <br/>
+    <a href="serie_bioshock.php"> Altair </a> <br/>
+    <a href="serie_the_sims.php"> Sonic </a> <br/>
+    <a href="serie_legend_of_zelda.php"> Luigi </a> <br/>
+    <a href="serie_pokemon.php"> Master Chief </a> <br/>
 </div>                    
 </div>

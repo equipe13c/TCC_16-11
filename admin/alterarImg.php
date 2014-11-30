@@ -10,7 +10,7 @@
         <script type="text/javascript" src="../js/javascript.js"></script>
         <script type="text/javascript" src="../js/menu2.js"></script>
         <script type="text/javascript" src="../js/restrito.js"></script>
-                <script type="text/javascript">
+        <script type="text/javascript"> 
             function previewImgUser(input, tipo) {
                     if(tipo == 'imgUser'){
                 if (input.files && input.files[0]) {
@@ -25,9 +25,6 @@
                 }
             }
 }
-
-            </script>
-        <script type="text/javascript"> 
             onload = function(){     
                 var imgMiniLogo = document.getElementById("imgMiniLogo");
                 var imgLogo = document.getElementById("img-logo");                
@@ -100,7 +97,7 @@
                 </div>
                 <nav id="menu2">
                     <?php 
-                        include '../includes/menuC.php';
+                        include '../includes/menuA.php';
                     ?>
                 </nav>
                 <article id="conteudo_infos">

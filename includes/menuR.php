@@ -6,9 +6,7 @@
         <ul>
             <li><a href='#'><img src="../imagens/iconePlataforma001.png"></a>
                 <ul>
-                    <li><a href='../series.php'>Séries</a></li>
                     <li><a href='../personagens.php'>Personagens</a></li>
-                    <li><a href='../generos.php'>Gêneros</a></li>
                     <li><a href='../nostalgia.php'>Nostalgia</a></li>
                 </ul>
             </li>
@@ -25,11 +23,12 @@
         <a href="http://www.facebook.com/MultiplayerJogos"><img src="../imagens/facebookIcon.jpg" alt=""/></a>
     </div>            
     <div id="buscaReduzido">
-        <a href="#"><img src="../imagens/lupa.jpg" alt="" id="imagemBusca"></a>
-        <form method="get" action="/search" id="search">  
-            <input name="buscar" type="text" size="40" placeholder="  Buscar" />
+        <form method="get" action="../buscarArtigo.php" id="search">  
+            <input type="submit" name="buscarMaterias" value="buscar" id="inputBusca"/>
+            <img src="../imagens/lupa.jpg" alt="" id="imagemBusca">       
+            <input name="tituloArtigo" type="text" size="40" placeholder="  Buscar" id="caixaBuscaReduzida" />
         </form>                                                
-    </div>                    
+    </div>               
 </nav>
 <nav id="nav">
     <a href="../index.php"> <div id="img-logo"></div></a>
@@ -37,9 +36,7 @@
         <ul>
             <li><a href='#'> <img src="../imagens/iconePlataforma001.png"> Colunas</a>
                 <ul>
-                    <li class='sub'><a href='../series.php'>Séries</a></li>
                     <li class='sub'><a href='../personagens.php'>Personagens</a></li>
-                    <li class='sub'><a href='../generos.php'>Gêneros</a></li>
                     <li class='sub'><a href='../nostalgia.php'>Nostalgia</a></li>
                 </ul>
             </li>
@@ -56,9 +53,10 @@
         <a href="http://www.facebook.com/MultiplayerJogos"><img src="../imagens/facebookIcon.jpg" alt=""/></a>
     </div>            
     <div id="busca">
-        <a href="#"><img src="../imagens/lupa.jpg" alt="" id="imagemBusca"></a>
-        <form method="get" action="/search" id="search">  
-            <input name="buscar" type="text" size="40" placeholder="  Buscar" />
+        <form method="get" action="../buscarArtigo.php" id="search"> 
+        <input type="submit" name="buscarMaterias" value="buscar" id="inputBusca"/>
+        <img src="../imagens/lupa.jpg" alt="" id="imagemBusca"> 
+            <input name="tituloArtigo" type="text" size="40" placeholder="  Buscar" id="caixaBusca"/>
         </form>                                                
-    </div>                    
+    </div>                  
 </nav>

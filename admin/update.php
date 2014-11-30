@@ -146,7 +146,7 @@
                             else{
                                 $sql2 = "UPDATE USUARIO SET NOME_USUARIO = '$nome' WHERE COD_USUARIO =" . $_SESSION['code'];
                                 if(mysql_query($sql2)){
-                                    echo "<script> location.href='painel.php' </script>";
+                                    echo "<script> location.href='index.php' </script>";
                                     $apelido = $usuarioEmail['APELIDO_USUARIO'];
                                     $mensagem = "$apelido Alterou Nome";
                                     $acao = 8;
@@ -176,7 +176,7 @@
                             else{
                                 $sql2 = "UPDATE USUARIO SET APELIDO_USUARIO = '$apelido1' WHERE COD_USUARIO =" . $_SESSION['code'];
                                 if(mysql_query($sql2)){
-                                    echo "<script> location.href='painel.php' </script>";
+                                    echo "<script> location.href='index.php' </script>";
                                     $apelido = $usuarioEmail['APELIDO_USUARIO'];
                                     $mensagem = "$apelido Alterou Apelido";
                                     $acao = 12;
@@ -240,7 +240,7 @@
                     break;
                     case 'Retornar':
                         //Inicio
-                            echo "<script>location.href='painel.php'</script>";
+                            echo "<script>location.href='index.php'</script>";
                                     
                         //Fim
                         break;
@@ -256,7 +256,7 @@
                         else{
                                 $sql2 = "UPDATE USUARIO SET ESTADO_USUARIO = '$estado' WHERE COD_USUARIO =" . $_SESSION['code'];
                                 if(mysql_query($sql2)){
-                                    echo "<script> location.href='painel.php' </script>";
+                                    echo "<script> location.href='index.php' </script>";
                                     $apelido = $usuarioEmail['APELIDO_USUARIO'];
                                     $mensagem = "$apelido Alterou Estado";
                                     $acao = 8;

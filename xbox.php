@@ -13,16 +13,27 @@
                 var imgMiniLogo = document.getElementById("imgMiniLogo");
                 var imgLogo = document.getElementById("img-logo");                
                 imgMiniLogo.innerHTML = '<img src="imagens/logosReduzidos003.png" alt="" id="miniLogo">';
-                imgLogo.innerHTML = '<img src="imagens/logo003.png" alt="" id="logo">';
-                document.getElementById("tituloPagina").style.backgroundColor = "#8EA50D";     
+                imgLogo.innerHTML = '<img src="imagens/logo003.png" alt="" id="logo">';   
                 document.getElementById("tituloAside").style.backgroundColor = "#8EA50D"; 
                 document.getElementById("tituloGaleria").style.backgroundColor = "#8EA50D";
                 document.getElementById("nav").style.backgroundColor = "#8EA50D";
                 document.getElementById("navReduzido").style.backgroundColor = "#8EA50D";                
                 document.getElementById("botaoLogin").style.backgroundColor = "#8EA50D";
-                document.getElementById("logar").style.borderBottom = "solid 5px #8EA50D";                  
+                document.getElementById("logar").style.borderBottom = "solid 5px #8EA50D"; 
+                
             };
-        </script>       
+        </script>      
+        <style type="text/css">
+            .materiasBusca{
+                border:8px solid #8EA50D;
+            }
+            .texto_titulo_materia{
+                color:#8EA50D;
+            }
+            .verMais{
+                background-color:#8EA50D;
+            }
+        </style>
         <title> Xbox </title>
     </head>
     <body>
@@ -43,47 +54,97 @@
                 </div>
             </header>
             <article id="conteudo">
-            <div id="corpoConteudoGaleria">
-                    <h1 id="tituloGaleria"> Novidades  </h1>
-                    <div id="galeria">  
-                        <div id="botoesGaleria">
-                            <a href="#" id="prev"> <img src="imagens/previous.png" alt=""> </a>
-                            <a href="#" id="next"> <img src="imagens/next.png" alt=""> </a>
-                        </div>
-                        <div id="slide">
-                            <?php
-                                 buscarMateriasSlideX();
-                            ?>    
-                        </div>                
-                    </div>  
+                <div id="corpoConteudoGaleria2">
+                     <h1 id="tituloGaleria"> Matérias  </h1>
+                        <?php
+                            $query = "SELECT * FROM ARTIGO WHERE CATEGORIA_ARTIGO = 3 ORDER BY DATA_ARTIGO DESC";
+                            $total_reg = "4";
+                            $pc= isset($_GET['pagina'])? $_GET['pagina'] : "1";
+                            $inicio = $pc - 1; 
+                            $inicio = $inicio * $total_reg;
+                            $limite = mysql_query("$query LIMIT $inicio,$total_reg"); 
+                            $result = mysql_query($query);                
+                            $tr = mysql_num_rows($result);
+                            $tp = $tr / $total_reg;
+                            if($tr === 0){
+                                echo "Nenhum Artigo encontrado";
+                            }
+                            else{
+                                while($artigos = mysql_fetch_array($limite))
+                                {      
+                                    
+                                    $sql = "SELECT * FROM IMAGENS_MATERIA WHERE COD_MATERIA_IMAGEM =".$artigos['ID_ARTIGO'];
+                                    $resultBusca = mysql_query($sql);
+                                    $totalBusca = mysql_fetch_array($resultBusca);
+                                    $imagemMini = $totalBusca['IMAGEM_PRINCIPAL'];
+                                    $descricaoArtigo = $artigos['DESCRICAO_ARTIGO'];
+                                    $tituloArtigo = $artigos['TITULO_ARTIGO'];
+                                    $urlArtigo = $artigos['URL_ARTIGO'];
+                                    $dataArtigo = $artigos['DATA_ARTIGO'];
+                                    $ano = substr($dataArtigo, 0, 4);
+                                    $mes = substr($dataArtigo, 5, 2);
+                                    $dia = substr($dataArtigo, 8, 2);
+                                    $autorArtigo = $artigos['AUTOR_ARTIGO'];
+                                    $sql = "SELECT * FROM USUARIO WHERE COD_USUARIO = $autorArtigo";
+                                    $buscaCod = mysql_query($sql);
+                                    $resultCod = mysql_fetch_array($buscaCod);
+                                    
+                                    echo '<div class="materiasBusca" >';
+                                    echo '<figure class="figura_materia">';
+                                    echo '<img src="uploads/'.$imagemMini.'" class="imagem_miniatura_materia">';
+                                    echo '</figure>';
+                                    echo '<p class="texto_titulo_materia">';
+                                    echo ''.$tituloArtigo .'';
+                                    echo '</p>';
+                                    echo '<p class="texto_materia">';
+                                    echo ''.$descricaoArtigo .'';
+                                    echo '</p>';
+                                    echo '<p class="verMais">';
+                                    echo ' <a href="'.$urlArtigo.'">Ver Mais...</a>';
+                                    echo '</p>';
+                                    echo '<p class="dataArtigos">';
+                                    echo '<b>Data: </b>'.$dia.'/'.$mes.'/'.$ano;
+                                    echo '</p>';
+                                    echo '<p class="autorArtigo">';
+                                    echo '<b>Autor: </b>'.$resultCod['NOME_USUARIO'];
+                                    echo '</p>';
+                                    echo '</div>';
+                            }
+                            }
+                            echo '<div id="paginacaoBuscar">';
+                            $anterior = $pc -1; 
+   $proximo = $pc +1; 
+   if ($pc>1) 
+       { echo " <a href='?pagina=$anterior&tituloArtigo=$tituloArtigo'><-</a> "; 
+       
+       } 
+       if($pc ==1){/*CODIGO A APARECER PARA VOLTAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério
+       //echo "|"; 
+       // Inicio lógica rogerio
+       for($i=1;$i<=$tp;$i++)
+       {
+           echo "<a href=?pagina=$i&tituloArtigo=$tituloArtigo>".$i . "</a>" . "    ";
+       }
+       // Fim lógia rogério
+       if ($pc<$tp) 
+           { echo " <a href='?pagina=$proximo&tituloArtigo=$tituloArtigo'>-></a>"; 
+           
+           }
+      if($pc == $tp){/*CODIGO A APARECER PARA PASSAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério
+      echo "</div>";
+                        ?>
+                     
                 </div>
-                <div id="corpoConteudo">
-                    <div id="materias">                         
-                        <h1 id="tituloPagina"> Notícias </h1>
-                         <?php
-                             buscarMateriasPrincipal();
-                            ?>                            
-                        <div id="materiasPequenas">
-                            <?php
-                             buscarMateriasPequenas();
-                            ?>                             
-                        </div> 
-                    </div>                
-                        <div id="paginacaoMateria">
-
-                        </div>
-                    </div>
-                    <aside id="aside1">
+                <aside id="aside1">
                         <h1 id="tituloAside"> Top Notícias </h1>
                         <div id="materiasAside">
                             <?php
                                 buscarMateriasAside2();
                             ?>
                         </div>    
-                    </aside> 
-                
+                </aside> 
                 <div id="voltarTopo">
-                    <a href="" class="subir">
+                    <a href="javascript:toTop();" class="subir">
                         <img src="imagens/topoXbox.png" alt="">
                         <p> Voltar ao topo </p>
                     </a>                    

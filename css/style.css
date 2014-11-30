@@ -182,7 +182,7 @@ body{
     float: right;
 }
 
-#busca #search input{  
+#caixaBusca{  
     height: 30px;
     width: 60px;
     float: right;
@@ -195,7 +195,7 @@ body{
     border-radius: 15px 0 0 15px;
 }  
 
-#busca #search input:focus{
+#caixaBusca:focus{
     width: 160px;     
     padding-left: 10px;
 } 
@@ -290,7 +290,6 @@ body{
     -ms-transition: color .2s ease;
     -o-transition: color .2s ease;
     transition: color .2s ease;
-    padding-bottom: 2px;
 }
 
 #menuReduzido ul li a:hover{
@@ -357,7 +356,7 @@ body{
     float: right;
 }
 
-#buscaReduzido #search input{  
+#caixaBuscaReduzida{  
     height: 30px;
     width: 60px;
     float: right;
@@ -370,7 +369,7 @@ body{
     border-radius: 15px 0 0 15px;
 }  
 
-#buscaReduzido #search input:focus{
+#caixaBuscaReduzida:focus{
     width: 160px;     
     padding-left: 10px;
 } 
@@ -382,6 +381,19 @@ body{
     margin-left: 0;
     float: right;
     border-radius: 0 15px 15px 0;
+}
+
+#inputBusca{
+    width: 30px;
+    height: 30px;    
+    margin-top: 0;
+    margin-left: 170px;
+    float: right;
+    border-radius: 0 15px 15px 0;
+    position: absolute;
+    z-index: 4;
+    opacity: 0;
+    cursor: pointer;
 }
 
 #propaganda1{
@@ -488,6 +500,7 @@ body{
     background-color: #fff;
     box-shadow: 7px 7px 0px 0px #333;
 }
+
 #tituloGaleria{
     margin-top: 0;
     margin-left: 0;
@@ -507,6 +520,7 @@ body{
     margin-bottom: 0px;
     float: left;
     background-color: #333;
+    border: 5px solid #333;
 }
 
 #slide{
@@ -712,7 +726,11 @@ body{
     margin-bottom: 30px;
     float: left;
     z-index: 2;
-    border: solid 5px #333;
+    border: solid 5px #333;    
+}
+
+.materias + materias{
+    margin-bottom: 30px;
 }
 
 .materias img{
@@ -1498,20 +1516,23 @@ body{
     width: 130px;
     height: 240px;
     margin-top: 0;
-    margin-left: 5px;
+    margin-left: 70px;
     float: left;
     color: #000;
     line-height: 17pt;    
     border: solid 2px #333;    
 }
 
+.linksRodape + .linksRodape{    
+    margin-left: 10px;
+}
+
 .figura_materia{
-    width: 30%;
+    width: 180px;
     height: 140px;
     float:left;
     margin-top:10px;
     margin-left:10px;
-    border:1px solid black;
 }
 .imagem_miniatura_materia{
     width: 100%;
@@ -1520,15 +1541,82 @@ body{
     margin-top:0px;
     margin-left:0px;
 }
+.texto_titulo_materia{
+    width: 535px;
+    height: 30px;
+    float:left;
+    text-align: center;
+    margin-top:20px;
+    margin-left:10px;
+    font-size:14pt;
+    font-family: century gothic;
+    text-transform: uppercase;
+    text-decoration: none;
+font-weight: bolder;
+letter-spacing: 2px;
+color:#00989E;
+border-bottom: 1px solid #ccc;
+}
 .texto_materia{
-    width: 65%;
-    height: 140px;
+    width: 535px;
+    height: 80px;
     float:left;
     margin-top:10px;
     margin-left:10px;
-    border:1px solid black;
+    font-size:12pt;
+    font-family: century gothic;
+    text-transform: uppercase;
+    text-decoration: none;
+    color:#333;
+    text-align: justify;
 }
-
+.verMais{
+    width: 90px;
+    height: 22px;
+    float:right;
+    margin-top:-6px;
+    margin-right:4px;
+    border:1px solid #ccc;
+    border-radius: 5px;
+    background-color:#00989E;
+    text-align:center;
+        line-height: 21px;
+}
+.verMais a {
+    font-size:10pt;
+    font-family: century gothic;
+    text-decoration: none;
+    color:#ffffff;
+    text-align: justify;
+}
+.verMais a:hover {
+    opacity:0.6;
+}
+.dataArtigos{
+    width: 120px;
+    height: 15px;
+    float:left;
+    margin-left:5px;
+    margin-top:-5px;
+    font-size:10pt;
+    font-family: century gothic;
+    text-decoration: none;
+    color: black;
+    text-align: justify;
+    border-right: 1px solid #00989E;
+}
+.autorArtigo{
+    width: auto;
+    height: 15px;
+    float:left;
+    margin-left:5px;
+    margin-top:-5px;
+    font-size:10pt;
+    font-family: century gothic;
+    text-decoration: none;
+    color: black;
+    text-align: justify;
+}
 #name_materia{
     float:left;
     margin-top:70px;   
@@ -1644,7 +1732,7 @@ body{
 }
 .links_usuario{
     margin-left: 18px;
-    margin-top: 30px;
+    margin-top: 25px;
     float: left;
 }
 .links_usuario a{
@@ -1816,9 +1904,9 @@ color:#00989E;
 }
 .senha_rec{
     float:left;
-    margin-left:380px;
-    margin-top:40px;
-    font-size:16pt;
+    margin-left:200px;
+    margin-top:20px;
+    font-size:14pt;
     font-family: century gothic;
 }
 #senha_rec{
@@ -1938,16 +2026,6 @@ color:#00989E;
     text-align: left;
 }
 
-.linksRodape{
-    width: 130px;
-    height: 240px;
-    margin-top: 0;
-    margin-left: 5px;
-    float: left;
-    color: #000;
-    line-height: 17pt;    
-    border: solid 2px #333;    
-}
 #msgCad{
     width:400px;
     height:60px;
@@ -1956,13 +2034,78 @@ color:#00989E;
     margin-left:25px;
 }
 
-#paginacaoMateria{
-    width:500px;
-    height:60px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 150px;
+#paginacao{
+    width: 250px;
+    height: 60px;
+    margin-top: 280px;
+    margin-left: 320px;
     float:left;
-    background-color: #fff;
+    background-color: #fff;  
+    box-shadow: 5px 5px 0px 0px #333;
+    position: absolute;
+    text-align: center;
 }
 
+#paginacaoMaterias{
+    margin-top: 20px; 
+}
+
+#paginacaoMaterias a{ 
+    font-family: century gothic;
+    font-size: 12pt;
+    color: #333;
+    text-decoration: none;
+    padding-left: 2px;
+}
+
+#paginacaoMaterias a:hover{  
+    color: #333;
+    text-decoration: underline;
+}
+#corpoConteudoGaleria2{
+    width: 900px;
+    height: auto;
+    margin-top: 0px;
+    margin-left: 7%;
+    min-height: 250px;
+    float: left;
+    background-color: #fff;
+    box-shadow: 7px 7px 0px 0px #333;
+}
+.materiasBusca{
+    width: 750px;
+    height: 160px;
+    float:left;
+    margin-top: 20px;
+    margin-left: 65px;
+    border:8px solid #00989E;
+}
+#paginacaoBuscar{
+    width: 100px;
+    height: 41px;
+    float:left;
+    margin-left:450px;
+    line-height: 40px;
+}
+#paginacaoBuscar a{ 
+    font-family: century gothic;
+    font-size: 12pt;
+    color: #333;
+    text-decoration: none;
+    padding-left: 2px;
+}
+
+#paginacaoBuscar a:hover{  
+    color: #333;
+    text-decoration: underline;
+}
+
+.semUsuario{    
+    font-family: century gothic;
+    font-size: 14pt;
+    color: #333;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 25%;
+    font-weight: bold;
+}

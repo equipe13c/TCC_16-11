@@ -66,12 +66,9 @@
                         <div id="materiasPequenas">
                             <?php
                              buscarMateriasPequenas();
-                            ?>                             
+                            ?> 
                         </div> 
-                    </div>                
-                        <div id="paginacaoMateria">
-
-                        </div>
+                    </div>                             
                     </div>
                     <aside id="aside1">
                         <h1 id="tituloAside"> Top Notícias </h1>

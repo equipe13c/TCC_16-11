@@ -80,7 +80,7 @@ CREATE TABLE `artigo` (
   KEY `CODIGO_AUTOR_idx` (`AUTOR_ARTIGO`),
   CONSTRAINT `CATEGORIA_ARTIGO` FOREIGN KEY (`CATEGORIA_ARTIGO`) REFERENCES `categoria` (`COD_CATEGORIA`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `CODIGO_AUTOR` FOREIGN KEY (`AUTOR_ARTIGO`) REFERENCES `usuario` (`COD_USUARIO`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `artigo`
@@ -90,9 +90,10 @@ CREATE TABLE `artigo` (
 INSERT INTO `artigo` (`ID_ARTIGO`,`TITULO_ARTIGO`,`CATEGORIA_ARTIGO`,`DATA_ARTIGO`,`HORA_ARTIGO`,`AUTOR_ARTIGO`,`URL_ARTIGO`,`DESCRICAO_ARTIGO`,`DATA_LANCAMENTO`,`CONTEUDO_ARTIGO`,`PLATAFORMA_ARTIGO`,`URLVIDEO1`,`URLVIDEO2`,`TITULO_CONTEUDO_ARTIGO`,`ACESSOS`) VALUES 
  (2,'the last of us - Remastered',1,'2014-11-27','01:50:23',29,'playstation/thelastofus.php','O game que ganhou vários prêmios do ano está de volta em uma nova versão muito mais refinada.','2014-07-30','The last­ of Us criado pela grande empresa Naughty Dog,é um jogo,onde se trata de um surto de Cordyceps(fungo responsável pela aniquilação da grande maioria da população),onde Joel um sobrevivente do Cordyceps, por isso podemos perceber durante o jogo que o protagonista é um pouco quanto reservado e fechado.Ele recebe uma missão de resgatar uma garota de quatorze anos do posto de quarentena,chamada Ellie,que nunca saiu mundo afora e podemos perceber isso no começo do jogo quando Ellie fica totalmente impressionada ou ver predios carros e animais.Os verdadeiros motivos por trás dessa missão não foram revelados,fazendo com que eles se tornem alvos procurados pelos militares.Ao longo da história Ellie e Joel começam a se aproximar mais,virando grandes amigos e uma dupla e tanto.','PlayStation 4','https://www.youtube.com/embed/kE7li_u1nmg','https://www.youtube.com/embed/FIFzImtPBvc','O que você irá fazer para sobreviver ?',1),
  (4,'gta v',1,'2014-11-27','15:34:13',29,'playstation/gtav.php','O grande sucesso da saga Grand Theft Auto(GTA),está de volta em uma versão mais refinada.','Novembro de 2014','Grand Theft Auto 5(GTA 5) foi mais um dos grandes sucessos anunciados na E3 2014,o game original(criado para xbox 360 e ps3) bateu todos os recorde da história dos games com mais de 33 milhões de unidades.\r\nCom os pedidos e rumores de uma versão para o pc e para os novos consoles(ps4 e xboxOne),os pedidos foram realizados.Esta nova versão irá incluir os mesmos conteúdos da versão anterior porém com gráficos melhorados,aumento do campo de visão e tráfego melhorados.\r\nO grande avanço é que agora podemos transferir personagens e progressos do GTA Online entre as plataformas.Exemplo um personagem salvo no Xbox360 pode ser transferido para o ps4,pc ou até mesmo xboxOne.\r\n','Multiplataforma','http://www.youtube.com/embed/VjZ5tgjPVfU','http://www.youtube.com/embed/BV85rkGqz2o','Los Santos como você nunca viu.',3),
- (5,'gta v',3,'2014-11-27','15:34:13',29,'xbox/gtav.php','O grande sucesso da saga Grand Theft Auto(GTA),está de volta em uma versão mais refinada.','Novembro de 2014','Grand Theft Auto 5(GTA 5) foi mais um dos grandes sucessos anunciados na E3 2014,o game original(criado para xbox 360 e ps3) bateu todos os recorde da história dos games com mais de 33 milhões de unidades.\r\nCom os pedidos e rumores de uma versão para o pc e para os novos consoles(ps4 e xboxOne),os pedidos foram realizados.Esta nova versão irá incluir os mesmos conteúdos da versão anterior porém com gráficos melhorados,aumento do campo de visão e tráfego melhorados.\r\nO grande avanço é que agora podemos transferir personagens e progressos do GTA Online entre as plataformas.Exemplo um personagem salvo no Xbox360 pode ser transferido para o ps4,pc ou até mesmo xboxOne.\r\n','Multiplataforma','http://www.youtube.com/embed/VjZ5tgjPVfU','http://www.youtube.com/embed/BV85rkGqz2o','Los Santos como você nunca viu.',2),
  (9,'Zelda U',2,'2014-11-27','16:02:29',29,'nintendo/zeldau.php','O mais novo game da saga The Legend of Zelda está chegando,sendo um dos grandes destaque da nintendo na E3 de 2014.','Final de 2015','Zelda U nome provissório,o mais novo game da saga The Legend of Zelda explorará um mundo de dimensões totalmente diferente dos anteriores.\r\nAinda não sabemos muito sobre esta nova hístoria,tendo boatos de que o game se passa entre o Wind Waker e o Skyward Sword,por causa de sua roupa e até mesmo pelo cenário,sendo uma floresta vasta e aberta.\r\n','Nintendo Wii U','http://www.youtube.com/embed/XZmxvig1dXE','http://www.youtube.com/embed/mM9MGY2OL8o','Qual será a nova trama para o grande heroí Li',11),
- (10,'sunset overdrive',3,'2014-11-27','16:23:08',29,'xbox/sunsetoverdrive.php','Uns dos melhores games da Xbox na E3 2014.','Final de 2015','Sunset Overdrive é um jogo,que se passa em um futuro distante de \"mundo-aberto\".\r\nOnde uma catastrofe deixou a cidade invadida por mutantes,quando mais morrer e se transformar mais você melhora seu nível.Seu objetivo destruir os monstros,com um arsenal incrível,contendo armas poderosas e talentos para atravessar a cidade com rapidez e agilidade.\r\nVocê pode modificar completamente a sua personagem e jogar com os seus amigos,sendo um dos grandes destaque do game. Com os gráficos cartunescos e visual infantil,não se deixe enganar,esse game não tem nada a ver com os jogos infantis!\r\n','Xbox One','http://www.youtube.com/embed/s_LmilGAhaM','http://www.youtube.com/embed/Zt4bfcbKtu4','Como sobreviver em um mundo sem regras e com ',3);
+ (10,'sunset overdrive',3,'2014-11-27','16:23:08',29,'xbox/sunsetoverdrive.php','Uns dos melhores games da Xbox na E3 2014.','Final de 2015','Sunset Overdrive é um jogo,que se passa em um futuro distante de \"mundo-aberto\".\r\nOnde uma catastrofe deixou a cidade invadida por mutantes,quando mais morrer e se transformar mais você melhora seu nível.Seu objetivo destruir os monstros,com um arsenal incrível,contendo armas poderosas e talentos para atravessar a cidade com rapidez e agilidade.\r\nVocê pode modificar completamente a sua personagem e jogar com os seus amigos,sendo um dos grandes destaque do game. Com os gráficos cartunescos e visual infantil,não se deixe enganar,esse game não tem nada a ver com os jogos infantis!\r\n','Xbox One','http://www.youtube.com/embed/s_LmilGAhaM','http://www.youtube.com/embed/Zt4bfcbKtu4','Como sobreviver em um mundo sem regras e com ',3),
+ (11,'teste',1,'2014-11-30','14:58:31',29,'playstation/testeps.php','conheça: the last of us, o exclusivo da playstation. agora remasterizado.','Agosto de 2012','correndo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendocorrendo e aprendendo','PlayStation 3','https://www.youtube.com/embed/QO8iXF5r1LE','https://www.youtube.com/embed/09lqWdLkVoQ','Corra Para Sobreviver',35),
+ (12,'teste2',1,'2014-11-30','15:47:41',44,'playstation/teste_2.php','conheça mais uma vez, the last of us.','Outubro de 2012','corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra forrest corra, corra for','PlayStation 3','https://www.youtube.com/embed/09lqWdLkVoQ','https://www.youtube.com/embed/zSP-LlQ-4oA','Corra forrest corra',2);
 /*!40000 ALTER TABLE `artigo` ENABLE KEYS */;
 
 
@@ -162,13 +163,16 @@ CREATE TABLE `coment` (
   KEY `CODIGO_MATERIA_idx` (`CODIGO_MATERIA`),
   CONSTRAINT `CODIGO_MATERIA` FOREIGN KEY (`CODIGO_MATERIA`) REFERENCES `artigo` (`ID_ARTIGO`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `COMENT_USUARIOS` FOREIGN KEY (`COD_USUARIO`) REFERENCES `usuario` (`COD_USUARIO`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `coment`
 --
 
 /*!40000 ALTER TABLE `coment` DISABLE KEYS */;
+INSERT INTO `coment` (`COD_COMENT`,`COD_USUARIO`,`CONTEUDO_COMENT`,`DATA_COMENT`,`HORA_COMENT`,`CODIGO_MATERIA`) VALUES 
+ (1,29,'teste','2014-11-30','12:05:18',11),
+ (2,29,'teste 2','2014-11-30','12:09:44',11);
 /*!40000 ALTER TABLE `coment` ENABLE KEYS */;
 
 
@@ -274,7 +278,7 @@ CREATE TABLE `imagens_materia` (
   PRIMARY KEY (`COD_IMAGEM_MATERIA`),
   KEY `IMAGENS_MATERIA_idx` (`COD_MATERIA_IMAGEM`),
   CONSTRAINT `IMAGENS_MATERIA` FOREIGN KEY (`COD_MATERIA_IMAGEM`) REFERENCES `artigo` (`ID_ARTIGO`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `imagens_materia`
@@ -284,9 +288,10 @@ CREATE TABLE `imagens_materia` (
 INSERT INTO `imagens_materia` (`COD_IMAGEM_MATERIA`,`COD_MATERIA_IMAGEM`,`IMAGEM_CAPA`,`IMAGEM_PRINCIPAL`,`IMAGEM_GALERIA`,`IMAGEM_GALERIA2`,`IMAGEM_GALERIA3`) VALUES 
  (12,2,'c969be.jpg','ff3665.jpg','e28d18.jpg','c82823.jpg','25f8d2.jpg'),
  (14,4,'eaa640.jpg','0c9fd2.jpg','ee1a5b.jpg','e511b7.jpg','cbcca3.jpg'),
- (15,5,'eaa640.jpg','0c9fd2.jpg','ee1a5b.jpg','e511b7.jpg','cbcca3.jpg'),
  (19,9,'a87324.jpg','2405c3.jpg','62646f.jpg','6baa46.jpg','36e2e3.jpg'),
- (20,10,'06e2cd.jpg','e93459.jpg','99831b.jpg','1470ae.jpg','313cc7.jpg');
+ (20,10,'06e2cd.jpg','e93459.jpg','99831b.jpg','1470ae.jpg','313cc7.jpg'),
+ (21,11,'e1f24f.jpg','08ba30.jpg','f5cb0f.jpg','5765ce.jpg','1e4bb5.jpg'),
+ (22,12,'15ca68.jpg','e76c79.jpg','244d5d.jpg','94e06f.jpg','63fdb8.jpg');
 /*!40000 ALTER TABLE `imagens_materia` ENABLE KEYS */;
 
 
@@ -333,7 +338,7 @@ CREATE TABLE `log` (
   KEY `COD_ACAO_idx` (`ACAO_LOG`),
   CONSTRAINT `COD_ACAO` FOREIGN KEY (`ACAO_LOG`) REFERENCES `acoes_log` (`COD_ACOES_LOG`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `COD_AUTOR_LOG` FOREIGN KEY (`COD_AUTOR_LOG`) REFERENCES `usuario` (`COD_USUARIO`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `log`
@@ -378,7 +383,12 @@ INSERT INTO `log` (`COD_LOG`,`IP_LOG`,`DATA_LOG`,`HORA_LOG`,`MENSAGEM_LOG`,`ACAO
  (46,'::1','2014-11-28','18:43:37','Joaozinho  Alterou Foto',2,'joaozinho@hotmail.com',44),
  (47,'::1','2014-11-28','18:44:29','Joaozinho  Alterou Foto',2,'joaozinho@hotmail.com',44),
  (48,'::1','2014-11-28','19:21:58','Joaozinho  Alterou Foto',2,'joaozinho@hotmail.com',44),
- (49,'::1','2014-11-28','19:22:50','Joaozinho  Alterou Foto',2,'joaozinho@hotmail.com',44);
+ (49,'::1','2014-11-28','19:22:50','Joaozinho  Alterou Foto',2,'joaozinho@hotmail.com',44),
+ (50,'::1','2014-11-30','14:28:15','Jow efetuou Login',1,'jonathan.webitb@hotmail.com',29),
+ (51,'::1','2014-11-30','14:31:09','Jonathan Efeutou Logout',11,'jonathan.webitb@hotmail.com',29),
+ (52,'::1','2014-11-30','14:31:19','Jow efetuou Login',1,'jonathan.webitb@hotmail.com',29),
+ (53,'::1','2014-11-30','15:42:45','Jonathan Efeutou Logout',11,'jonathan.webitb@hotmail.com',29),
+ (54,'::1','2014-11-30','15:42:55','ADM: Joaozinho  efetuou Login',1,'joaozinho@hotmail.com',44);
 /*!40000 ALTER TABLE `log` ENABLE KEYS */;
 
 
@@ -468,8 +478,8 @@ INSERT INTO `usuario` (`COD_USUARIO`,`NOME_USUARIO`,`APELIDO_USUARIO`,`EMAIL_USU
  (33,'josimar','josi','josimar2@gmail.com','$2a$08$MzgxMzMzMDcxNTQ1YTg3NOqpK7CFw1wHM.qBIvhWaXY3CjAL5HqKy',2,'0000-00-00',NULL,NULL,NULL),
  (34,'josimar','josi','josimar3@gmail.com','$2a$08$MTQwMTA5NTY0ODU0NWE4NuTK2mkeghWnBsGMLIgmYR1gte/Zo18im',2,'0000-00-00',NULL,NULL,NULL),
  (35,'josimar','josi','josimar4@gmail.com','$2a$08$MTE1OTcwMTQ1NTQ1YTg3Zebe3XcThAuzVYrZxGomZAjsOU8MKAKMK',2,'0000-00-00',NULL,NULL,NULL),
- (36,'JONATHAN ALVES DE LIMA','Jow','jonathan.webitb2@hotmail.com','$2a$08$MTY3MDY4OTYyODU0NjkzOOi8vpFE944LbpG.bjJigPJdOYPLJV03m',3,'0000-00-00',NULL,NULL,NULL),
- (44,'Joao Gabriel','Joaozinho ','joaozinho@hotmail.com','$2a$08$MTcxOTAwNjA2NzU0NWE1O.LQBhx7eZb3nryfzfJaa50cyDklklb7.',1,'2014-11-27',NULL,'SP','I\'am Fucked');
+ (36,'JONATHAN ALVES DE LIMA','Jow','jonathan.webitb2@hotmail.com','$2a$08$MTY3MDY4OTYyODU0NjkzOOi8vpFE944LbpG.bjJigPJdOYPLJV03m',3,'0000-00-00',NULL,NULL,''),
+ (44,'Joao Gabriel','Joaozinho ','joaozinho@hotmail.com','$2a$08$MTcxOTAwNjA2NzU0NWE1O.LQBhx7eZb3nryfzfJaa50cyDklklb7.',1,'2014-11-27',NULL,'SP','João Gabriel, Morador da Cidade de Barueri.');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 
 
