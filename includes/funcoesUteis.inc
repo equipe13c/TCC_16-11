@@ -96,6 +96,27 @@ function VerificaSessao(){
                         </form>';
                 }            
 }
+function buscarPreferencia($preferencia, $cod){
+    $query = "SELECT * FROM USUARIO WHERE COD_USUARIO = $cod";
+                    $result = mysql_query($query);
+                    $totalResult = mysql_fetch_array($result);
+                    $descricao = $totalResult['DESCRICAO_USUARIO'];
+                    $plataforma = $totalResult['PLATAFORMAS_PREFERIDAS'];
+                    $jogo = $totalResult['JOGOS_PREFERIDOS'];
+                    if($preferencia == 'descricao'){
+                        
+                        echo $descricao;                        
+                    }
+                     if($preferencia == 'jogo'){
+                        
+                        echo $jogo;                        
+                    }
+                     if($preferencia == 'plataforma'){
+                        
+                        echo $plataforma;                        
+                    }
+    
+}
 function VerificaSessao2(){
                if(isset($_SESSION["tipo"])){
                     $logado = true;
@@ -1042,6 +1063,19 @@ function buscarDescAutor($id){
                     $descricaoUser2 = mysql_fetch_array($result); 
                     $resultDescricao = $descricaoUser2['DESCRICAO_USUARIO'];
                     echo $resultDescricao;
+}
+function mostrarBotao($tipoUsuario){
+    if($tipoUsuario==1){
+        echo "<td><input type='submit' class='botoes' name='Desativar' value='Desativar'><input type='submit' class='botoes' name='Rebaixar' value='Rebaixar'></td>";
+    }else if($tipoUsuario==2){
+        echo "<td><input type='submit' class='botoes' name='Desativar' value='Desativar'><input type='submit' class='botoes' name='Elevar' value='Elevar'>";
+    }else if($tipoUsuario==3){
+        echo "<td><input type='submit' class='botoes' name='Desativar' value='Desativar'><input type='submit' class='botoes' name='Elevar' value='Elevar'><input type='submit' class='botoes' name='Rebaixar' value='Rebaixar'></td>";
+    }else if($tipoUsuario==4){
+        echo "<td><input type='submit' class='botoes' name='Reativar' value='Ativar'></td>";
+    }else{
+        echo 'nada';
+    }
 }
 
 ?>

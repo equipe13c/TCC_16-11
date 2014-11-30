@@ -2,6 +2,7 @@
 include "../conexao/conecta.inc";
 include '../includes/funcoesUteis.inc';
 include_once '../classes/Bcrypt.class.php';
+
 validaAutenticacao('../index.php', '1');
 echo "<meta charset=UTF-8>";
 $nome = $_POST['nome'];

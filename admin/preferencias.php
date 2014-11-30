@@ -10,22 +10,6 @@
         <script type="text/javascript" src="../js/javascript.js"></script>
         <script type="text/javascript" src="../js/menu2.js"></script>
         <script type="text/javascript" src="../js/restrito.js"></script>
-                    <script type="text/javascript">
-            function previewImgUser(input, tipo) {
-                    if(tipo == 'imgCapa'){
-                if (input.files && input.files[0]) {
-                    var reader = new FileReader();
- 
-                    reader.onload = function (e) {
-                            $('#imagemCapa')
-                .attr('src', e.target.result)
-                                    .width(200)
-                    };
-                    reader.readAsDataURL(input.files[0]);
-                }
-            }
-            }
-            </script>
         <script type="text/javascript"> 
             onload = function(){     
                 var imgMiniLogo = document.getElementById("imgMiniLogo");
@@ -38,6 +22,23 @@
                 document.getElementById("logar").style.borderBottom = "solid 5px #00989E";               
                 document.getElementById("tituloPagina").style.backgroundColor = "#00989E"; 
             };
+            function edit(valor, id1, id2, id3){
+                if(valor === "preferencias"){
+                    document.getElementById(id1).disabled = false;
+                    document.getElementById(id1).style.backgroundColor = "#FFF";
+                    document.getElementById(id1).style.color = "#000";
+                    document.getElementById(id1).focus();
+                    document.getElementById(id2).disabled = false;
+                    document.getElementById(id2).style.backgroundColor = "#FFF";
+                    document.getElementById(id2).style.color = "#000";
+                    document.getElementById(id3).disabled = false;
+                    document.getElementById(id3).style.backgroundColor = "#FFF";
+                    document.getElementById(id3).style.color = "#000";
+                    var salvar =  document.getElementById("editPreferencias");
+                    salvar.innerHTML = '<input type="submit" name="salvarPreferencias" class="bsalvar" value="Salvar">';
+                }
+               
+            }
         </script>
         <title> Área Administrativa </title>
     </head>
@@ -64,6 +65,7 @@
                         <a href="alterarImg.php"> Alterar</a><br/>
                         <a href="removerImg.php"> Remover</a>
                     </div>
+                    <figure id="imgUser" onmouseover="mostrarCam();" onmouseout="retirarCam();" >
                         <?php
                             $query = "SELECT * FROM IMAGEM_USUARIO WHERE COD_IMAGEM_USUARIO = ".$_SESSION['code'];
                             $result = mysql_query($query);                
@@ -103,11 +105,11 @@
                     ?>
                 </nav>
                 <article id="conteudo_infos">
-                    <form action="script2.php" method="post" enctype="multipart/form-data">
+                    <form action="script2.php" method="post" enctype="multipart/form-data" id="teste">
                         <div id="tabelaPreferencias">
                             <div id="alterarCapa">
                                 <p> Alterar Imagem de Capa </p>
-                                <div class="alterar">                     
+                                <div class="alterar" >                     
                                     <?php
                                         $query = "SELECT * FROM IMAGEM_USUARIO WHERE COD_IMAGEM_USUARIO = ".$_SESSION['code'];
                                         $result = mysql_query($query);                
@@ -125,31 +127,41 @@
                                     ?>                                    
                                 </div>                                                         
                                 <div class="infoInputs">
-                                   <input type="file" name="arquivo" value="Alterar Imagem" class="btnAlterarImg" onchange="previewImgUser(this,'imgCapa');" multiple>                       
+                                    <input type="file" name="arquivo" >                          
                                 </div>                                
                                 <div class="infoInputs">
-                                    <input type="submit" name="alterarImg" class="bsalvar" value="Alterar Foto">                                
+                                    <input type="submit" name="alterarImg"  class="bsalvar" value="Alterar Foto">                                
                                 </div>
                             </div>
-                            <div class="areasPreferencia">                                
+                         
+                       
+                    </form>  
+                    <form action="script3.php" method="post" enctype="multipart/form-data" >
+                       <div class="areasPreferencia">                                
                                 <div class="preferencias">  
                                     <p> Descrição: </p> 
-                                    <textarea id="areasPreferenciaInput"> </textarea> <br/>
+                                    <textarea id="descricao" name="descricao" class="txtInfo" disabled="disabled"><?php buscarPreferencia('descricao', $_SESSION['code']);?></textarea> <br/>
+                               
                                 </div>
                                 <div class="preferencias">  
                                     <p> Jogos Preferidos: </p> 
-                                    <textarea id="areasPreferenciaInput"> </textarea> <br/>
+                                    <textarea id="jogos" name="jogos" class="txtInfo" disabled="disabled"><?php buscarPreferencia('jogo', $_SESSION['code']);?></textarea> <br/>
+                             
                                 </div>
+                           
                                 <div class="preferencias">  
                                     <p> Plataformas Preferidas: </p> 
-                                    <textarea id="areasPreferenciaInput"> </textarea> <br/>
+                                    <textarea id="plataformas" name="plataformas" class="txtInfo" disabled="disabled"><?php buscarPreferencia('plataforma', $_SESSION['code']);?></textarea> <br/>
+                               
+                                    
+                                    
                                 </div>
-                                <div class="infoInputs">
-                                    <input type="submit" name="salvarPreferencias" class="bsalvar" value="Salvar">                                
+                                <div class="infoInputs" id="editPreferencias">
+                                    <a onclick="edit('preferencias', 'descricao', 'jogos', 'plataformas')" href="#teste"><img src="../imagens/edit.png" alt="editImage" class="editImage"> </a>                               
                                 </div>
                             </div>
-                        </div>
-                    </form>    
+                        </form>
+                     </div>
                 </article>                
             </article>
             <div id="imgFooter" ondragstart="return false">
