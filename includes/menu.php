@@ -57,8 +57,8 @@
     </div>            
     <div id="busca">
         <a href="#"><img src="imagens/lupa.jpg" alt="" id="imagemBusca"></a>
-        <form method="get" action="/search" id="search">  
-            <input name="buscar" type="text" size="40" placeholder="  Buscar" />
+        <form method="get" action="buscarArtigo.php" id="search">  
+            <input name="tituloArtigo" type="text" size="40" placeholder="  Buscar" />
         </form>                                                
     </div>                    
 </nav>
