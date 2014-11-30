@@ -726,8 +726,11 @@ body{
     margin-bottom: 30px;
     float: left;
     z-index: 2;
-    border: solid 5px #333;
-    
+    border: solid 5px #333;    
+}
+
+.materias + materias{
+    margin-bottom: 30px;
 }
 
 .materias img{
@@ -2031,21 +2034,20 @@ color:#00989E;
     margin-left:25px;
 }
 
-#paginacaoMateria{
-    width:500px;
-    height:60px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 150px;
+#paginacao{
+    width: 250px;
+    height: 60px;
+    margin-top: 280px;
+    margin-left: 320px;
     float:left;
-    background-color: #fff;
+    background-color: #fff;  
+    box-shadow: 5px 5px 0px 0px #333;
+    position: absolute;
+    text-align: center;
 }
 
 #paginacaoMaterias{
-    height: 50px;
-    margin-top: 20px;
-    margin-left: 320px;
-    float: left;
+    margin-top: 20px; 
 }
 
 #paginacaoMaterias a{ 

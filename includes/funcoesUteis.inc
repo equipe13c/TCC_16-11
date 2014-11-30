@@ -890,8 +890,8 @@ function buscarMateriasPequenas(){
     $query = "SELECT * FROM ARTIGO ORDER BY ID_ARTIGO DESC";
                             $pc= isset($_GET['pagina'])? $_GET['pagina'] : "1";
                             $inicio = $pc - 1; 
-                            $total_reg = "2";
-                            $inicio = 0;
+                            $total_reg = "3";
+                            $inicio = $inicio * $total_reg;
                             $limite = mysql_query("$query LIMIT $inicio,$total_reg"); 
                             $result = mysql_query($query);                
                             $tr = mysql_num_rows($result);
@@ -919,30 +919,31 @@ function buscarMateriasPequenas(){
                                     echo ' <img src="uploads/'.$imagemMini.'" alt="" id="imagemMaterias">';
                                     echo '</div>';
                                     echo '</a>';
-                            }
-                            echo "<div id='paginacaoMaterias'>";
+                            }                            
+                    }
+                    echo "<div id='paginacao'>";
+                    echo "<div id='paginacaoMaterias'>";
                     $anterior = $pc -1; 
                     $proximo = $pc +1; 
                     if ($pc>1) 
-                    { echo " <a href='?pagina=$anterior'>< Anterior</a> "; 
+                        { echo " <a href=?pagina=$anterior>< Anterior</a> "; 
 
-                    } 
-                    if($pc ==1){/*CODIGO A APARECER PARA VOLTAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério
-                    //echo "|"; 
-                    // Inicio lógica rogerio
-                    for($i=1;$i<=$tp;$i++)
-                    {
-                        echo "<a href=?pagina=$i>".$i . "</a>" . "    ";
-                    }
-                    // Fim lógia rogério
-                    if ($pc<$tp) 
-                        { echo " <a href='?pagina=$proximo'>Próxima ></a>"; 
-
+                        } 
+                        if($pc ==1){/*CODIGO A APARECER PARA VOLTAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério
+                        //echo "|"; 
+                        // Inicio lógica rogerio
+                        for($i=1;$i<=$tp;$i++)
+                        {
+                            echo "<a href=?pagina=$i>".$i . "</a>" . "    ";
                         }
-                   if($pc == $tp){/*CODIGO A APARECER PARA PASSAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério
+                        // Fim lógia rogério
+                        if ($pc<$tp) 
+                            { echo " <a href=?pagina=$proximo>Próxima ></a>"; 
 
-                    }
-                echo "</div>";
+                            }
+                       if($pc == $tp){/*CODIGO A APARECER PARA PASSAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério
+                     echo "</div>";
+                     echo "</div>";
 }
 function buscarImagemAutor($autor){
                     $query = "SELECT * FROM IMAGEM_USUARIO WHERE COD_IMAGEM_USUARIO = $autor";

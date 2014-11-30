@@ -1015,6 +1015,20 @@ table.bordasimples td.campos{
     font-size: 9pt;
 }
 
+.botoes2{
+    width: 90px;
+    height: 25px;
+    margin-left: 15px;
+    margin-top: 4px;    
+    margin-bottom: 5px;
+    float: left;    
+    border: 0;
+    color: #fff;
+    background-color: #00989E;
+    font-family: century gothic;
+    font-size: 9pt;
+}
+
 .botoes + .botoes{
     margin-top: 4px;
     margin-left:  7px;
@@ -1253,6 +1267,7 @@ table.bordasimples tr td {
     float: left;
     margin-top: 50px;
     margin-left: 280px;
+    margin-bottom: 30px;
     background-color: ghostwhite;
     border: solid 5px #00989E;
     color:white;
@@ -1816,4 +1831,433 @@ table.tableInserirMateria td.campos{
     text-transform: uppercase;
     margin-top: 25%;
     font-weight: bold;
+}
+
+#buscaMaterias{
+    width: 385px;
+    height: 50px;    
+    float: right;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+#buscaMaterias label{ 
+    font-family: century gothic;
+    font-size: 12pt;
+    color: #333;
+    margin-top: 10px;
+    float:left;
+    margin-right: 10px;
+}
+
+#caixaMateria{ 
+    font-family: century gothic;
+    font-size: 12pt;
+    color: #333;
+    float: left;
+    margin-top: 5px;
+}
+
+#botaoBuscaMateria{
+    width: 60px;
+    height: 30px;
+    background: #00989E; 
+    color: white;
+    font-family: century gothic;
+    font-size: 10pt;
+    text-align: center;
+    text-decoration: none;
+    float: right;
+    border: none;
+    margin-top: 2px;
+}
+
+#tabelaMateria{
+    width: 1010px;
+    margin-top: 20px;
+    margin-left: 10px;
+    float: left;
+    background-color: #00989E;
+    font-family: century gothic;
+    font-size: 12pt;
+    color: #333;
+}
+
+#tabelaMateria th{
+    background-color: #E0E0E0;  
+}
+
+#tabelaMateria td{
+    width: 100px;
+    height: 80px;    
+    background-color: #E0E0E0;
+    text-align: center;
+}
+
+.visualizarMateria{
+    width: 100px;
+    height: 50px;
+}
+
+#imagem_materia_listagem{
+    width: 100px;
+    height: 50px;
+    margin-top: 5px;
+    margin-left: 12.5px;
+    float: left;
+}
+
+#paginacaoEditarMateria{
+    height: 50px;
+    margin-top: 20px;
+    margin-left: 450px;
+    float: left;
+}
+
+#paginacaoEditarMateria a{ 
+    font-family: century gothic;
+    font-size: 12pt;
+    color: #333;
+    text-decoration: none;
+    padding-left: 2px;
+}
+
+#paginacaoEditarMateria a:hover{  
+    color: #333;
+    text-decoration: underline;
+}
+
+#categoria{
+    width: 100%;
+    min-height: 180px;
+    height: auto;
+    float: left;
+}
+
+#categoria h1{
+    text-align: left; 
+    font-family: century gothic;
+    color: #00989E;
+    font-size: 14pt;
+    margin-top: 20px;
+    margin-left: 20px;
+    font-weight: normal;
+}
+
+#categoria input[type=radio]{
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+#categoria input[type=radio]:before {
+    content: " ";
+    background-color: #ccc;
+    display: inline-block;
+    margin-right: 15px;
+    width: 6px;
+    height: 6px;
+    border: 3px solid #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    visibility: visible;
+    box-shadow: 0 0 0px 2px #999;
+}
+
+#categoria input[type=radio]:checked:before {
+    background-color: #052;
+}
+
+.inputRadios {
+  list-style: none;
+  margin-top: 0px;
+  margin-left: 100px;
+  padding: 0;
+}
+
+.inputRadios:after {
+  content: "";
+  clear: both;
+}
+
+.inputRadio {
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  float: left;
+  height: 72px;
+  position: relative;
+  width: 122px;
+}
+
+.inputRadio label {
+  background: #fff no-repeat center center;
+  bottom: 1px;
+  cursor: pointer;
+  display: block;
+  font-size: 0;
+  left: 1px;
+  position: absolute;
+  right: 1px;
+  text-indent: 100%;
+  top: 1px;
+  white-space: nowrap;
+}
+
+.inputRadio + .inputRadio {
+  margin-left: 25px;
+}
+
+.radioNintendo label {
+    background-image: url(../../imagens/radioNintendo.jpg);
+    background-size: 120px 70px;    
+    outline: 4px solid #E0E0E0;
+}
+
+.radioPc label {    
+    background-image: url(../../imagens/radioPc.jpg);
+    background-size: 120px 70px;  
+    outline: 4px solid #E0E0E0;
+}
+
+.radioPlaystation label {
+    background-image: url(../../imagens/radioPs.jpg);
+    background-size: 120px 70px;  
+    outline: 4px solid #E0E0E0;
+}
+
+.radioXbox label {
+    background-image: url(../../imagens/radioXbox.jpg);
+    background-size: 120px 70px;  
+    outline: 4px solid #E0E0E0;
+}
+.radioNostalgia label {
+    background-image: url(../../imagens/radioNostalgia.jpg);
+    background-size: 120px 70px;  
+    outline: 4px solid #E0E0E0;
+}
+.radioMulti label {
+    background-image: url(../../imagens/radioMulti.jpg);
+    background-size: 120px 70px;  
+    outline: 4px solid #E0E0E0;
+}
+
+.radioNintendo input:focus + label {
+  outline: 2px dotted #009FE3;
+}
+
+.radioNintendo input:checked + label {
+  outline: 4px solid #009FE3;
+  background-image: url(../../imagens/radioNintendoover.jpg);
+}
+
+.radioPc input:focus + label {
+  outline: 2px dotted #F39200;
+}
+
+.radioPc input:checked + label {
+  outline: 4px solid #F39200;
+  background-image: url(../../imagens/radioPcover.jpg);
+}
+
+.radioPlaystation input:focus + label {
+  outline: 2px dotted #9C1006;
+}
+
+.radioPlaystation input:checked + label {
+  outline: 4px solid #9C1006;
+  background-image: url(../../imagens/radioPlaystationover.jpg);
+}
+
+.radioXbox input:focus + label {
+  outline: 2px dotted #8EA50D;
+}
+
+.radioXbox input:checked + label {
+  outline: 4px solid #8EA50D;
+  background-image: url(../../imagens/radioXboxover.jpg);
+}
+
+.radioMulti input:focus + label {
+  outline: 2px dotted #00989E;
+}
+
+.radioMulti input:checked + label {
+  outline: 4px solid #00989E;
+  background-image: url(../../imagens/radioMultiover.jpg);
+}
+
+.radioNostalgia input:focus + label {
+  outline: 2px dotted #6D6A65;
+}
+.radioNostalgia input:checked + label {
+  outline: 4px solid #6D6A65;
+  background-image: url(../../imagens/radioNostalgiaover.jpg);
+}
+.inputRadios input:checked + label:after {  
+  bottom: -10px;
+  content: "";
+  display: inline-block;
+  height: 20px;
+  position: absolute;
+  right: -10px;
+  width: 20px;
+}
+
+@-moz-document url-prefix() {
+  .radioNintendo input:checked + label:after {
+    bottom: 0;
+    right: 0;
+    background-color: #009FE3;
+    background-image: url(../../imagens/ok.png);
+    background-size: 20px 20px;
+    background-position: 1px 0px; 
+  }
+    .radioPc input:checked + label:after {
+    bottom: 0;
+    right: 0;
+    background-color: #F39200;
+    background-image: url(../../imagens/ok.png);
+    background-size: 20px 20px;
+    background-position: 1px 0px; 
+  }
+    .radioPlaystation input:checked + label:after {
+    bottom: 0;
+    right: 0;
+    background-color: #9C1006;
+    background-image: url(../../imagens/ok.png);
+    background-size: 20px 20px;
+    background-position: 1px 0px; 
+  }
+    .radioXbox input:checked + label:after {
+    bottom: 0;
+    right: 0;
+    background-color: #8EA50D;
+    background-image: url(../../imagens/ok.png);
+    background-size: 20px 20px;
+    background-position: 1px 0px; 
+  }
+    .radioMulti input:checked + label:after {
+    bottom: 0;
+    right: 0;
+    background-color: #00989E;
+    background-image: url(../../imagens/ok.png);
+    background-size: 20px 20px;
+    background-position: 1px 0px; 
+  }
+    .radioNostalgia input:checked + label:after {
+    bottom: 0;
+    right: 0;
+    background-color: #6D6A65;
+    background-image: url(../../imagens/ok.png);
+    background-size: 20px 20px;
+    background-position: 1px 0px; 
+  }
+}
+
+#imgRadio{
+    position: absolute;
+    background-color: #00989E;
+    margin-left: -21px;
+}
+
+#mostrarMaterias{
+    width: 1030px;
+    height: 600px;
+    float: left;
+    margin-left: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#mostrar_materias{
+    width: 100%;
+    height: 600px;
+    float: left;
+}
+
+#inputBusca{
+    width: 30px;
+    height: 30px;    
+    margin-top: 0;
+    margin-left: 170px;
+    float: right;
+    border-radius: 0 15px 15px 0;
+    position: absolute;
+    z-index: 4;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#campos{
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-bottom: 10px;  
+}
+
+.campos{
+    width: 230px;
+    height: 30px;
+    margin-right: 10px;
+    float: right;     
+    font-family: century gothic;
+    font-size: 14pt;
+    color: #333;
+}
+
+.campoCaptcha{
+    width: 230px;
+    height: 30px;
+    margin-left: 195px;
+    margin-top: -40px;
+    float: left;     
+    font-family: century gothic;
+    font-size: 14pt;
+    color: #333;
+}
+
+.botaoForm{
+    width: 100px;
+    height: 30px;
+    margin-top: 20px;
+    margin-left: 5px; 
+    margin-bottom: 10px;
+    font-family: century gothic;
+    font-size: 14pt;
+    color: #fff;
+    background-color: #00989E;
+    border: 0;
+    cursor: pointer;
+}
+
+#cadastrar{
+    width: 450px;
+    height: 600px;
+    margin-top: 50px;
+    margin-left: 35px;
+    margin-bottom: 50px;
+    float: left;       
+    box-shadow: 0 0 0 5px #333;  
+    color: red;
+}
+
+#novoUsuario{
+    width: 600px;
+    height: 500px;    
+    margin-top: 30px;
+    margin-left: 250px;
+    margin-bottom: 30px;
+    float: left;
+    border: solid 5px #00989E;
+}
+
+#campos p{
+    width: 230px;
+    height: 30px;
+    margin-right: 10px;
+    float: left;     
+    font-family: century gothic;
+    font-size: 14pt;
+    color: #333;
 }

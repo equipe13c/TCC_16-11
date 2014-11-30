@@ -96,9 +96,9 @@
                             </div>        
                             <br/><br/>
                             <input type="checkbox" name="termos" id="termos"> <a href="termos_uso.php" target="_blank"> Concordo Com os Termos de Uso </a>
-                            <br/>
-                            <input type="reset" value="Limpar" class="botaoForm"/>
+                            <br/>                            
                             <input type="submit" value="Cadastrar" class="botaoForm"/>
+                            <input type="reset" value="Limpar" class="botaoForm"/>
                             <br/><br/>                     
                         </form>
                     </div>

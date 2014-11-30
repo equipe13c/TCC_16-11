@@ -9,8 +9,7 @@
         sticky: false
       }, options);
 
-      return this.each(function() {
-        menu.prepend('<div id="menu-button">' +  + '</div>');
+      return this.each(function() {       
         $(this).find("#menu-button").on('click', function(){
           $(this).toggleClass('menu-opened');
           var mainmenu = $(this).next('ul');
@@ -99,49 +98,6 @@ jQuery(function($){
             menuLine.css("width", lineWidth);
             menuLine.css("left", linePosition);
             $("#menu > ul > li").hover(function() {
-                activeElement = $(this);
-                lineWidth = activeElement.width();
-                linePosition = activeElement.position().left;
-                menuLine.css("width", lineWidth);
-                menuLine.css("left", linePosition);
-            }, 
-            function() {
-                menuLine.css("left", defaultPosition);
-                menuLine.css("width", defaultWidth);
-            });
-        });
-    });
-})(jQuery);
-
-
-
-
-/////////
-
-(function($){
-    $(document).ready(function(){
-        $(document).ready(function() {
-            $("#menuReduzido").menumaker({
-                title: "Menu",
-                format: "multitoggle"
-            });
-            $("#menuReduzido").prepend("<div id='menuReduzido-line'></div>");
-            var foundActive = false, activeElement, linePosition = 0, menuLine = $("#menuReduzido #menuReduzido-line"), lineWidth, defaultPosition, defaultWidth;
-            $("#menuReduzido > ul > li").each(function() {
-                if ($(this).hasClass('active')) {
-                    activeElement = $(this);
-                    foundActive = true;
-                }
-            });
-
-            if (foundActive === false) {
-                activeElement = $("#menuReduzido > ul > li").first();
-            }
-            defaultWidth = lineWidth = activeElement.width();
-            defaultPosition = linePosition = activeElement.position().left;
-            menuLine.css("width", lineWidth);
-            menuLine.css("left", linePosition);
-            $("#menuReduzido > ul > li").hover(function() {
                 activeElement = $(this);
                 lineWidth = activeElement.width();
                 linePosition = activeElement.position().left;

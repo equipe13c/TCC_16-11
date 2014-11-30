@@ -2289,39 +2289,6 @@ margin-left: 350px;
     text-align: center;
 }
 
-.visualizarMateria{
-    width: 100px;
-    height: 50px;
-}
-
-#imagem_materia_listagem{
-    width: 100px;
-    height: 50px;
-    margin-top: 5px;
-    margin-left: 12.5px;
-    float: left;
-}
-
-#paginacaoEditarMateria{
-    height: 50px;
-    margin-top: 20px;
-    margin-left: 450px;
-    float: left;
-}
-
-#paginacaoEditarMateria a{ 
-    font-family: century gothic;
-    font-size: 12pt;
-    color: #333;
-    text-decoration: none;
-    padding-left: 2px;
-}
-
-#paginacaoEditarMateria a:hover{  
-    color: #333;
-    text-decoration: underline;
-}
-
 #paginacaoLogAtividades{
     height: 50px;
     margin-top: 20px;

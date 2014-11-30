@@ -104,7 +104,7 @@
                             $anterior = $pc -1; 
    $proximo = $pc +1; 
    if ($pc>1) 
-       { echo " <a href='?pagina=$anterior&tituloArtigo=$tituloArtigo'><-</a> "; 
+       { echo " <a href='?pagina=$anterior&tituloArtigo=$tituloArtigo'>< Anterior</a> "; 
        
        } 
        if($pc ==1){/*CODIGO A APARECER PARA VOLTAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério
@@ -116,7 +116,7 @@
        }
        // Fim lógia rogério
        if ($pc<$tp) 
-           { echo " <a href='?pagina=$proximo&tituloArtigo=$tituloArtigo'>-></a>"; 
+           { echo " <a href='?pagina=$proximo&tituloArtigo=$tituloArtigo'> Próximo ></a>"; 
            
            }
       if($pc == $tp){/*CODIGO A APARECER PARA PASSAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério
