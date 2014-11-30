@@ -56,7 +56,10 @@ function mostraOculta(opc, id, id2){
                 
 
                 !window.jQuery && document.write('<script src="http://tecnowarez.com/site/scripts/js/jquery-1.4.3.min.js"><\/script>');
-                function preview(input, tipo) {
+               
+
+
+function preview(input, tipo) {
                     if(tipo == 'capa'){
                 if (input.files && input.files[0]) {
                     var reader = new FileReader();

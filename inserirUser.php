@@ -2,7 +2,6 @@
 include "conexao/conecta.inc";
 include "cadastro.php";
 include_once 'classes/Bcrypt.class.php';
-session_start();
 echo "<meta charset=UTF-8>";
 $nome = $_POST['nome'];
 $apelido = $_POST['apelido'];
@@ -11,6 +10,10 @@ $confirmsenha = $_POST['confirmsenha'];
 $email = $_POST['email'];
 $confirmemail = $_POST['confirmemail'];
 $data = $_POST['data'];
+$dia = substr($data, 0, 2);
+$mes = substr($data, 3, 2);
+$ano = substr($data,6, 4);
+$dataFormatada = $ano.'-'.$mes.'-'.$dia;
 $tipo = 2;
         function salvaLog($mensagem,$code,$email) {
         $ip = $_SERVER['REMOTE_ADDR']; // Salva o IP do visitante
@@ -39,7 +42,7 @@ else{
 if (isMail($email)){
         $senha = Bcrypt::hash($senha);
     $query = "INSERT INTO USUARIO (NOME_USUARIO,APELIDO_USUARIO, SENHA_USUARIO, EMAIL_USUARIO, DATA_NASCIMENTO, TIPO_USUARIO)
-        VALUES('$nome','$apelido', '$senha', '$email', '$data', $tipo)";
+        VALUES('$nome','$apelido', '$senha', '$email', '$dataFormatada', $tipo)";
         if(mysql_query($query)){
                echo "<script>cadastroE();</script>";
                 $busca = "SELECT * FROM USUARIO WHERE EMAIL_USUARIO='$email'";

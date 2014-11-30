@@ -9,6 +9,7 @@
         <script type="text/javascript" src="../js/cycle.js"></script>
         <script type="text/javascript" src="../js/javascript.js"></script>
         <script type="text/javascript" src="../js/menu2.js"></script>
+        <script type="text/javascript" src="../js/restrito.js"></script>
         <script type="text/javascript"> 
             onload = function(){     
                 var imgMiniLogo = document.getElementById("imgMiniLogo");

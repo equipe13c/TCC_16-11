@@ -10,6 +10,23 @@
         <script type="text/javascript" src="../js/javascript.js"></script>
         <script type="text/javascript" src="../js/menu2.js"></script>
         <script type="text/javascript" src="../js/restrito.js"></script>
+        <script type="text/javascript">
+            function previewImgUser(input, tipo) {
+                    if(tipo == 'imgUser'){
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+ 
+                    reader.onload = function (e) {
+                            $('#imagemInfo')
+                .attr('src', e.target.result)
+                                    .width(200)
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+}
+
+            </script>
         <script type="text/javascript"> 
             onload = function(){     
                 var imgMiniLogo = document.getElementById("imgMiniLogo");
@@ -104,7 +121,8 @@
                                 ?>
                             </div>                                                         
                             <div class="infoInputs">
-                                <input type="file" name="arquivo" value="Alterar Imagem">                            
+                                
+                                <input type="file" name="arquivo" value="Alterar Imagem" id="btnAlterarImg" onchange="previewImgUser(this,'imgUser');" multiple>                            
                             </div>                                
                             <div class="infoInputs">
                                 <input type="submit" name="arquivo" class="bsalvar" value="Alterar Foto">                                
