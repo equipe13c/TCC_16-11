@@ -10,7 +10,7 @@
       }, options);
 
       return this.each(function() {
-        menu.prepend('<div id="menu-button">' + settings.title + '</div>');
+        menu.prepend('<div id="menu-button">' +  + '</div>');
         $(this).find("#menu-button").on('click', function(){
           $(this).toggleClass('menu-opened');
           var mainmenu = $(this).next('ul');
