@@ -94,7 +94,7 @@
                     $tp = $tr / $total_reg;
                     
                     if($tr === 0){
-                        echo "Nenhuma Ação Encontrada";
+                        echo "<p class='semUsuario'> Nenhuma Ação Encontrada </p>";
                     }
                     else{
                         echo '<table id="tabelaLogAtividades" class="">

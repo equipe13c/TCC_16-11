@@ -25,9 +25,10 @@
         <a href="http://www.facebook.com/MultiplayerJogos"><img src="imagens/facebookIcon.jpg" alt=""/></a>
     </div>            
     <div id="buscaReduzido">
-        <a href="#"><img src="imagens/lupa.jpg" alt="" id="imagemBusca"></a>
         <form method="get" action="/search" id="search">  
-            <input name="buscar" type="text" size="40" placeholder="  Buscar" />
+            <input type="submit" name="buscarMaterias" value="buscar" id="inputBusca"/>
+            <img src="imagens/lupa.jpg" alt="" id="imagemBusca">       
+            <input name="buscar" type="text" size="40" placeholder="  Buscar" id="caixaBuscaReduzida" />
         </form>                                                
     </div>                    
 </nav>
@@ -56,9 +57,10 @@
         <a href="http://www.facebook.com/MultiplayerJogos"><img src="imagens/facebookIcon.jpg" alt=""/></a>
     </div>            
     <div id="busca">
-        <a href="#"><img src="imagens/lupa.jpg" alt="" id="imagemBusca"></a>
-        <form method="get" action="buscarArtigo.php" id="search">  
-            <input name="tituloArtigo" type="text" size="40" placeholder="  Buscar" />
+        <form method="get" action="/search" id="search"> 
+        <input type="submit" name="buscarMaterias" value="buscar" id="inputBusca"/>
+        <img src="imagens/lupa.jpg" alt="" id="imagemBusca"> 
+            <input name="buscar" type="text" size="40" placeholder="  Buscar" id="caixaBusca"/>
         </form>                                                
     </div>                    
 </nav>

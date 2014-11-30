@@ -76,7 +76,7 @@ function VerificaSessao(){
                 echo '</div><br/><br/>';
                 echo '<div class="links_usuario">';
                     echo "<a href='colunista/index.php'>Perfil </a><br/>";
-                    echo "<a href='colunista/index.php'>Nova Matéria </a><br/>";
+                    echo "<a href='colunista/novaMateria.php'>Nova Matéria </a><br/>";
                     echo "<a href='colunista/inserirPersonagem.php'>Novo Personagem </a><br/>";
                     echo "<a href='colunista/sair.php'>Logout </a><br/>";
                 echo '</div>';
@@ -173,7 +173,8 @@ function VerificaSessao2(){
                 echo '</div><br/><br/>';
                 echo '<div class="links_usuario">';
                     echo "<a href='../colunista/index.php'>Perfil </a><br/>";
-                    echo "<a href='../colunista/index.php'>Nova Matéria </a><br/>";
+                    echo "<a href='../colunista/novamateria.php'>Nova Matéria </a><br/>";                    
+                    echo "<a href='../colunista/inserirPersonagem.php'>Novo Personagem </a><br/>";
                     echo "<a href='../colunista/sair.php'>Logout </a><br/>";
                 echo '</div>';
                 }
@@ -1036,12 +1037,14 @@ function acrescentarAcessos($id){
                     mysql_query($sql);
 }
 function buscarDescAutor($id){
+                    echo "<p class='informacaoAutor'>"; 
                     $query = "SELECT * FROM USUARIO WHERE COD_USUARIO = $id";
                     $result = mysql_query($query);                
                     $descricaoUser = mysql_num_rows($result);
                     $descricaoUser2 = mysql_fetch_array($result); 
                     $resultDescricao = $descricaoUser2['DESCRICAO_USUARIO'];
                     echo $resultDescricao;
+                    echo "<p/>";
 }
 
 ?>

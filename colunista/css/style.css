@@ -2360,3 +2360,42 @@ margin-left: 350px;
     background-color: #fff;
     text-align: center;
 }
+
+#buscaMaterias{
+    width: 385px;
+    height: 50px;    
+    float: right;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+#buscaMaterias label{ 
+    font-family: century gothic;
+    font-size: 12pt;
+    color: #333;
+    margin-top: 10px;
+    float:left;
+    margin-right: 10px;
+}
+
+#caixaMateria{ 
+    font-family: century gothic;
+    font-size: 12pt;
+    color: #333;
+    float: left;
+    margin-top: 5px;
+}
+
+#botaoBuscaMateria{
+    width: 60px;
+    height: 30px;
+    background: #00989E; 
+    color: white;
+    font-family: century gothic;
+    font-size: 10pt;
+    text-align: center;
+    text-decoration: none;
+    float: right;
+    border: none;
+    margin-top: 2px;
+}

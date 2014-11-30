@@ -182,7 +182,7 @@ body{
     float: right;
 }
 
-#busca #search input{  
+#caixaBusca{  
     height: 30px;
     width: 60px;
     float: right;
@@ -195,7 +195,7 @@ body{
     border-radius: 15px 0 0 15px;
 }  
 
-#busca #search input:focus{
+#caixaBusca:focus{
     width: 160px;     
     padding-left: 10px;
 } 
@@ -357,7 +357,7 @@ body{
     float: right;
 }
 
-#buscaReduzido #search input{  
+#caixaBuscaReduzida{  
     height: 30px;
     width: 60px;
     float: right;
@@ -370,7 +370,7 @@ body{
     border-radius: 15px 0 0 15px;
 }  
 
-#buscaReduzido #search input:focus{
+#caixaBuscaReduzida:focus{
     width: 160px;     
     padding-left: 10px;
 } 
@@ -382,6 +382,19 @@ body{
     margin-left: 0;
     float: right;
     border-radius: 0 15px 15px 0;
+}
+
+#inputBusca{
+    width: 30px;
+    height: 30px;    
+    margin-top: 0;
+    margin-left: 170px;
+    float: right;
+    border-radius: 0 15px 15px 0;
+    position: absolute;
+    z-index: 4;
+    opacity: 0;
+    cursor: pointer;
 }
 
 #propaganda1{
@@ -1713,7 +1726,7 @@ border-bottom: 1px solid #ccc;
 }
 .links_usuario{
     margin-left: 18px;
-    margin-top: 30px;
+    margin-top: 25px;
     float: left;
 }
 .links_usuario a{
