@@ -198,14 +198,14 @@ function validaCadastro(form){
         form.email.focus();
         return false;
     }
-    if (!filtro_mail.test(form.confirmaEmail.value) || form.confirmaEmail.value==""){
+    if (!filtro_mail.test(form.confirmemail.value) || form.confirmemail.value==""){
         alert("Confirme seu E-mail corretamente.");
-        form.confirmaEmail.focus();
+        form.confirmemail.focus();
         return false;
     }
-    if (form.email.value!=form.confirmaEmail.value){
+    if (form.email.value!=form.confirmemail.value){
         alert("O E-mail e a confirmação devem ser iguais");
-        form.confirmaEmail.focus();
+        form.confirmemail.focus();
         return false;
     }
     if (form.senha.value==""){
@@ -218,14 +218,14 @@ function validaCadastro(form){
         form.senha.focus();
         return false;
     }                
-    if (form.confirmaSenha.value=="" || form.confirmaSenha.value.length < 8){
+    if (form.confirmsenha.value=="" || form.confirmsenha.value.length < 8){
         alert("Preencha a confirmação de senha corretamente.");
-        form.confirmaSenha.focus();
+        form.confirmsenha.focus();
         return false;
     }
-    if (form.senha.value!=form.confirmaSenha.value){
+    if (form.senha.value!=form.confirmsenha.value){
         alert("A senha e a confirmação devem de ser iguais.");
-        form.confirmaSenha.focus();
+        form.confirmsenha.focus();
         return false;
     }
     if (form.dataNascimento.value==""){

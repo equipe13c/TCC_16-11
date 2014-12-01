@@ -39,6 +39,21 @@
                 }
                
             }
+            function preview(input, tipo) {
+            
+                                if(tipo == 'capa2'){
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+ 
+                    reader.onload = function (e) {
+                            $('#imagemCapa')
+                .attr('src', e.target.result)
+                                    .width(170)
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+        }
         </script>
         <title> Área Administrativa </title>
     </head>
@@ -123,7 +138,7 @@
                                     ?>                                    
                                 </div>                                                         
                                 <div class="infoInputs">
-                                    <input type="file" name="arquivo" >                          
+                                    <input type="file" name="arquivo" onchange="preview(this,'capa2');" multiple>                          
                                 </div>                                
                                 <div class="infoInputs">
                                     <input type="submit" name="alterarImg"  class="bsalvar" value="Alterar Foto">                                
@@ -133,7 +148,7 @@
                        
                     </form>  
                     <form action="script3.php" method="post" enctype="multipart/form-data" >
-                       <div class="areasPreferencia">                                
+                       <<div class="areasPreferencia">                                
                                 <div class="preferencias">  
                                     <p> Descrição: </p> 
                                     <textarea id="descricao" name="descricao" class="txtInfo" disabled="disabled"><?php buscarPreferencia('descricao', $_SESSION['code']);?></textarea> <br/>
@@ -153,7 +168,7 @@
                                     
                                 </div>
                                 <div class="infoInputs" id="editPreferencias">
-                                    <a onclick="edit('preferencias', 'descricao', 'jogos', 'plataformas')" href="#teste"><img src="../imagens/edit.png" alt="editImage" class="editImage"> </a>                               
+                                    <a onclick="edit('preferencias', 'descricao', 'jogos', 'plataformas')" href="#teste"><img src="../imagens/edit.png" alt="editImage" class="editImage"> Editar</a>                               
                                 </div>
                             </div>
                         </form>

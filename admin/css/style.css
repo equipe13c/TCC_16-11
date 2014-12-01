@@ -967,7 +967,7 @@ table.bordasimples td.campos{
     font-family:century gothic;
     font-size:14pt;
     border:0px;
-    background-color: transparent;
+    background-color: #fff;
 }
 
 #name_busca{
@@ -1153,8 +1153,8 @@ table.editEmailTable td.info2, td.campos2, td.icone2, td.salvarEdit{
 }
 
 #menu2 ul li a{    
-    padding: 0 8px 0 8px;
-    font-size: 12px;
+    padding: 0 5px 0 5px;
+    font-size: 11px;
     text-decoration: none;
     text-transform: uppercase;
     color: #fff;
@@ -1167,7 +1167,7 @@ table.editEmailTable td.info2, td.campos2, td.icone2, td.salvarEdit{
 }
 
 #menu2 ul li a:hover{
-    padding: 0 8px 0 8px;
+    padding: 0 5px 0 5px;
     color: lightgray;
 }
 
@@ -2197,6 +2197,16 @@ table.tableInserirMateria td.campos{
     margin-bottom: 10px;  
 }
 
+#campos select{
+    width: 235px;
+    height: 30px;  
+    font-family: century gothic;
+    font-size: 12pt;
+    color: #333;
+    text-transform: uppercase;
+}
+
+
 .campos{
     width: 230px;
     height: 30px;    
@@ -2259,4 +2269,11 @@ table.tableInserirMateria td.campos{
     font-family: century gothic;
     font-size: 14pt;
     color: #333;
+}
+
+.infoInputs a{
+    color: #000;
+    font-family: century gothic;
+    font-size: 14pt;
+    text-decoration: none;
 }

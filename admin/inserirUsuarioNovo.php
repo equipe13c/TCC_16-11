@@ -52,12 +52,13 @@ salvaLog($mensagem);
 if($resultCode === 0){
 }
 else{
-$codigos = mysql_fetch_array($codigo); 
-$codUsuario = $codigos['COD_USUARIO'];                
-$nome = "default.jpg";            
-mysql_query("INSERT INTO IMAGEM_USUARIO(URL_IMAGEM, COD_IMAGEM_USUARIO)
-VALUES('$nome',$codUsuario)");
-}
+                $codigos = mysql_fetch_array($codigo); 
+                $codUsuario = $codigos['COD_USUARIO'];                
+                $nome = "default.jpg";
+                $imgCapa = "defaultCapa.jpg";
+                mysql_query("INSERT INTO IMAGEM_USUARIO(URL_IMAGEM, COD_IMAGEM_USUARIO, URL_IMAGEM_CAPA)
+                VALUES('$nome',$codUsuario, '$imgCapa')");
+                }
 }
 else{
     echo "Não Foi Possível Realizar o Cadastro<br/>";

@@ -136,17 +136,21 @@
                        <div class="areasPreferencia">                                
                                 <div class="preferencias">  
                                     <p> Descrição: </p> 
-                                    <textarea id="descricao" name="descricao" disabled="disabled"><?php buscarPreferencia('descricao', $_SESSION['code']);?></textarea> <br/>                               
+                                    <textarea id="descricao" name="descricao" class="txtInfo" disabled="disabled"><?php buscarPreferencia('descricao', $_SESSION['code']);?></textarea> <br/>
+                               
                                 </div>
                                 <div class="preferencias">  
                                     <p> Jogos Preferidos: </p> 
-                                    <textarea id="jogos" name="jogos" disabled="disabled"><?php buscarPreferencia('jogo', $_SESSION['code']);?></textarea> <br/>                             
+                                    <textarea id="jogos" name="jogos" class="txtInfo" disabled="disabled"><?php buscarPreferencia('jogo', $_SESSION['code']);?></textarea> <br/>
+                             
                                 </div>
                            
                                 <div class="preferencias">  
                                     <p> Plataformas Preferidas: </p> 
-                                    <textarea id="plataformas" name="plataformas" disabled="disabled"><?php buscarPreferencia('plataforma', $_SESSION['code']);?></textarea> <br/>                               
-                                                                        
+                                    <textarea id="plataformas" name="plataformas" class="txtInfo" disabled="disabled"><?php buscarPreferencia('plataforma', $_SESSION['code']);?></textarea> <br/>
+                               
+                                    
+                                    
                                 </div>
                                 <div class="infoInputs" id="editPreferencias">
                                     <a onclick="edit('preferencias', 'descricao', 'jogos', 'plataformas')" href="#teste"><img src="../imagens/edit.png" alt="editImage" class="editImage"> Editar</a>                               

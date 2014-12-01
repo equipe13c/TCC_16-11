@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="shortcut icon" href="imagens/icone004.png" >
+        <link rel="shortcut icon" href="imagens/icone001.png" >
         <script type="text/javascript" src="js/funcoes.js"> </script>
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/cycle.js"></script>
@@ -12,30 +12,19 @@
             onload = function(){
                 var imgMiniLogo = document.getElementById("imgMiniLogo");
                 var imgLogo = document.getElementById("img-logo");                
-                imgMiniLogo.innerHTML = '<img src="imagens/logosReduzidos004.png" alt="" id="miniLogo">';
-                imgLogo.innerHTML = '<img src="imagens/logo004.png" alt="" id="logo">';                              
-                document.getElementById("tituloAside").style.backgroundColor = "#6D6A65";   
-                document.getElementById("tituloGaleria").style.backgroundColor = "#6D6A65";
-                document.getElementById("logar").style.borderBottom = "solid 5px #6D6A65";
-                document.getElementById("nav").style.backgroundColor = "#6D6A65";
-                document.getElementById("navReduzido").style.backgroundColor = "#6D6A65";                
-                document.getElementById("botaoLogin").style.backgroundColor = "#6D6A65";              
+                imgMiniLogo.innerHTML = '<img src="imagens/logosReduzidos001.png" alt="" id="miniLogo">';
+                imgLogo.innerHTML = '<img src="imagens/logo001.png" alt="" id="logo">';     
+                document.getElementById("tituloAside").style.backgroundColor = "#00989E"; 
+                document.getElementById("tituloGaleria").style.backgroundColor = "#00989E"
+                document.getElementById("nav").style.backgroundColor = "#00989E";
+                document.getElementById("navReduzido").style.backgroundColor = "#00989E";                
+                document.getElementById("botaoLogin").style.backgroundColor = "#00989E";
+                document.getElementById("logar").style.borderBottom = "solid 5px #00989E";              
             };             
         </script>   
-                         <style type="text/css">
-            .materiasBusca{
-                border:8px solid #6D6A65;
-            }
-            .texto_titulo_materia{
-                color:#6D6A65;
-            }
-            .verMais{
-                background-color:#6D6A65;
-            }
-        </style>
-        <title> Nostalgia </title>
+        <title> Multiplayer </title>
     </head>
-  <body>
+    <body>
         <section id="container">
             <?php
                 include_once 'conexao/conecta.inc';
@@ -51,15 +40,12 @@
                         VerificaSessao('');
                     ?>                    
                 </div>
-                <div id="propaganda">
-                    <iframe src="http://www.brasilgameshow.com.br/publico/contador-horizontal.php" style="width: 544px; height: 100px; display: block; margin: 0 auto; border: none; overflow: hidden;"></iframe> 
-                </div>
             </header>
             <article id="conteudo">
                 <div id="corpoConteudoGaleria2">
-                     <h1 id="tituloGaleria"> Matérias  </h1>
+                     <h1 id="tituloGaleria"> Novidades  </h1>
                         <?php
-                            $query = "SELECT * FROM ARTIGO WHERE CATEGORIA_ARTIGO = 5 ORDER BY DATA_ARTIGO DESC";
+                            $query = "SELECT * FROM ARTIGO ORDER BY DATA_ARTIGO DESC";
                             $total_reg = "4";
                             $pc= isset($_GET['pagina'])? $_GET['pagina'] : "1";
                             $inicio = $pc - 1; 
@@ -69,7 +55,7 @@
                             $tr = mysql_num_rows($result);
                             $tp = $tr / $total_reg;
                             if($tr === 0){
-                                echo "<p class='semUsuario'> Nenhum Artigo encontrado </p>";
+                                echo "Nenhum Artigo encontrado";
                             }
                             else{
                                 while($artigos = mysql_fetch_array($limite))
@@ -91,7 +77,7 @@
                                     $buscaCod = mysql_query($sql);
                                     $resultCod = mysql_fetch_array($buscaCod);
                                     
-                                    echo '<div class="materiasBusca" >';
+                                    echo '<div class="materiasBusca">';
                                     echo '<figure class="figura_materia">';
                                     echo '<img src="uploads/'.$imagemMini.'" class="imagem_miniatura_materia">';
                                     echo '</figure>';
@@ -117,7 +103,7 @@
                             $anterior = $pc -1; 
    $proximo = $pc +1; 
    if ($pc>1) 
-       { echo " <a href='?pagina=$anterior&tituloArtigo=$tituloArtigo'><-</a> "; 
+       { echo " <a href='?pagina=$anterior'>< Anterior</a> "; 
        
        } 
        if($pc ==1){/*CODIGO A APARECER PARA VOLTAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério
@@ -125,11 +111,11 @@
        // Inicio lógica rogerio
        for($i=1;$i<=$tp;$i++)
        {
-           echo "<a href=?pagina=$i&tituloArtigo=$tituloArtigo>".$i . "</a>" . "    ";
+           echo "<a href=?pagina=$i>".$i . "</a>" . "    ";
        }
        // Fim lógia rogério
        if ($pc<$tp) 
-           { echo " <a href='?pagina=$proximo&tituloArtigo=$tituloArtigo'>-></a>"; 
+           { echo " <a href='?pagina=$proximo'> Próximo ></a>"; 
            
            }
       if($pc == $tp){/*CODIGO A APARECER PARA PASSAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério
@@ -144,10 +130,10 @@
                                 buscarMateriasAside2();
                             ?>
                         </div>    
-                    </aside> 
+                </aside> 
                 <div id="voltarTopo">
                     <a href="javascript:toTop();" class="subir">
-                        <img src="imagens/topoOutros.png" alt="">
+                        <img src="imagens/topo.png" alt="">
                         <p> Voltar ao topo </p>
                     </a>                    
                 </div>

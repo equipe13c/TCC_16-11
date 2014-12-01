@@ -51,7 +51,11 @@
                         VerificaSessao('');
                     ?>                    
                 </div>
+                <div id="propaganda">
+                    <iframe src="http://www.brasilgameshow.com.br/publico/contador-horizontal.php" style="width: 544px; height: 100px; display: block; margin: 0 auto; border: none; overflow: hidden;"></iframe> 
+                </div>
             </header>
+             
             <article id="conteudo">
                 <div id="corpoConteudoGaleria2">
                      <h1 id="tituloGaleria"> Matérias  </h1>
@@ -66,7 +70,7 @@
                             $tr = mysql_num_rows($result);
                             $tp = $tr / $total_reg;
                             if($tr === 0){
-                                echo "Nenhum Artigo encontrado";
+                                echo "<p class='semUsuario'> Nenhum Artigo encontrado </p>";
                             }
                             else{
                                 while($artigos = mysql_fetch_array($limite))

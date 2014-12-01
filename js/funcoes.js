@@ -32,6 +32,7 @@ function cadastroF5(){
 function cadastroE(){
     document.getElementById('msgCadastro2').innerHTML = '<div id="msgCadastro">'+
                     '<p> Cadastro realizado com sucesso. </p>'+
+                   ' <script>setInterval(location.href="index.php", 3000);</script>'+
                 '</div>';
 }
 

@@ -108,14 +108,16 @@
                                 <p> Data de Nascimento: </p> <input type="text" name="data" placeholder="dd/mm/aaaa" onKeyPress="MascaraData(formCad.data);" maxlength="10" onBlur="validarData(formCad.data);" class="campos">
                             </div>
                             <div id="campos">
-                                <p> Tipo: </p> <input type="text" name="data" placeholder="dd/mm/aaaa" onKeyPress="MascaraData(formCad2.data);" maxlength="10" onBlur="validarData(formCad2.data);" class="campos">
-                            </div>
+                                <p> Tipo: </p> 
                             <div id="campos">
                                 <select name="tipoUser">
-                                    <option value="2" selected>RES</option>
-                                    <option value="3">COL</option>
+                                    <option value="1" selected>Administrador</option>
+                                    <option value="2" >Restrito</option>
+                                    <option value="3">Colunista</option>
                                 </select>
-                            </div>                            
+                            </div>
+                            </div>
+                                                        
                             <input type="submit" value="Cadastrar" name="cadastrar" class="botaoForm"/>
                             <input type="reset" value="Limpar" name="limpar" class="botaoForm"/>
                         </form>
