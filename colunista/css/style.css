@@ -1427,6 +1427,95 @@ table.tableInserirMateria td.campos{
     margin-top: 60px;
     border: none;
 }
+#imgOut{
+    width: 230px;
+    height: 210px;
+    margin-top: 10;
+    margin-left: 140px;
+    margin-bottom: 40px;
+    float: left;
+    z-index: 2;    
+    border: solid 5px #333;
+}
+#preview_imageOut{
+    width: 230px;
+    height: 210px;
+    margin-top: -54px;
+    margin-left: 0px;
+}
+#preview_imageOut2{
+    width: 230px;
+    height: 210px;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+#preview_imageHover{
+    width: 230px;
+    height: 210px;
+    margin-top: -54px;
+    margin-left: 0px;
+}
+#preview_imageHover2{
+    width: 230px;
+    height: 210px;
+    margin-top: -210px;
+    margin-left: 0px; 
+}
+#previewEfeito{
+    width: 230px;
+    height: 210px;
+    margin-top: 0;
+    margin-left: 24px;
+    margin-bottom: 40px;
+    float: left;
+    z-index: 2;    
+    border: solid 5px #333;
+}
+.imgOutPersonagem{
+    width: 230px;
+    height: 210px;
+    margin-top:-220px;
+    position: absolute;
+    z-index: 5;
+    opacity: 0;
+    cursor:pointer;
+}
+
+#imgOut p{
+    margin-left: 5px;
+    margin-top: 5px;
+    text-align: left; 
+    font-family: century gothic;
+    color: #00989E;
+    font-size: 10pt; 
+}
+#imgHover{
+    width: 230px;
+    height: 210px;
+    margin-top: 0;
+    margin-left: 24px;
+    margin-bottom: 40px;
+    float: left;
+    z-index: 2;    
+    border: solid 5px #333; 
+}
+#imgHover p{
+    margin-left: 5px;
+    margin-top: 5px;
+    text-align: left; 
+    font-family: century gothic;
+    color: #00989E;
+    font-size: 10pt; 
+}
+.imgHoverPersonagem{
+    width: 230px;
+    height: 210px;
+    margin-top:-240px;
+    position: absolute;
+    z-index: 5;
+    cursor:pointer;
+    opacity:0;
+}
 
 .imgCapaMateria{
     width: 950px;
@@ -2404,6 +2493,54 @@ margin-left: 350px;
     text-transform: uppercase;
     margin-top: 25%;
     font-weight: bold;
+}
+.imagemPersonagem1{
+    height: 230px;
+    margin-left:0px;
+    float: left;
+    z-index: 6;
+    margin-top:50px;
+    position: relative;
+    opacity: 2;    
+    -webkit-transition: all 0.7s ease 0s;     
+    -moz-transition: all 0.7s ease 0s;    
+    -o-transition: all 0.7s ease 0s;     
+    transition: all 0.7s ease 0s; 
+}
+
+.imagemPersonagem1:hover{
+    opacity: 0;
+    -webkit-transition: all 0.7s ease 0s;     
+    -moz-transition: all 0.7s ease 0s;    
+    -o-transition: all 0.7s ease 0s;     
+    transition: all 0.7s ease 0s; 
+}
+.imagemPersonagem2{ 
+    float: left;
+    z-index: 1;
+    position: relative;
+}
+#descricaoPersonagem{
+    width: 240px;
+    height: 25px;
+    margin-top: 5.4px;
+    margin-left:-5.2px;
+    float: left;    
+    background-color: #333;
+}
+#nome_personagem{
+    font-family: century gothic;
+    font-size: 12pt;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #333;
+    border:0px;
+    min-width: 50px;
+    width:auto;
+    height:18px;
+    margin-left:30px;
+    margin-top:-2px;
 }
 #inputBusca{
     width: 30px;
