@@ -67,7 +67,7 @@
                             $tr = mysql_num_rows($result);
                             $tp = $tr / $total_reg;
                             if($tr === 0){
-                                echo "Nenhum Artigo encontrado";
+                                echo "<p class='semUsuario'> Nenhum Artigo encontrado </p>";
                             }
                             else{
                                 while($artigos = mysql_fetch_array($limite))
