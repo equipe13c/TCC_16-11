@@ -1286,7 +1286,7 @@ body{
     margin-bottom: 40px;
     float: left;
     z-index: 2;    
-    border: solid 5px #333;
+    border: solid 5px #00989E;
 }
 
 .imagemPersonagem1{
@@ -1324,7 +1324,7 @@ body{
     height: 25px;
     margin-top: 5px; 
     float: left;    
-    background-color: #333;
+    background-color: #00989E;
 }
 
 #descricaoPersonagem h3{

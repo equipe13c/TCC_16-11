@@ -22,6 +22,7 @@
                 document.getElementById("logar").style.borderBottom = "solid 5px #00989E";               
                 document.getElementById("tituloPagina").style.backgroundColor = "#00989E"; 
             };
+  
         </script>
         <title> Área Administrativa </title>
     </head>

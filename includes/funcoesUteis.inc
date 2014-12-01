@@ -427,7 +427,7 @@ function infosImagensMateria($string,$code){
                     }
                 }
 }
-function  infoArtigos($string,$url){
+function infoArtigos($string,$url){
     
     if($string == "dataLancamento"){
         $sql = "SELECT * FROM ARTIGO WHERE URL_ARTIGO = '$url'";
@@ -1105,6 +1105,253 @@ function mostrarBotao($tipoUsuario){
         echo 'nada';
     }
 }
+function listarPersonagens(){
+    $query = "SELECT * FROM PERSONAGEM ORDER BY ID_PERSONAGEM DESC";
+                            $pc= isset($_GET['pagina'])? $_GET['pagina'] : "1";
+                            $inicio = $pc - 1; 
+                            $total_reg = "3";
+                            $inicio = $inicio * $total_reg;
+                            $limite = mysql_query("$query LIMIT $inicio,$total_reg"); 
+                            $result = mysql_query($query);                
+                            $tr = mysql_num_rows($result);
+                            $tp = $tr / $total_reg;
+                            if($tr === 0){
+                                echo "Nenhum Artigo encontrado";
+                            }
+                            else{
+                                while($artigos = mysql_fetch_array($limite))
+                                {      
+                                    $codigoImagem = $artigos['ID_PERSONAGEM'];
+                                    $urlArtigo = $artigos['URL_PERSONAGEM'];
+                                    $tituloArtigo = $artigos['TITULO_PERSONAGEM'];
+                                    $descricaoArtigo = $artigos['DESCRICAO_PERSONAGEM'];
+                                    $sql = "SELECT * FROM IMAGENS_PERSONAGEM WHERE COD_PERSONAGEM_IMAGEM = $codigoImagem";
+                                    $resultado = mysql_query($sql);
+                                    $artigos2 = mysql_fetch_array($resultado);
+                                    $imagemMini = $artigos2['IMAGEM_OUT'];
+                                    $imagemMini2 = $artigos2['IMAGEM_HOVER'];
+                                    $imagemCapa = $artigos2['IMAGEM_CAPA'];
+                                    $nomePersonagem = $artigos['NOME_PERSONAGEM'];
+                                    echo '<a href="'.$urlArtigo.'">';
+                                    echo '<div class="materiasPersonagem">';
+                                    echo '<img src="uploads/'.$imagemMini.'" alt="" class="imagemPersonagem1"> ';
+                                    echo '<img src="uploads/'.$imagemMini2.'" alt="" class="imagemPersonagem2">';
+                                    echo '<div id="descricaoPersonagem"> ';                                   
+                                    echo '<h3> '.$nomePersonagem.'</h3>';
+                                    echo '</div>';
+                                    echo '</div>';
+                                    echo '</a>';
+                            }                            
+                    }
+                    echo "<div id='paginacao'>";
+                    echo "<div id='paginacaoMaterias'>";
+                    $anterior = $pc -1; 
+                    $proximo = $pc +1; 
+                    if ($pc>1) 
+                        { echo " <a href=?pagina=$anterior>< Anterior</a> "; 
+
+                        } 
+                        if($pc ==1){/*CODIGO A APARECER PARA VOLTAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério
+                        //echo "|"; 
+                        // Inicio lógica rogerio
+                        for($i=1;$i<=$tp;$i++)
+                        {
+                            echo "<a href=?pagina=$i>".$i . "</a>" . "    ";
+                        }
+                        // Fim lógia rogério
+                        if ($pc<$tp) 
+                            { echo " <a href=?pagina=$proximo>Próxima ></a>"; 
+
+                            }
+                       if($pc == $tp){/*CODIGO A APARECER PARA PASSAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério
+                     echo "</div>";
+                     echo "</div>";
+}
+function infosImagensMateria2($string,$code){
+
+                if($string == "imagemgaleria1"){   
+                    $query = "SELECT * FROM IMAGENS_PERSONAGEM WHERE COD_PERSONAGEM_IMAGEM = $code";
+                    $result = mysql_query($query);                
+                    $imagens = mysql_num_rows($result);
+                    if($imagens === 0){
+                    $nome = "defaultCapa.jpg";            
+                    mysql_query("INSERT INTO IMAGENS_PERSONAGEM(IMAGEM_CAPA, COD_PERSONAGEM_IMAGEM)
+                    VALUES('$nome','$code')");
+                    }
+                    else{
+                    $imagens2 = mysql_fetch_array($result); 
+                    $urlImagem = $imagens2['IMAGEM_GALERIA'];
+                    echo '<a class="vlightbox1" href="../uploads/'.$urlImagem.'"><img src="../uploads/'.$urlImagem.'" alt="" /></a>';
+                    }
+                }
+                if($string == "imagemgaleria2"){   
+                    $query = "SELECT * FROM IMAGENS_PERSONAGEM WHERE COD_PERSONAGEM_IMAGEM = $code";
+                    $result = mysql_query($query);                
+                    $imagens = mysql_num_rows($result);
+                    if($imagens === 0){
+                    $nome = "defaultCapa.jpg";            
+                    mysql_query("INSERT INTO IMAGENS_PERSONAGEM(IMAGEM_CAPA, COD_PERSONAGEM_IMAGEM)
+                    VALUES('$nome','$code')");
+                    }
+                    else{
+                    $imagens2 = mysql_fetch_array($result); 
+                    $urlImagem = $imagens2['IMAGEM_GALERIA2'];
+                    echo '<a class="vlightbox1" href="../uploads/'.$urlImagem.'"><img src="../uploads/'.$urlImagem.'" alt="" /></a>';
+                    }
+                }
+                if($string == "imagemgaleria3"){   
+                    $query = "SELECT * FROM IMAGENS_PERSONAGEM WHERE COD_PERSONAGEM_IMAGEM = $code";
+                    $result = mysql_query($query);                
+                    $imagens = mysql_num_rows($result);
+                    if($imagens === 0){
+                    $nome = "defaultCapa.jpg";            
+                    mysql_query("INSERT INTO IMAGENS_PERSONAGEM(IMAGEM_CAPA, COD_PERSONAGEM_IMAGEM)
+                    VALUES('$nome','$code')");
+                    }
+                    else{
+                    $imagens2 = mysql_fetch_array($result); 
+                    $urlImagem = $imagens2['IMAGEM_GALERIA3'];
+                    echo '<a class="vlightbox1" href="../uploads/'.$urlImagem.'"><img src="../uploads/'.$urlImagem.'" alt="" /></a>';
+                    }
+                }
+                if($string == "capa"){   
+                    $query = "SELECT * FROM IMAGENS_PERSONAGEM WHERE COD_PERSONAGEM_IMAGEM = $code";
+                    $result = mysql_query($query);                
+                    $imagens = mysql_num_rows($result);
+                    if($imagens === 0){
+                    $nome = "defaultCapa.jpg";            
+                    mysql_query("INSERT INTO IMAGENS_PERSONAGEM(IMAGEM_CAPA, COD_PERSONAGEM_IMAGEM)
+                    VALUES('$nome','$code')");
+                    }
+                    else{
+                    $imagens2 = mysql_fetch_array($result); 
+                    $urlImagem = $imagens2['IMAGEM_CAPA'];
+                    echo "<img src='../uploads/$urlImagem' alt='Imagem' id='imgFundo'>";
+                    }
+                }
+                if($string == "imgPrincipal"){   
+                    $query = "SELECT * FROM IMAGENS_PERSONAGEM WHERE COD_PERSONAGEM_IMAGEM = $code";
+                    $result = mysql_query($query);                
+                    $imagens = mysql_num_rows($result);
+                    if($imagens === 0){
+                    $nome = "imgPrincipalDefault.jpg";            
+                    mysql_query("INSERT INTO IMAGENS_PERSONAGEM(IMAGEM_PRINCIPAL, COD_PERSONAGEM_IMAGEM)
+                    VALUES('$nome','$code')");
+                    }
+                    else{
+                    $imagens2 = mysql_fetch_array($result); 
+                    $urlImagem = $imagens2['IMAGEM_PRINCIPAL'];
+                    echo "<img src='../uploads/$urlImagem' alt='Imagem' id='imagemPrincipal'>";
+                    }
+                }
+}
+function infoArtigos2($string,$url){
+
+    if($string == "titulo"){
+        $sql = "SELECT * FROM PERSONAGEM WHERE URL_PERSONAGEM = '$url'";
+        $result = mysql_query($sql);                
+        $info = mysql_num_rows($result);
+        if($info === 0){
+        }
+        else{
+        $informacao = mysql_fetch_array($result); 
+        $infoRecebida = $informacao['TITULO_PERSONAGEM'];
+        echo "$infoRecebida";
+        }
+    }
+    if($string == "descricao"){
+        $sql = "SELECT * FROM PERSONAGEM WHERE URL_PERSONAGEM = '$url'";
+        $result = mysql_query($sql);                
+        $info = mysql_num_rows($result);
+        if($info === 0){
+        }
+        else{
+        $informacao = mysql_fetch_array($result); 
+        $infoRecebida = $informacao['DESCRICAO_PERSONAGEM'];
+        echo "$infoRecebida";
+        }
+    }
+    if($string == "tituloConteudo"){
+        $sql = "SELECT * FROM PERSONAGEM WHERE URL_PERSONAGEM = '$url'";
+        $result = mysql_query($sql);                
+        $info = mysql_num_rows($result);
+        if($info === 0){
+        }
+        else{
+        $informacao = mysql_fetch_array($result); 
+        $infoRecebida = $informacao['TITULO_CONTEUDO_PERSONAGEM'];
+        echo "$infoRecebida";
+        }
+    }
+    if($string == "conteudoMateria"){
+        $sql = "SELECT * FROM PERSONAGEM WHERE URL_PERSONAGEM = '$url'";
+        $result = mysql_query($sql);                
+        $info = mysql_num_rows($result);
+        if($info === 0){
+        }
+        else{
+        $informacao = mysql_fetch_array($result); 
+        $infoRecebida = $informacao['CONTEUDO_PERSONAGEM'];
+        echo "$infoRecebida";
+        }
+    }
+    if($string == "nomeAutor"){
+        $sql = "SELECT * FROM PERSONAGEM WHERE URL_PERSONAGEM = '$url'";
+        $result = mysql_query($sql);                
+        $info = mysql_num_rows($result);
+        if($info === 0){
+        }
+        else{
+        $informacao = mysql_fetch_array($result); 
+        $infoRecebida = $informacao['AUTOR_PERSONAGEM'];
+        $sql = "SELECT * FROM USUARIO WHERE COD_USUARIO = '$infoRecebida'";
+        $result = mysql_query($sql);  
+        $nomeResult = mysql_fetch_array($result);
+        echo $nomeResult['NOME_USUARIO']; 
+        }
+    }
+}
+function buscarUrlVideo2($code,$url){
+                    $query = "SELECT URLVIDEO1,URLVIDEO2 FROM PERSONAGEM WHERE ID_PERSONAGEM = $code";
+                    $result = mysql_query($query);                
+                    $videos = mysql_num_rows($result);
+                    $videos2 = mysql_fetch_array($result);
+
+                    $urlVideo1 = $videos2['URLVIDEO1'];
+                    $urlVideo2 = $videos2['URLVIDEO2'];
+                    if($urlVideo1 === ''){
+                        echo '<script>document.getElementById("galeriaVideo").style.display = "none";</script>';
+                    }
+                    else{
+                    if($url == 'urlVideo1'){
+                    echo "<div id='video1'>";
+                    echo "<iframe width='370' id='iframeVideo1' height='245' src='$urlVideo1' frameborder='0' allowfullscreen></iframe>";
+                    echo "</div>";
+                    }                   
+                    if($url == 'urlVideo2'){
+                    echo "<div id='video2'>";
+                    echo "<iframe width='370' id='iframeVideo2' height='245' src='$urlVideo2' frameborder='0' allowfullscreen></iframe>";
+                    echo "</div>";
+                    }  
+                    }
+                    }
+function buscarImagemAutor2($autor){
+                    $query = "SELECT * FROM IMAGEM_USUARIO WHERE COD_IMAGEM_USUARIO = $autor";
+                    $result = mysql_query($query);                
+                    $imagens = mysql_num_rows($result);
+                    if($imagens === 0){
+                    $nome = "Default.jpg";            
+                    mysql_query("INSERT INTO IMAGEM_USUARIO(URL_IMAGEM, COD_PERSONAGEM_IMAGEM)
+                    VALUES('$nome','$autor')");
+                    }
+                    else{
+                    $imagens2 = mysql_fetch_array($result); 
+                    $urlImagem = $imagens2['URL_IMAGEM'];
+                    echo "<img src='../uploads/$urlImagem' alt='Imagem' id='imgAutor'>";
+                    }
+}
+
+
 
 ?>
 

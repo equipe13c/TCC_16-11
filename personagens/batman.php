@@ -2,7 +2,7 @@
                                                                                                 
 <html>                                                                                  
     <head> 
-        <title>teste</title>
+        <title>BATMAN</title>
         <meta charset="UTF-8">
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
         <link rel="stylesheet" type="text/css" href="../css/styleMaterias.css"/>
@@ -22,16 +22,16 @@
                 var imgLogo = document.getElementById("img-logo"); 
                 imgMiniLogo.innerHTML = "<img src='../imagens/logosReduzidos002.png' alt='' id='miniLogo'>";
                 imgLogo.innerHTML = "<img src='../imagens/logo002.png' alt='' id='logo'>";  
-                document.getElementById("nav").style.backgroundColor = "#9C1006";                
-                document.getElementById("imgPrincipal").style.backgroundColor = "#9C1006"; 
-                document.getElementById("tituloMateria").style.backgroundColor = "#9C1006";
-                document.getElementById("tituloAside").style.backgroundColor = "#9C1006";
-                document.getElementById("navReduzido").style.backgroundColor = "#9C1006";
-                document.getElementById("fundoDescricaoMateria").style.backgroundColor = "#FCC6C0";
-                document.getElementById("descricaoColunista").style.backgroundColor = "#9C1006";  
-                document.getElementById("logar").style.borderBottom = "solid 5px #9C1006"; 
-                document.getElementById("botaoLogin").style.backgroundColor = "#9C1006";
-                document.getElementById("tituloPagina").style.backgroundColor = "#9C1006";           
+                document.getElementById("nav").style.backgroundColor = "#00989E";                
+                document.getElementById("imgPrincipal").style.backgroundColor = "#00989E"; 
+                document.getElementById("tituloMateria").style.backgroundColor = "#00989E";
+                document.getElementById("tituloAside").style.backgroundColor = "#00989E";
+                document.getElementById("navReduzido").style.backgroundColor = "#00989E";
+                document.getElementById("fundoDescricaoMateria").style.backgroundColor = "#83FF7B";
+                document.getElementById("descricaoColunista").style.backgroundColor = "#00989E";  
+                document.getElementById("logar").style.borderBottom = "solid 5px #00989E"; 
+                document.getElementById("botaoLogin").style.backgroundColor = "#00989E";
+                document.getElementById("tituloPagina").style.backgroundColor = "#00989E";           
                 var imgMiniLogo = document.getElementById("imgMiniLogo");
             };
         </script>       
@@ -43,7 +43,6 @@
                 include_once '../conexao/conecta.inc';
                 include_once '../includes/funcoesUteis.inc';
                 session_start();
-                acrescentarAcessos('11');
             ?>
             <header id="cabecalho">
                 <?php
@@ -51,7 +50,7 @@
                 ?>
             <figure id="imgCapa">
                 <?php
-                infosImagensMateria('capa','11');
+                infosImagensMateria2('capa','12');
                 ?>                
             </figure>
                 <div id="logar">
@@ -63,56 +62,35 @@
             <article id="conteudo">
                 <figure id="imgPrincipal">
                     <?php
-                        infosImagensMateria('imgPrincipal','11');
+                        infosImagensMateria2('imgPrincipal','12');
                     ?>
                 </figure>
                 <div id="tituloMateria">
                     <div id="caixaTitulo"><h1 class="editTitulo"> 
                     <?php
-                        infoArtigos('titulo','playstation/testeps.php');
+                        infoArtigos2('titulo','personagens/batman.php');
                     ?>
                      </h1></div>
-                </div>
-                <div id="fundoDescricaoMateria">
-                    <div id="descricaoMateria">
-                        <p class="editDescricao">
-                        <?php
-                            infoArtigos('descricao','playstation/testeps.php');
-                        ?>
-                        </p>
-                        <p class="editPlataforma">
-                        <?php
-                            echo "<b>Plataforma:</b>    ";
-                            infoArtigos('plataforma','playstation/testeps.php');
-                        ?>
-                        </p>
-                        <p class="editDatalancamento">
-                        <?php
-                            echo "<b>Data de Lançamento:</b>    ";
-                            infoArtigos('dataLancamento','playstation/testeps.php');
-                        ?>
-                        </p>
-                    </div>
-                </div>    
+                </div>   
                 <div id="conteudoMateria">
                     <div class="ediConteudoMateria">
                         <div class="editTituloconteudo">
                             <p>
                                 <?php
-                                    infoArtigos('tituloConteudo','playstation/testeps.php');
+                                    infoArtigos2('tituloConteudo','personagens/batman.php');
                                 ?>
                             </p>
                             <div id="nome_autor">
                                 <b>POR</b>
                                 <?php
-                                   infoArtigos('nomeAutor','playstation/testeps.php');  
+                                   infoArtigos2('nomeAutor','personagens/batman.php');  
                                 ?>
-                               <b>EM</b> 30/11/2014 
+                               <b>EM</b> 01/12/2014 
                             </div>
                         </div>                        
                         <p>
                             <?php
-                                infoArtigos('conteudoMateria','playstation/testeps.php');
+                                infoArtigos2('conteudoMateria','personagens/batman.php');
                             ?>
                         </p>
                         </div>
@@ -120,58 +98,57 @@
                 <div id="galeriaImagens">
                     <figure class="imagensGaleria" >
                         <?php
-                            infosImagensMateria('imagemgaleria1','11');
+                            infosImagensMateria2('imagemgaleria1','12');
                         ?>
                     </figure>
                     <figure class="imagensGaleria">
                         <?php
-                            infosImagensMateria('imagemgaleria2','11');
+                            infosImagensMateria2('imagemgaleria2','12');
                         ?>
                     </figure>
                     <figure class="imagensGaleria" >
                         <?php
-                            infosImagensMateria('imagemgaleria3','11');
+                            infosImagensMateria2('imagemgaleria3','12');
                         ?>
                     </figure>
                     	<script src="../popupgaleria/vlb_engine/vlbdata1.js" type="text/javascript"></script>
                 </div>
                 <div id="galeriaVideo">
-                    <?php buscarUrlVideo('11','urlVideo1');
-                    buscarUrlVideo('11','urlVideo2');
+                    <?php buscarUrlVideo2('12','urlVideo1');
+                    buscarUrlVideo2('12','urlVideo2');
                     ?>
                 </div>
                 <div id="colunista">     
                     <figure id="autor_materia">
                     <?php
-                        buscarImagemAutor('29');
+                        buscarImagemAutor2('29');
                     ?>
                     </figure>
                     <div id="descricaoColunista"> 
                         <div id="infoAutor">
-                             <?php buscarDescAutor('29');?> 
+                             <?php buscarDescAutor('29');?>
                         </div>
                     </div>
                 </div>
                 <div id="comentario">
-                    <h1 id='tituloComentario'>Comentários</h1> 
+                <h1 id="tituloComentario">Comentários</h1>
                     <div class="comentarios">                        
                     <figure class="imagem_user"> 
                         <?php
                             buscarFotoUser();
                         ?>
-                    </figure>                              
+                    </figure>                                            
                     <div class="coment">
                         <form name='frmComentar' method='post' action='../comentar.php' id='enviar'>
                         <input type="text" id="textocomentario" name="comentario">                    
-                        <input type="hidden" name="codigoArtigo" value="11" > 
+                        <input type="hidden" name="codigoArtigo" value="12" > 
                         <input type="submit" name="btnComentar" value="Publicar" class="botaoEnviar" > 
                         </form>
                     </div>   
                     </div>
                     <div class='exibirComent'>
-                       
                         <?php
-                            listarComentarios('11');
+                            listarComentarios('12');
                         ?>
                     </div>
                 </div>
@@ -184,7 +161,7 @@
                 <br/>
             </aside>
             <div id="voltarTopo">
-                <a href="" class="subir">
+                <a href="javascript:toTop();" class="subir">
                     <img src="../imagens/topoPs.png" alt="">
                     <p> Voltar ao topo </p>
                 </a>                    

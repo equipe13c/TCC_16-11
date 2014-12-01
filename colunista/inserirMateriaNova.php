@@ -1411,7 +1411,7 @@ $salt = geraSaltAleatorio();
                                                                                    echo "Erro Ao Inserir Matéria";
                                                                                }
                                                                             }
-                                                                            if($i == 5){
+                                                                            if($i == 6){
                                                                                 break;
                                                                             }
                                                                         }

@@ -44,96 +44,10 @@
                 <div id="corpoConteudo">
                     <div id="materias">
                         <h1 id="tituloPagina"> Personagens </h1>
-                        <a href="#">
-                            <div class="materiaPrincipal">                                
-                                    <div id="descricaoImagemPrincipal"> 
-                                        <p> Leon - Resident Evil 4 </p>
-                                    </div>
-                                <img src="imagens/residentEvil4.jpg" alt="">                        
-                            </div>
-                        </a>
                         <div id="materiasPequenas">
-                            <a href="#">
-                                <div class="materiasPersonagem">
-                                    <img src="imagens/mario1.png" alt="" class="imagemPersonagem1"> 
-                                    <img src="imagens/mario2.png" alt="" class="imagemPersonagem2">
-                                    <div id="descricaoPersonagem"> 
-                                    <h3> Mario </h3> 
-                                    </div>
-                                </div>                                
-                            </a>
-                            <a href="#">
-                                <div class="materiasPersonagem">
-                                    <img src="imagens/batman1.png" alt="" class="imagemPersonagem1"> 
-                                    <img src="imagens/batman2.png" alt="" class="imagemPersonagem2">
-                                    <div id="descricaoPersonagem"> 
-                                    <h3> Batman </h3> 
-                                    </div>
-                                </div> 
-                            </a>
-                            <a href="#">
-                                <div class="materiasPersonagem">
-                                    <img src="imagens/kratos1.png" alt="" class="imagemPersonagem1"> 
-                                    <img src="imagens/kratos2.png" alt="" class="imagemPersonagem2">
-                                    <div id="descricaoPersonagem"> 
-                                    <h3> Kratos </h3> 
-                                    </div>
-                                </div> 
-                            </a>
-                            <a href="#">
-                                <div class="materiasPersonagem">
-                                    <img src="imagens/link1.png" alt="" class="imagemPersonagem1"> 
-                                    <img src="imagens/link2.png" alt="" class="imagemPersonagem2">
-                                    <div id="descricaoPersonagem"> 
-                                    <h3> Link </h3> 
-                                    </div>
-                                </div> 
-                            </a>
-                            <a href="#">
-                                <div class="materiasPersonagem">
-                                    <img src="imagens/altair1.png" alt="" class="imagemPersonagem1"> 
-                                    <img src="imagens/altair2.png" alt="" class="imagemPersonagem2">
-                                    <div id="descricaoPersonagem"> 
-                                    <h3> Altair </h3> 
-                                    </div>
-                                </div> 
-                            </a>
-                            <a href="#">
-                                <div class="materiasPersonagem">
-                                    <img src="imagens/sonic1.png" alt="" class="imagemPersonagem1"> 
-                                    <img src="imagens/sonic2.png" alt="" class="imagemPersonagem2">
-                                    <div id="descricaoPersonagem"> 
-                                    <h3> Sonic </h3> 
-                                    </div>
-                                </div> 
-                            </a> 
-                            <a href="#">
-                                <div class="materiasPersonagem">
-                                    <img src="imagens/luigi1.png" alt="" class="imagemPersonagem1"> 
-                                    <img src="imagens/luigi2.png" alt="" class="imagemPersonagem2">
-                                    <div id="descricaoPersonagem"> 
-                                    <h3> Luigi </h3> 
-                                    </div>
-                                </div> 
-                            </a>
-                            <a href="#">
-                                <div class="materiasPersonagem">
-                                    <img src="imagens/masterChief1.png" alt="" class="imagemPersonagem1"> 
-                                    <img src="imagens/masterChief2.png" alt="" class="imagemPersonagem2">
-                                    <div id="descricaoPersonagem"> 
-                                    <h3> Master Chief </h3> 
-                                    </div>
-                                </div> 
-                            </a>
-                            <a href="#">
-                                <div class="materiasPersonagem">
-                                    <img src="imagens/laraCroft1.png" alt="" class="imagemPersonagem1"> 
-                                    <img src="imagens/laraCroft2.png" alt="" class="imagemPersonagem2">
-                                    <div id="descricaoPersonagem"> 
-                                    <h3> Lara Croft </h3> 
-                                    </div>
-                                </div> 
-                            </a>
+                        <?php
+                        listarPersonagens();
+                        ?>
                         </div>  
                     </div>    
                     </div>                    
