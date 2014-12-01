@@ -250,7 +250,7 @@ case 'editarPersonagem';
         $sql2 = "SELECT * FROM IMAGENS_PERSONAGEM WHERE COD_PERSONAGEM_IMAGEM = $codMateria";
         $result2 = mysql_query($sql2);
         $totalResult2 = mysql_fetch_array($result2);
-echo '<form action="atualizarMateria.php" method="post" enctype="multipart/form-data" class="novaMateria" onsubmit="return validaInserir(this);">
+echo '<form action="atualizarPersonagem.php" method="post" enctype="multipart/form-data" class="novaMateria" onsubmit="return validaInserir(this);">
                        <input type="hidden" name="codigo" value="'.$codMateria.'">
                         <figure id="imgCapaMateria">
                             <p> Selecione uma imagem de capa com dimensões 400x250 para esta área.</p>
@@ -349,7 +349,18 @@ case 'excluir';
         $sql3 = "DELETE FROM ARTIGO WHERE ID_ARTIGO = $codMateria";
         $result = mysql_query($sql3);
         if($result){
-            echo "Matéria Deletada";
+                        echo "Matéria Deletada";
+                    function salvaLog($mensagem) {
+            date_default_timezone_set("Brazil/East");
+        $ip = $_SERVER['REMOTE_ADDR']; // Salva o IP do visitante
+        $hora = date('H:i:s'); // Salva a hora atual (formato MySQL)
+        $dia = date('Y-m-d');
+        $sql = "INSERT INTO LOG(IP_LOG, DATA_LOG, HORA_LOG, MENSAGEM_LOG, ACAO_LOG,AUTOR_LOG,COD_AUTOR_LOG)
+        VALUES('$ip','$dia', '$hora', '$mensagem', 13,'".$_SESSION['email']."',".$_SESSION['code'].")";
+        mysql_query($sql);
+        }
+            $mensagem = "$apelido Excluiu Matéria";
+            salvaLog($mensagem);
         }
         else{
             echo "erro ao deletar Matéria";
@@ -367,7 +378,18 @@ case 'excluirPersonagem';
         $sql3 = "DELETE FROM PERSONAGEM WHERE ID_PERSONAGEM = $codMateria";
         $result = mysql_query($sql3);
         if($result){
-            echo "Matéria Deletada";
+            echo "Personagem Deletado";
+                                          function salvaLog($mensagem) {
+            date_default_timezone_set("Brazil/East");
+        $ip = $_SERVER['REMOTE_ADDR']; // Salva o IP do visitante
+        $hora = date('H:i:s'); // Salva a hora atual (formato MySQL)
+        $dia = date('Y-m-d');
+        $sql = "INSERT INTO LOG(IP_LOG, DATA_LOG, HORA_LOG, MENSAGEM_LOG, ACAO_LOG,AUTOR_LOG,COD_AUTOR_LOG)
+        VALUES('$ip','$dia', '$hora', '$mensagem', 15,'".$_SESSION['email']."',".$_SESSION['code'].")";
+        mysql_query($sql);
+        }
+            $mensagem = "$apelido Excluiu Personagem";
+            salvaLog($mensagem);
         }
         else{
             echo "erro ao deletar Matéria";

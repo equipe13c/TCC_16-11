@@ -45,19 +45,19 @@ $salt = geraSaltAleatorio();
         $code = $_SESSION['code'];
         $apelido = $_SESSION['apelido'];
         function salvaLog($mensagem) {
+            date_default_timezone_set("Brazil/East");
         $ip = $_SERVER['REMOTE_ADDR']; // Salva o IP do visitante
-        $hora = date('Y-m-d H:i:s'); // Salva a hora atual (formato MySQL)
-        $acao = 2;
+        $hora = date('H:i:s'); // Salva a hora atual (formato MySQL)
         $dia = date('Y-m-d');
         $sql = "INSERT INTO LOG(IP_LOG, DATA_LOG, HORA_LOG, MENSAGEM_LOG, ACAO_LOG,AUTOR_LOG,COD_AUTOR_LOG)
-        VALUES('$ip','$dia', '$hora', '$mensagem', '$acao','".$_SESSION['email']."',".$_SESSION['code'].")";
+        VALUES('$ip','$dia', '$hora', '$mensagem', 18,'".$_SESSION['email']."',".$_SESSION['code'].")";
         mysql_query($sql);
         }
         $sql = "UPDATE IMAGEM_USUARIO SET URL_IMAGEM_CAPA = '$nome' WHERE COD_IMAGEM_USUARIO = $code";
 
         if(mysql_query($sql)){
              echo "<script> location.href='index.php' </script>";
-            $mensagem = "$apelido Alterou Foto";
+            $mensagem = "$apelido Alterou Foto de Capa";
             salvaLog($mensagem);
         }
         else{

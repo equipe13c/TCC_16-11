@@ -39,6 +39,21 @@
                 }
                
             }
+                        function preview(input, tipo) {
+            
+                                if(tipo == 'capa2'){
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+ 
+                    reader.onload = function (e) {
+                            $('#imagemCapa')
+                .attr('src', e.target.result)
+                                    .width(170)
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+        }
         </script>
         <title> Área Administrativa </title>
     </head>
@@ -123,7 +138,7 @@
                                     ?>                                    
                                 </div>                                                         
                                 <div class="infoInputs">
-                                    <input type="file" name="arquivo" >                          
+                                    <input type="file" name="arquivo" onchange="preview(this,'capa2');" multiple>               
                                 </div>                                
                                 <div class="infoInputs">
                                     <input type="submit" name="alterarImg"  class="bsalvar" value="Alterar Foto">                                

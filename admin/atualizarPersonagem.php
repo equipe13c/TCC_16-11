@@ -58,7 +58,7 @@ $salt = geraSaltAleatorio();
     }
     if(move_uploaded_file($_FILES['imagemCapa']['tmp_name'], $_UP['pasta'] . $imgCapaname)){
     
-        $sql = "UPDATE IMAGENS_MATERIA SET IMAGEM_CAPA = '$imgCapaname' WHERE COD_MATERIA_IMAGEM = $codMateria";
+        $sql = "UPDATE IMAGENS_PERSONAGEM SET IMAGEM_CAPA = '$imgCapaname' WHERE COD_PERSONAGEM_IMAGEM = $codMateria";
         mysql_query($sql);
     
     }
@@ -96,7 +96,7 @@ $salt = geraSaltAleatorio();
     }
     if(move_uploaded_file($_FILES['imagemPrincipal']['tmp_name'], $_UP['pasta'] . $imagemPrincipalname)){
     
-        $sql = "UPDATE IMAGENS_MATERIA SET IMAGEM_PRINCIPAL = '$imagemPrincipalname' WHERE COD_MATERIA_IMAGEM = $codMateria";
+        $sql = "UPDATE IMAGENS_PERSONAGEM SET IMAGEM_PRINCIPAL = '$imagemPrincipalname' WHERE COD_PERSONAGEM_IMAGEM = $codMateria";
         mysql_query($sql);
     
     }
@@ -133,7 +133,7 @@ $salt = geraSaltAleatorio();
     }
     if(move_uploaded_file($_FILES['imagemGaleria']['tmp_name'], $_UP['pasta'] . $imagemGalerianame)){
     
-        $sql = "UPDATE IMAGENS_MATERIA SET IMAGEM_GALERIA = '$imagemGalerianame' WHERE COD_MATERIA_IMAGEM = $codMateria";
+        $sql = "UPDATE IMAGENS_PERSONAGEM SET IMAGEM_GALERIA = '$imagemGalerianame' WHERE COD_PERSONAGEM_IMAGEM = $codMateria";
         mysql_query($sql);
     
     }
@@ -172,7 +172,7 @@ $salt = geraSaltAleatorio();
     }
     if(move_uploaded_file($_FILES['imagemGaleria2']['tmp_name'], $_UP['pasta'] . $imagemGaleria2name)){
     
-        $sql = "UPDATE IMAGENS_MATERIA SET IMAGEM_GALERIA2 = '$imagemGaleria2name' WHERE COD_MATERIA_IMAGEM = $codMateria";
+        $sql = "UPDATE IMAGENS_PERSONAGEM SET IMAGEM_GALERIA2 = '$imagemGaleria2name' WHERE COD_PERSONAGEM_IMAGEM = $codMateria";
         mysql_query($sql);
     
     }
@@ -211,7 +211,7 @@ $salt = geraSaltAleatorio();
     }
     if(move_uploaded_file($_FILES['imagemGaleria3']['tmp_name'], $_UP['pasta'] . $imagemGaleria3)){
     
-        $sql = "UPDATE IMAGENS_MATERIA SET IMAGEM_GALERIA = '$imagemGaleria3' WHERE COD_MATERIA_IMAGEM = $codMateria";
+        $sql = "UPDATE IMAGENS_PERSONAGEM SET IMAGEM_GALERIA = '$imagemGaleria3' WHERE COD_PERSONAGEM_IMAGEM = $codMateria";
         mysql_query($sql);
     
     }
@@ -219,23 +219,23 @@ $salt = geraSaltAleatorio();
     }
     
 }
-$query = "SELECT * FROM ARTIGO WHERE ID_ARTIGO = $codMateria";
+$query = "SELECT * FROM PERSONAGEM WHERE ID_PERSONAGEM = $codMateria";
 $result = mysql_query($query);
 $totalResult = mysql_fetch_array($result);
-if($tituloArtigo == $totalResult['TITULO_ARTIGO']){
+if($tituloArtigo == $totalResult['TITULO_PERSONAGEM']){
 }
 else if($tituloArtigo == ""){
 }
 else{
-        $sql = "UPDATE ARTIGO SET TITULO_ARTIGO = '$tituloArtigo' WHERE ID_ARTIGO = $codMateria";
+        $sql = "UPDATE PERSONAGEM SET TITULO_PERSONAGEM = '$tituloArtigo' WHERE ID_PERSONAGEM = $codMateria";
         mysql_query($sql);
 }
-if($descricaoArtigo == $totalResult['DESCRICAO_ARTIGO']){
+if($descricaoArtigo == $totalResult['DESCRICAO_PERSONAGEM']){
 }
 else if($descricaoArtigo == ""){
 }
 else{
-        $sql = "UPDATE ARTIGO SET DESCRICAO_ARTIGO = '$descricaoArtigo' WHERE ID_ARTIGO = $codMateria";
+        $sql = "UPDATE PERSONAGEM SET DESCRICAO_PERSONAGEM = '$descricaoArtigo' WHERE ID_PERSONAGEM = $codMateria";
         mysql_query($sql);
 }
 if($dataLancamento == $totalResult['DATA_LANCAMENTO']){
@@ -243,23 +243,23 @@ if($dataLancamento == $totalResult['DATA_LANCAMENTO']){
 else if($dataLancamento == ""){
 }
 else{
-        $sql = "UPDATE ARTIGO SET DATA_LANCAMENTO = '$dataLancamento' WHERE ID_ARTIGO = $codMateria";
+        $sql = "UPDATE PERSONAGEM SET DATA_LANCAMENTO = '$dataLancamento' WHERE ID_PERSONAGEM = $codMateria";
         mysql_query($sql);
 }
-if($subtitulo == $totalResult['TITULO_CONTEUDO_ARTIGO']){
+if($subtitulo == $totalResult['TITULO_CONTEUDO_PERSONAGEM']){
 }
 else if($subtitulo == ""){
 }
 else{
-        $sql = "UPDATE ARTIGO SET TITULO_CONTEUDO_ARTIGO = '$subtitulo' WHERE ID_ARTIGO = $codMateria";
+        $sql = "UPDATE PERSONAGEM SET TITULO_CONTEUDO_PERSONAGEM = '$subtitulo' WHERE ID_PERSONAGEM = $codMateria";
         mysql_query($sql);
 }
-if($conteudoArtigo == $totalResult['CONTEUDO_ARTIGO']){
+if($conteudoArtigo == $totalResult['CONTEUDO_PERSONAGEM']){
 }
 else if($conteudoArtigo == ""){
 }
 else{
-        $sql = "UPDATE ARTIGO SET CONTEUDO_ARTIGO = '$conteudoArtigo' WHERE ID_ARTIGO = $codMateria";
+        $sql = "UPDATE PERSONAGEM SET CONTEUDO_PERSONAGEM = '$conteudoArtigo' WHERE ID_PERSONAGEM = $codMateria";
         mysql_query($sql);
 }
 if($urlVideo == $totalResult['URLVIDEO1']){
@@ -267,7 +267,7 @@ if($urlVideo == $totalResult['URLVIDEO1']){
 else if($urlVideo == ""){
 }
 else{
-        $sql = "UPDATE ARTIGO SET URLVIDEO1 = '$urlVideo' WHERE ID_ARTIGO = $codMateria";
+        $sql = "UPDATE PERSONAGEM SET URLVIDEO1 = '$urlVideo' WHERE ID_PERSONAGEM = $codMateria";
         mysql_query($sql);
 }
 if($urlVideo2 == $totalResult['URLVIDEO2']){
@@ -275,8 +275,19 @@ if($urlVideo2 == $totalResult['URLVIDEO2']){
 else if($urlVideo2 == ""){
 }
 else{
-        $sql = "UPDATE ARTIGO SET URLVIDEO2 = '$urlVideo2' WHERE ID_ARTIGO = $codMateria";
+        $sql = "UPDATE PERSONAGEM SET URLVIDEO2 = '$urlVideo2' WHERE ID_PERSONAGEM = $codMateria";
         mysql_query($sql);
 }
 echo "MATÉRIA ATUALIZADA";
+        function salvaLog($mensagem) {
+            date_default_timezone_set("Brazil/East");
+        $ip = $_SERVER['REMOTE_ADDR']; // Salva o IP do visitante
+        $hora = date('H:i:s'); // Salva a hora atual (formato MySQL)
+        $dia = date('Y-m-d');
+        $sql = "INSERT INTO LOG(IP_LOG, DATA_LOG, HORA_LOG, MENSAGEM_LOG, ACAO_LOG,AUTOR_LOG,COD_AUTOR_LOG)
+        VALUES('$ip','$dia', '$hora', '$mensagem', 16,'".$_SESSION['email']."',".$_SESSION['code'].")";
+        mysql_query($sql);
+        }
+            $mensagem = "$apelido Editou Matéria";
+            salvaLog($mensagem);
 ECHO "<a onclick='javascript:history.go(-1);'>Voltar</a>";

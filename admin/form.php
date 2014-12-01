@@ -23,12 +23,12 @@ case 'Reativar';
                     $totalResult = mysql_fetch_array($result);
                     echo $tipoDesativado = $totalResult['TIPO_DESATIVADO'];
                     function salvaLog($mensagem,$name,$data,$code,$email, $tipoDesativado) {
+                         date_default_timezone_set("Brazil/East");
                     $ip = $_SERVER['REMOTE_ADDR']; // Salva o IP do visitante
-                    $hora = date('Y-m-d H:i:s'); // Salva a hora atual (formato MySQL)
-                    $acao = "reativarUsuario";
+                    $hora = date('H:i:s'); // Salva a hora atual (formato MySQL)
                     $dia = date('Y-m-d');
                     $sql = "INSERT INTO LOG(COD_LOG, IP_LOG, DATA_LOG, HORA_LOG, MENSAGEM_LOG, ACAO_LOG,AUTOR_LOG)
-                        VALUES(".$_SESSION['code'].",'$ip','$dia', '$hora', '$mensagem', '$acao','$email')";
+                        VALUES(".$_SESSION['code'].",'$ip','$dia', '$hora', '$mensagem', 5,'$email')";
                     mysql_query($sql);
                     $sql2 = "UPDATE USUARIO SET TIPO_USUARIO = $tipoDesativado, USUARIO_DESATIVADO = null WHERE COD_USUARIO = $code";
                     mysql_query($sql2);
@@ -52,7 +52,15 @@ case 'Elevar';
      $sql = "SELECT * FROM USUARIO WHERE COD_USUARIO = $code";
      $result = mysql_query($sql);
      $totalResult = mysql_fetch_array($result);
-     
+                 function salvaLog($mensagem) {
+        $ip = $_SERVER['REMOTE_ADDR']; // Salva o IP do visitante
+         date_default_timezone_set("Brazil/East");
+        $hora = date('H:i:s'); // Salva a hora atual (formato MySQL)
+        $dia = date('Y-m-d');
+        $sql = "INSERT INTO LOG(IP_LOG, DATA_LOG, HORA_LOG, MENSAGEM_LOG, ACAO_LOG,AUTOR_LOG,COD_AUTOR_LOG)
+        VALUES('$ip','$dia', '$hora', '$mensagem1', 25,'".$_SESSION['email']."',".$_SESSION['code'].")";
+        mysql_query($sql);
+        }
      if($totalResult['TIPO_USUARIO'] === '2'){
          $sql_up = "UPDATE USUARIO SET TIPO_USUARIO = 3, USUARIO_DESATIVADO = null WHERE COD_USUARIO = $code";
          mysql_query($sql_up);
@@ -62,10 +70,17 @@ case 'Elevar';
          $sql_up = "UPDATE USUARIO SET TIPO_USUARIO = 1, USUARIO_DESATIVADO = null WHERE COD_USUARIO = $code";
          mysql_query($sql_up);
      echo $name." Foi Elevado Para Administrador";
-     echo "<script>javascript:history.go(-1);</script>";
+          $url = $_SERVER['HTTP_REFERER'];
+       echo "<script>location.href='$url'</script>";
+                      $mensagem = "$apelido Elevado";
+                
+            salvaLog($mensagem);
       }else if($totalResult['TIPO_USUARIO'] === '1'){
           $url = $_SERVER['HTTP_REFERER'];
        echo "<script>location.href='$url'</script>";
+                        $mensagem = "$apelido Elevado";
+                
+            salvaLog($mensagem);
       }
     //fim
     break;
@@ -77,7 +92,15 @@ case 'Rebaixar';
      $sql = "SELECT * FROM USUARIO WHERE COD_USUARIO = $code";
      $result = mysql_query($sql);
      $totalResult = mysql_fetch_array($result);
-     
+            function salvaLog($mensagem) {
+        $ip = $_SERVER['REMOTE_ADDR']; // Salva o IP do visitante
+         date_default_timezone_set("Brazil/East");
+        $hora = date('H:i:s'); // Salva a hora atual (formato MySQL)
+        $dia = date('Y-m-d');
+        $sql = "INSERT INTO LOG(IP_LOG, DATA_LOG, HORA_LOG, MENSAGEM_LOG, ACAO_LOG,AUTOR_LOG,COD_AUTOR_LOG)
+        VALUES('$ip','$dia', '$hora', '$mensagem1', 24,'".$_SESSION['email']."',".$_SESSION['code'].")";
+        mysql_query($sql);
+        }
      if($totalResult['TIPO_USUARIO'] === '2'){
        
          echo '<script>alert("'.$name. 'não pode ser rebaixado pois já é usuário restrito.");</script>';
@@ -85,12 +108,18 @@ case 'Rebaixar';
      }else if($totalResult['TIPO_USUARIO'] === '3'){
          $sql_up = "UPDATE USUARIO SET TIPO_USUARIO = 2, USUARIO_DESATIVADO = null WHERE COD_USUARIO = $code";
          mysql_query($sql_up);
-     
+                    $mensagem = "$apelido Rebaixado";
+                
+            salvaLog($mensagem);
        echo '<script>alert("'.$name. 'Foi rebaixado Para usuário restrito.");</script>';
-        echo "<script> javascript:history.go(-1); </script>";
+         $url = $_SERVER['HTTP_REFERER'];
+       echo "<script>location.href='$url'</script>";
       }else if($totalResult['TIPO_USUARIO'] === '1'){
          $sql_up = "UPDATE USUARIO SET TIPO_USUARIO = 3, USUARIO_DESATIVADO = null WHERE COD_USUARIO = $code";
          mysql_query($sql_up);
+                        $mensagem = "$apelido Rebaixado";
+                
+            salvaLog($mensagem);
          $url = $_SERVER['HTTP_REFERER'];
        echo "<script>location.href='$url'</script>";
              
@@ -121,8 +150,9 @@ $sql4 = "SELECT * FROM USUARIO WHERE COD_USUARIO = $code";
      
 
 function salvaLog($mensagem,$code,$nomeUsuario,$apelidoUsuario,$emailUsuario,$senhaUsuario,$tipoUsuario,$dataUsuario,$estadoUsuario,$descricaoUsuario,$plataformasUsuario,$jogosUsuario) {
-$ip = $_SERVER['REMOTE_ADDR']; // Salva o IP do visitante
-$hora = date('Y-m-d H:i:s'); // Salva a hora atual (formato MySQL)
+                         date_default_timezone_set("Brazil/East");
+                    $ip = $_SERVER['REMOTE_ADDR']; // Salva o IP do visitante
+                    $hora = date('H:i:s'); // Salva a hora atual (formato MySQL)
 $acao = 3;
 $dia = date('Y-m-d');
 echo $code;

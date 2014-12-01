@@ -111,6 +111,17 @@
                                     if(mysql_query($query)){
                                          echo "<script> location.href='../index.php' </script>";
                                          echo "<script> alert('Senha alterada, por favor logue-se novamente!'); </script>";
+                                                                               function salvaLog($mensagem) {
+            date_default_timezone_set("Brazil/East");
+        $ip = $_SERVER['REMOTE_ADDR']; // Salva o IP do visitante
+        $hora = date('H:i:s'); // Salva a hora atual (formato MySQL)
+        $dia = date('Y-m-d');
+        $sql = "INSERT INTO LOG(IP_LOG, DATA_LOG, HORA_LOG, MENSAGEM_LOG, ACAO_LOG,AUTOR_LOG,COD_AUTOR_LOG)
+        VALUES('$ip','$dia', '$hora', '$mensagem', 6,'".$_SESSION['email']."',".$_SESSION['code'].")";
+        mysql_query($sql);
+        }
+            $mensagem = "$apelido Alterou Senha";
+            salvaLog($mensagem);
                                          session_destroy();
                                     }
                                     else{
@@ -148,9 +159,17 @@
                                 if(mysql_query($sql2)){
                                     echo "<script> location.href='index.php' </script>";
                                     $apelido = $usuarioEmail['APELIDO_USUARIO'];
-                                    $mensagem = "$apelido Alterou Nome";
-                                    $acao = 8;
-                                    salvaLog($mensagem,$acao);
+function salvaLog($mensagem) {
+            date_default_timezone_set("Brazil/East");
+        $ip = $_SERVER['REMOTE_ADDR']; // Salva o IP do visitante
+        $hora = date('H:i:s'); // Salva a hora atual (formato MySQL)
+        $dia = date('Y-m-d');
+        $sql = "INSERT INTO LOG(IP_LOG, DATA_LOG, HORA_LOG, MENSAGEM_LOG, ACAO_LOG,AUTOR_LOG,COD_AUTOR_LOG)
+        VALUES('$ip','$dia', '$hora', '$mensagem', 8,'".$_SESSION['email']."',".$_SESSION['code'].")";
+        mysql_query($sql);
+        }
+            $mensagem = "$apelido Alterou Nome";
+            salvaLog($mensagem);;
                                     
                                 }
                                 else{
@@ -178,9 +197,17 @@
                                 if(mysql_query($sql2)){
                                     echo "<script> location.href='index.php' </script>";
                                     $apelido = $usuarioEmail['APELIDO_USUARIO'];
-                                    $mensagem = "$apelido Alterou Apelido";
-                                    $acao = 12;
-                                    salvaLog($mensagem,$acao);
+                                      function salvaLog($mensagem) {
+            date_default_timezone_set("Brazil/East");
+        $ip = $_SERVER['REMOTE_ADDR']; // Salva o IP do visitante
+        $hora = date('H:i:s'); // Salva a hora atual (formato MySQL)
+        $dia = date('Y-m-d');
+        $sql = "INSERT INTO LOG(IP_LOG, DATA_LOG, HORA_LOG, MENSAGEM_LOG, ACAO_LOG,AUTOR_LOG,COD_AUTOR_LOG)
+        VALUES('$ip','$dia', '$hora', '$mensagem', 23,'".$_SESSION['email']."',".$_SESSION['code'].")";
+        mysql_query($sql);
+        }
+            $mensagem = "$apelido Alterou Apelido";
+            salvaLog($mensagem);;
                                     
                                 }
                                 else{
@@ -215,9 +242,17 @@
                                     echo "<script> location.href='../index.php' </script>";
                                     echo "<script> alert('E-mail alterado, por favor logue-se novamente!'); </script>";
                                     $apelido = $usuarioEmail['APELIDO_USUARIO'];
-                                    $mensagem = "$apelido Alterou E-mail";
-                                    $acao = 7;
-                                    salvaLog($mensagem,$acao);
+                                  function salvaLog($mensagem) {
+            date_default_timezone_set("Brazil/East");
+        $ip = $_SERVER['REMOTE_ADDR']; // Salva o IP do visitante
+        $hora = date('H:i:s'); // Salva a hora atual (formato MySQL)
+        $dia = date('Y-m-d');
+        $sql = "INSERT INTO LOG(IP_LOG, DATA_LOG, HORA_LOG, MENSAGEM_LOG, ACAO_LOG,AUTOR_LOG,COD_AUTOR_LOG)
+        VALUES('$ip','$dia', '$hora', '$mensagem', 7,'".$_SESSION['email']."',".$_SESSION['code'].")";
+        mysql_query($sql);
+        }
+            $mensagem = "$apelido Alterou E-mail";
+            salvaLog($mensagem);;
                                     session_destroy();
                                 }
                                 else{

@@ -279,4 +279,15 @@ else{
         mysql_query($sql);
 }
 echo "MATÉRIA ATUALIZADA";
+        function salvaLog($mensagem) {
+            date_default_timezone_set("Brazil/East");
+        $ip = $_SERVER['REMOTE_ADDR']; // Salva o IP do visitante
+        $hora = date('H:i:s'); // Salva a hora atual (formato MySQL)
+        $dia = date('Y-m-d');
+        $sql = "INSERT INTO LOG(IP_LOG, DATA_LOG, HORA_LOG, MENSAGEM_LOG, ACAO_LOG,AUTOR_LOG,COD_AUTOR_LOG)
+        VALUES('$ip','$dia', '$hora', '$mensagem', 17,'".$_SESSION['email']."',".$_SESSION['code'].")";
+        mysql_query($sql);
+        }
+            $mensagem = "$apelido Editou Matéria";
+            salvaLog($mensagem);
 ECHO "<a onclick='javascript:history.go(-1);'>Voltar</a>";
