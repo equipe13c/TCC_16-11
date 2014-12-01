@@ -48,15 +48,14 @@
                         <h2> Altere Aqui. </h2>                        
                         <div id="formularioContato">
                             <h1> Recuperar para e-mail </h1>
-                            <form action="enviarLink.php" method="get">
+                            <form action="enviarSenha.php" method="post">
                                 <p id="tag_rec"> Recuperar Senha</p><br/><br/>
                                 <label id="tag_email_rec">E-mail:</label><input id="rec_email" type="email" name="email" required><br/>
                                 <input type="submit" id="btnRec" value="Recuperar">
                             </form>
                         </div>    
                     </div>
-                </div>
-                </div>                 
+                </div>                
             </article>
             <div id="imgFooter" ondragstart='return false'> 
                 <img src="imagens/imagemRodape.png" alt=""> 
@@ -66,6 +65,6 @@
                     include_once 'includes/rodape.php';
                 ?>
             </footer>
-        </container>
+        </section>
     </body>
 </html> 

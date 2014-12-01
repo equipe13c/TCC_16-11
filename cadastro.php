@@ -65,7 +65,7 @@
                         </div>
                         <form action="inserirUser.php" name="formCad" method="post" id="cadastrarForm" onsubmit="return validaCadastro(this);">
                             <div id="campos">
-                                <p> Nome: </p> <input type="text" name="nome" placeholder="Nome" class="campos"> 
+                                <p> Nome: </p> <input type="text" name="nome" placeholder="Nome" class="campos" > 
                             </div>
                             <div id="campos">
                                 <p> Apelido: </p> <input type="text" name="apelido" placeholder="Apelido" class="campos">

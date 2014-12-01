@@ -93,7 +93,7 @@
                 <article id="conteudo_infos">
 <?php
 $codeU = $_SESSION['code'];
-$query = "SELECT * FROM PERSONAGEM WHERE ORDER BY ID_PERSONAGEM ASC";
+$query = "SELECT * FROM PERSONAGEM ORDER BY ID_PERSONAGEM ASC";
 $total_reg = 10;
 $pc= isset($_GET['pagina'])? $_GET['pagina'] : "1";
 $inicio = $pc - 1; 

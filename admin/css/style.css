@@ -2197,6 +2197,16 @@ table.tableInserirMateria td.campos{
     margin-bottom: 10px;  
 }
 
+#campos select{
+    width: 235px;
+    height: 30px;  
+    font-family: century gothic;
+    font-size: 12pt;
+    color: #333;
+    text-transform: uppercase;
+}
+
+
 .campos{
     width: 230px;
     height: 30px;    

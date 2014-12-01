@@ -20,30 +20,6 @@
                 document.getElementById("botaoLogin").style.backgroundColor = "#00989E";
                 document.getElementById("logar").style.borderBottom = "solid 5px #00989E";           
             };             
-            function validaSenha(form){    
-    
-    if (form.senhaAtual.value==""){
-        alert("Preencha a senha corretamente.");
-        form.senhaAtual.focus();
-        return false;
-    }
-    if (form.senha.value=="" || form.senha.value.length < 8){
-        alert("A senha deve conter pelo menos 8 dígitos.");
-        form.senha.focus();
-        return false;
-    }                
-    if (form.confirmSenha.value=="" || form.confirmSenha.value.length < 8){
-        alert("Preencha a confirmação de senha corretamente.");
-        form.confirmesenhaUser.focus();
-        return false;
-    }
-    if (form.senha.value!=form.confirmSenha.value){
-        alert("A senha e a confirmação devem de ser iguais.");
-        form.confirmesenhaUser.focus();
-        return false;
-    }
-    else{ return true;}
-};
         </script>   
         <title> Multiplayer </title>
     </head>   
@@ -76,28 +52,51 @@
                             <?php 
                             include_once 'classes/Bcrypt.class.php';
 
-     $cod = $_GET['id']; 
-     
-     $resultCod  = base64_decode($cod);;
-     $resultCod = $resultCod - 299202;
-     $query = "SELECT * FROM USUARIO WHERE COD_USUARIO = $resultCod";
+     $email = $_POST['email']; 
+     $query = "SELECT EMAIL_USUARIO FROM usuario WHERE EMAIL_USUARIO = '$email'";
      $result = mysql_query($query);
 
      $totalUsuario = mysql_num_rows($result);
      if($totalUsuario === 0){
          echo '<p id="tituloSenha">Usuário nao encontrado!</p><br/> <br/>';
-         echo '<p id="tituloSenha" <a class="voltarSenha" href="javascript:history.back(1)">Voltar</a></p><br/><br/>'; 
+          echo '<p id="tituloSenha" <a class="voltarSenha" href="javascript:history.back(1)">Voltar</a></p><br/><br/>';
+           
      }
      else{
-        echo '<form action="alterarSenha.php" method="post" onsubmit="return validaSenha(this);">';
-        echo '<input type="hidden" name="codigo" value="'.$resultCod.'" class="txtSenhas">'; 
-        echo '<input type="password" name="senhaAtual" class="txtSenhas">';
-        echo '<input type="password" name="senha" class="txtSenhas">';
-        echo '<input type="password" name="confirmSenha" class="txtSenhas">';
-        echo '<input type="submit" value="Alterar" class="btnAlterarSenha">';
-        echo '</form>';
-        
+
+     $query = "SELECT NOME_USUARIO, SENHA_USUARIO FROM usuario WHERE EMAIL_USUARIO = '$email'";
+     $result = mysql_query($query);
+     $usuarios = mysql_fetch_array($result);
+     $senha = $usuarios['SENHA_USUARIO'];
+     $nome = $usuarios['NOME_USUARIO'];
+     function geraSaltAleatorio($tamanho = 6) {
+     return substr(md5(mt_rand()), 0, $tamanho); 
      }
+     $salt = geraSaltAleatorio();
+     $novasenha = Bcrypt::hash($salt);
+     $seguranca = $usuarios['COD_USUARIO'] + 299202;
+     $hash = base64_encode($seguranca);
+     $emaildestinatario = $email;
+     $assunto = "Recuperação de Senha ";
+     $envio = "UPDATE USUARIO SET EMAIL_USUARIO = '$email', SENHA_USUARIO = '$novasenha'  WHERE EMAIL_USUARIO = '$email'";
+     if(mysql_query($envio)){
+         echo "<p id='tituloSenha'>Senha Recuperada</p><br/>";
+     
+
+     $emaildestinatario = $email;
+     $assunto = "Recuperação de Senha ";
+     $mensagemHTML = 'Acesse o Link abaixo para trocar sua Senha<br/>http://www.multiplayer.url.ph/trocarSenha?&id='.$hash;
+    $headers = "MIME-Version: 1.0\r\n";
+    $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
+     $envio = mail($emaildestinatario, $assunto, $mensagemHTML, $headers); 
+     if($envio){
+     echo "<center><p class='verifiqueSenha'>E-mail Enviado, verifique Sua Caixa de Mensagens<br/> Caso o E-mail não tenha sido enviado <a href=reenviarSenha.php>clique aqui</a><p class='verifiqueSenha'></center> ";
+     echo "<a id='voltarSenha' href=index.php><p id='tituloSenha'>Voltar</p></a><br/>";
+     }
+
+         }else{
+         echo "<p class='verifiqueSenha'>Erro ao recuperar senha</p>";
+     }}
 ?>  
                     </div>
             </article>

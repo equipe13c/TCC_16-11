@@ -76,27 +76,30 @@
                             <?php 
                             include_once 'classes/Bcrypt.class.php';
 
-     $cod = $_GET['id']; 
-     
-     $resultCod  = base64_decode($cod);;
-     $resultCod = $resultCod - 299202;
-     $query = "SELECT * FROM USUARIO WHERE COD_USUARIO = $resultCod";
+     $senhaAtual = $_POST['senhaAtual'];
+     $senha = $_POST['senha'];
+     $codigo = $_POST['codigo'];
+     $query = "SELECT * FROM USUARIO WHERE COD_USUARIO = $codigo";
      $result = mysql_query($query);
-
      $totalUsuario = mysql_num_rows($result);
+     $usuarios = mysql_fetch_array($result);
+
      if($totalUsuario === 0){
          echo '<p id="tituloSenha">Usuário nao encontrado!</p><br/> <br/>';
          echo '<p id="tituloSenha" <a class="voltarSenha" href="javascript:history.back(1)">Voltar</a></p><br/><br/>'; 
      }
      else{
-        echo '<form action="alterarSenha.php" method="post" onsubmit="return validaSenha(this);">';
-        echo '<input type="hidden" name="codigo" value="'.$resultCod.'" class="txtSenhas">'; 
-        echo '<input type="password" name="senhaAtual" class="txtSenhas">';
-        echo '<input type="password" name="senha" class="txtSenhas">';
-        echo '<input type="password" name="confirmSenha" class="txtSenhas">';
-        echo '<input type="submit" value="Alterar" class="btnAlterarSenha">';
-        echo '</form>';
-        
+     if($senhaAtual == $usuarios['SENHA_USUARIO']){
+     $query = "UPDATE USUARIO SET SENHA_USUARIO = $senha WHERE COD_USUARIO = $codigo";
+     $result = mysql_query($query);
+     if($result){
+         echo 'SENHA ALTERADA';
+     }
+     }
+     else{
+         echo '<script> alert("Senha Atual Incorreta");</script>';
+         echo '<script>javascript:history.go(-1);</script>';
+     }
      }
 ?>  
                     </div>
