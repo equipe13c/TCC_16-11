@@ -32,6 +32,7 @@ else{
         $_SESSION['apelido'] = $apelidoUSUARIO;
         $logado = true;
         function salvaLog($mensagem,$email) {
+            date_default_timezone_set("Brazil/East");
         $ip = $_SERVER['REMOTE_ADDR']; // Salva o IP do visitante
         $hora = date('Y-m-d H:i:s'); // Salva a hora atual (formato MySQL)
         $dia = date('Y-m-d');
