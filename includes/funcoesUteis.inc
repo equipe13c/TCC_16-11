@@ -894,16 +894,19 @@ function buscarMateriasPrincipal(){
                                     $resultado = mysql_query($sql);
                                     $artigos2 = mysql_fetch_array($resultado);
                                     $imagemMini = $artigos2['IMAGEM_PRINCIPAL'];
-                                    $imagemCapa = $artigos2['IMAGEM_CAPA'];
-                                    echo '<a href="'.$urlArtigo.'">';
+                                    $imagemCapa = $artigos2['IMAGEM_CAPA'];                                    
                                     echo '<div class="materiaPrincipal">';
-                                    echo '';
-                                    echo '<div id="descricaoImagemPrincipal">';
-                                    echo '<p>'.$descricaoArtigo.'</P>';
-                                    echo '</div>';                                   
-                                    echo ' <img src="uploads/'.$imagemMini.'" alt="" id="imagemMaterias">';
-                                    echo '</div>';
+                                    echo '<div class="materiasGrande">';                                    
+                                    echo '<a href="'.$urlArtigo.'">';
+                                    echo '<img src="uploads/'.$imagemMini.'" alt="" id="imagemMaterias">';
+                                    echo '</div>';                      
+                                    echo '<div id="descricaoImagemPrincipal">';                                    
+                                    echo '<p class="tituloMaterias">'.$tituloArtigo.'</p>';
+                                    echo '<hr/>';
+                                    echo '<p class="descricaoMaterias">'.$descricaoArtigo.'</p>';                                    
                                     echo '</a>';
+                                    echo '</div>';                                    
+                                    echo '</div>';
                             }
                             }
 }
@@ -911,7 +914,7 @@ function buscarMateriasPequenas(){
     $query = "SELECT * FROM ARTIGO ORDER BY ID_ARTIGO DESC";
                             $pc= isset($_GET['pagina'])? $_GET['pagina'] : "1";
                             $inicio = $pc - 1; 
-                            $total_reg = "3";
+                            $total_reg = "6";
                             $inicio = $inicio * $total_reg;
                             $limite = mysql_query("$query LIMIT $inicio,$total_reg"); 
                             $result = mysql_query($query);                
@@ -937,36 +940,15 @@ function buscarMateriasPequenas(){
                                     echo '<a href="'.$urlArtigo.'">';
                                     echo '<img src="uploads/'.$imagemMini.'" alt="" id="imagemMaterias">';
                                     echo '</div>';                      
-                                    echo '<div id="descricaoImagem">';
-                                    echo '<p>'.$descricaoArtigo.'</p>';                                    
+                                    echo '<div id="descricaoImagem">';                                    
+                                    echo '<p class="tituloMateriasPequenas">'.$tituloArtigo.'</p>';
+                                    echo '<hr/>';
+                                    echo '<p class="descricaoMateriasPequenas">'.$descricaoArtigo.'</p>';                                    
                                     echo '</a>';
                                     echo '</div>';                                    
                                     echo '</div>';
                             }                            
-                    }
-                    echo "<div id='paginacao'>";
-                    echo "<div id='paginacaoMaterias'>";
-                    $anterior = $pc -1; 
-                    $proximo = $pc +1; 
-                    if ($pc>1) 
-                        { echo " <a href=?pagina=$anterior>< Anterior</a> "; 
-
-                        } 
-                        if($pc ==1){/*CODIGO A APARECER PARA VOLTAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério
-                        //echo "|"; 
-                        // Inicio lógica rogerio
-                        for($i=1;$i<=$tp;$i++)
-                        {
-                            echo "<a href=?pagina=$i>".$i . "</a>" . "    ";
-                        }
-                        // Fim lógia rogério
-                        if ($pc<$tp) 
-                            { echo " <a href=?pagina=$proximo>Próxima ></a>"; 
-
-                            }
-                       if($pc == $tp){/*CODIGO A APARECER PARA PASSAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério
-                     echo "</div>";
-                     echo "</div>";
+                    }                    
 }
 function buscarImagemAutor($autor){
                     $query = "SELECT * FROM IMAGEM_USUARIO WHERE COD_IMAGEM_USUARIO = $autor";

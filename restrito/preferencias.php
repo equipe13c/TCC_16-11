@@ -61,10 +61,6 @@
             </figure>
             <article id="conteudo">
                 <div id="info_user">    
-                    <div id="linksAtualizarImg"> 
-                        <a href="alterarImg.php"> Alterar</a><br/>
-                        <a href="removerImg.php"> Remover</a>
-                    </div>
                     <figure id="imgUser" onmouseover="mostrarCam();" onmouseout="retirarCam();" >
                         <?php
                             $query = "SELECT * FROM IMAGEM_USUARIO WHERE COD_IMAGEM_USUARIO = ".$_SESSION['code'];
@@ -101,7 +97,7 @@
                 </div>
                 <nav id="menu2">
                     <?php 
-                        include '../includes/menuA.php';
+                        include '../includes/menuR2.php';
                     ?>
                 </nav>
                 <article id="conteudo_infos">
