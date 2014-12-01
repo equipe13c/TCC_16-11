@@ -51,7 +51,11 @@
                         VerificaSessao('');
                     ?>                    
                 </div>
+                <div id="propaganda">
+                    <iframe src="http://www.brasilgameshow.com.br/publico/contador-horizontal.php" style="width: 544px; height: 100px; display: block; margin: 0 auto; border: none; overflow: hidden;"></iframe> 
+                </div>
             </header>
+             
             <article id="conteudo">
                 <div id="corpoConteudoGaleria2">
                      <h1 id="tituloGaleria"> Matérias  </h1>

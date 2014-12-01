@@ -133,7 +133,7 @@
                        
                     </form>  
                     <form action="script3.php" method="post" enctype="multipart/form-data" >
-                       <div class="areasPreferencia">                                
+                       <<div class="areasPreferencia">                                
                                 <div class="preferencias">  
                                     <p> Descrição: </p> 
                                     <textarea id="descricao" name="descricao" class="txtInfo" disabled="disabled"><?php buscarPreferencia('descricao', $_SESSION['code']);?></textarea> <br/>
@@ -153,7 +153,7 @@
                                     
                                 </div>
                                 <div class="infoInputs" id="editPreferencias">
-                                    <a onclick="edit('preferencias', 'descricao', 'jogos', 'plataformas')" href="#teste"><img src="../imagens/edit.png" alt="editImage" class="editImage"> </a>                               
+                                    <a onclick="edit('preferencias', 'descricao', 'jogos', 'plataformas')" href="#teste"><img src="../imagens/edit.png" alt="editImage" class="editImage"> Editar</a>                               
                                 </div>
                             </div>
                         </form>

@@ -537,16 +537,22 @@ function buscarMateriasAside(){
                                 {      
                                     $codigoImagem = $artigos['ID_ARTIGO'];
                                     $urlArtigo = $artigos['URL_ARTIGO'];
-                                    $tituloArtigo = $artigos['TITULO_ARTIGO'];
+                                    $tituloArtigo = $artigos['TITULO_ARTIGO'];                                    
+                                    $descricaoArtigo = $artigos['DESCRICAO_ARTIGO'];
                                     $sql = "SELECT * FROM IMAGENS_MATERIA WHERE COD_MATERIA_IMAGEM = $codigoImagem";
                                     $resultado = mysql_query($sql);
                                     $artigos2 = mysql_fetch_array($resultado);
-                                    $imagemMini = $artigos2['IMAGEM_PRINCIPAL'];
-                                    echo '<div class="materiaAside">';
-                                    echo '<a href="../'.$urlArtigo.'"><div class="descricaoMateriaAside">';
-                                    echo '<p>'.$tituloArtigo .'</p>';
-                                    echo '</div>';
+                                    $imagemMini = $artigos2['IMAGEM_PRINCIPAL']; 
+                                    echo '<div class="materiaAside">';                                    
+                                    echo '<a href="../'.$urlArtigo.'">';
                                     echo '<img src="../uploads/'.$imagemMini.'" class="imagemMateriaAside">';
+                                    echo '<div class="descricaoMateriaAside">';                                    
+                                    echo '<p class="tituloMateriaAside">'.$tituloArtigo .'</p>';
+                                    echo '<br/>';
+                                    echo '<hr/>';
+                                    echo '<p class="descricaoAside">'.$descricaoArtigo .'</p>';
+                                    echo '</div>';                                      
+                                    echo '</a>'; 
                                     echo '</div>';
                             }
                             }
@@ -568,15 +574,21 @@ function buscarMateriasAside2(){
                                     $codigoImagem = $artigos['ID_ARTIGO'];
                                     $urlArtigo = $artigos['URL_ARTIGO'];
                                     $tituloArtigo = $artigos['TITULO_ARTIGO'];
+                                    $descricaoArtigo = $artigos['DESCRICAO_ARTIGO'];
                                     $sql = "SELECT * FROM IMAGENS_MATERIA WHERE COD_MATERIA_IMAGEM = $codigoImagem";
                                     $resultado = mysql_query($sql);
                                     $artigos2 = mysql_fetch_array($resultado);
                                     $imagemMini = $artigos2['IMAGEM_PRINCIPAL'];
-                                    echo '<div class="materiaAside" >';
-                                    echo '<a href="'.$urlArtigo.'"><div class="descricaoMateriaAside">';
-                                    echo '<p>'.$tituloArtigo .'</p>';
-                                    echo '</div>';
-                                    echo '<img src="uploads/'.$imagemMini.'" class="imagemMateriaAside">';
+                                    echo '<div class="materiaAside">';                                    
+                                    echo '<a href="../'.$urlArtigo.'">';
+                                    echo '<img src="../uploads/'.$imagemMini.'" class="imagemMateriaAside">';
+                                    echo '<div class="descricaoMateriaAside">';                                    
+                                    echo '<p class="tituloMateriaAside">'.$tituloArtigo .'</p>';
+                                    echo '<br/>';
+                                    echo '<hr/>';
+                                    echo '<p class="descricaoMateriasAside">'.$descricaoArtigo .'</p>';
+                                    echo '</div>';                                      
+                                    echo '</a>'; 
                                     echo '</div>';
                             }
                             }
@@ -893,6 +905,10 @@ function buscarMateriasPrincipal(){
                                     $sql = "SELECT * FROM IMAGENS_MATERIA WHERE COD_MATERIA_IMAGEM = $codigoImagem";
                                     $resultado = mysql_query($sql);
                                     $artigos2 = mysql_fetch_array($resultado);
+                                    $dataArtigo = $artigos['DATA_ARTIGO'];
+                                    $ano = substr($dataArtigo, 0, 4);
+                                    $mes = substr($dataArtigo, 5, 2);
+                                    $dia = substr($dataArtigo, 8, 2);
                                     $imagemMini = $artigos2['IMAGEM_PRINCIPAL'];
                                     $imagemCapa = $artigos2['IMAGEM_CAPA'];                                    
                                     echo '<div class="materiaPrincipal">';
@@ -926,6 +942,24 @@ function buscarMateriasPequenas(){
                             else{
                                 while($artigos = mysql_fetch_array($limite))
                                 {      
+                                    $sql = "SELECT * FROM IMAGENS_MATERIA WHERE COD_MATERIA_IMAGEM =".$artigos['ID_ARTIGO'];
+                                    $resultBusca = mysql_query($sql);
+                                    $totalBusca = mysql_fetch_array($resultBusca);
+                                    $imagemMini = $totalBusca['IMAGEM_PRINCIPAL'];
+                                    $descricaoArtigo = $artigos['DESCRICAO_ARTIGO'];
+                                    $tituloArtigo = $artigos['TITULO_ARTIGO'];
+                                    $urlArtigo = $artigos['URL_ARTIGO'];
+                                    $dataArtigo = $artigos['DATA_ARTIGO'];
+                                    $ano = substr($dataArtigo, 0, 4);
+                                    $mes = substr($dataArtigo, 5, 2);
+                                    $dia = substr($dataArtigo, 8, 2);
+                                    $autorArtigo = $artigos['AUTOR_ARTIGO'];
+                                    $sql = "SELECT * FROM USUARIO WHERE COD_USUARIO = $autorArtigo";
+                                    $buscaCod = mysql_query($sql);
+                                    $resultCod = mysql_fetch_array($buscaCod);
+                                  
+                                   
+                                    
                                     $codigoImagem = $artigos['ID_ARTIGO'];
                                     $urlArtigo = $artigos['URL_ARTIGO'];
                                     $tituloArtigo = $artigos['TITULO_ARTIGO'];
@@ -944,8 +978,14 @@ function buscarMateriasPequenas(){
                                     echo '<p class="tituloMateriasPequenas">'.$tituloArtigo.'</p>';
                                     echo '<hr/>';
                                     echo '<p class="descricaoMateriasPequenas">'.$descricaoArtigo.'</p>';                                    
-                                    echo '</a>';
-                                    echo '</div>';                                    
+                                    echo '</a>';                                     
+                                    echo '</div>'; 
+                                    echo '<p class="dataArtigos2">';
+                                    echo '<b>Data: </b>'.$dia.'/'.$mes.'/'.$ano;
+                                    echo '</p>';
+                                    echo '<p class="autorArtigo2">';
+                                    echo '<b>Autor: </b>'.$resultCod['NOME_USUARIO'];
+                                    echo '</p>';
                                     echo '</div>';
                             }                            
                     }                    
@@ -1100,7 +1140,7 @@ function listarPersonagens(){
                             $tr = mysql_num_rows($result);
                             $tp = $tr / $total_reg;
                             if($tr === 0){
-                                echo "Nenhum Artigo encontrado";
+                                echo "<p class='semUsuario'> Nenhum Artigo encontrado </p>";
                             }
                             else{
                                 while($artigos = mysql_fetch_array($limite))
@@ -1127,7 +1167,6 @@ function listarPersonagens(){
                                     echo '</a>';
                             }                            
                     }
-                    echo "<div id='paginacao'>";
                     echo "<div id='paginacaoMaterias'>";
                     $anterior = $pc -1; 
                     $proximo = $pc +1; 
@@ -1148,7 +1187,6 @@ function listarPersonagens(){
 
                             }
                        if($pc == $tp){/*CODIGO A APARECER PARA PASSAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério
-                     echo "</div>";
                      echo "</div>";
 }
 function infosImagensMateria2($string,$code){

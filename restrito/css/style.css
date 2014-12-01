@@ -793,7 +793,7 @@ table.bordasimples td.campos{
     font-family:century gothic;
     font-size:14pt;
     border:0px;
-    background-color: transparent;
+    background-color: #fff;
 }
 table.editEmailTable{
     border-collapse: collapse;
@@ -1300,4 +1300,10 @@ table.tablealterarCapa2 td.info{
     height: 50px;    
     background-color: #fff;
     text-align: center;
+}
+.infoInputs a{
+    color: #000;
+    font-family: century gothic;
+    font-size: 14pt;
+    text-decoration: none;
 }
