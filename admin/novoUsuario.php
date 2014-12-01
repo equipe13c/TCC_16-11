@@ -43,11 +43,8 @@
                 ?>
             </figure>
             <article id="conteudo">
-                <div id="info_user">    
-                    <div id="linksAtualizarImg"> 
-                        <a href="alterarImg.php"> Alterar</a><br/>
-                        <a href="removerImg.php"> Remover</a>
-                    </div>
+                <div id="info_user">   
+                    
                         <?php
                             $query = "SELECT * FROM IMAGEM_USUARIO WHERE COD_IMAGEM_USUARIO = ".$_SESSION['code'];
                             $result = mysql_query($query);                
@@ -83,7 +80,7 @@
                 </div>
                 <nav id="menu2">
                     <?php 
-                        include '../includes/menuC.php';
+                        include '../includes/menuA.php';
                     ?>
                 </nav>
                 <article id="conteudo_infos">

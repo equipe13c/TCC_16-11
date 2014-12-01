@@ -60,11 +60,7 @@
                 ?>
             </figure>
             <article id="conteudo">
-                <div id="info_user">    
-                    <div id="linksAtualizarImg"> 
-                        <a href="alterarImg.php"> Alterar</a><br/>
-                        <a href="removerImg.php"> Remover</a>
-                    </div>
+                <div id="info_user">                     
                     <figure id="imgUser" onmouseover="mostrarCam();" onmouseout="retirarCam();" >
                         <?php
                             $query = "SELECT * FROM IMAGEM_USUARIO WHERE COD_IMAGEM_USUARIO = ".$_SESSION['code'];
@@ -101,7 +97,7 @@
                 </div>
                 <nav id="menu2">
                     <?php 
-                        include '../includes/menuA.php';
+                        include '../includes/menuC.php';
                     ?>
                 </nav>
                 <article id="conteudo_infos">
@@ -140,24 +136,20 @@
                        <div class="areasPreferencia">                                
                                 <div class="preferencias">  
                                     <p> Descrição: </p> 
-                                    <textarea id="descricao" name="descricao" class="txtInfo" disabled="disabled"><?php buscarPreferencia('descricao', $_SESSION['code']);?></textarea> <br/>
-                               
+                                    <textarea id="descricao" name="descricao" disabled="disabled"><?php buscarPreferencia('descricao', $_SESSION['code']);?></textarea> <br/>                               
                                 </div>
                                 <div class="preferencias">  
                                     <p> Jogos Preferidos: </p> 
-                                    <textarea id="jogos" name="jogos" class="txtInfo" disabled="disabled"><?php buscarPreferencia('jogo', $_SESSION['code']);?></textarea> <br/>
-                             
+                                    <textarea id="jogos" name="jogos" disabled="disabled"><?php buscarPreferencia('jogo', $_SESSION['code']);?></textarea> <br/>                             
                                 </div>
                            
                                 <div class="preferencias">  
                                     <p> Plataformas Preferidas: </p> 
-                                    <textarea id="plataformas" name="plataformas" class="txtInfo" disabled="disabled"><?php buscarPreferencia('plataforma', $_SESSION['code']);?></textarea> <br/>
-                               
-                                    
-                                    
+                                    <textarea id="plataformas" name="plataformas" disabled="disabled"><?php buscarPreferencia('plataforma', $_SESSION['code']);?></textarea> <br/>                               
+                                                                        
                                 </div>
                                 <div class="infoInputs" id="editPreferencias">
-                                    <a onclick="edit('preferencias', 'descricao', 'jogos', 'plataformas')" href="#teste"><img src="../imagens/edit.png" alt="editImage" class="editImage"> </a>                               
+                                    <a onclick="edit('preferencias', 'descricao', 'jogos', 'plataformas')" href="#teste"><img src="../imagens/edit.png" alt="editImage" class="editImage"> Editar</a>                               
                                 </div>
                             </div>
                         </form>

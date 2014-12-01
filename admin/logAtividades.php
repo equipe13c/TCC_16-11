@@ -60,12 +60,12 @@
                             $urlImagem = $imagens2['URL_IMAGEM'];
                             echo "<img src='../uploads/$urlImagem' id='imagemUser' alt='imagem'>";
                         ?>
-                        <div id="imgCam" >
+                       <div id="imgCam" >
                             <div id="linksMudarImg">
                                 <a href="alterarImg.php" > Alterar Imagem </a>
                                 <a href="removerImg.php" > Remover Imagem </a> 
                             </div>
-                        </div>    
+                        </div>   
                     </figure>
                     <div id="nomeUser">
                         <?php

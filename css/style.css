@@ -216,7 +216,7 @@ body{
     height: 40px;
     width: 40px;
     margin-top: 2px;    
-    margin-left: 50px;    
+    margin-left: 50px;  
     float: left;
     background-color: #fff;
 }
@@ -232,7 +232,7 @@ body{
 #menuReduzido{
     height: 40px;
     margin-top: 0px;    
-    margin-left: 0px;
+    margin-left: 10px;
     float: left;
 }
 
@@ -271,6 +271,16 @@ body{
 
 #menuReduzido ul li{  
     float: left; 
+}
+
+#menuReduzido ul li a:hover{
+    padding: 20px;
+    background-color: #333;
+    -webkit-transition: all 0.30s ease-out;
+    -moz-transition: all 0.30s ease-out;
+    -ms-transition: all 0.30s ease-out;
+    -o-transition: all 0.30s ease-out;
+    transition: all 0.30s ease-out; 
 }
 
 #menuReduzido.align-right ul ul{
@@ -396,13 +406,9 @@ body{
     cursor: pointer;
 }
 
-#propaganda1{
-    width: 800px;
-    height: 100px;
-    margin-top: 100px;
-    margin-left: 250px;
-    float: left;    
-    background-color: #fff; 
+#propaganda{
+    margin-top: 80px;
+    margin-left: 100px; 
 }
 
 #iconesSociais{
@@ -493,7 +499,7 @@ body{
 #corpoConteudoGaleria{
     width: 1150px;
     height: 640px;
-    margin-top: 40px;
+    margin-top: -28px;
     margin-left: 7%;
     margin-bottom: 50px;
     float: left;
@@ -664,11 +670,15 @@ body{
 
 .materiaPrincipal{
     width: 760px;
-    height: 400px;
+    height: 550px;
     margin-top: 30px;
-    margin-left: 22px;
+    margin-left: 30px;
+    margin-bottom: 10px;
     float: left;    
-    border: solid 5px #333;
+}
+
+.materiaPrincipal:hover{
+    box-shadow: 1px 1px 1px 1px #333;
 }
 
 .materiaPrincipal img{
@@ -676,38 +686,51 @@ body{
     height: 400px;
 }
 
-#descricaoImagemPrincipal{
+.materiasGrande{
     width: 760px;
     height: 400px;
-    margin-top: 0;
-    background-color: #000;
-    z-index: 3;
-    position: absolute;
-    opacity: 0.6;    
-    -webkit-transition: all 0.7s ease 0s;     
-    -moz-transition: all 0.7s ease 0s;    
-    -o-transition: all 0.7s ease 0s;     
-    transition: all 0.7s ease 0s;
 }
 
-#descricaoImagemPrincipal:hover{
-    opacity: 0.9;
-    -webkit-transition: all 0.7s ease 0s;     
-    -moz-transition: all 0.7s ease 0s;    
-    -o-transition: all 0.7s ease 0s;     
-    transition: all 0.7s ease 0s;
+#descricaoImagemPrincipal{
+    width: 740px;
+    height: 150px;
+    margin-left: 10px;
+    margin-top: 0px;
+    background-color: #E0E0E0;  
 }
 
-#descricaoImagemPrincipal p{
-    margin-top: 25%;
-    margin-left: 5px;
-    margin-bottom: 25%;
-    font-family: impact;
-    text-transform: uppercase;
+#descricaoImagemPrincipal a{
+    padding-top: 20px;
+    font-family: century gothic;
+    text-decoration: none;
+    color:#00989E;
+}
+
+.descricaoMaterias{
+    height: auto;
+    width: 730px;
+    font-family: Century Gothic;
     font-size: 14pt;
-    line-height: 20pt;
-    color: #fff;  
+    line-break: auto;  
+    text-decoration: none;
+    text-align: left;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-top: 5px;   
+    float: left;
+}
+
+.tituloMaterias{
+    padding-top: 10px;  
+    padding-bottom: 10px;  
+    font-family: Century Gothic;
+    font-size: 14pt;
+    line-height: 16pt;
+    text-decoration: none;
+    font-weight: bolder;
+    text-transform: uppercase;
     text-align: center;
+    color: #00989E;
 }
 
 #materiasPequenas{
@@ -718,61 +741,74 @@ body{
     float: left;
 }
 
-.materias{
-    width: 230px;
-    height: 210px;
-    margin-top: 0;
-    margin-left: 24px;
+.materiasReduzidas{
+    width: 250px;
+    height: auto;
+    margin-top: 20px;
+    margin-left: 17px;
     margin-bottom: 30px;
     float: left;
-    z-index: 2;
-    border: solid 5px #333;    
 }
 
-.materias + materias{
+.materiasReduzidas:hover{
+    box-shadow: 1px 1px 1px 1px #333;
+}
+
+.materiasReduzidas + .materiasReduzidas{
+    margin-top: 20px;
+    margin-left: 17px;
     margin-bottom: 30px;
+}
+
+.materias{
+    width: 250px;
+    height: 180px;
+    float: left;       
 }
 
 .materias img{
-    width: 230px;
-    height: 210px;
+    width: 250px;
+    height: 180px;
 }
 
 #descricaoImagem{
-    width: 230px;    
-    height: 210px;
-    margin-top: 0;
-    background-color: #000;
-    z-index: 3;
-    position: absolute;
-    opacity: 0.6;
-    -webkit-transition: all 0.7s ease 0s;     
-    -moz-transition: all 0.7s ease 0s;    
-    -o-transition: all 0.7s ease 0s;     
-    transition: all 0.7s ease 0s;
+    width: 240px;    
+    height: 120px;
+    margin-left: 4px;
+    margin-top: 180px;
+    background-color: #E0E0E0;
 }
 
-#descricaoImagem:hover{
-    opacity: 0.9;
-    -webkit-transition: all 0.7s ease 0s;     
-    -moz-transition: all 0.7s ease 0s;    
-    -o-transition: all 0.7s ease 0s;     
-    transition: all 0.7s ease 0s;
+#descricaoImagem a{
+    padding-top: 20px;
+    font-family: century gothic;
+    text-decoration: none;
+    color:#00989E;
 }
 
-#descricaoImagem p{
-    margin-top: 30%;
+.tituloMateriasPequenas{
+    padding-top: 5px;    
+    padding-bottom: 5px;
+    font-family: Century Gothic;
+    font-size: 11pt;
+    line-height: 16pt;
+    text-decoration: none;
+    font-weight: bolder;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.descricaoMateriasPequenas{
+    height: auto;
+    width: 230px;
+    font-family: Century Gothic;
+    font-size: 10pt;
+    line-break: auto;  
+    text-decoration: none;
+    text-align: left;
     margin-left: 5px;
     margin-right: 5px;
-    margin-bottom: 30%;
-    font-family: impact;
-    text-transform: uppercase;
-    font-size: 10pt;
-    line-height: 16pt;
-    color: #fff;
-    text-align: center;
-    opacity: 1;
-    word-break: break-all;
+    float: left;
 }
 
 #aside1{
@@ -1546,16 +1582,16 @@ body{
     height: 30px;
     float:left;
     text-align: center;
-    margin-top:20px;
+    margin-top: 5px;
     margin-left:10px;
     font-size:14pt;
     font-family: century gothic;
     text-transform: uppercase;
     text-decoration: none;
-font-weight: bolder;
-letter-spacing: 2px;
-color:#00989E;
-border-bottom: 1px solid #ccc;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    color:#00989E;
+    border-bottom: 1px solid #ccc;
 }
 .texto_materia{
     width: 535px;
@@ -1580,7 +1616,7 @@ border-bottom: 1px solid #ccc;
     border-radius: 5px;
     background-color:#00989E;
     text-align:center;
-        line-height: 21px;
+    line-height: 21px;
 }
 .verMais a {
     font-size:10pt;
