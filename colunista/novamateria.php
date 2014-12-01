@@ -5,6 +5,7 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="shortcut icon" href="../imagens/icone001.png" >
         <script type="text/javascript" src="../js/funcoes.js"> </script>
+        <script type="text/javascript" src="validacao.js"></script>
         <script type="text/javascript" src="../js/jquery.js"></script>
         <script type="text/javascript" src="../js/cycle.js"></script>
         <script type="text/javascript" src="../js/javascript.js"></script>
@@ -22,6 +23,9 @@
                 document.getElementById("logar").style.borderBottom = "solid 5px #00989E";               
                 document.getElementById("tituloPagina").style.backgroundColor = "#00989E"; 
             };
+            
+
+
         </script>  
         <title> Área Administrativa </title>
     </head>
@@ -86,7 +90,7 @@
                     ?>
                 </nav>
                 <article id="conteudo_infos">
-                    <form action="inserirMateriaNova.php" method="post" enctype="multipart/form-data" class="novaMateria" onsubmit="return validaInserir(this);">
+                    <form action="inserirMateriaNova.php" method="post" onsubmit="return validaInserir(this);" enctype="multipart/form-data" class="novaMateria" >
                         <div id="categoria">
                             <h1> Selecione Uma Categoria Abaixo: </h1> <br/>
                             <ul class="inputRadios">
@@ -114,7 +118,7 @@
                               <p> Xbox </p>
                             </li>
                             <li class="inputRadio radioNostalgia">
-                              <input name="categoria[]"  value="0" type="radio" id="radioNostalgia" onclick="ocultar('categorias','nostalgia');">    
+                              <input name="categoria[]"  value="5" type="radio" id="radioNostalgia" onclick="ocultar('categorias','nostalgia');">    
                               <label for="radioNostalgia">Nostalgia</label><br/><br/><br/>
                               <p> Nostalgia </p>
                             </li>
@@ -162,12 +166,12 @@
                         <figure id="imgCapaMateria">
                             <p> Selecione uma imagem de capa com dimensões 400x250 para esta área.</p>
                             <img id="preview_imageCapa" alt="" src="">
-                            <input type="file" name="imagemCapa" class="imgCapaMateria"  onchange="preview(this,'capa');" multiple>
+                            <input type="file" name="imagemCapa" id="previewCapa" class="imgCapaMateria"  onchange="preview(this,'capa');" multiple>
                         </figure>
                         <figure id="imgPrincipal">                            
                             <p> Selecione uma imagem com dimensões 400x250 para esta área.</p>
                             <img id="preview_image" alt="" src="">
-                            <input type="file" name="imagemPrincipal" class="imgPrincipal" id="files" onchange="preview(this,'principal');" multiple>
+                            <input type="file" name="imagemPrincipal"  id="previewPrincipal" class="imgPrincipal" id="files" onchange="preview(this,'principal');" multiple>
                         </figure>
                         <div id="tituloMateria">
                             <input type="text" name="titulo_conteudo" class="textos_materia" id="titulo_materia" placeholder="Digite aqui o título da Matéria">
@@ -236,17 +240,17 @@
                             <figure class="imagensGaleria" >
                                 <p> imagem 255x150</p>
                                 <img id="preview_imageGaleria1" alt="" src="">
-                                <input type="file" name="imagemGaleria" class="imgGaleria1" onchange="preview(this,'galeria1');" multiple>
+                                <input type="file" name="imagemGaleria" class="imgGaleria1" id="img1" onchange="preview(this,'galeria1');" multiple>
                             </figure>
                             <figure class="imagensGaleria">
                                 <p> imagem 255x150</p>
                                 <img id="preview_imageGaleria2" alt="" src="">
-                                <input type="file" name="imagemGaleria2" class="imgGaleria1" onchange="preview(this,'galeria2');" multiple>
+                                <input type="file" name="imagemGaleria2" class="imgGaleria1"   id="img2" onchange="preview(this,'galeria2');" multiple>
                             </figure>
                             <figure class="imagensGaleria" >
                                 <p> imagem 255x150</p>
                                 <img id="preview_imageGaleria3" alt="" src="">
-                                <input type="file" name="imagemGaleria3" class="imgGaleria1" onchange="preview(this,'galeria3');" multiple>
+                                <input type="file" name="imagemGaleria3" class="imgGaleria1"  id="img3"  onchange="preview(this,'galeria3');" multiple>
                             </figure>                                
                         </div>
                         <div id="galeriaVideo">

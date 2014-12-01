@@ -5,6 +5,7 @@
     <li> <a href="novoUsuario.php"> Novo Usuário </a></li> 
     <li> <a href="exibeUsers.php"> Usuários </a></li>           
     <li> <a href="atividadesUsuarios.php"> Atividades de Usuários </a></li>  
-    <li> <a href="materias.php"> Matérias </a></li>                       
+    <li> <a href="materias.php"> Matérias </a></li> 
+    <li> <a href="personagens.php"> Personagens </a></li> 
     <li> <a href="sair.php"> SAIR </a></li>
 </ul>

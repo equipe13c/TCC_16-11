@@ -25,8 +25,9 @@
 include '../includes/funcoesUteis.inc';
 validaAutenticacao('../index.php', '3'); 
 $tipoMateria = $_GET['tipoMateria'];
+$tituloArtigo = $_GET['titulo_materia'];
 $codeU = $_SESSION['code'];
-$query = "SELECT * FROM ARTIGO WHERE CATEGORIA_ARTIGO = '$tipoMateria' AND AUTOR_ARTIGO = $codeU ORDER BY ID_ARTIGO ASC";
+$query = "SELECT * FROM ARTIGO WHERE TITULO_ARTIGO OR CONTEUDO_ARTIGO LIKE '%$tituloArtigo%' AND CATEGORIA_ARTIGO = '$tipoMateria'";
 $total_reg = 10;
 $pc= isset($_GET['pagina'])? $_GET['pagina'] : "1";
 $inicio = $pc - 1; 
@@ -43,9 +44,9 @@ else{
     
 echo "<div id='buscaMaterias'>"
     ."<form action='buscaMateria.php' method='get'>"
-    . "<label>Matéria: </label>"
+    . "<label> Busca de Usuário</label>"
     . "<input type='hidden' name='tipoMateria' value='$tipoMateria' id='caixaMateria'>"
-    . "<input type='text' onKeyPress='return letras();' name='titulo_materia' id='caixaMateria'>"
+    . "<input type='text' onKeyPress='return letras();' name='titulo_materia' >"
     . "<input type='submit' name='botaoBuscaMateria' id='botaoBuscaMateria' value='Buscar'>"    
     . "</form>"
     . "</div>";
@@ -96,7 +97,7 @@ echo "</table><br/>";
 $anterior = $pc -1; 
    $proximo = $pc +1; 
    if ($pc>1) 
-       { echo " <a href='?pagina=$anterior&tipoMateria=$tipoMateria'>< Anterior</a> "; 
+       { echo " <a href='?pagina=$anterior&tipoMateria=$tipoMateria&titulo_materia=$tituloArtigo'>< Anterior</a> "; 
        
        } 
        if($pc ==1){/*CODIGO A APARECER PARA VOLTAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério
@@ -104,11 +105,11 @@ $anterior = $pc -1;
        // Inicio lógica rogerio
        for($i=1;$i<=$tp;$i++)
        {
-           echo "<a href=?pagina=$i&tipoMateria=$tipoMateria>".$i . "</a>" . "    ";
+           echo "<a href=?pagina=$i&tipoMateria=$tipoMateria&titulo_materia=$tituloArtigo>".$i . "</a>" . "    ";
        }
        // Fim lógia rogério
        if ($pc<$tp) 
-           { echo " <a href='?pagina=$proximo&tipoMateria=$tipoMateria'>Próxima ></a>"; 
+           { echo " <a href='?pagina=$proximo&tipoMateria=$tipoMateria&titulo_materia=$tituloArtigo'>Próxima ></a>"; 
            
            }
       if($pc == $tp){/*CODIGO A APARECER PARA PASSAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério

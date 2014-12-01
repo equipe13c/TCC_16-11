@@ -42,9 +42,10 @@ if($tr == 0){
 else{
     
 echo "<div id='buscaMaterias'>"
-    ."<form action='buscarUsuario.php' method='post'>"
+    ."<form action='buscaMateria.php' method='get'>"
     . "<label> Busca de Usuário</label>"
-    . "<input type='text' onKeyPress='return letras();' name='nome_user' id='caixaMateria'>"
+    . "<input type='hidden' name='tipoMateria' value='$tipoMateria' id='caixaMateria'>"
+    . "<input type='text' onKeyPress='return letras();' name='titulo_materia' id='caixaMateria'>"
     . "<input type='submit' name='botaoBuscaMateria' id='botaoBuscaMateria' value='Buscar'>"    
     . "</form>"
     . "</div>";

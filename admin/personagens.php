@@ -5,6 +5,7 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="shortcut icon" href="../imagens/icone001.png" >
         <script type="text/javascript" src="../js/funcoes.js"> </script>
+        <script type="text/javascript" src="validacao.js"></script>
         <script type="text/javascript" src="../js/jquery.js"></script>
         <script type="text/javascript" src="../js/cycle.js"></script>
         <script type="text/javascript" src="../js/javascript.js"></script>
@@ -22,8 +23,10 @@
                 document.getElementById("logar").style.borderBottom = "solid 5px #00989E";               
                 document.getElementById("tituloPagina").style.backgroundColor = "#00989E"; 
             };
-  
-        </script>
+            
+
+
+        </script>  
         <title> Área Administrativa </title>
     </head>
     <body >
@@ -35,7 +38,9 @@
             ?>
             <header id="cabecalho">
                 <?php
-                include_once '../includes/menuR.php'; 
+                
+                include_once '../includes/menuR.php';
+                
                 ?>
             </header>
             <figure id="imgCapa">
@@ -86,40 +91,95 @@
                     ?>
                 </nav>
                 <article id="conteudo_infos">
-                    <form action="update.php" method="post">
-                        <table id="tabelaPerfil" class="bordasimples">
-                            <tr class="linhasInfo">
-                                <td class="info">Endereço de e-mail</td>
-                                <td class="campos"><input type="text" class="txtInfo" disabled="disabled" id="emailInfo"   value="<?php echo $_SESSION['email']; ?>"></td>
-                                <td class="edit"><img src="../imagens/edit.png" alt="editImage" class="editImage"><a onclick="edit('email', '<?php echo $_SESSION['email']; ?>')" href="#">Editar</a></td>                            
-                            </tr>
-                            <tr class="linhasInfo">
-                                <td class="info">Senha</td>
-                                <td class="campos"><input type="password" class="txtInfo" disabled="disabled" id="senhaInfo" name="senhaUser" value="default"></td>
-                                <td class="edit" id="salvarSenha"><img src="../imagens/edit.png" alt="editImage" class="editImage"><a href="alterarSenha.php">Editar</a></td>                            
-                            </tr>
-                            <tr class="linhasInfo">
-                                <td class="info">Nome completo</td>
-                                <td class="campos"><input type="text" class="txtInfo" disabled="disabled"  id="nomeInfo" name="nomeUser"  value="<?php  buscarDados('nome'); ?>"></td>
-                                <td class="edit" id="salvarName"><img src="../imagens/edit.png" alt="editImage" class="editImage"><a onclick="edit('nome')" href="#">Editar</a></td>                            
-                            </tr>
-                            <tr class="linhasInfo">
-                                <td class="info">Apelido</td>
-                                <td class="campos"><input type="text" class="txtInfo" disabled="disabled"  id="apelidoInfo" name="apelidoUser" value="<?php buscarDados('apelido'); ?>"></td>
-                                <td class="edit" id="salvarApel"><img src="../imagens/edit.png" alt="editImage" class="editImage"><a onclick="edit('apelido')" href="#">Editar</a></td>                            
-                            </tr>
-                            <tr class="linhasInfo">
-                                <td class="info">Data de nascimento</td>
-                                <td class="campos"><input type="text" class="txtInfo" disabled="disabled"  id="dataInfo"  value="<?php buscarDados('data'); ?>"></td>
-                                <td class="edit"></td>                            
-                            </tr>
-                            <tr class="linhasInfo">
-                                <td class="info">Estado</td>
-                                <td class="campos"><input type="text" class="txtInfo" disabled="disabled" id="cidadeInfo" name="estadoUser" value="<?php buscarDados('estado'); ?>"></td>
-                                <td class="edit" id="salvarCid"><img src="../imagens/edit.png" alt="editImage" class="editImage"><a onclick="edit('cidade')" href="#">Editar</a></td>                            
-                            </tr>
-                        </table>
-                    </form>    
+<?php
+$codeU = $_SESSION['code'];
+$query = "SELECT * FROM PERSONAGEM WHERE ORDER BY ID_PERSONAGEM ASC";
+$total_reg = 10;
+$pc= isset($_GET['pagina'])? $_GET['pagina'] : "1";
+$inicio = $pc - 1; 
+$inicio = $inicio * $total_reg;
+$limite = mysql_query("$query LIMIT $inicio,$total_reg"); 
+$result = mysql_query($query);
+$tr = mysql_num_rows($result);
+
+$tp = $tr / $total_reg;
+if($tr == 0){
+    echo "<p class='semUsuario'> Nenhum Registro Encontrado </p>";
+}
+else{
+    
+echo "<div id='buscaMaterias'>"
+    ."<form action='buscarPersonagem.php' method='get'>"
+    . "<label> Personagem: </label>"
+    . "<input type='text' onKeyPress='return letras();' name='nome_personagem' id='caixaMateria'>"
+    . "<input type='submit' name='botaoBuscaMateria' id='botaoBuscaMateria' value='Buscar'>"    
+    . "</form>"
+    . "</div>";
+echo "<div class='tables'>";
+    echo "<table class='' id='tabelaMateria' >";
+    echo "<tr>";
+    echo "<th style='display: none'>Código</th>";
+    echo "<th>Imagem</th>";
+    echo "<th>Titulo</th>";
+    echo "<th>Autor</th>";
+    echo "<th colspan='2'>Data/Hora</th>";
+    echo "<th colspan='3'>Opções</th>";
+    echo "</tr>";
+while($artigos = mysql_fetch_array($limite))
+{         
+    
+    $sql = "SELECT IMAGEM_PRINCIPAL FROM IMAGENS_PERSONAGEM WHERE COD_PERSONAGEM_IMAGEM = ".$artigos['ID_PERSONAGEM'];
+                $result2 = mysql_query($sql);   
+                $imagens = mysql_fetch_array($result2); 
+                $urlImagem = $imagens['IMAGEM_PRINCIPAL'];
+       $sql2 = "SELECT * FROM USUARIO WHERE COD_USUARIO = ".$artigos['AUTOR_PERSONAGEM'];
+                $result3 = mysql_query($sql2);   
+                $imagens2 = mysql_fetch_array($result3);          
+                $autorArtigo = $imagens2['NOME_USUARIO'];
+                
+                $ano = substr($artigos['DATA_PERSONAGEM'], 0, 4);
+                $mes = substr($artigos['DATA_PERSONAGEM'], 5, 2);
+                $dia = substr($artigos['DATA_PERSONAGEM'], 8, 2);                                                      
+                $urlArtigo = $artigos['URL_PERSONAGEM'];
+    echo "<form id='usuariosA' action='opcoes.php' method='post'>";
+        echo "<tr>";
+        echo "<td style='display: none'><input type='hidden' readonly='readonly' class='txtInfo3' size='35'  id='usuarioTable' name='codigo' value='" . $artigos['ID_PERSONAGEM'] . "'></td>";
+        echo "<td><img src='../uploads/$urlImagem' id='imagem_materia_listagem' alt='imagem'></td>";        
+        echo "<td>" . $artigos['TITULO_PERSONAGEM'] . "</td>";
+        echo "<td>" . $autorArtigo . "</td>";
+        echo "<td>" . $dia.'/'.$mes.'/'.$ano. "</td>";
+        echo "<td>" . $artigos['HORA_PERSONAGEM'] . "</td>";
+        echo "<td><input type='submit' class='botoes2' name='editarPersonagem' value='Editar Matéria'></td>";
+        echo "<td><input type='submit' class='botoes2' name='excluirPersonagem' value='Excluir Matéria'></td>";
+        echo "<td><a href='../$urlArtigo' target='_blank'> Visualizar Matéria </a></td>";
+        echo "</tr>"; 
+        echo "</form>";
+}
+echo "</table><br/>";
+}
+
+ echo "<div id='paginacaoEditarMateria'>";
+$anterior = $pc -1; 
+   $proximo = $pc +1; 
+   if ($pc>1) 
+       { echo " <a href='?pagina=$anterior&tipoMateria=$tipoMateria'>< Anterior</a> "; 
+       
+       } 
+       if($pc ==1){/*CODIGO A APARECER PARA VOLTAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério
+       //echo "|"; 
+       // Inicio lógica rogerio
+       for($i=1;$i<=$tp;$i++)
+       {
+           echo "<a href=?pagina=$i&tipoMateria=$tipoMateria>".$i . "</a>" . "    ";
+       }
+       // Fim lógia rogério
+       if ($pc<$tp) 
+           { echo " <a href='?pagina=$proximo&tipoMateria=$tipoMateria'>Próxima ></a>"; 
+           
+           }
+      if($pc == $tp){/*CODIGO A APARECER PARA PASSAR PAGINA*/} // Mostrando desabilitado 06/11/13 Rogério
+echo "</div>";
+?>
                 </article>                
             </article>
             <div id="imgFooter" ondragstart="return false">
@@ -133,3 +193,4 @@
         </section>
     </body>
 </html>
+
