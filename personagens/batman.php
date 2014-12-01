@@ -139,7 +139,7 @@
                         ?>
                     </figure>                                            
                     <div class="coment">
-                        <form name='frmComentar' method='post' action='../comentar.php' id='enviar'>
+                        <form name='frmComentar' method='post' action='../comentar2.php' id='enviar'>
                         <input type="text" id="textocomentario" name="comentario">                    
                         <input type="hidden" name="codigoArtigo" value="12" > 
                         <input type="submit" name="btnComentar" value="Publicar" class="botaoEnviar" > 
@@ -148,7 +148,7 @@
                     </div>
                     <div class='exibirComent'>
                         <?php
-                            listarComentarios('12');
+                            listarComentarios2('12');
                         ?>
                     </div>
                 </div>

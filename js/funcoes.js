@@ -168,6 +168,11 @@ function preview(input, tipo) {
                         document.getElementById("tituloMateria").style.backgroundColor = "#8EA50D";               
                         document.getElementById("fundoDescricaoMateria").style.backgroundColor = "#A9F5D0";
                     }
+                    if(tipo == 'nostalgia'){
+                        document.getElementById("imgPrincipal").style.backgroundColor = "#6D6A65";
+                        document.getElementById("tituloMateria").style.backgroundColor = "#6D6A65";               
+                        document.getElementById("fundoDescricaoMateria").style.backgroundColor = "#6D6A65";
+                    }
 
                 }
                 
@@ -203,3 +208,4 @@ function preview(input, tipo) {
                     document.getElementById("video2").style.display = 'none';
                     }
                 }
+               

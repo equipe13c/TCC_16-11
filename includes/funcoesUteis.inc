@@ -1032,6 +1032,44 @@ function listarComentarios($string){
                             echo '</div>';
                             }
 }
+function listarComentarios2($string){
+                           $query = "SELECT * FROM COMENT WHERE COD_PERSONAGEM = $string  ORDER BY COD_COMENT DESC";
+                            $result = mysql_query($query);                
+                            $imagens = mysql_num_rows($result);
+                            while($comentarios = mysql_fetch_array($result)){ 
+                            $comentario = $comentarios['CONTEUDO_COMENT'];
+                            $codComent = $comentarios['COD_COMENT'];
+                            $as= 'às';
+                            $dataComent = $comentarios['DATA_COMENT'];
+                                    $ano = substr($dataComent, 0, 4);
+                                    $mes = substr($dataComent, 5, 2);
+                                    $dia = substr($dataComent, 8, 2);
+                            $horaComent = $comentarios['HORA_COMENT'];    
+                                    $hora = substr($horaComent, 0, 2);
+                                    $min = substr($horaComent, 3, 2);
+                            $codigoUser = $comentarios['COD_USUARIO'];
+                            $query2 = "SELECT * FROM USUARIO WHERE COD_USUARIO = $codigoUser";
+                            $resultado1 = mysql_query($query2);
+                            $usuarios = mysql_fetch_array($resultado1);
+                            $nomeUser = $usuarios['NOME_USUARIO'];
+                            $sql = "SELECT * FROM IMAGEM_USUARIO WHERE COD_IMAGEM_USUARIO = $codigoUser";
+                            $resultado = mysql_query($sql);                
+                            $imagens2 = mysql_fetch_array($resultado); 
+                            $urlImagem = $imagens2['URL_IMAGEM'];
+                            echo '<br/>';
+                            echo '<figure class="imagem_user">'; 
+                            echo "<img src='../uploads/$urlImagem' class='imagemUsuario' alt='imagem'>";
+                            echo '</figure>';
+                            echo '<div class="coment">';
+                            echo '<form action="../removerComent.php" method="post">';
+                            echo '<hr width="620"/>';
+                            echo "<input type='text' class='nome_comentario' readonly='readonly' disabled='disabled' name='nomeUserComent' value='$nomeUser'>";
+                            echo "<input type='text'  id='data_comentario' readonly='readonly' disabled='disabled' name='dataComent' value= '$as $hora:$min, $dia/$mes/$ano'>";
+                            echo "<textarea class='texto_comentario' readonly='readonly' disabled='disabled' name='textComentario'>$comentario</textarea>";
+                            echo "</form>";
+                            echo '</div>';
+                            }
+}
 function buscarUrlVideo($code,$url){
                     $query = "SELECT URLVIDEO1,URLVIDEO2 FROM ARTIGO WHERE ID_ARTIGO = $code";
                     $result = mysql_query($query);                

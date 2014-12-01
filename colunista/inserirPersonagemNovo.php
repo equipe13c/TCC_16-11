@@ -253,7 +253,7 @@ $salt = geraSaltAleatorio();
                                                                                                 $fundoDesc = "#83FF7B";
                                                                                                 $descricaoCol = "#00989E";
                                                                                                 $fundoLogar = "#00989E";
-                                                                                                $logo = "002.png";
+                                                                                                $logo = "001.png";
                                                                                                 $ano = substr($data, 0, 4);
                                                                                                 $mes = substr($data, 5, 2);
                                                                                                 $dia = substr($data, 8, 2);
@@ -400,7 +400,7 @@ $salt = geraSaltAleatorio();
                         ?>
                     </figure>                                            
                     <div class="coment">
-                       '." <form name='frmComentar' method='post' action='../comentar.php' id='enviar'>
+                       '." <form name='frmComentar' method='post' action='../comentar2.php' id='enviar'>
                         ".'<input type="text" id="textocomentario" name="comentario">                    
                         <input type="hidden" name="codigoArtigo" value="'.$codigo_materia.'" > 
                         <input type="submit" name="btnComentar" value="Publicar" class="botaoEnviar" > 
@@ -409,7 +409,7 @@ $salt = geraSaltAleatorio();
                     </div>
                     '."<div class='exibirComent'>
                         <?php
-                            listarComentarios('".$codigo_materia."');
+                            listarComentarios2('".$codigo_materia."');
                         ?>
                     </div>
                 </div>
