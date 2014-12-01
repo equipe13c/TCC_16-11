@@ -87,7 +87,7 @@
                 </div>
                 <nav id="menu2">
                     <?php 
-                        include '../includes/menuC.php';
+                        include '../includes/menuA.php';
                     ?>
                 </nav>
                 <article id="conteudo_infos">

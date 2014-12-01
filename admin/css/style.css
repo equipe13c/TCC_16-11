@@ -1153,8 +1153,8 @@ table.editEmailTable td.info2, td.campos2, td.icone2, td.salvarEdit{
 }
 
 #menu2 ul li a{    
-    padding: 0 8px 0 8px;
-    font-size: 12px;
+    padding: 0 5px 0 5px;
+    font-size: 11px;
     text-decoration: none;
     text-transform: uppercase;
     color: #fff;
@@ -1167,7 +1167,7 @@ table.editEmailTable td.info2, td.campos2, td.icone2, td.salvarEdit{
 }
 
 #menu2 ul li a:hover{
-    padding: 0 8px 0 8px;
+    padding: 0 5px 0 5px;
     color: lightgray;
 }
 
